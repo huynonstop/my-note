@@ -9,7 +9,7 @@ React creates a virtual DOM. When state changes in a component it firstly runs a
 - Follows **Unidirectional** data flow or data binding
 - Uses **reusable/composable** UI components to develop the view
 
-# Advantages of ReactJS:
+# Advantages of ReactJS
 
 1. Increases the application’s performance with Virtual DOM
 2. JSX makes code is easy to read and write. It is also really easy to see the layout, or how components are plugged/combined with each other.
@@ -29,7 +29,9 @@ React creates a virtual DOM. When state changes in a component it firstly runs a
 
 React has a powerful composition model, and we recommend using composition instead of inheritance to reuse code between components.
 
-# One-way data binding![img](https://viblo.asia/uploads/29fea837-c6e8-416f-a11f-d708b33c2a78.png)
+# One-way data binding
+
+# ![img](https://viblo.asia/uploads/29fea837-c6e8-416f-a11f-d708b33c2a78.png)
 
 # What is the Virtual DOM?
 

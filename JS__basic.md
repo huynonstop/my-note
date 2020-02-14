@@ -8,26 +8,26 @@ Key word : var, let, const (A variable declared outside a function, becomes **GL
 
 ![Kết quả hình ảnh cho let const var difference](https://kickoff.tech/wp-content/uploads/2019/04/const-vs-let-vs-var-scope.png)
 
-## Datatype: 
+## Datatype
 
 + Primitive type: Deep copy
   + Number
   + String
   + Boolean
-
-- Special type:
-  - undefined (Something hasn't been initialized)
   
-  - null (Something is currently unavailable)
+  + undefined (Something hasn't been initialized)
+  
+  + null (Something is currently unavailable)
   
     ```javascript
     typeof null; // “object”
     typeof undefined; // “undefined”
     ```
   
-- Reference type: Shallow copy
++ Reference type: Shallow copy
   - Array
   - Object ({key: value})
+  - Function
 
 ## Array
 
@@ -243,8 +243,6 @@ const cat = {
 }
 ```
 
-![image-20200211182818925](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200211182818925.png)
-
 ```javascript
 //2. new operator => new + function => contrustor
 //a) Constructor function + prototype
@@ -318,20 +316,46 @@ var l = new function(){
 ### Difference between: function Person(){}, var person = Person(), and var person = new Person()
 
 ```javascript
-function Person(name) {
-  this.name = name; // constructors
+function Person(name) { //function
+  this.name = name;
 }
 
 var person = Person("John"); // invokes the Person as a function
 console.log(person); // undefined
 console.log(person.name); // Uncaught TypeError: Cannot read property 'name' of undefined
 
-var person = new Person("John"); // creates an instance of the Person
+var person = new Person("John"); // creates an instance of the Person - constructor call
 console.log(person); // Person { name: "John" }
 console.log(person.name); // "john"
 ```
 
+![image-20200211182818925](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200211182818925.png)
 
+Khi có constructor call, những hành động sau sẽ được thực hiện:
+
+1. Một object mới được tạo ra (hay constructed) (by javascript engine)
+
+   ```javascript
+   function ConstructorExample() {
+       // this = {};
+       // this.__proto__ = PersonConstructor.prototype;
+       console.log(this);
+       this.value = 10;
+       console.log(this);
+       // return this;
+   }
+   
+   new ConstructorExample();
+   
+   // -> ConstructorExample {}
+   // -> ConstructorExample { value: 10 }
+   ```
+
+2. object mới này được gắn prototype
+
+3. object mới được set thành this cho hàm gọi
+
+4. nếu hàm không trả về object nào khác của nó, thì cái object mới tạo ra kia sẽ được trả về.
 
 ## Prototype
 

@@ -32,6 +32,8 @@ console.log(bar); // [Function: bar]
 
 ```
 
+Both function declaration and variable declarations are hoisted to the top of the containing scope. And function declaration takes precedence over variable declarations (but not over variable assignment).![img](https://images.viblo.asia/e70b623f-c197-4435-b1cc-13bde4dd0a6a.png)![img](https://images.viblo.asia/af1f1df2-cd4b-4612-afa3-a1750d79d271.png)
+
 ## let vs const
 
 no hoisting
@@ -151,6 +153,8 @@ if (true) {
 console.log(name); // logs 'Hammad'
 console.log(likes); // Uncaught ReferenceError: likes is not defined
 console.log(skills); // Uncaught ReferenceError: skills is not defined
+while() {}
+for() {}
 ```
 
 ### Scope chaining
