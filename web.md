@@ -94,64 +94,6 @@ Giả sử certificate đã được xác thực và còn hạn sử dụng ho�
 
 Và tất nhiên, các session key sẽ được tạo ra ngẫu nhiên và khác nhau trong mỗi phiên làm việc với server. Ngoài encryption thì cơ chế hashing sẽ được sử dụng để đảm bảo tính Integrity cho các thông điệp được trao đổi.
 
-# Browser
-
-# ![img](https://miro.medium.com/max/499/1*RL0pnuf_hmLJ76oY6DViZw.png)
-
-**Javascript Interpreter** = **JavaScript Engine**
-
-## Rendering Engine
-
-- Chrome and Safari uses WebKit
-- Firefox uses Gecko
-- Internet Explorer uses Trident
-- Edge uses EdgeHTML
-
-![img](https://miro.medium.com/max/600/1*cfQpu6Xvb7e9IiH4CCuiCg.png)
-
-![img](https://viblo.asia/uploads/d6710955-9dc3-4a28-944d-069c0dac03c0.png)
-
-## Storage/Data Persistenace
-
-localStorage, sessionStorage, and cookies are all **client storage** solutions. Session data is held on the server where it remains under your direct control. (It's unique per `protocol://host:port`(**Origin**) combination)
-
- They are only able to store values as strings.
-
-+ Cookies
-
-  An HTTP cookie (web cookie, browser cookie) is a small piece of data that a server sends to the user's web browser. The browser may store it and send it back with the next request to the same server.
-
-  - Stores data that has to be sent back to the server with subsequent requests. Its expiration varies based on the type and the **expiration duration** can be set from either server-side or client-side (normally from server-side).
-  - Cookies can be read on server-side and client-side.
-  - Size must be less than 4KB.
-  - Cookies can be made secure by setting the httpOnly flag as true for that cookie. This prevents client-side access to that cookie
-
-  Cookies are mainly used for three purposes:
-
-  - Session management: Logins, shopping carts, game scores, or anything else the server should remember
-
-  - Personalization: User preferences, themes, and other settings
-
-  - Tracking: Recording and analyzing user behavior
-
-    **Cross-Site Request Forgery** (XSRF).
-
-    **Third-party cookies**
-
-+ SessionStorage (1 Tab)
-
-  + The sessionStorage object stores data only for a session, meaning that the data is stored until the browser (or tab) is closed.
-  + Data is never transferred to the server.
-  + Storage limit is larger than a cookie (at least 5MB).
-  + SessionStorage can only be read on client-side
-
-+ LocalStorage (Browser)
-
-  - Stores data with no expiration date, and gets cleared only through JavaScript, or clearing the Browser cache / Locally Stored Data
-  - Storage limit is the maximum amongst the three
-  - Data is never transferred to the server.
-  - LocalStoragecan only be read on client-side
-
 # Client-side Rendering And Server-side Rendering
 
 ![img](https://images.viblo.asia/df2bcc4e-5dec-4469-8e0b-a71e31d7152f.png)
@@ -170,6 +112,37 @@ The **same-origin policy** is a critical security mechanism that restricts how a
 
 CSP cho bạn ngôn ngữ để chỉ ra những nơi mà trình duyệt được phép tải tài nguyên về. Bạn có thể định nghĩa một danh sách các nguồn scripts, ảnh, font chữ, css cho từng cái một, cũng như kiểm tra hash của các tài nguyên đã được tải đó với chữ kí có sẵn.
 
+# HTTP request method
+
+Có tất cả 9 loại request, GET và POST là 2 loại thông dụng được sử dụng nhiều hiện này:
+
+- **GET**: được sử dụng để lấy thông tin từ server theo URI đã cung cấp.
+- **HEAD**: giống với GET nhưng response trả về không có body, chỉ có header.
+- **POST**: gửi thông tin tới server thông qua các biểu mẫu HTTP.
+- **PUT**: ghi đè tất cả thông tin của đối tượng với những gì được gửi lên.
+- **PATCH**: ghi đè các thông tin được thay đổi của đối tượng.
+- **DELETE**: xóa tài nguyên trên server.
+- **CONNECT**: thiết lập một kết nối tới server theo URI.
+- **OPTIONS**: mô tả các tùy chọn giao tiếp cho resource.
+- **TRACE**: thực hiện một bài test loop – back theo đường dẫn đến resource.
+
+# Web service
+
+Trong khi đó **Web Service** là một dịch vụ web, nó cung cấp các thông tin thô, và khó hiểu với đa số người dùng và vì vậy nó được sử dụng bởi các ứng dụng (Web front end, app di động). Các ứng dụng này sẽ chế biến các dữ liệu thô trước khi trả về cho bạn (*người dùng cuối*).
+
+# Resource 
+
+Và quản lý một resource của một website bao gồm 4 tác vụ chính:
+
+- Thêm một resource. (Ta dùng POST)
+- Lấy thông tin một resource. (Ta dùng GET)
+- Cập nhật một resource. (Ta dùng PUT hay PATCH)
+- Xoá một resource. (Ta dùng DELETE)
+
+# How does webpage work ?
+
+![image-20200521225002397](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200521225002397.png)
+
 # REST
 
 REST (**RE**presentational **S**tate **T**ransfer) is basically an architectural style of development having some principles...
@@ -185,6 +158,27 @@ REST (**RE**presentational **S**tate **T**ransfer) is basically an architectural
 
 **RESTFUL services** means it follows all the above principles.
 
-# DOM
+# Redis
 
-*DOM is “Document Object Model”. It’s the browsers’ programming interface for HTML (and XML) documents that treats them as tree structures. The DOM API can be used to change a document structure, style, and content.*![img](https://miro.medium.com/max/753/1*ZrzXoRljG5Co5KvEsWJNjA.png)
+Redis is an in-memory key-value NoSQL database (with disk-persistance) primarily used as a cache system
+
+With redis, the data is (ideally) all in memory, making the lookups much faster. You don't get the same functionality (relationships, complex queries, foreign keys, etc.) but you get speed.
+
+strings, hashes, lists, sets, sorted
+
+Redis có những đặc điểm nổi bật như:
+
+- Cập nhật thêm mới và xóa các dữ liệu trên redis rất nhanh chóng vì nó hỗ trợ nhiều command tiện ích.
+- Redis lấy và save dữ liệu trên RAM nhưng tại một thời điểm thì dữ liệu được lưu trữ vào file lưu trên disk.
+- Redis lưu dữ liệu dưới dạng `Key-Value` kiểu dữ liệu của `Key` nhưng kiểu dữ liệu của `Value` thì đa dạng hơn có thể là: `List, Set, Sorted Set, Hash...`
+- Có hỗ trợ multiple database với nhiều commands có thể tự động remove `key-value` từ một database tới một database khác.
+- Redis hỗ trợ mở rộng `master-slave` giúp chúng ta lưu trữ an toàn hoặc linh hoạt mở rộng lưu trữ data.
+
+# Client/server
+
+# MVC
+
+# MVVM
+
+
+

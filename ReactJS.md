@@ -17,7 +17,7 @@ React creates a virtual DOM. When state changes in a component it firstly runs a
 4. Easy to integrate with other frameworks (Angular, BackboneJS) since it is only a view library
 5. Easy to write UI Test cases and integration with tools such as JEST
 
-# Below are the list of limitations:
+# Below are the list of limitations
 
 1. React is just a view library, not a full-blown framework
 2. There is a learning curve for beginners who are new to web development.
