@@ -1,19 +1,33 @@
-# SQL vs noSQL
+# Why database
+
+![image-20200716220926516](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200716220926516.png)
+
+# Scaling
+
+![image-20200716223546267](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200716223546267.png)
+
+# SQL vs NoSQL
+
+https://academind.com/learn/web-dev/sql-vs-nosql/
+
+![image-20200716223824491](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200716223824491.png)
 
 |                                             | SQL Databases                                                | NoSQL Databases                                              |
 | ------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | **Types**                                   | One type (SQL database) with minor variations                | Many different types including key-value stores,[document databases](https://www.mongodb.com/document-databases), wide-column stores, and graph databases |
-| **Development History**                     | Developed in 1970s to deal with first wave of data storage applications | Developed in late 2000s to deal with limitations of SQL databases, especially scalability, multi-structured data, geo-distribution and agile development sprints |
 | **Examples**                                | MySQL, Postgres, Microsoft SQL Server, Oracle Database       | MongoDB, Cassandra, HBase, Neo4j                             |
-| **Data Storage Model**                      | Individual records (e.g., 'employees') are stored as rows in tables, with each column storing a specific piece of data about that record (e.g., 'manager,' 'date hired,' etc.), much like a spreadsheet. Related data is stored in separate tables, and then joined together when more complex queries are executed. For example, 'offices' might be stored in one table, and 'employees' in another. When a user wants to find the work address of an employee, the database engine joins the 'employee' and 'office' tables together to get all the information necessary. | Varies based on database type. For example, key-value stores function similarly to SQL databases, but have only two columns ('key' and 'value'), with more complex information sometimes stored as BLOBs within the 'value' columns. Document databases do away with the table-and-row model altogether, storing all relevant data together in single 'document' in JSON, XML, or another format, which can nest values hierarchically. |
-| **Schemas**                                 | Structure and data types are fixed in advance. To store information about a new data item, the entire database must be altered, during which time the database must be taken offline. | Typically dynamic, with some enforcing data validation rules. Applications can add new fields on the fly, and unlike SQL table rows, dissimilar data can be stored together as necessary. For some databases (e.g., wide-column stores), it is somewhat more challenging to add new fields dynamically. |
-| **Scaling**                                 | Vertically, meaning a single server must be made increasingly powerful in order to deal with increased demand. It is possible to spread SQL databases over many servers, but significant additional engineering is generally required, and core relational features such as JOINs, referential integrity and transactions are typically lost. | Horizontally, meaning that to add capacity, a database administrator can simply add more commodity servers or cloud instances. The database automatically spreads data across servers as necessary. |
-| **Development Model**                       | Mix of open technologies (e.g., Postgres, MySQL) and closed source (e.g., Oracle Database) | Open technologies                                            |
+| **Data Storage Model**                      | much like a **spreadsheet**.<br />Data store in **tables** (Users, Orders, Products) and can have **relationships**  with other tables<br />A table have **fields** (**columns**) to define the data (User have ID, email, name)<br />Data is called **record** (**rows**) | Tables are Collections<br />Record (rows) are Documents store in a format (JSON,XML,...)<br />User **duplicated** and **nested** data instead of relation |
+| **Schemas**                                 | Structure and data types are **fixed** in advance.           | Typically **dynamic** (**schemaless**), with some enforcing data validation rules. Applications can add new fields on the fly, and unlike SQL table rows, dissimilar data can be stored together as necessary. |
+| **Scaling**                                 | Vertically, meaning a single server must be made increasingly powerful in order to deal with increased demand. It is possible to spread SQL databases over many servers, but significant additional engineering is generally required, and core relational features such as JOINs, referential integrity and transactions are typically lost. | Horizontally + Vertically, meaning that to add capacity, a database administrator can simply add more commodity servers or cloud instances. The database automatically spreads data across servers as necessary. |
 | **Supports multi-record ACID transactions** | Yes                                                          | Mostly no. MongoDB 4.0 and beyond support multi-document ACID transactions.[Learn more](https://www.mongodb.com/transactions) |
 | **Data Manipulation**                       | Specific language using Select, Insert, and Update statements, e.g. SELECT fields FROM table WHERE… | Through object-oriented APIs                                 |
 | **Consistency**                             | Can be configured for strong consistency                     | Depends on product. Some provide strong consistency (e.g., MongoDB, with tunable consistency for reads) whereas others offer eventual consistency (e.g., Cassandra). |
 
-# **ACID** 
+# SQL
+
+![image-20200716221148542](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200716221148542.png)
+
+## ACID 
 
 ![img](https://tedu.com.vn/UploadData/images/acid-600x338.png)
 
@@ -22,7 +36,7 @@
 **Isolation** giữ giao dịch tách rời nhau cho đến khi chúng đã hoàn tất. Tính chất này đảm bảo rằng hai hoặc nhiều giao dịch không bao giờ được trộn lẫn với nhau, tạo ra dữ liệu không chính xác và không phù hợp.
 **Durability** đảm bảo rằng cơ sở dữ liệu sẽ theo dõi các thay đổi cấp phát trong một cách mà các máy chủ có thể phục hồi từ một sự kết thúc bất thường. Tính chất này đảm bảo rằng trong trường hợp thất bại hay dịch vụ khởi động lại các dữ liệu có sẵn trong  trước khi gặp lỗi.
 
-# Transaction 
+## Transaction 
 
 Transaction can be defined as a collection of task that are considered as minimum processing unit. Each minimum processing unit can not be divided further.
 
@@ -51,8 +65,8 @@ A *dirty read* (aka *uncommitted dependency*) occurs when a transaction is allow
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | `/* Query 1 */ SELECT age FROM users WHERE id = 1; /* will read 20 */ ` |                                                              |
 |                                                              | `/* Query 2 */ UPDATE users SET age = 21 WHERE id = 1; /* No commit here */ ` |
-| `/* Query 1 */ SELECT age FROM users WHERE id = 1; /* will read 21 */ ` |                                                              |
-|                                                              | `ROLLBACK; /* lock-based DIRTY READ */`                      |
+| `/* Query 1 */ SELECT age FROM users WHERE id = 1; /* will read 21 */ `  (This is dirty read here) |                                                              |
+|                                                              | `ROLLBACK; `                                                 |
 
 ## Non-repeatable reads
 
@@ -62,7 +76,7 @@ A *non-repeatable read* occurs, when during the course of a transaction, a row i
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | `/* Query 1 */ SELECT * FROM users WHERE id = 1; `           |                                                              |
 |                                                              | `/* Query 2 */ UPDATE users SET age = 21 WHERE id = 1; COMMIT; /* in multiversion concurrency   control, or lock-based READ COMMITTED */ ` |
-| `/* Query 1 */ SELECT * FROM users WHERE id = 1; COMMIT; /* lock-based REPEATABLE READ */` |                                                              |
+| `/* Query 1 */ SELECT * FROM users WHERE id = 1; /* lock-based REPEATABLE READ */` |                                                              |
 
 ## Phantom reads
 
@@ -75,15 +89,14 @@ A *phantom read* occurs when, in the course of a transaction, new rows are added
 |                                                              | `/* Query 2 */ INSERT INTO users(id,name,age) VALUES ( 3, 'Bob', 27 ); COMMIT; ` |
 | `/* Query 1 */ SELECT * FROM users WHERE age BETWEEN 10 AND 30; COMMIT; ` |                                                              |
 
+# NoSQL
+
+![image-20200716223418804](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200716223418804.png)
+
 # N+1 problem
 
-Giả sử ta có một cơ sở dữ liệu, trong đó table `post` có khóa ngoại `user_id`
-
-Thực hiện truy vấn vào cơ sở dữ liệu và lấy `tất cả` User `kèm theo` các Post của User đó:
-
-- Một truy vấn để lấy ra tất cả users => đây chính là 1 trong `"N+1"`
-- Ba truy vấn để lấy ra các post tương ứng với các user trong cơ sở dữ liệu => đây chính là `N` trong `"N+1"`
-
-Đối với những hệ thống có số lượng `bản ghi` lớn (cỡ như phải trả về 1000 user thì chúng ta phải thực hiện 1001 truy vấn) 
+- 1 query to get user `"1"`
+- N query to get a data relative to user `"N"
 
 =>  select in () || joins
+

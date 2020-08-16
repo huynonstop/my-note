@@ -6,8 +6,6 @@ JavaScript is a **dynamic**, **weakly typed** **programming language** which is 
 
 JavaScript was created to make webpages more dynamic (e.g. change content on a page directly from inside the browser).
 
-It  has **nothing in common with Java** and **no alternatives to JS in the browser**
-
 JavaScript is a specific version of ECMAScript
 
 ![image-20200521234356795](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200521234356795.png)
@@ -23,6 +21,10 @@ For implementation (browser, runtime)![image-20200609162754749](C:\Users\ASUS\Ap
 ## Dynamic and Weakly-typed
 
 ![image-20200523112734856](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200523112734856.png)
+
+## Hosted Language
+
+![image-20200611212206286](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611212206286.png)
 
 ## Environment
 
@@ -80,41 +82,6 @@ A variable declared outside a function, becomes global variable
 | **Hoisting**       | NO    | NO   | YES  |
 | **ES**             | 6+    | 6+   | <5   |
 
-
-
-## Datatype
-
-+ Primitive type: Deep copy, store in stack
-  + Number
-  
-  + String
-  
-  + Boolean
-  
-  + undefined (Something hasn't been initialized auto set by JS)
-  
-  + null (Something is currently unavailable set by Dev)
-  
-    ```javascript
-    typeof null; // “object”
-    typeof undefined; // “undefined”
-    ```
-  
-+ Reference type: Shallow copy, store value in heap
-  - Array
-  - Object ({key: value})
-  - Function
-
-![image-20200523224859003](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200523224859003.png)
-
-![image-20200531222813663](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200531222813663.png)
-
-![image-20200609173712566](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200609173712566.png)
-
-### Floating point  (Im)Precision
-
-![image-20200609174146528](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200609174146528.png)
-
 ## Operators
 
 [Docs link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
@@ -139,7 +106,31 @@ console.log(a == undefined); // true
 
 ![image-20200523204617685](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200523204617685.png)
 
-## Loop
+## Expression
+
+![image-20200612205313041](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612205313041.png)
+
+## Statement
+
+Code that not return value
+
+if, function statement,....
+
+![image-20200612205716918](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612205716918.png)
+
+## Control Structures
+
+![image-20200612145656041](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612145656041.png)
+
+![image-20200612145734885](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612145734885.png)
+
+![image-20200612145746445](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612145746445.png)
+
+![image-20200612145759011](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612145759011.png)
+
+![image-20200612145821016](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612145821016.png)
+
+### Loop
 
 ![image-20200523210555960](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200523210555960.png)
 
@@ -147,71 +138,54 @@ break: stop looping
 
 continue: skip this loop
 
-## Function
+#### Iterable
 
-![image-20200221180104305](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200221180104305.png)
+![image-20200530211212489](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200530211212489.png)
 
-Functions are one of the fundamental building blocks in JavaScript. A function is a JavaScript procedure—a set of statements that performs a task or calculates a value. To use a function, you must define it somewhere in the scope and call it any time and any where you want.
+## Datatype
 
-Function just be an object in javascript 
++ Primitive type: Deep copy, store in stack, present a single value
 
-You can defined a function inside a function
+  + Number
 
-![image-20200524210656777](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200524210656777.png)
+  + String
 
-### Anonymous function
+  + Boolean
 
-One time used no named function
+  + undefined (Something doesn't have value but defined, **auto** set by JS and may set by Dev)
 
-### Function method
+  + null (Something is set to not have value, set by Dev)
 
-#### bind(context[...,arguments ]) method
+    ```javascript
+    typeof null; // “object”
+    typeof undefined; // “undefined”
+    ```
 
-return a new reference at a function in place which is preconfigured regarding the arguments it receives 
+    ![image-20200612205802024](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612205802024.png)
 
-not executed immediately
++ Reference type: Shallow copy, store value in heap
 
-can append more arguments which is not preconfigured when call the function
+  - Array
 
-#### call and apply method
+  - Object ({key: value})
 
-allow to preconfigured arguments to the function but immediately execute the function
+  - Function
 
-### Arguments variable 
+    ![image-20200612205815807](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612205815807.png)
 
-Only used inside a function use function keyword
+![image-20200523224859003](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200523224859003.png)
 
-Arguments is Array-like object
+![image-20200531222813663](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200531222813663.png)
 
-```js
-function sum() {
-    let rs = 0
-    for (let i = 0; i < arguments.length;i++){
-        rs += arguments[i]
-    }
-    return rs;
-}
-sum(1,2,3,4,5) // 15
-```
+![image-20200609173712566](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200609173712566.png)
 
-### Rest parameters ES6+
+### Coercion
 
-Take all arguments and merges to an array
+![image-20200612204624112](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612204624112.png)
 
-Must be the last argument and 1 rest parameters
+### Floating point  (Im)Precision
 
-```js
-function sum(...nums) {
-    return nums.reduce((a,b) => a+b) //nums: [1,2,3,4,5]
-}
-sum(1,2,3,4,5) // 15
-```
-
-### Arrow function ES6+
-
-![image-20200524212628601](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200524212628601.png)
-
-It is an anonymous function
+![image-20200609174146528](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200609174146528.png)
 
 ## Array
 
@@ -362,51 +336,107 @@ console.log(a); // 3
 console.log(b); // 1
 ```
 
-##  Array-like-object
+###  Array-like-object
 
 ![image-20200530211222871](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200530211222871.png)
 
-## Iterable
+## Function
 
-![image-20200530211212489](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200530211212489.png)
+![image-20200221180104305](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200221180104305.png)
 
-## Set
+Functions are one of the fundamental building blocks in JavaScript. A function is a JavaScript object (store your code - a set of statements ) that can be invoked (run) later. 
 
-![image-20200530223213192](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200530223213192.png)
+To use a function, you must define it somewhere in the scope and then you can call it any time and any where you want.
 
-```js
-var array = [1, 2, 3, 5, 1, 5, 9, 1, 2, 8];
-Array.from(new Set(array)); // [1, 2, 3, 5, 9, 8]
+![image-20200612145620350](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612145620350.png)
+
+Function is an object in JavaScript
+
+You can defined a function inside a function
+
+![image-20200524210656777](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200524210656777.png)
+
+![image-20200612204848376](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612204848376.png)
+
+### Anonymous function
+
+A function is used once and does not need to be used anywhere else
+
+They can be used in IIFEs to encapsulate some code within a local scope so that variables declared in it do not leak to the global scope.
+
+```javascript
+(function() {
+  // Some code here.
+})();
 ```
 
-![image-20200530224402270](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200530224402270.png)
+The code will seem more self-contained and readable when handlers are defined right inside the code calling them, rather than having to search elsewhere to find the function body.
 
-## Map
-
-![image-20200530223719341](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200530223719341.png)
-
-![image-20200530223740138](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200530223740138.png)
-
-```js
-let myMap = new Map()
-myMap.set('bla','blaa')
-myMap.set('bla2','blaa2')
-console.log(myMap)  // Map { 'bla' => 'blaa', 'bla2' => 'blaa2' }
-
-myMap.has('bla')    // true
-myMap.delete('bla') // true
-console.log(myMap)  // Map { 'bla2' => 'blaa2' }
+```javascript
+setTimeout(function() {
+  console.log("Hello world!");
+}, 1000);
 ```
 
-![image-20200530224451404](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200530224451404.png)
+Arguments to functional programming constructs
 
-**for obj:**![image-20200530223811758](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200530223811758.png)
+```javascript
+const arr = [1, 2, 3];
+const double = arr.map(function(el) {
+  return el * 2;
+});
+console.log(double); // [2, 4, 6]
+```
 
-## Difference
+### Function method
 
-![image-20200530222255014](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200530222255014.png)
+#### bind(context[...,arguments ]) method
 
-![image-20200530222307367](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200530222307367.png)
+return a new reference at a function in place which is preconfigured regarding the arguments it receives 
+
+not executed immediately
+
+can append more arguments which is not preconfigured when call the function
+
+#### call and apply method
+
+allow to preconfigured arguments to the function but immediately execute the function
+
+### Arguments variable 
+
+Only used inside a function use function keyword
+
+Arguments is Array-like object
+
+```js
+function sum() {
+    let rs = 0
+    for (let i = 0; i < arguments.length;i++){
+        rs += arguments[i]
+    }
+    return rs;
+}
+sum(1,2,3,4,5) // 15
+```
+
+### Rest parameters ES6+
+
+Take all arguments and merges to an array
+
+Must be the last argument and 1 rest parameters
+
+```js
+function sum(...nums) {
+    return nums.reduce((a,b) => a+b) //nums: [1,2,3,4,5]
+}
+sum(1,2,3,4,5) // 15
+```
+
+### Arrow function ES6+
+
+![image-20200524212628601](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200524212628601.png)
+
+It is an anonymous function
 
 ## Object
 
@@ -533,7 +563,7 @@ console.log(q); // true
 
 `this` refers to different things, depending on where it's used and how (if used in a function) a function is called.
 
-Generally, `this` refers to the "thing" which called a function (if used inside of a function). That can be the global context, an object or some bound data/ object (e.g. when the browser binds `this` to the button that triggered a click event).
+Generally, `this` refers to the "thing" which call a function (if used inside of a function). That can be the global context, an object or some bound data/ object (e.g. when the browser binds `this` to the button that triggered a click event).
 
 ![image-20200601001943153](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200601001943153.png)
 
@@ -544,7 +574,7 @@ Generally, `this` refers to the "thing" which called a function (if used inside 
 ```js
 function something() { ... }
 something === window.something // true
-console.log(this); // logs global object (window in browser) - ALWAYS (also in strict mode)!
+console.log(this); // logs global object (window in browser)
 ```
 
 #### function behavior 
@@ -659,19 +689,19 @@ window: give access to browser's core APIs (just the active tab)
 
 ![image-20200525233250502](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200525233250502.png)
 
-## OOP
-
-![image-20200601211040597](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200601211040597.png)
-
-![image-20200601211116941](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200601211116941.png)
-
-![image-20200601211007877](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200601211007877.png)
-
 ## Class 
 
-![image-20200601211422042](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200601211422042.png)
+### Constructor method
 
-![image-20200601234636997](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200601234636997.png)
+```js
+// ES6 Class
+class Person {
+  constructor(name) {
+    this.name = name; //this = object is being created by using the new keyword
+  }
+}
+const a = new Person("hi")// this = a
+```
 
 ### Fields vs Properties
 
@@ -679,15 +709,12 @@ window: give access to browser's core APIs (just the active tab)
 
 ```js
 class MyClass() {
-  /* properties - don't depend on the constructor*/
   prop1 = 1;
   prop2; 
   /* 
-  	This is a property that this class instance will have but
-  	Created when constructor is called but after super is executed completely
+   	Don't depend on the constructor
+  	This is a property that this class instance will have, created when constructor is called and after super is executed completely
   */
-
-  /* easy to see what the constructor does that is only about *constructing* the object */
   constructor(someArg) {
     this.prop2 = someArg;
   }
@@ -705,18 +732,6 @@ class Private {
     #privateMethod() {}
     //new syntax becareful
 }
-```
-
-### Constructor method
-
-```js
-// ES6 Class
-class Person {
-  constructor(name) {
-    this.name = name; //this = object is being created by using the new keyword
-  }
-}
-const a = new Person("hi")// this = a
 ```
 
 ### Binding class method 
@@ -744,13 +759,6 @@ Static class members (properties/methods) are not tied to a specific instance of
 ![image-20200601235316105](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200601235316105.png)
 
 ```javascript
-class Student extends Person {
-  constructor(name, studentId) {
-    super(name);
-    this.studentId = studentId;
-  }
-}
-
 class Polygon {
   constructor(height, width) {
     this.name = 'Polygon';
@@ -762,14 +770,18 @@ class Polygon {
 class Square extends Polygon {
   constructor(length) {
     super(length, length); 
-      //call constructor of parrent class (super.function())
-      //must call before accessing 'this'
+      //Must call constructor of parrent class (super.function())
+      //allow accessing `this` inside child contructor 
     this.name = 'Square';
   }
 }
 ```
 
 ## Behind the scenes of class and object in JavaScript
+
+### Constructor function vs factory function
+
+https://medium.com/@chamikakasun/javascript-factory-functions-vs-constructor-functions-585919818afe
 
 ### Constructor function vs Classes
 
@@ -778,6 +790,10 @@ class Square extends Polygon {
 ![image-20200602210528810](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200602210528810.png)
 
 ![image-20200602210252909](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200602210252909.png)
+
+![image-20200612212210695](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612212210695.png)
+
+![image-20200612212336865](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612212336865.png)
 
 ### new
 
@@ -807,7 +823,9 @@ new ConstructorExample();
 // -> ConstructorExample { value: 10 }
 ```
 
-### Difference between: function Person(){}, var person = Person(), and var person = new Person()
+![image-20200612212123663](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612212123663.png)
+
+#### Difference between: function Person(){}, var person = Person(), and var person = new Person()
 
 ```javascript
 function Person(name) { //function
@@ -944,6 +962,8 @@ If `doSomeInstancing` does not have the property, then the browser looks for the
 If it still doesn't exits, the `__proto__` of the `__proto__` of doSomeInstancing (a.k.a. the `__proto__` of doSomething.prototype (a.k.a. `Object.prototype`)) is then looked through for the property being searched for.
 
 If JavaScript reach to the end of  **prototype chain** and if it didn't find property, it will return undefined and for the method, it would throw an error
+
+![image-20200612211958126](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612211958126.png)
 
 **A prototype is just a base class of object**
 
@@ -1092,337 +1112,36 @@ Array.prototype
 
 String.prototype
 
-## Browser API
+Set
 
-### DOM
+Map
 
-Read more [JS_DOM.md](JS_DOM.md) 
+## More about JS
 
-### Timers & intervals
+### Invocation
 
-![image-20200608121224915](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608121224915.png)
-
-![image-20200608121324990](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608121324990.png)
-
-![image-20200608121503051](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608121503051.png)
-
-![image-20200608121524339](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608121524339.png)
-
-**minimum** time to run the callback (waiting for the callstack is empty)
-
-### location (URL and page we're on)
-
-![image-20200608124840159](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608124840159.png)
-
-### history
-
-![image-20200608124758794](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608124758794.png)
-
-### navigator
-
-![image-20200608125128292](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608125128292.png)
-
-### Date
-
-![image-20200608125559605](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608125559605.png)
-
-### Error
-
-![image-20200608125712784](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608125712784.png)
-
-### JSON 
-
-JSON.stringify(object)
-
-JSON.parse(JSONstring)
-
-## Event
-
-![image-20200608132055539](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608132055539.png)
-
-### Browser Event Objects
-
-![image-20200608132201928](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608132201928.png)
-
-Whatever causes an event provides you some data along with such an event to describe it to help you control it
-
-![image-20200608142509047](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608142509047.png)
-
-![image-20200608142527917](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608142527917.png)
-
-### Adding event
-
-HTML `on` attributes => mix HTML and JS code
-
-element `on` property => only 1 event handler
-
-element `addEventListener()` => most flexibles ways (can add and remove event listener later)
-
-### Remove event
-
-![image-20200608134906555](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608134906555.png)
-
-can only remove exact the same function (not work direct with anonymous function or `bind()`)
-
-### preventDefault()
-
-form submit to server or link navigation
-
-### Bubbling & Capturing, Propagation
-
-![image-20200608144128162](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608144128162.png)
-
-Capturing => Bubbling
-
-By default all event listeners are registered in the bubbling phase 
-
-```html
-<div>
-    <button>
-    </button>
-</div>
-```
-
-![image-20200608144923627](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608144923627.png)
-
-![image-20200608145005127](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608145005127.png)
-
-![image-20200608145139650](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608145139650.png)
-
-![image-20200608145211518](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608145211518.png)
-
-The way event occurred on this button but it's listenable on all ancestors called **Event Propagation** (some event are not propagated)
-
-![image-20200608145736200](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608145736200.png)
-
-![image-20200608150018545](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608150018545.png)
-
-### Event delegation pattern
-
-Event delegation is a technique involving adding event listeners to a **parent** element instead of adding them to the child elements. 
-
-![image-20200608150822633](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608150822633.png)
-
-The listener will fire whenever the event is triggered on the descendant elements due to **event bubbling up** the DOM. The benefits of this technique are:
-
-- Only have 1 listener
-- There is no need to unbind the handler from elements that are removed and to bind the event for new elements.
-
-```html
-<ul id="parent-list">
-	<li id="post-1">Item 1</li>
-	<li id="post-2">Item 2</li>
-	<li id="post-3">Item 3</li>
-	<li id="post-4">Item 4</li>
-	<li id="post-5">Item 5</li>
-</ul>
-```
-
-```js
-document.getElementById("parent-list").addEventListener("click", 			function(e) {
-		// e.target is the clicked element!
-   		event.target.closest('li').classList.toggle('highlight');
-    }
- );
-```
-
-### Trigger event programmatically
-
-use element method (submit(),click(),...)
-
-### this in event handler
-
-this is bound to the event's source - the element which is registered the event listener  (not for arrow function)
-
-![image-20200608152759049](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608152759049.png)
-
-![image-20200608152825710](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608152825710.png)
-
-## Hoisting
-
-Hoisting is a term used to explain the behavior of variable declarations in your code. Variables declared or initialized with the `var` keyword will have their declaration "moved" up to the top of their module/function-level scope, which we refer to as hoisting
-
-```javascript
-console.log(foo); // undefined
-var foo = "foo";
-//code above behavior like this
-var foo
-console.log(foo); // undefined
-foo = "foo";
-
-console.log(baz); // ReferenceError: can't access before initialization
-let baz = "baz";
-
-console.log(bar); // ReferenceError: can't access before initialization
-const bar = "bar";
-
-// Function Declaration
-console.log(foo); // [Function: foo]
-foo(); // 'FOOOOO'
-function foo() {
-  console.log("FOOOOO");
-}
-console.log(foo); // [Function: foo]
-
-// Function Expression
-console.log(bar); // undefined
-bar(); // Uncaught TypeError: bar is not a function
-var bar = function() {
-  console.log("BARRRR");
-};
-console.log(bar); // [Function: bar]
-
-```
-
-![img](https://images.viblo.asia/e70b623f-c197-4435-b1cc-13bde4dd0a6a.png)![img](https://images.viblo.asia/af1f1df2-cd4b-4612-afa3-a1750d79d271.png)
-
-## More about function
-
-### Pure function
-
-![image-20200608183520088](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608183520088.png)
-
-Should aim for pure function than impure function (reduce impure function), because they are predictable (not do anything behind the scene)
-
-### Higher order function
-
-A **higher order function** is a function that takes a function as an argument, or returns a function
-
-### Factory function
-
-A function return a function
-
-![image-20200608220359309](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608220359309.png)
-
-### Closure 
-
-If you have a function in a function, that **inner function** can use all the variables or parameters of the outer function and all variables that are defined globally (access outer environment), the **outer function** can not access the inner functions specific constants or variables.
-
-When a function is created as we do it here with the function keyword by using this function declaration, then this function creates a new **lexical environment** and registers any variables it has access to inside of this environment.
-
-**Every function** closes over the surrounding environment which means it **registers** the **surrounding environment** and the variables registered there and it **memorizes the values of these variables**. If you then change a variable, well that is **reflected** inside of the function.
-
-So a function, every function in Javascript is a closure because it closes over the variables defined in its environment and it kind of memorizes them, so that they're not thrown away when you don't need them in the surrounding context anymore and you can still use them from inside of the inner function
-
-#### Summary
-
-Functions remember the surrounding variables
-
-```javascript
-let name = "Max"
-function greet() { // lexical environment
-    console.log(name) // access name in outer environment
-}
-//greet() => Max
-name = "Huy"
-greet() //=> Huy
-```
-
-```js
-let name = "Max"
-function greet() { // lexical environment
-    let userName = name // store name, part of the inner evironment
-    console.log(userName) 
-}
-//greet() => Max
-name = "Huy"
-greet() //=> Huy
-```
-
-```js
-function greet() { // lexical environment
-    console.log(userName) 
-}
-let name = "Max"
-greet() //=> Max
-```
-
-### Scope /  Lexical environment
-
-Scope is the accessibility of variables, functions, and objects in some particular part of your code during runtime. In other words, scope determines the visibility of variables and other resources in areas of your code. (lexical environment for the curly braces)
-
-#### Global Scope
-
-```javascript
-var name = 'Hammad';
-
-console.log(name); // logs 'Hammad'
-
-function logName() {
-    console.log(name); // 'name' is accessible here and everywhere else
-}
-```
-
-#### Local Scope
-
-```javascript
-// Global Scope
-function someFunction() {
-    // Local Scope #1
-    function someOtherFunction() {
-        // Local Scope #2
-    }
-}
-
-// Global Scope
-function anotherFunction() {
-    // Local Scope #3
-}
-// Global Scope
-```
-
-```javascript
-if (true) {
-    // if conditional block or while() {} or for() {} also create a scope
-    // name is in the global scope because of the 'var' keyword
-    var name = 'Hammad';
-    // likes is in the local scope because of the 'let' keyword
-    let likes = 'Coding';
-    // skills is in the local scope because of the 'const' keyword
-    const skills = 'JavaScript and PHP';
-}
-console.log(name); // logs 'Hammad'
-console.log(likes); // Uncaught ReferenceError: likes is not defined
-console.log(skills); // Uncaught ReferenceError: skills is not defined
-```
-
-Global scope lives as long as your application lives. Local Scope lives as long as your functions are called and executed.
-
-#### Function Arguments
-
-Function arguments (parameters) work as local variables inside functions.
-
-#### The Lifetime of Variables
-
-The lifetime of a JavaScript variable starts when it is declared.
-
-Local variables are deleted when the function is completed.
-
-In a web browser, global variables are deleted when you close the browser window (or tab).
-
-### Recursion
-
-![image-20200608235527130](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608235527130.png)
-
-![image-20200608235802861](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608235802861.png)
+Invoke a function, using `()`
 
 ### Context
 
-*Context* is used to refer to the value of `this` in some particular part of your code.
+***Context* is used to refer to the value of `this` in your code.**
 
-1. If the `new` keyword is used when calling the function, `this` inside the function is a brand new object.
-2. If `apply`, `call`, or `bind` are used to call/create a function, `this` inside the function is the object that is passed in as the argument.
-3. If a function is called as a method, such as `obj.method()` — `this` is the object that the function is a property of.
-4. If a function is invoked as a free function invocation, meaning it was invoked without any of the conditions present above, `this` is the global object. In a browser, it is the `window` object. If in strict mode (`'use strict'`), `this` will be `undefined` instead of the global object.
-5. If multiple of the above rules apply, the rule that is higher wins and will set the `this` value.
-6. If the function is an ES2015 arrow function, it ignores all the rules above and receives the `this` value of its surrounding scope at the time it is created
+If the `new` keyword is used when calling the function, `this` inside the function is a brand new object.
 
-In the global scope context is always the Window object.
+If `apply`, `call`, or `bind` are used to call/create a function, `this` inside the function is the object that is passed in as the argument.
+
+If a function is called as a method, such as `obj.method()` — `this` is the object that the function is a property of.
+
+If a function is invoked as a free function invocation, meaning it was invoked without any of the conditions present above, `this` is the global object. In a browser, it is the `window` object. If in strict mode (`'use strict'`), `this` will be `undefined` instead of the global object.
+
+If multiple of the above rules apply, the rule that is higher wins and will set the `this` value.
+
+If the function is an arrow function, it ignores all the rules above and receives the `this` value of its surrounding scope at the time it is created
 
 ```javascript
-// logs: Window {speechSynthesis: SpeechSynthesis, caches: CacheStorage, localStorage: Storage…}
+//In the global scope context is the Window object.
 console.log(this);
-
+//Window {speechSynthesis: SpeechSynthesis, caches: CacheStorage, localStorage: Storage…}
 function logFunction() {
     console.log(this);
 }
@@ -1495,17 +1214,351 @@ var a = {
 }
 ```
 
-### Execution Context (CallStack)
+### Execution Context
 
-JavaScript is a single-threaded language so it can only execute a single task at a time. The rest of the tasks are queued in the Execution Context.
+*Execution context* equates to the 'environment' a function executes in; that is, variable scope (and the *scope chain*, variables in closures from outer scopes), function arguments, and the value of the `this` object.
 
-JavaScript interpreter starts to execute your code, the context (scope) is by default set to be global. This global context is appended to your execution context which is actually the first context that starts the execution context.
+The *call stack* is a collection of execution contexts.
 
-After that, each function call (invocation) would append its context to the execution context. The same thing happens when an another function is called inside that function or somewhere else.
+![image-20200612164941745](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612164941745.png)
+
+![image-20200612163937134](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612163937134.png)
+
+JavaScript interpreter starts to execute your code,execution context is set to be global by default. After that, each function call (invocation) would append its context to the execution context. The same thing happens when an another function is called inside that function or somewhere else.
+
+#### Global Execution Context
+
+No outer environment, this = global object, your global code
+
+Code not inside a function is global
+
+<img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612164606842.png" alt="image-20200612164606842" style="zoom: 33%;" />
+
+#### Creation phase
+
+- JS Engine parses - run through your code & `identifies variables & functions` created by code (which will be used in execution phase)
+- Setup memory space for Variables & Functions - **"Hoisting"**
+
+![image-20200612165628524](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612165628524.png)
+
+##### Hoisting 
+
+Hoisting is a term used to explain the behavior of variable declarations in your code. Variables declared or initialized with the `var` keyword will have their declaration "moved" up to the top of their module/function-level scope, which we refer to as hoisting
+
+```javascript
+// var
+console.log(foo); // undefined
+var foo = "foo";
+/*
+ Code above behavior like this
+ 
+ Creation phase
+ Setup memory for: 
+ var foo
+ => can reference but no value (undefined)
+ 
+ Execute phase
+ console.log(foo); (no set value yet => undefined) 
+ foo = "foo" => set value here
+ => value ready
+*/
+```
+
+```js
+
+// Function Declaration
+console.log(foo); // [Function: foo]
+foo(); // 'FOOOOO'
+function foo() { 
+  console.log("FOOOOO");
+}
+console.log(foo); // [Function: foo]
+/*
+ Creation phase
+ Setup function memmory (reference and code) for: 
+ function foo() { 
+  console.log("FOOOOO");
+ }
+ => ready to call
+ 
+ Execute phase
+ console.log(foo); // [Function: foo]
+ foo(); // 'FOOOOO'
+ console.log(foo); // [Function: foo]
+*/
+```
+
+```js
+
+// Function Expression => like variable
+console.log(bar); // undefined
+bar(); // Uncaught TypeError: bar is not a function
+var bar = function() {
+  console.log("BARRRR");
+};
+console.log(bar); // [Function: bar]
+```
+
+```js
+
+// let vs const
+console.log(baz); // ReferenceError: can't access before initialization
+let baz = "baz";
+console.log(bar); // ReferenceError: can't access before initialization
+const bar = "bar";
+
+//Becareful
+var myName;
+function myName() {};
+// => typeof myName; function
+var myName = "abc";
+function myName() {};
+// => typeof myName; string
+```
+
+#### Execution phase
+
+- When the code is executed line-by-line (by JS interpreeter) it can access the variables defined inside Execution Context
+- variable assignment are done in this phase
+
+Run code in single thread and synchronously
+
+![image-20200612172016928](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612172016928.png)
+
+#### Execution stack
+
+```js
+function b() {
+    // 2 
+}
+function a() {
+    // 1 
+    b()
+    // 3 
+}
+a()
+// 4 
+// ... rest code
+// 5 
+```
+
+- Now first of all `Global Execution Context` is going to be created
+
+- then execution starts and interpreter encounters `call to function a()`, and `here a new execution context is created pushed on top EC Stack`
+
+  *so anytime you invoke a function, a new EC is created & placed on top of EC Stack.*
+
+- so now `EC for a()` is `CREATED` interpreter will execute the code inside `a()` line-by-line
+
+- then intrepreeter encounters `call to function b()`, this creates another `EC` which is pushed on top or `EC` stack
+
+- When `b()` finishes it will be popped-off the stack then `a()` will finish & all the way down to `Global EC`
+
+![image-20200612175012830](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612175012830.png)
+
+![image-20200612175022470](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612175022470.png)
+
+![image-20200612183551744](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612183551744.png)
+
+### Scope
+
+The **scope** (**lexical context**) is where a variable is available in your code determines the way your data will travel throughout your application via **statements** and **expressions**.
+
+**Scope** defines the way JavaScript resolves a variable at run time
+
+![image-20200612150147376](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612150147376.png)
+
+The current context of execution. The context in which values and **expressions** are "visible" or can be referenced. If a **variable** or other expression is not "in the current scope," then it is unavailable for use. Scopes can also be layered in a hierarchy, so that child scopes have access to parent scopes, but not vice versa.
+
+![image-20200612180158977](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612180158977.png)
+
+A variable defined exclusively within the function cannot be accessed from outside the function or within other functions.
+
+#### Scope chain
+
+```js
+function b() {console.log(myVar)}
+function a() {
+    var myVar = 2;
+    b()
+}
+var myVar = 1
+a()
+```
+
+![image-20200612180323636](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612180323636.png)
+
+```js
+function a() {
+    function b() {
+        console.log(myVar)
+    }
+    // var myVar = 2; // if uncomment this line => 2
+    b()
+}
+var myVar = 1
+a() // 1
+b() // not defined
+```
+
+![image-20200612180830321](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612180830321.png)
+
+**"scope chain" that makes closures possible.**
+
+#### Global Scope
+
+```javascript
+var name = 'Hammad';
+
+console.log(name); // logs 'Hammad'
+
+function logName() {
+    console.log(name); // 'name' is accessible here and everywhere else
+}
+```
+
+Global scope lives as long as your application lives
+
+#### Local Scope
+
+```javascript
+// Global Scope
+function someFunction() {
+    // Local Scope #1
+    function someOtherFunction() {
+        // Local Scope #2
+    }
+}
+
+// Global Scope
+function anotherFunction() {
+    // Local Scope #3
+}
+// Global Scope
+{
+    // Block scope
+}
+```
+
+ Local Scope lives as long as your functions are called and executed
+
+##### ES6 local scope
+
+```javascript
+if (true) {
+    // If conditional block or while() {} or for() {} also create a scope
+    // name is in the global scope because of the 'var' keyword
+    var name = 'Hammad';
+    // likes is in the local scope because of the 'let' keyword
+    let likes = 'Coding';
+    // skills is in the local scope because of the 'const' keyword
+    const skills = 'JavaScript and PHP';
+}
+console.log(name); // logs 'Hammad'
+console.log(likes); // Uncaught ReferenceError: likes is not defined
+console.log(skills); // Uncaught ReferenceError: skills is not defined
+```
+
+#### Function Arguments
+
+Function arguments (parameters) work as local variables inside functions.
+
+#### The Lifetime of Variables
+
+The lifetime of a JavaScript variable starts when it is declared.
+
+Local variables are deleted when the function is completed.
+
+In a web browser, global variables are deleted when you close the browser window (or tab).
+
+### Lexical Environment 
+
+(>< Dynamic Environment)
+
+Lexical Environment in JavaScript is created every time you create a scope using the curly brackets {} and global scope also
+
+A **Lexical Environment** is created behind the scenes. It’s just a logistical concept. There is no way to actually access it from your JavaScript code.
+
+It can be nested
+
+![image-20200612184723898](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612184723898.png)
+
+### Closure 
+
+Inner functions contain the scope of parent functions even if the parent function has returned (closure).
+
+If you have a function in a function, that **inner function** can use all the variables or parameters of the outer function and all variables that are defined globally (access outer environment), the **outer function** can not access the inner functions specific constants or variables.
+
+When a function is created as we do it here with the function keyword by using this function declaration, then this function creates a new **lexical environment** and registers any variables it has access to inside of this environment.
+
+**Every function** closes over the surrounding environment which means it **registers** the **surrounding environment** and the variables registered there and it **memorizes the values of these variables**. If you then change a variable, well that is **reflected** inside of the function.
+
+So a function, every function in Javascript is a closure because it closes over the variables defined in its environment and it kind of memorizes them, so that they're not thrown away when you don't need them in the surrounding context anymore and you can still use them from inside of the inner function
+
+#### Summary
+
+A **closure** is the combination of a function bundled together (enclosed) with references to its surrounding state (the **lexical environment**). In other words, a closure gives you access to an **outer function’s scope** from an inner function even **that outer function has returned**. In JavaScript, closures are created every time a function is created, at function creation time.
+
+![image-20200612211115251](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612211115251.png)
+
+```javascript
+let name = "Max"
+function greet() { // lexical environment
+    console.log(name) // access name in outer environment
+}
+//greet() => Max
+name = "Huy"
+greet() //=> Huy
+```
+
+```js
+let name = "Max"
+function greet() { // lexical environment
+    let userName = name // store name, part of the inner evironment
+    console.log(userName) 
+}
+//greet() => Max
+name = "Huy"
+greet() //=> Huy
+```
+
+```js
+function greet() { // lexical environment
+    console.log(userName) 
+}
+let name = "Max"
+greet() //=> Max
+```
+
+### Function Factory 
+
+A function return a function
+
+![image-20200608220359309](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608220359309.png)
+
+![image-20200612211304984](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612211304984.png)
+
+### Recursion
+
+![image-20200608235527130](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608235527130.png)
+
+![image-20200608235802861](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608235802861.png)
+
+### Pure function
+
+![image-20200608183520088](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608183520088.png)
+
+Should aim for pure function than impure function (reduce impure function), because they are predictable (not do anything behind the scene)
+
+### Higher order function
+
+A **higher order function** is a function that takes a function as an argument, or returns a function
 
 ### Curry function
 
-Currying is a pattern where a function with more than one parameter is broken into multiple functions that, when called in series, will accumulate all of the required parameters one at a time. This technique can be useful for making code written in a functional style easier to read and compose. It's important to note that for a function to be curried, it needs to start out as one function, then broken out into a sequence of functions that each accepts one parameter.
+![image-20200612211507617](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612211507617.png)
+
+Change a multiple arguments function into a chain of many single argument function
 
 ```javascript
 function curry(fn) {
@@ -1561,9 +1614,9 @@ timeout, http request, event listener,...
 
 => **Runtime environment** is responsible for asynchronous action by using **multiple threads**, so JS code will not blocked in main thread.
 
-### How we can do asynchronous  action without blocking
+### How we can do asynchronous  action 
 
-JS runtime environment provide us **APIs** to work with threads in **parallel**. 
+JS runtime environment provide us **APIs** to work with asynchronous task in other threads **parallelly** for not blocking main JavaScript thread.  
 
 From **call stack**, if an asynchronous action pop off the stack, it will be handed to the **API container (environment)** to run in **another thread**. When any action is done or an event occurred, the **callback handler function** is sent to the end of the **callback (message) queue**. 
 
@@ -1571,7 +1624,7 @@ From **call stack**, if an asynchronous action pop off the stack, it will be han
 
 ![image-20200209104121348](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200209104121348.png)
 
-**TLDR**: Handing the asynchronous (long) task to the environment and give function to do when done task (call-back), then we continue in JavaScript so that Javascript code is **never blocked** (if there is no really long JS operations like for loops, heavy calculation,...)
+**TLDR**: Handing the asynchronous (long) task to the **environment** which push **callback to queue** when **done that task**, while we **continue in JavaScript thread** and handle the **callback** when **JavaScript thread free** by using **event loop** so that Javascript code is **never blocked** (if there is no really long JS operations like long for loops, heavy calculation,...)
 
 #### Event loop in actions
 
@@ -1615,7 +1668,9 @@ No DOM **Manipulation**
 
 ### Asynchronous Callback
 
-Function run after finish an async job, put in the callback queue != function is passed to another simple function (not an API of browser), put in the call stack
+Function that after finishing an async job, put in the callback queue, wait callstack empty to run 
+
+( >< function is passed to another simple function (not an API of browser), put in the call stack)
 
 ![image-20200610201745892](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200610201745892.png)
 
@@ -1756,6 +1811,18 @@ promise
   - Fail to pass along any necessary environment/parameters
   - Swallow any errors/exceptions that may happen
 
+#### Promise.all()
+
+Return a promise with the combined data of all promise
+
+#### Promise.race()
+
+Return a promise with the result of the fastest promise
+
+#### Promise.allSeettled()
+
+Return a promise with the detail of all promise
+
 ### Async/Await 
 
 Async functions are functions that auto return a promises
@@ -1783,7 +1850,7 @@ Write async code a bit more like synchronous code
 
    It wraps everything inside of the async function into one big promise.
 
-- Your code can waiting for a **promise settled**  with `await` and next line code can only execute after that **promise settled** (just code in the async function)
+- Your code can waiting for a **promise settled**  with `await` and next line code can only execute after that **promise settled** (only code in the async function)
 
   It replicate `then` behind the scene, return that promise and get result of the promise 
 
@@ -1808,6 +1875,8 @@ Write async code a bit more like synchronous code
   ![image-20200211180859185](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200211180859185.png)
 
   ![image-20200610222512399](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200610222512399.png)
+  
+  ![image-20200610231833680](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200610231833680.png)
 
 #### Error handle
 
@@ -1835,43 +1904,473 @@ doManyThings().then((result) => {  // Do the things that need to wait for our fu
 });
 ```
 
-## Anonymous function
+## Event
 
-They can be used in IIFEs to encapsulate some code within a local scope so that variables declared in it do not leak to the global scope.
+![image-20200608132055539](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608132055539.png)
 
-```javascript
-(function() {
-  // Some code here.
-})();
+### Browser Event Objects
+
+![image-20200608132201928](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608132201928.png)
+
+Whatever causes an event provides you some data along with such an event to describe it to help you control it
+
+![image-20200608142509047](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608142509047.png)
+
+![image-20200608142527917](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608142527917.png)
+
+### Adding event
+
+HTML `on` attributes => mix HTML and JS code
+
+element `on` property => only 1 event handler
+
+element `addEventListener()` => most flexibles ways (can add and remove event listener later)
+
+### Remove event
+
+![image-20200608134906555](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608134906555.png)
+
+can only remove exact the same function (not work direct with anonymous function or `bind()`)
+
+### preventDefault()
+
+form submit to server or link navigation
+
+### Bubbling & Capturing, Propagation
+
+![image-20200608144128162](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608144128162.png)
+
+Capturing => Bubbling
+
+By default all event listeners are registered in the bubbling phase 
+
+```html
+<div>
+    <button>
+    </button>
+</div>
 ```
 
-As a callback that is used once and does not need to be used anywhere else. The code will seem more self-contained and readable when handlers are defined right inside the code calling them, rather than having to search elsewhere to find the function body.
+![image-20200608144923627](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608144923627.png)
 
-```javascript
-setTimeout(function() {
-  console.log("Hello world!");
-}, 1000);
+![image-20200608145005127](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608145005127.png)
+
+![image-20200608145139650](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608145139650.png)
+
+![image-20200608145211518](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608145211518.png)
+
+The way event occurred on this button but it's listenable on all ancestors called **Event Propagation** (some event are not propagated)
+
+![image-20200608145736200](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608145736200.png)
+
+![image-20200608150018545](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608150018545.png)
+
+### Event delegation pattern
+
+```html
+<ul id="parent-list">
+	<li id="post-1">Item 1</li>
+	<li id="post-2">Item 2</li>
+	<li id="post-3">Item 3</li>
+	<li id="post-4">Item 4</li>
+	<li id="post-5">Item 5</li>
+</ul>
 ```
 
-Arguments to functional programming constructs or Lodash (similar to callbacks).
+Event delegation is a technique involving adding event listeners to a **parent** element instead of adding them to the child elements. 
 
-```javascript
-const arr = [1, 2, 3];
-const double = arr.map(function(el) {
-  return el * 2;
+![image-20200608150822633](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608150822633.png)
+
+The listener will fire whenever the event is triggered on the descendant elements due to **event bubbling up** the DOM. The benefits of this technique are:
+
+- Only have 1 listener
+- There is no need to unbind the handler from elements that are removed and to bind the event for new elements.
+
+```js
+document.getElementById("parent-list").addEventListener("click", 			function(e) {
+		// e.target is the clicked element!
+   		event.target.closest('li').classList.toggle('highlight');
+    }
+ );
+```
+
+### Trigger event programmatically
+
+use element method (submit(),click(),...)
+
+### `this` in event handler
+
+`this` is bound to the event's source - the element which is registered the event listener  (not for arrow function)
+
+![image-20200608152759049](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608152759049.png)
+
+![image-20200608152825710](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608152825710.png)
+
+### Observer Pattern
+
+![image-20200623095423563](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200623095423563.png)
+
+- **subject** – This is the object that will send out a notification to all of the ‘observers’ who want/need to know that the subject was updated.
+- **observers** – These are the objects that want to know when the subject has changed
+
+```js
+// Observable or Subject
+class Observable {
+  constructor() {
+    this.observers = [];
+  }
+  subscribe(f) {
+    this.observers.push(f);
+  }
+  unsubscribe(f) {
+    this.observers = this.observers.filter(subscriber => subscriber !== f);
+  }
+  notify(data) {
+    this.observers.forEach(observer => observer.update(data));
+  }
+}
+// Observer
+class Observer {
+   constructor(element,update) {
+    this.element = element;
+    this.update = update;
+  }
+}
+//--------------------------------------------------------------------
+const headingsObserver = new Observable();
+// DOM 
+const p1 = document.querySelector('.p1')
+const p2 = document.querySelector('.p2')
+document.querySelector('.button').addEventListener('click', e => {
+  // notify all observers about new data on event
+  headingsObserver.notify("clicked");
 });
-console.log(double); // [2, 4, 6]
+
+const o1 = new Observer(p1,text => p1.textContent = text)
+const o2 = new Observer(p2,text => p2.textContent = text)
+
+headingsObserver.subscribe(o1);
+headingsObserver.subscribe(o2);
+
+headingsObserver.unsubscribe(o2)
 ```
+
+## Browser API
+
+### DOM
+
+Read more [JS_DOM.md](JS_DOM.md) 
+
+### Timers & intervals
+
+![image-20200608121224915](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608121224915.png)
+
+![image-20200608121324990](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608121324990.png)
+
+![image-20200608121503051](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608121503051.png)
+
+![image-20200608121524339](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608121524339.png)
+
+**minimum** time to run the callback (waiting for the callstack is empty)
+
+### location (URL and page we're on)
+
+![image-20200608124840159](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608124840159.png)
+
+### history
+
+![image-20200608124758794](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608124758794.png)
+
+### navigator
+
+![image-20200608125128292](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608125128292.png)
+
+### Date
+
+![image-20200608125559605](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608125559605.png)
+
+### Error
+
+![image-20200608125712784](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608125712784.png)
+
+### JSON 
+
+Typically, data is transferred as "**JSON**" data between your client-side code and your backend ("the server").
+
+JSON stands for **J**ava**S**cript **O**bject **N**otation and it looks like this:
+
+```json
+{
+    "name": "Max",
+    "age": 30,
+    "hobbies": [
+        { "id": "h1", "title": "Sports" },
+        { "id": "h2", "title": "Cooking" }
+    ],
+    "isInstructor": true
+}
+```
+
+JSON data supports **objects** (`{}`), **arrays** (`[]`), **strings** (MUST use double-quotes!), **numbers** (NO quotes) and **Booleans** (also NO quotes).
+
+All object keys (e.g. "name") **HAVE to be wrapped by double quotes**.
+
+Actually, the whole JSON "object" is wrapped in quotes itself because **JSON data in the end is just a string** that contains data in the format shown above.
+
+```js
+const person = { // this is NOT JSON - it's a normal ("raw") JavaScript object!
+    name: 'Max',
+    age: 30,
+    hobbies: [
+        { id: 'h1', title: 'Sports' },
+        { id: 'h2', title: 'Cooking' }
+    ],
+    isInstructor: true
+};
+
+const jsonData = JSON.stringify(person); // convert raw JS data to JSON data string
+console.log(jsonData); // a string with machine-readable JSON data in it
+console.log(typeof jsonData); // string
+```
+
+We use JSON data because it's easy to parse for machines - and as an extra benefit it's also quite readable to us humans.
+
+If you receive some JSON data and you want to convert it back into normal JS data, you can use `JSON.parse()`:
+
+```js
+const parsedData = JSON.parse(jsonData); // yields a "raw" JS object/ array etc.
+```
+
+You're **NOT LIMITED to objects** when converting data to JSON. You can also convert numbers, arrays, booleans or just strings - all data types JSON supports:
+
+```js
+const jsonNumber = JSON.stringify(2); // "2"
+const jsonText = JSON.stringify('Hi there! I use single quotes in raw JS'); // ""Hi there! ...""
+const jsonArray = JSON.stringify([1, 2, 3]); // "[1,2,3]"
+const jsonBoolean = JSON.stringify(true); // "true"
+```
+
+### HTTP request
+
+ [JS_HTTP.md](JS_HTTP.md) 
+
+### Browser Storage
+
+ [JS_Browser_Storage.md](JS_Browser_Storage.md) 
 
 ## Immediately-Invoked Function Expression (IIFE)
 
 An IIFE is an anonymous function that is created and then immediately invoked. It’s not called from anywhere else (hence why it’s anonymous), but runs just after being created.
 
+![image-20200612210709261](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612210709261.png)
+
 ```javascript
 function foo(){ }();// not working
-
-(function () {return 5;} ());
+(function () {return 5;} ()); //invokes when created
 ```
+
+## Modules 
+
+Each file content will be locked down (not add to global, but in it's own module scope, thing defined in a module is not shared unless you export it) and each file will be downloaded when needed (by HTTP request to a server)
+
+Module run in strict mode
+
+Can use global object (window, globalThis, ...) to share global data 
+
+```js
+//app.js
+window.SOME_GLOBAL_VALUE ="abc"
+//abc.js
+console.log(window.SOME_GLOBAL_VALUE)
+//order is matter be careful
+```
+
+![image-20200611133605096](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611133605096.png)
+
+![image-20200611132342219](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611132342219.png)
+
+![image-20200611131250853](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611131250853.png)
+
+To share `export`
+
+```js
+// component.js
+export class Component {} // name export
+
+export default class Component {} // default export
+```
+
+To use exported module `import`
+
+```js
+import { name } form './file'
+import { name as anotherName } form './file'
+import * as alias form './file'
+import defaultContent form './file'
+```
+
+```js
+// app.js
+import { Component } form './component'
+```
+
+Dynamic import 
+
+Import code in a later time, not when your web app load but only when we need that code
+
+![image-20200611133255822](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611133255822.png)
+
+**Need a web server environment to bypass security issue** 
+
+## Meta-Programming
+
+Configuring our code to behave in a certain way when other people use it
+
+![image-20200611211554298](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611211554298.png)
+
+- [More about Symbols (MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
+- [List of Well-Known Symbols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol#Well-known_symbols)
+- [More about Iterators & Generators (MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators)
+- [More about the Reflect API (MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect)
+- [More about the Proxy API (MDN)]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
+- [List of all Proxy API Traps]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy#A_complete_traps_list_example)
+
+### Symbol
+
+https://medium.com/intrinsic/javascript-symbols-but-why-6b02768f4a5c
+
+Unique identifiers for your objects
+
+![image-20200611181703613](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611181703613.png)
+
+![image-20200611181716785](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611181716785.png)
+
+```js
+Symbol("abc") === Symbol("abc") //false
+```
+
+#### Well-know symbols
+
+![image-20200611182645270](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611182645270.png)
+
+### Iterator
+
+Iterator is an object with next() method
+
+```js
+const company = {
+    curEmployee: 0,
+    employees: ["Max","Manu","Anna"],
+    next() { // Iterator is an object with next() method
+        if(this.curEmployee >= this.employees.length) {
+            return {value: this.curEmployee, done: true}
+        }
+       const returnValue = {
+           value: this.employees[this.curEmployee],
+           done: false
+       }
+       this.curEmployee++
+       return returnValue
+    }
+}
+company.next()
+company.next()
+company.next()
+company.next()
+company.next()
+```
+
+![image-20200611192846023](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611192846023.png)
+
+<img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611193123041.png" alt="image-20200611193123041" style="zoom:150%;" /><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611193146309.png" alt="image-20200611193146309" style="zoom:150%;" />
+
+### Generator
+
+A special function create an iterator object (object with a next() method)
+
+```js
+const employees = ["Max","Manu","Anna"]
+function* employeeGenerator() {
+    let current = 0
+    while(current < employees.length) {
+        yield employees[current++] //Javascript save the current state of execution this iterator and will continue from that point when call the next() method
+    }
+}
+const it = employeeGenerator()
+```
+
+![image-20200611195527229](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611195527229.png)
+
+```js
+const company = {
+    employees: ["Max","Manu","Anna"],
+    //You can tap in native JS features to implement your own loop logic
+    [Symbol.iterator]: function* employeeGenerator() {
+        let current = 0
+        while(current < this.employees.length) {
+            yield this.employees[current++] 
+        }
+	}
+}
+for(let i of company) {
+    console.log(i)
+}
+//Max
+//Manu
+//Anna
+console.log([...company])
+//Max
+//Manu
+//Anna
+```
+
+### Reflect API
+
+Provide extra thing to work with (change) object on a meta level
+
+```js
+const course = {
+    title: 'Javascript - The Complete Guide'
+}
+Reflect.setPrototypeOf(course, {
+    toString() {
+        return this.title
+    }
+})
+console.log(course.toString()) // 'Javascript - The Complete Guide'
+```
+
+#### When error behavior
+
+Object: fail silently or return undefined
+
+Reflect: better error, return true or false, ...
+
+#### Reflect group all method you need to work with object
+
+Refelect: have deleProperty method and much more
+
+### Proxy API
+
+Help you 'trap' a certain operations of someone  and execute your own code 
+
+Help you control how your code is used
+
+```js
+const course = {
+    title: 'Javascript - The Complete Guide'
+}
+const courseHandler = {
+    get(object, propertyName) {
+        console.log(propertyName)
+        return object[propertyName]
+    }
+}
+const pCourse = new Proxy(course,courseHandler)
+console.log(pCourse.title)
+```
+
+![image-20200611211112467](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611211112467.png)
 
 ## Best practice
 
@@ -2225,7 +2724,7 @@ In JavaScript, there is no such thing as public or private scope. However, we ca
 })();
 ```
 
-### HTTP request
+### HTTP request promise
 
 ```js
 function get(url) {
@@ -2266,3 +2765,174 @@ get('story.json').then(function(response) {
 })
 ```
 
+### Pure prototype inheritance
+
+![image-20200612212615904](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612212615904.png)
+
+### IIFE module
+
+```js
+;(function(global, $) {
+    
+    // 'new' an object
+    var Greetr = function(firstName, lastName, language) {
+        return new Greetr.init(firstName, lastName, language);   
+    }
+    
+    // hidden within the scope of the IIFE and never directly accessible
+    var supportedLangs = ['en', 'es'];
+    
+    // informal greetings
+    var greetings = {
+        en: 'Hello',
+        es: 'Hola'
+    };
+    
+    // formal greetings
+    var formalGreetings = {
+        en: 'Greetings',
+        es: 'Saludos'
+    };
+    
+    // logger messages
+    var logMessages = {
+        en: 'Logged in',
+        es: 'Inició sesión'
+    };
+    
+    // prototype holds methods (to save memory space)
+    Greetr.prototype = {
+        
+        // 'this' refers to the calling object at execution time
+        fullName: function() {
+            return this.firstName + ' ' + this.lastName;   
+        },
+        
+        validate: function() {
+            // check that is a valid language
+            // references the externally inaccessible 'supportedLangs' within the closure
+             if (supportedLangs.indexOf(this.language)  === -1) {
+                throw "Invalid language";   
+             }
+        },
+        
+        // retrieve messages from object by referring to properties using [] syntax
+        greeting: function() {
+            return greetings[this.language] + ' ' + this.firstName + '!';
+        },
+        
+        formalGreeting: function() {
+            return formalGreetings[this.language] + ', ' + this.fullName();  
+        },
+        
+        // chainable methods return their own containing object
+        greet: function(formal) {
+            var msg;
+            
+            // if undefined or null it will be coerced to 'false'
+            if (formal) {
+                msg = this.formalGreeting();  
+            }
+            else {
+                msg = this.greeting();  
+            }
+
+            if (console) {
+                console.log(msg);
+            }
+
+            // 'this' refers to the calling object at execution time
+            // makes the method chainable
+            return this;
+        },
+        
+        log: function() {
+            if (console) {
+                console.log(logMessages[this.language] + ': ' + this.fullName()); 
+            }
+            
+            // make chainable
+            return this;
+        },
+                            
+        setLang: function(lang) {
+            
+            // set the language
+            this.language = lang;
+        
+            // validate
+            this.validate();
+            
+            // make chainable
+            return this;
+        },
+        
+        HTMLGreeting: function(selector, formal) {
+            if (!$) {
+                throw 'jQuery not loaded';   
+            }
+            
+            if (!selector) {
+                throw 'Missing jQuery selector';   
+            }
+            
+            // determine the message
+            var msg;
+            if (formal) {
+                msg = this.formalGreeting();   
+            }
+            else {
+                msg = this.greeting();   
+            }
+            
+            // inject the message in the chosen place in the DOM
+            $(selector).html(msg);
+            
+            // make chainable
+            return this;
+        }
+        
+    };
+    
+    // the actual object is created here, allowing us to 'new' an object without calling 'new'
+    Greetr.init = function(firstName, lastName, language) {
+        
+        var self = this;
+        self.firstName = firstName || '';
+        self.lastName = lastName || '';
+        self.language = language || 'en';
+        
+        self.validate();
+        
+    }
+    
+    // trick borrowed from jQuery so we don't have to use the 'new' keyword
+    Greetr.init.prototype = Greetr.prototype;
+    
+    // attach our Greetr to the global object, and provide a shorthand '$G' for ease our poor fingers
+    global.Greetr = global.G$ = Greetr;
+    
+}(window, jQuery));
+```
+
+```js
+// gets a new object (the architecture allows us to not have to use the 'new' keyword here)
+var g = G$('John', 'Doe');
+
+// use our chainable methods
+g.greet().setLang('es').greet(true).log();
+
+// let's use our object on the click of the login button
+$('#login').click(function() {
+   
+    // create a new 'Greetr' object (let's pretend we know the name from the login)
+    var loginGrtr = G$('John', 'Doe');
+    
+     // hide the login on the screen
+    $('#logindiv').hide();
+    
+     // fire off an HTML greeting, passing the '#greeting' as the selector and the chosen language, and log the welcome as well
+    loginGrtr.setLang($('#lang').val()).HTMLGreeting('#greeting', true).log();
+    
+});
+```

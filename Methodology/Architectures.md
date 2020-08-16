@@ -1,6 +1,31 @@
-# Architecture
+# [Architectural pattern](https://en.wikipedia.org/wiki/Architectural_pattern)
 
-## Monolithic
+https://en.wikipedia.org/wiki/Software_architecture
+
+https://towardsdatascience.com/10-common-software-architectural-patterns-in-a-nutshell-a0b47a1e9013
+
+There are many recognized architectural patterns and styles, among them:
+
+- [Blackboard](https://en.wikipedia.org/wiki/Blackboard_(computing))
+- [Client-server](https://en.wikipedia.org/wiki/Client–server_model) (2-tier, [3-tier](https://en.wikipedia.org/wiki/Three-tier_(computing)), [*n*-tier](https://en.wikipedia.org/wiki/N-tier), [cloud computing](https://en.wikipedia.org/wiki/Cloud_computing) exhibit this style)
+- [Component-based](https://en.wikipedia.org/wiki/Software_componentry)
+- [Data-centric](https://en.wikipedia.org/wiki/Database-centric_architecture)
+- [Event-driven](https://en.wikipedia.org/wiki/Event-driven_architecture) (or [implicit invocation](https://en.wikipedia.org/wiki/Implicit_invocation))
+- [Layered](https://en.wikipedia.org/wiki/Abstraction_(computer_science)#Layered_architecture) (or [multilayered architecture](https://en.wikipedia.org/wiki/Multilayered_architecture))
+- [Microservices architecture](https://en.wikipedia.org/wiki/Microservices)
+- [Monolithic application](https://en.wikipedia.org/wiki/Monolithic_application)
+- [Model-view-controller](https://en.wikipedia.org/wiki/Model–view–controller) (MVC)
+- [Peer-to-peer](https://en.wikipedia.org/wiki/Peer-to-peer) (P2P)
+- [Pipes and filters](https://en.wikipedia.org/wiki/Pipes_and_filters)
+- [Plug-ins](https://en.wikipedia.org/wiki/Plug-in_(computing))
+- [Reactive architecture](https://en.wikipedia.org/w/index.php?title=Reactive_architecture&action=edit&redlink=1)
+- [Representational state transfer](https://en.wikipedia.org/wiki/Representational_state_transfer) (REST)
+- [Rule-based](https://en.wikipedia.org/wiki/Rule-based_system)
+- [Service-oriented](https://en.wikipedia.org/wiki/Service-oriented_architecture)
+- [Shared nothing architecture](https://en.wikipedia.org/wiki/Shared_nothing_architecture)
+- [Space-based architecture](https://en.wikipedia.org/wiki/Space-based_architecture)
+
+# Monolithic
 
 Monolith means composed all in one piece. The **Monolithic** application describes a single-tiered **software** application in which different components combined into a single program from a single platform. Components can be:
 
@@ -20,16 +45,16 @@ Chúng ta thường sử dụng kiến trúc một khối khi:
 - Bạn không muốn mất thời gian cho cơ sở hạ tầng, monitoring,…
 - Khi người dùng thường nhỏ và ít nên bạn không mong đợi họ sẽ mở rộng. Ví dụ các ứng dụng doanh nghiệp nhắm đến mục tiêu là một nhóm người cụ thể…
 
-## ![img](https://miro.medium.com/max/1400/1*TRmj8lWyzCufEGjxCONAog.jpeg)
+![img](https://miro.medium.com/max/1400/1*TRmj8lWyzCufEGjxCONAog.jpeg)
 
-#### Ưu điểm:
+## Ưu điểm:
 
 - Dễ phát triển vì các stack công nghệ thống nhất ở tất cả các layer.
 - Dễ test do toàn bộ project được đóng gói trong một package nên dễ dàng chạy test integrantion và test end-to-end.
 - Deploy đơn giản và nhanh chóng nếu bạn chỉ có một package để bận tâm.
 - Dễ scale vì chúng ta có thể có nhiều instance cho load banlancer.
 
-#### Nhược điểm:
+## Nhược điểm:
 
 - Theo thời gian thì project trở nên phức tạp và lớn dần. Các tính năng mới sẽ mất nhiều thời gian hơn để phát triển và tái cấu trúc các tính năng hiện có sẽ nhiều khó khăn hơn. (Maintenance)
 - Toàn bộ ứng dụng cần được triển khai lại cho bất kỳ thay đổi nào.
@@ -38,7 +63,7 @@ Chúng ta thường sử dụng kiến trúc một khối khi:
 - Các service quan trọng không thể scale riêng dẫn đến lãng phí tài nguyên vì toàn bộ ứng dụng phải scale theo.
 - Các ứng dụng một khối lớn sẽ có thời gian khởi động lâu và tốn tài nguyên CPU cũng như bộ nhớ
 
-## Microservice
+# Microservice
 
 **Microservices** are an approach to application development in which a large application is built as a suite of modular services (i.e. loosely coupled modules/components). Each module supports a specific business goal and uses a simple, well-defined interface to communicate with other sets of services, each microservice has its own database.
 
@@ -62,7 +87,7 @@ Chúng ta thường sử dụng kiến trúc microservice khi:
 
 ![img](https://miro.medium.com/max/1400/1*TRmj8lWyzCufEGjxCONAog.jpeg)
 
-#### Ưu điểm:
+## Ưu điểm:
 
 - Các component có kết nối lỏng lẻo dẫn đến dễ cách ly, dễ test và khởi động nhanh. (Better testability, Better deployability)
 - Vòng đời phát triển nhanh hơn. Tính năng mới được phát triển nhanh hơn và tính năng cũ được cấu trúc lại dễ hơn. (Agile)
@@ -72,7 +97,7 @@ Chúng ta thường sử dụng kiến trúc microservice khi:
 - Các mô hình scale phức tạp và hiệu quả hơn có thể được thiết lập. Các service quan trọng có thể scale hiệu quả hơn. Các component riêng sẽ khởi động nhanh hơn và cải thiện thời gian khởi động của cả hệ thống.
 - Các team tham gia sẽ ít phụ thuộc lẫn nhau. Kiến trúc này rất thích hợp cho các đội Agile.
 
-#### Nhược điểm:
+## Nhược điểm:
 
 - Phức tạp hơn về mặt tổng thể vì các component khác nhau có các stack công nghệ khác nhau nên buộc team phải tập trung đầu tư thời gian để theo kịp công nghệ.
 - Khó thực hiện test end-to-end và integration test vì có nhiều stack công nghệ khác nhau.
@@ -82,7 +107,7 @@ Chúng ta thường sử dụng kiến trúc microservice khi:
 - Phải xử lý sự cố khi kết nối chậm, lỗi khi thông điệp không gửi được hoặc thông điệp gửi đến nhiều đích đến vào các thời điểm khác nhau.
 - Yêu cầu cơ sở hạ tầng phức tạp. Thông thường sẽ yêu cầu nhiều container (Docker) và nhiều máy JVM để chạy.
 
-## Microservice vs monolithic
+# Microservice vs monolithic
 
 | **Microservices**                                            | **Monolithic Architecture**                                  |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
@@ -104,5 +129,36 @@ Chúng ta thường sử dụng kiến trúc microservice khi:
 
 ![img](https://images.viblo.asia/1cf078a4-ded3-4126-8890-1bbd4bd37e11.png)
 
-## Multithreading
+# Client–server model
 
+[https://en.wikipedia.org/wiki/Client%E2%80%93server_model](https://en.wikipedia.org/wiki/Client–server_model)
+
+https://www.geeksforgeeks.org/client-server-model/
+
+The Client-server model is a distributed application structure that partitions task or workload between the providers of a resource or service, called servers, and service requesters called clients. In the client-server architecture, when the client computer sends a request for data to the server through the internet, the server accepts the requested process and deliver the data packets requested back to the client. Clients do not share any of their resources.
+
+So, its basically the **Client** requesting something and the **Server** serving it as long as its present in the database.
+
+![img](https://media.geeksforgeeks.org/wp-content/uploads/20191016114416/801.png)
+
+# peer-to-peer
+
+# DBMS (Database Management System)
+
+https://www.geeksforgeeks.org/difference-between-rdbms-and-dbms/?ref=rp
+
+https://www.geeksforgeeks.org/introduction-of-dbms-database-management-system-set-1/
+
+https://www.geeksforgeeks.org/dbms-architecture-2-level-3-level/
+
+## Two-tier Architecture
+
+## Multi-tier architecture
+
+# MVC
+
+# MVVM
+
+# Multithreading
+
+# Event-driven

@@ -75,6 +75,14 @@ objects of a superclass shall be replaceable with objects of its subclasses with
 3. class abstract for instruction sub class
 4. Interface khi chúng ta cung cấp các hành vi bổ sung cho class cụ thể và những hành vì này không bắt buộc đối với clas đó.
 
+## Inheritance
+
+![image-20200612211739276](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612211739276.png)
+
+![image-20200612211759007](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612211759007.png)
+
+![image-20200612211808601](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612211808601.png)
+
 ## Composition over inheritance
 
 ```
@@ -252,4 +260,11 @@ const john = { ...human, name: "John" }; // {race: "human", name: "John"}
 const alienJohn = { ...john, race: "alien" }; // {race: "alien", name: "John"}
 ```
 
-## 
+# Declarative Programming
+
+Declarative programming is when you write your code in such a way that it describes what you want to do, and not how you want to do it. It is left up to the compiler to figure out the how.
+
+# Imperative Programming
+
+In this imperative program, I have told you the exact steps to take in order to do the task. These instructions aren’t the most detailed in the world, but I have told you all the steps you need to take in order to arrive at a finished product.
+
