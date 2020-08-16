@@ -10,6 +10,8 @@ NodeJS use V8 engine and adds more features to it (File system, ...)
 
 ![image-20200707115214004](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200707115214004.png)
 
+![image-20200817015104933](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817015104933.png)
+
 # V8 javascript engine
 
 Taking JS code => compiling to machine code
@@ -18,6 +20,8 @@ Taking JS code => compiling to machine code
 
 A javascript runtime => Build server, Utility script, helper tool, app, ... Make javascript not be limited to the browser and can do everything that other programming langue can do
 
+![image-20200817015437923](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817015437923.png)
+
 ## web dev
 
 Run server: create sever and listening request
@@ -25,6 +29,28 @@ Run server: create sever and listening request
 Business logic: Handle request, validate inputs, connect to database
 
 Return response: return html, JSON
+
+# NPM
+
+https://docs.npmjs.com/s
+
+![image-20200817015153517](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817015153517.png)
+
+## CLI
+
+https://docs.npmjs.com/cli-documentation/
+
+## version
+
+https://docs.npmjs.com/misc/semver#versions
+
+https://stackoverflow.com/a/25861938
+
+## build tool
+
+https://academind.com/learn/webpack
+
+![image-20200817015510854](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817015510854.png)
 
 # REPL
 
@@ -246,3 +272,84 @@ fs.writeFile(filename, message, cb) // offload write file process to the OS (whi
 ```
 
 => NodeJS high performance because it never block code execution
+
+# Testing
+
+- Mocha: https://mochajs.org/
+- Chai: https://www.chaijs.com/
+- Sinon: https://sinonjs.org/
+
+![image-20200817014848649](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817014848649.png)
+
+![image-20200817014903396](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817014903396.png)
+
+# Deployment
+
+https://devcenter.heroku.com/categories/reference
+
+https://medium.com/@baphemot/understanding-react-deployment-5a717d4378fd
+
+https://aws.amazon.com/getting-started/projects/deploy-nodejs-web-app/
+
+https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-16-04
+
+![image-20200817011307490](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817011307490.png)
+
+![image-20200817011405198](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817011405198.png)
+
+## Helmet
+
+`npm install --save helmet`
+
+## Compression assets
+
+![image-20200817012209283](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817012209283.png)
+
+![image-20200817012220035](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817012220035.png)
+
+## Logging (host can do this)
+
+https://blog.risingstack.com/node-js-logging-tutorial/
+
+`npm install --save morgan`
+
+![image-20200817012456148](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817012456148.png)
+
+![image-20200817012404864](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817012404864.png)
+
+![image-20200817012720573](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817012720573.png)
+
+## SSL/TLS
+
+![image-20200817013010251](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817013010251.png)
+
+create your own SSL (for fun)
+
+![image-20200817013106413](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817013106413.png)
+
+![image-20200817013253356](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817013253356.png)
+
+![image-20200817013329360](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817013329360.png)
+
+## Use Hosting Provider
+
+![image-20200817013513656](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817013513656.png)
+
+### Git
+
+![image-20200817013659434](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817013659434.png)
+
+## File upload
+
+https://devcenter.heroku.com/articles/s3-upload-node
+
+https://help.heroku.com/K1PPS2WM/why-are-my-file-uploads-missing-deleted
+
+A popular and very efficient + affordable alternative is **AWS S3** (**S**imple **S**torage **S**ervice): https://aws.amazon.com/s3/
+
+You can easily configure `multer` to store your files there with the help of another package: https://www.npmjs.com/package/multer-s3
+
+To also serve your files, you can use packages like `s3-proxy`: https://www.npmjs.com/package/s3-proxy
+
+For deleting the files (or interacting with them on your own in general), you'd use the AWS SDK: https://aws.amazon.com/sdk-for-node-js/
+

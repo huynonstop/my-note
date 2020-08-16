@@ -392,6 +392,8 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
 
 ## JSON Web Token
 
+### Refreshing Token
+
 ## Session Cookies
 
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Session
@@ -412,30 +414,13 @@ CSRF ( Cross Site Request Forgery) abuse server session and trick user execute m
 
 ![image-20200611220835360](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611220835360.png)
 
-# REST
-
-https://restfulapi.net/
-
-REST (REpresentational **S**tate **T**ransfer) is basically an architectural style of development having some principles
-
- It is architectural style for **distributed hypermedia systems** 
-
-Guiding Principles of REST
-
-1. **Client–server** – By separating the user interface concerns from the data storage concerns, we improve the portability of the user interface across multiple platforms and improve scalability by simplifying the server components.
-2. **Stateless** – Each request from client to server must contain all of the information necessary to understand the request, and cannot take advantage of any stored context on the server. Session state is therefore kept entirely on the client.
-3. **Cacheable** – Cache constraints require that the data within a response to a request be implicitly or explicitly labeled as cacheable or non-cacheable. If a response is cacheable, then a client cache is given the right to reuse that response data for later, equivalent requests.
-4. **Uniform interface** – By applying the software engineering principle of generality to the component interface, the overall system architecture is simplified and the visibility of interactions is improved. In order to obtain a uniform interface, multiple architectural constraints are needed to guide the behavior of components. REST is defined by four interface constraints: identification of resources; manipulation of resources through representations; self-descriptive messages; and, hypermedia as the engine of application state.
-5. **Layered system** – The layered system style allows an architecture to be composed of hierarchical layers by constraining component behavior such that each component cannot “see” beyond the immediate layer with which they are interacting.
-6. **Code on demand (optional)** – REST allows client functionality to be extended by downloading and executing code in the form of applets or scripts. This simplifies clients by reducing the number of features required to be pre-implemented.
-
-REST based services follow some of the above principles and not all
-
-RESTfulservices means it follows all the above principles.
-
 # JSON
 
 JSON stands for JavaScript Object Notation and is a text representation that is also valid JavaScript code.
+
+# API
+
+ [API.md](API.md) 
 
 # Web service
 
@@ -446,10 +431,6 @@ Applications which are accessed via HTTP APIs are often called Web Services. In 
 # Client-side Rendering And Server-side Rendering
 
 ![img](https://images.viblo.asia/df2bcc4e-5dec-4469-8e0b-a71e31d7152f.png)
-
-# GraphQL
-
-
 
 # Redis
 
