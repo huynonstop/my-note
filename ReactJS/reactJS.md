@@ -10,22 +10,6 @@ https://stackoverflow.com/questions/51506440/mvvm-architectural-pattern-for-a-re
 
 React is an open-source JavaScript library created by Facebook for building complex, interactive UIs in web and mobile applications. React’s core purpose is to build UI components; it is often referred to as just the “V” (View) in an “MVC” architecture.
 
-# ES6 feature
-
- [ES6-react.pdf](ES6-react.pdf) 
-
-## let & const
-
-## arrow function
-
-## export & import
-
-## classes
-
-## Spread & Rest operator
-
-## Destructuring
-
 # Advantages of ReactJS
 
 1. Increases the application’s performance with Virtual DOM handled by React
@@ -38,69 +22,11 @@ React is an open-source JavaScript library created by Facebook for building comp
 
 ![img](https://viblo.asia/uploads/29fea837-c6e8-416f-a11f-d708b33c2a78.png)
 
-# Virtual DOM works in the ReactJS
-
-The virtual DOM (VDOM) is a programming concept where an ideal, or “virtual”, representation of a UI is kept in memory and synced with the “real” DOM
-
-## How DOM is build
-
-Every time the DOM changes, browser need to changes to the DOM, recalculate the CSS, do layout, and repaint the web page. This is what takes time.
-
-Browser makers are continually working to shorten the time it takes to repaint the screen. The biggest thing that can be done is to minimize and batch the DOM changes that make redraws necessary.
-
-This strategy of reducing and batching DOM changes, taken to another level of abstraction, is the idea behind React Virtual DOM.
-
-## How virtual DOM works in React
-
-React is keeping two Virtual DOM trees in memory. 
-
-When state changes in a component it **firstly** runs a "diffing" algorithm, which **identifies what has changed in the virtual DOM**. 
-
-The **second** step is "reconciliation", where it **updates the DOM exactly where the nodes are changed.**
-
-Each time the underlying data changes in a React app, a new Virtual DOM representation of the user interface is created
-
-![image-20200624005326042](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200624005326042.png)
-
-Updating the browser’s DOM is a three-step process in React.
-
-1. Whenever anything may have changed, the components will be re-rendered in a Virtual DOM representation.
-
-2. The difference between the previous Virtual DOM representation and the new one will be calculated.
-
-3. The real DOM will be updated with what has actually changed. This is very much like applying a patch.
-
-
-## Reconciliation
-
-When a component’s props or state change, React decides whether an actual DOM update is necessary by comparing the newly returned element with the previously rendered one. When they are not equal, React will update the DOM. This process is called “reconciliation”.
-
-### The Diffing Algorithm of React
-
-React implements a heuristic O(n) algorithm based on two assumptions:
-
-1. Two elements of different types will produce different trees.
-2. The developer can hint at which child elements may be stable across different renders with a `key` prop.
-
-When we tell React to render a tree of elements in the browser, it first generates a virtual representation of that tree and keeps it around in memory for later. Then it’ll proceed to perform the DOM operations that will make the tree show up in the browser.
-
-When we tell React to **update** the tree of elements it previously rendered, it **generates** **a new virtual representation** of the updated tree. Now React has **2 versions of the DOM** in memory!
-
-To render the **updated** tree in the browser, React does not discard what has already been rendered. Instead, it will **compare the 2 virtual versions** of the tree that it has in memory, **compute the differences** between them, figure out what sub-trees in the main tree **need to be updated**, and only **update these sub-trees** in the browser.
-
-## Why React "fast"
-
-React only really re-render the changed part of the DOM, not all the DOM 
-
-=> not re-calculate, re-building, re-painting all element in the real DOM of browser
-
-=> make it an efficiency way to works with Browser UI.
-
 # JSX
 
 JSX is a syntax extension to JavaScript. It is similar to a template language, but it has full power of JavaScript. JSX gets compiled to `React.createElement()` calls which return plain JavaScript objects called “React elements”.
 
-## Why React use `className`
+## element `className`
 
 class is a keyword in JavaScript, and JSX is an extension of JavaScript. That's the principal reason why React uses `className` instead of class
 
@@ -753,12 +679,6 @@ We call them **pure components** because they can accept any dynamically provide
 
 
 
-# Routing
-
-![image-20200626200729737](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200626200729737.png)
-
-![image-20200626200713192](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200626200713192.png)
-
 # Portal
 
 *Portal* is a recommended way to render children into a DOM node that exists outside the DOM hierarchy of the parent component.
@@ -1077,20 +997,6 @@ const Person = props => {
 Context API: lightweight store management, couple with a context, complex provider in big apps
 
 Redux: handle asynchronous actions inside of redux middleware and compose ability of components
-
-# Server deployment
-
-![image-20200626204520572](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200626204520572.png)
-
-```jsx
-//index.js
-<BrowserRouter basename="/">
-</BrowserRouter>
-```
-
-# Fiber
-
-Fiber is the new *reconciliation* engine or reimplementation of core algorithm in React v16. 
 
 # CRA
 

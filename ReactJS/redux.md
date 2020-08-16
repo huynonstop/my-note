@@ -56,8 +56,6 @@ export const fetchFail = (error) => ({
 });
 ```
 
-
-
 ```js
 function fetchData() {
     dispatch(fetchStart());

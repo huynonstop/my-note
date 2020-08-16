@@ -1,3 +1,9 @@
+# Routing
+
+![image-20200626200729737](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200626200729737.png)
+
+![image-20200626200713192](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200626200713192.png)
+
 # React Router
 
 React Router is a powerful routing library built on top of React that helps you add new screens and flows to your application incredibly quickly, all while keeping the URL in sync with what's being displayed on the page.
@@ -280,4 +286,12 @@ export default class LoginComponent extends Component {
 }
 ```
 
-## 
+# Server deployment
+
+![image-20200626204520572](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200626204520572.png)
+
+```jsx
+//index.js
+<BrowserRouter basename="/">
+</BrowserRouter>
+```
