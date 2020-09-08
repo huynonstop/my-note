@@ -1327,38 +1327,40 @@ Run code in single thread and synchronously
 
 #### Execution stack
 
+Whenever you write a function in JavaScript, the JS engine creates what we call function execution context. Also, each time the JS engine begins, it creates a global execution context that holds the global objects — for example, the `window` object in the browser and the `global` object in Node.js. Both these contexts are handled in JS using a stack data structure also known as the execution stack.
+
 ```js
-function b() {
-    // 2 
-}
 function a() {
-    // 1 
-    b()
-    // 3 
+  console.log("i am a")
+  b()
 }
+
+function b() {
+  console.log("i am b")
+}
+
 a()
-// 4 
-// ... rest code
-// 5 
 ```
 
-- Now first of all `Global Execution Context` is going to be created
+The JavaScript engine first creates a global execution context and pushes it into the execution stack. 
 
-- then execution starts and interpreter encounters `call to function a()`, and `here a new execution context is created pushed on top EC Stack`
+Then it creates a function execution context for the function `a()`. Since `b()` is called inside `a()`, it will create another function execution context for `b()` and push it into the stack.
 
-  *so anytime you invoke a function, a new EC is created & placed on top of EC Stack.*
+![image-20200830112444561](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200830112444561.png)
 
-- so now `EC for a()` is `CREATED` interpreter will execute the code inside `a()` line-by-line
+When the function `b()` returns, the engine destroys the context of `b()`, and when we exit function `a()`, the context of `a()` is destroyed.
 
-- then intrepreeter encounters `call to function b()`, this creates another `EC` which is pushed on top or `EC` stack
+But what happens when the browser makes an asynchronous event like an HTTP request?
 
-- When `b()` finishes it will be popped-off the stack then `a()` will finish & all the way down to `Global EC`
+The JS engine does something different here. On top of the execution stack, the JS engine has a queue data structure, also known as the event queue. The event queue handles asynchronous calls like HTTP or network events coming into the browser.
 
-![image-20200612175012830](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612175012830.png)
+![image-20200830113116278](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200830113116278.png)
 
-![image-20200612175022470](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612175022470.png)
+The way the JS engine handles the stuff in the queue is by waiting for the execution stack to become empty. So each time the execution stack becomes empty, the JS engine checks the event queue, pops items off the queue, and handles that event. It is important to note that the JS engine checks the event queue only when the execution stack is empty or the only item in the execution stack is the global execution context.
 
-![image-20200612183551744](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612183551744.png)
+Although we call them asynchronous events, there is a subtle distinction here: the events are asynchronous with respect to when they arrive into the queue, but they’re not really asynchronous with respect to when they get actually get handled.
+
+
 
 ### Scope
 

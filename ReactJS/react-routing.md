@@ -1,5 +1,7 @@
 # Routing
 
+https://goshakkk.name/min-viable-router-is-state/
+
 ![image-20200626200729737](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200626200729737.png)
 
 ![image-20200626200713192](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200626200713192.png)

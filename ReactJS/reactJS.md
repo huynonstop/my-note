@@ -2,6 +2,8 @@
 
 https://github.com/huynonstop/react-redux-links
 
+https://goshakkk.name/on-react/
+
 # React is a JavaScript “library”
 
 https://stackoverflow.com/questions/51506440/mvvm-architectural-pattern-for-a-reactjs-application
@@ -478,17 +480,50 @@ class MyName extends React.Componenet {
 
 https://reactjs.org/docs/forms.html
 
+https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/
+
+https://www.codebeast.dev/react-forms-then-and-now/
+
+https://goshakkk.name/array-form-inputs/
+
+https://goshakkk.name/form-recipe-disable-submit-button-react/
+
+https://goshakkk.name/instant-form-fields-validation-react/
+
+https://goshakkk.name/submit-time-validation-react/
+
+There are two conventional ways to manage form states in React. The first one takes state management control from the form fields and lifts the control to React state using `setState`. The second leaves state management to the form fields but extracts the values using React’ s `ref`.
+
 ## Controlled Components
+
+Controlled components are the opposites of uncontrolled. They are the components that use states for data preservation.
 
 A component that controls the input elements within the forms on subsequent user input is called **Controlled Component**, i.e, every state mutation will have an associated handler function.
 
 form data is handled by a React component
 
+We can instead, use one handler that deals with all the fields’ needs
+
+```js
+handleChange = event => {
+  const target = event.target;
+  const value = target.type === 'checkbox' ? target.checked : target.value;
+  const name = target.name;
+  this.setState({
+    [name]: value,
+  });
+};
+```
+
 ## Uncontrolled Components
+
+Uncontrolled components avoid preserving data in state but instead, preserve data in what React calls refs
 
 An *uncontrolled component* works like form elements do outside of React.
 
 form data is handled by the DOM itself
+
+In other words, **you have to ‘pull’ the value from the field when you need it**. This can happen when the form is submitted.
 
 When a user inputs data into a form field (an input box, dropdown, ...) the updated information is reflected without React needing to do anything. And you query the DOM using a ref to find its current value when you need it. This is a bit more like traditional HTML.
 
@@ -523,20 +558,21 @@ class UserProfile extends React.Component {
 }
 ```
 
-| feature                                                      | uncontrolled | controlled |
-| ------------------------------------------------------------ | ------------ | ---------- |
-| one-time value retrieval (e.g. on submit)                    | ✅            | ✅          |
-| [validating on submit](https://goshakkk.name/submit-time-validation-react/) | ✅            | ✅          |
-| [instant field validation](https://goshakkk.name/instant-form-fields-validation-react/) | ❌            | ✅          |
-| [conditionally disabling submit button](https://goshakkk.name/form-recipe-disable-submit-button-react/) | ❌            | ✅          |
-| enforcing input format                                       | ❌            | ✅          |
-| several inputs for one piece of data                         | ❌            | ✅          |
-| [dynamic inputs](https://goshakkk.name/array-form-inputs/)   | ❌            | ✅          |
+| feature                                   | uncontrolled | controlled |
+| ----------------------------------------- | ------------ | ---------- |
+| one-time value retrieval (e.g. on submit) | ✅            | ✅          |
+| validating on submit                      | ✅            | ✅          |
+| instant field validation                  | ❌            | ✅          |
+| conditionally disabling submit button     | ❌            | ✅          |
+| enforcing input format                    | ❌            | ✅          |
+| several inputs for one piece of data      | ❌            | ✅          |
+| dynamic inputs                            | ❌            | ✅          |
 
 ## Validation
 
 - Validate.js (you may import its functionality into your React projects): https://validatejs.org/
 - Get more ideas about potential validation approaches: https://react.rocks/tag/Validation
+- input html pattern
 
 # Lifecycle
 
@@ -677,7 +713,68 @@ We call them **pure components** because they can accept any dynamically provide
 
 ![image-20200624010927236](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200624010927236.png)
 
+# render Props
 
+https://reactjs.org/docs/render-props.html
+
+https://formik.org/docs/overview
+
+https://www.youtube.com/watch?v=oiNtnehlaTo
+
+# ![image-20200831130138878](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200831130138878.png)
+
+```jsx
+<Formik onSubmit={this.handleSubmit}>
+  {({ values, handleChange, handleSubmit }) => (
+    <form className={styles.form} onSubmit={handleSubmit}>
+      <div className={styles.formGroup}>
+        <label htmlFor="name">Full Name</label>
+        <input
+          type="text"
+          name="name"
+          value={values.name}
+          onChange={handleChange}
+        />
+      </div>
+      <div className={styles.formGroup}>
+        <label htmlFor="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          value={values.email}
+          onChange={handleChange}
+        />
+      </div>
+      <div className={styles.inlineGroup}>
+        <div className={styles.formGroup}>
+          <label htmlFor="meal">Meal Preference</label>
+          <select name="meal" value={values.meal} onChange={handleChange}>
+            <option value="1">Jollof Rice</option>
+            <option value="2">Fried Rice</option>
+          </select>
+        </div>
+        <div className={styles.formGroup}>
+          <label htmlFor="meal">Is Going?</label>
+          <input
+            name="isGoing"
+            type="checkbox"
+            value={values.isGoing}
+            onChange={handleChange}
+          />
+        </div>
+      </div>
+      <div className={styles.formGroup}>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  )}
+</Formik>
+```
+
+What should we take away from refactoring with render props? Notice how we are longer relying on the state. In fact, we can delete the state object now. Here are clear reasons why render props are preferred:
+
+1. Form states are ephemeral — they last for a very short time. Why bother with redux or even component state with such a temporary state. Formik is now handling the short-lived temporary state.
+2. We can reuse state and form logic without bothering about the details — just focus on creating and styling fields; leave the rest to Formik.
 
 # Portal
 
@@ -689,308 +786,9 @@ ReactDOM.createPortal(child, container) // modal tooltip
 
 The first argument is any render-able React child, such as an element, string, or fragment. The second argument is a DOM element
 
-# Refs
+# Error
 
-https://reactjs.org/docs/refs-and-the-dom.html
-
-The **ref** is used to return a reference to the element. They can be useful when we need direct access to DOM element or an instance of a component.
-
-Like a query selector of react
-
-Refs provide a way to access DOM nodes or React elements created in the render method.
-
-In the typical React dataflow, **props are the only way** that parent components interact with their children. To modify a child, you re-render it with new props. However, there are a few cases where you need to imperatively modify a child outside of the typical dataflow.
-
-There are a few good use cases for refs:
-
-- Managing focus, text selection, or media playback.
-- Triggering imperative animations.
-- Integrating with third-party DOM libraries.
-
-## Accessing Refs
-
-The value of the ref differs depending on the type of the node:
-
-- When the `ref` attribute is used on an HTML element, the `ref` created in the constructor with `React.createRef()` receives the underlying DOM element as its `current` property.
-- When the `ref` attribute is used on a custom class component, the `ref` object receives the mounted instance of the component as its `current`.
-
-### Ref of a DOM Element
-
-This code uses a `ref` to store a reference to a DOM node:
-
-```jsx
-class CustomTextInput extends React.Component {
-  constructor(props) {
-    super(props);
-    // create a ref to store the textInput DOM element
-    this.textInput = React.createRef();
-    this.focusTextInput = this.focusTextInput.bind(this);
-  }
-
-  focusTextInput() {
-    // Explicitly focus the text input using the raw DOM API
-    // Note: we're accessing "current" to get the DOM node
-    this.textInput.current.focus();
-    // this.textInput.focus();
-  }
-
-  render() {
-    // tell React that we want to associate the <input> ref
-    // with the `textInput` that we created in the constructor
-    return (
-      <div>
-        <input
-          type="text"
-          ref={this.textInput} />            
-           {/*
-           		or 
-           		ref={ipRef => {
-           			this.textInput = ipRef
-           		}}
-           */}
-        <button
-          onClick={this.focusTextInput}
-        >Focus the text input</button>
-      </div>
-    );
-  }
-}
-```
-
-React will assign the `current` property with the DOM element when the component mounts, and assign it back to `null` when it unmounts. `ref` updates happen before `componentDidMount` or `componentDidUpdate` lifecycle methods.
-
-### Ref of a Class Component
-
-If we wanted to wrap the `CustomTextInput` above to simulate it being clicked immediately after mounting, we could use a ref to get access to the custom input and call its `focusTextInput` method manually:
-
-```javascript
-class AutoFocusTextInput extends React.Component {
-  constructor(props) {
-    super(props);
-    this.textInput = React.createRef();
-  }
-
-  componentDidMount() {
-    this.textInput.current.focusTextInput();
-  }
-
-  render() {
-    return (
-      <CustomTextInput ref={this.textInput} />
-    );
-  }
-}
-```
-
-Note that this only works if `CustomTextInput` is declared as a class
-
-### Refs and Function Components
-
-If you want to allow people to take a `ref` to your function component, you can use [`forwardRef`](https://reactjs.org/docs/forwarding-refs.html) (possibly in conjunction with [`useImperativeHandle`](https://reactjs.org/docs/hooks-reference.html#useimperativehandle)), or you can convert the component to a class.
-
-You can, however, **use the `ref` attribute inside a function component** as long as you refer to a DOM element or a class component:
-
-```javascript
-function CustomTextInput(props) {
-  // textInput must be declared here so the ref can refer to it
-  let textInput = React.createRef();
-
-  function handleClick() {
-    textInput.current.focus();
-  }
-
-  return (
-    <div>
-      <input
-        type="text"
-        ref={textInput} />
-      <input
-        type="button"
-        value="Focus the text input"
-        onClick={handleClick}
-      />
-    </div>
-  );
-}
-```
-
-## Forwarding Refs
-
-Ref forwarding is a technique for automatically passing a [ref](https://reactjs.org/docs/refs-and-the-dom.html) through a component to one of its children. 
-
-```jsx
-const ButtonElement = React.forwardRef((props, ref) => (
-  <button ref={ref} className="CustomButton">
-    {props.children}
-  </button>
-));
-
-// Create ref to the DOM button:
-const ref = React.createRef();
-<ButtonElement ref={ref}>{'Forward Ref'}</ButtonElement>
-```
-
-## Callback Refs
-
-Instead of passing a `ref` attribute created by `createRef()`, you pass a function. The function receives the React component instance or HTML DOM element as its argument, which can be stored and accessed elsewhere.
-
-```jsx
-class MyComponent extends Component {
-  constructor(props){
-    super(props);
-    this.node = createRef();
-  }
-  componentDidMount() {
-    this.node.current.scrollIntoView();
-  }
-
-  render() {
-    return <div ref={this.node} />
-  }
-}
-```
-
-```jsx
-class MyComponent extends Component {
-  renderRow = (index) => {
-    // This won't work. Ref will get attached to DataTable rather than MyComponent:
-    return <input ref={'input-' + index} />;
-
-    // This would work though! Callback refs are awesome.
-    return <input ref={input => this['input-' + index] = input} />;
-  }
-
-  render() {
-    return <DataTable data={this.props.data} renderRow={this.renderRow} />
-  }
-}
-```
-
-# Context API
-
-*Context* provides a way to pass data through the component tree without having to pass props down manually at every level. 
-
-It generally consists of three building blocks:
-
-- A Context Object
-
-  ```js
-  import React from 'react'
-  export default React.createContext({/*add here for ide auto complete*/}) 
-  ```
-
-- A Context Provider
-
-  ```jsx
-  import React, { Component } from 'react';
-  import ShopContext from './shop-context';
-  import ProductsPage from './ProductsPage'
-  class App extends Component {
-    state = {
-      products: [
-        { id: 'p1', title: 'Gaming Mouse', price: 29.99 },
-        { id: 'p2', title: 'Harry Potter 3', price: 9.99 },
-        ...
-      ],
-      cart: []
-    };
-    addProductToCart = product => {
-      const updatedCart = [...this.state.cart];
-      this.setState({ cart: updatedCart });
-  
-    };
-    removeProductFromCart = productId => {
-      const updatedCart = [...this.state.cart];
-      this.setState({ cart: updatedCart });
-    };
-  
-    render() {
-      return (
-        <ShopContext.Provider
-          value={{
-            products: this.state.products,
-            cart: this.state.cart,
-            addProductToCart: this.addProductToCart,
-            removeProductFromCart: this.removeProductFromCart
-          }}
-        >
-          {/*Component use data will nest in here*/}
-           <ProductsPage></ProductsPage>
-        </ShopContext.Provider>
-      );
-    }
-  }
-  export default GlobalState;
-  ```
-
-- A Context Consumer
-
-  ```jsx
-  // Other imports...
-  import ShopContext from '../context/shop-context'
-  
-  class ProductsPage extends Component {
-    render() {
-      return (
-        <ShopContext.Consumer>
-          {context => (
-            <React.Fragment>
-              <MainNavigation
-                cartItemNumber={context.cart.reduce((count, curItem) => {
-                  return count + curItem.quantity
-                }, 0)}
-              />
-              <main className="products">...</main>
-            </React.Fragment>
-          )}
-        </ShopContext.Consumer>
-      )
-    }
-  }
-  
-  export default ProductsPage
-  ```
-
-  ```jsx
-  // Other imports...
-  import ShopContext from '../context/shop-context'
-  
-  class CartPage extends Component {
-    static contextType = ShopContext //must be contextType
-  
-    componentDidMount() {
-      // Advantage of static contextType: We can now also access Context in the rest of the component
-      console.log(this.context)
-    }
-  
-    render() {
-      return (
-        <React.Fragment>
-          <MainNavigation
-            cartItemNumber={this.context.cart.reduce((count, curItem) => {
-              return count + curItem.quantity
-            }, 0)}
-          />
-          <main className="cart">...</main>
-        </React.Fragment>
-      )
-    }
-  }
-  
-  export default CartPage
-  ```
-
-## useContext
-
-```jsx
-import React, { useContext } from 'react'
-import ThemeContext from './theme-context'
-
-const Person = props => {
-  const context = useContext(ThemeContext)
-  return <p className={context.isLight ? 'light' : 'dark'}>...</p>
-}
-```
+https://reactjs.org/docs/error-boundaries.html
 
 # Redux & Context API
 
@@ -1013,4 +811,7 @@ Bundlers take JavaScript and CSS code written as separate modules (often hundred
 # Composition vs Inheritance
 
 React has a powerful composition model, and we recommend using composition instead of inheritance to reuse code between components.
+
+https://reactjs.org/docs/composition-vs-inheritance.html
+
 

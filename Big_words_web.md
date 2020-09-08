@@ -6,11 +6,31 @@ https://developer.mozilla.org/en-US/docs/Glossary
 
 [https://www.electronicdesign.com/unused/article/21800810/whats-the-difference-between-the-osi-sevenlayer-network-model-and-tcpip#:~:text=The%20Internet%20Protocol%20layer%20is,%2C%206%2C%20and%207%20combined.](https://www.electronicdesign.com/unused/article/21800810/whats-the-difference-between-the-osi-sevenlayer-network-model-and-tcpip#:~:text=The Internet Protocol layer is,%2C 6%2C and 7 combined.)
 
-| **Appl­ication Layer** | Where the network applic­ations, such as web browsers or email programs, operate. Examples: HTTP, HTTPS |
-| ---------------------- | ------------------------------------------------------------ |
-| **Tran­sport Layer**   | Sets up the commun­ication between the two hosts and they agree settings such as ‘language’ and size of packets. |
-| **Network Layer**      | Addresses and packages data for transm­ission. Routes the packets across the network. |
-| **Data Link Layer**    | This is where the network hardware such as the NIC (network interface card) is located. OS device drivers also sit here. |
+https://www.techopedia.com/definition/6006/application-layer
+
+https://www.techopedia.com/definition/8955/presentation-layer
+
+https://www.techopedia.com/definition/9322/session-layer
+
+https://www.techopedia.com/definition/9760/transport-layer
+
+https://www.techopedia.com/definition/24204/network-layer
+
+https://www.techopedia.com/definition/18698/data-link-layer
+
+https://www.techopedia.com/definition/8866/physical-layer
+
+https://www.totolink.vn/article/136-mo-hinh-osi-la-gi-chuc-nang-cua-cac-tang-giao-thuc-trong-mo-hinh-osi.html
+
+| OSI Layer                         | Description                                                  |
+| --------------------------------- | ------------------------------------------------------------ |
+| Appl­ication Layer                | Approaches protocols for network applic­ations (web browsers or email programs) interaction with the network. Examples: HTTP, HTTPS, SMTP, FTP |
+| Presentation Layer (Syntax Layer) | With a focus on end-user services, the application layer helps to facilitate process-to-process connections over Internet protocol. The presentation layer is responsible for the following:<br/>Data encryption/decryption<br/>Character/string conversion<br/>Data compression<br/>Graphic handling<br />The presentation layer is responsible for integrating all formats into a standard format for efficient and effective communication. |
+| Session Layer                     | Controls the connections between multiple computers. The session layer tracks the dialogs between computers, which are also called sessions. This layer establishes, controls and ends the sessions between local and remote applications. |
+| Tran­sport Layer                  | Be responsible for end-to-end communication over a network,deliver and receive data without errors. (TCP/UDP)<br />The send side breaks application messages into segments (packets) and passes them on to the network layer<br />The receiving side then reassembles segments into messages and passes them to the application layer |
+| Network Layer                     | Addresses and packages data for transm­ission. Routes the packets across the network. (Internet Protocol) |
+| Data Link Layer                   | The data link layer is used for the encoding, decoding and logical organization of data bits. Data packets are framed and addressed by this layer, which has two sublayers.(media access control - MAC, logical link control, ethernet, WIFI) |
+| Physical Layer                    | This layer plays with most of the network’s physical connections—wireless transmission, cabling, cabling standards and types, connectors and types, network interface cards |
 
 ![Kết quả hình ảnh cho TCP/IP model](https://download.huawei.com/mdl/imgDownload?uuid=d6bd7de144f045e09d2e3a95e9667a14.png)
 
@@ -370,50 +390,6 @@ The **same-origin policy** is a critical security mechanism that restricts how a
 
 CSP allow you to define where browser can download resource (script,image,font,css,...) from and check hash of them
 
-# Web Authentication
-
-https://medium.com/@vivekmadurai/different-ways-to-authenticate-a-web-application-e8f3875c254a
-
-https://medium.com/better-programming/json-web-tokens-vs-session-cookies-for-authentication-55a5ddafb435
-
-https://www.youtube.com/watch?v=mBd-SMPp3kI
-
-https://topdev.vn/blog/json-web-token-hay-session-cookies-dau-moi-la-chan-ai/?fbclid=IwAR0UlnfohlwT4ZcreuJWT9skndZRcqmnhfA61SWmn8stIu-I-QhLEcg4wVI
-
-https://anonystick.com/blog-developer/authorization-framework-access-token-refresh-token-cung-giong-viec-sinh-vien-thue-nha-tro-2019061161976500?fbclid=IwAR1YHS5AGwC4bmfUoX6nEMpKXr3idkWsGl10b1KvNFxvHq7hu3m9aBdoqrk
-
-## Cookie sessions
-
-https://www.quora.com/What-is-a-session-in-a-Web-Application
-
-https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
-
-![image-20200812213039239](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200812213039239.png)
-
-## JSON Web Token
-
-### Refreshing Token
-
-## Session Cookies
-
-https://developer.mozilla.org/en-US/docs/Web/HTTP/Session
-
-## OAuth
-
-# Security
-
-## XSS
-
-## CSRF
-
-https://www.acunetix.com/websitesecurity/csrf-attacks/
-
-CSRF ( Cross Site Request Forgery) abuse server session and trick user execute malicious code. 
-
-=> Protect: only let session available on your views
-
-![image-20200611220835360](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611220835360.png)
-
 # JSON
 
 JSON stands for JavaScript Object Notation and is a text representation that is also valid JavaScript code.
@@ -427,6 +403,10 @@ JSON stands for JavaScript Object Notation and is a text representation that is 
 Provide raw data for applications (JSON,...) , these data will be used to display for end user by front-end apps
 
 Applications which are accessed via HTTP APIs are often called Web Services. In other words, a web service is a function that can be accessed by other programs over the web (HTTP).
+
+# Web hooks
+
+https://rapidapi.com/blog/api-glossary/webhooks/
 
 # Client-side Rendering And Server-side Rendering
 

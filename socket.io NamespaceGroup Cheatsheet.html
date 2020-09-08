@@ -1,0 +1,7 @@
+<p><strong>ALL these are server only</strong></p><p>Send an event from the server to this socket only:</p><pre class="prettyprint linenums">socket.emit()
+socket.send()</pre><p><br></p><p>Send an event from a socket to a room:</p><p>NOTE: remember, this will not go to the sending socket</p><pre class="prettyprint linenums">socket.to(roomName).emit()
+socket.in(roomName).emit()</pre><p><br></p><p>Because each socket has it's own room, named by it's socket.id, a socket can send a message to another socket:</p><pre class="prettyprint linenums">socket.to(anotherSocketId).emit('hey');
+socket.in(anotherSocketId).emit('hey');</pre><p><br></p><p>A namespace can send a message to any room:</p><pre class="prettyprint linenums">io.of(aNamespace).to(roomName).emit()
+io.of(aNamespace).in(roomName).emit()</pre><p><br></p><p>A namespace can send a message to the entire namespace</p><pre class="prettyprint linenums">io.emit()
+io.of('/').emit()
+io.of('/admin').emit()</pre>

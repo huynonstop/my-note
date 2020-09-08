@@ -128,6 +128,8 @@ https://nodejs.org/en/knowledge/advanced/streams/what-are-streams/
 
 https://medium.freecodecamp.org/node-js-streams-everything-you-need-to-know-c9141306be93
 
+[https://itnext.io/using-node-js-to-read-really-really-large-files-pt-1-d2057fe76b33#:~:text=Whomp%20whomp%E2%80%A6-,As%20it%20turns%20out%2C%20although%20Node.,one%20time%2C%20but%20no%20more.](https://itnext.io/using-node-js-to-read-really-really-large-files-pt-1-d2057fe76b33#:~:text=Whomp whomp…-,As it turns out%2C although Node.,one time%2C but no more.)
+
 ![image-20200706235605988](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200706235605988.png)
 
 What makes streams unique, is that instead of a program reading a file into memory **all at once** like in the traditional way, streams read chunks of data piece by piece, processing its content without keeping it all in memory.
@@ -235,6 +237,8 @@ https://nodejs.org/en/knowledge/getting-started/the-console-module/
 https://nodejs.org/en/knowledge/getting-started/the-process-module/
 
 https://nodejs.org/en/knowledge/getting-started/what-is-node-core-verus-userland/
+
+https://medium.com/better-programming/is-node-js-really-single-threaded-7ea59bcc8d64
 
 ![image-20200707104435586](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200707104435586.png)
 
