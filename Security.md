@@ -40,6 +40,8 @@ In addition to username and password, authentication can include additional info
 
 # Authorization and Authentication
 
+https://anonystick.com/blog-developer/4-co-che-dang-nhap-bai-viet-nay-la-du-cho-dan-lap-trinh-phan-1-2020091071827696
+
 https://medium.com/@ratrosy/authorization-and-authentication-in-api-services-9b4db295a35b
 
 [https://medium.com/future-vision/the-great-authenticators-of-rest-738e81109331#:~:text=1.-,Basic%20Authentication,your%20computer%20to%20the%20server.](https://medium.com/future-vision/the-great-authenticators-of-rest-738e81109331#:~:text=1.-,Basic Authentication,your computer to the server.)

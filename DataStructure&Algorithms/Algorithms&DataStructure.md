@@ -28,31 +28,208 @@ for (int a : arrA) {
 //O(N^2)
 ```
 
-<img src="https://www.lavivienpost.com/wp-content/uploads/2018/05/ds-overview.jpg" alt="img" style="zoom:200%;" />
-
 ![image-20200301153741625](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200301153741625.png)
 
-# Algorithms
+https://algs4.cs.princeton.edu/cheatsheet/
 
-![img](https://www.lavivienpost.com/wp-content/uploads/2018/04/algorithms-cheat-sheet3-768x460.jpg)
+# Recursion
+
+![image-20200925172339474](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200925172339474.png)
+
+![image-20200921155215123](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200921155215123.png)
+
+JSON parse/ JSON stringify
+
+DOM traversal
+
+Object traversal
+
+alternative to iteration
+
+## JS
+
+![image-20200925172911063](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200925172911063.png)
+
+# Dynamic program
+
+cached, solve small problem and memo the result for next time
+
+sub problem **overlap**
+
+![image-20200921200050131](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200921200050131.png)
+
+![image-20200921200838373](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200921200838373.png)
+
+![image-20200927013120931](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200927013120931.png)
+
+![image-20200927013050896](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200927013050896.png)
 
 # Data structure
 
-## Build-in
+https://medium.com/omarelgabrys-blog/data-structures-language-support-5f70f8312e84
+
+https://en.wikipedia.org/wiki/List_of_data_structures
+
+https://github.com/ashish-chopra/Structures
+
+![Image for post](https://miro.medium.com/max/1345/1*WuPrPNWDYL72boblf4Me4Q.png)
+
+JS
 
 ![image-20200807220953518](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200807220953518.png)
 
 ![image-20200807221116770](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200807221116770.png)
 
-## Custom Data Structure
+## Array
 
-### Linked List
++Fast access: O(1)
+
++Fast push/pop (end of array): O(1)
+
++Ordered (close in memory)
+
+-Slow insert/delete (shift elements to keep ordered): O(n)
+
+-Add new when dynamic array full O(n)
+
+Search: O(n)
+
+```js
+class MyArray {
+  constructor() {
+    this.length = 0;
+    this.data = {};
+  }
+  get(index) {
+    return this.data[index];
+  }
+  push(item) {
+    this.data[this.length] = item;
+    this.length++;
+    return this.data;
+  }
+  pop() {
+    const lastItem = this.data[this.length - 1];
+    delete this.data[this.length - 1];
+    this.length--;
+    return lastItem;
+  }
+  deleteAtIndex(index) {
+    const item = this.data[index];
+    this.shiftItems(index);
+    return item;
+  }
+  shiftItems(index) {
+    for (let i = index; i < this.length - 1; i++) {
+      this.data[i] = this.data[i + 1];
+    }
+    console.log(this.data[this.length - 1]);
+    delete this.data[this.length - 1];
+    this.length--;
+  }
+}
+```
+
+## Hash table
+
+https://www.cs.usfca.edu/~galles/visualization/OpenHash.html
+
+https://en.wikipedia.org/wiki/Comparison_of_programming_languages_(associative_array)
+
+(hash map, map, ordered map, dict(ionary))
+
+key (transformed (hash) to index (in memory) by **hash function**) - value pair
+
++insert O(1)
+
++access O(1) //O(n) if many collisions
+
++delete O(1)
+
++search O(1)
+
+### hash function
+
+transform input to a random pattern
+
++ one way => from result cannot find out the input
++ same input => same result (idempotent)
+
+=> time comusing
+
+### hash collisions
+
+-chain keys's value have same index (linked list)
+
+-move to next free space
+
+```js
+class HashTable {
+  constructor(size){
+    this.data = new Array(size);
+    // this.data = [];
+  }
+
+  _hash(key) {
+    let hash = 0;
+    for (let i =0; i < key.length; i++){
+        hash = (hash + key.charCodeAt(i) * i) % this.data.length
+    }
+    return hash;
+  }
+
+  set(key, value) {
+    let address = this._hash(key);
+    if (!this.data[address]) {
+      this.data[address] = [];
+    }
+    this.data[address].push([key, value]);
+    return this.data;
+  }
+
+  get(key){
+    const address = this._hash(key);
+    const currentBucket = this.data[address]
+    if (currentBucket) {
+      for(let i = 0; i < currentBucket.length; i++){
+        if(currentBucket[i][0] === key) {
+          return currentBucket[i][1]
+        }
+      }
+    }
+    return undefined;
+  }
+  
+  keys(){
+    const keysArray = [];
+    console.log(this.data.length);
+    for (let i = 0; i < this.data.length; i++){
+      if(this.data[i]){
+        keysArray.push(this.data[i][0][0])
+      }
+    }
+    return keysArray;
+  }
+}
+```
+
+## Hash table vs Array
+
+![image-20200918011028633](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200918011028633.png)
+
+## Linked List
+
+https://visualgo.net/en/list
 
 ![image-20200808175311665](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200808175311665.png)
 
-![image-20200808174914030](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200808174914030.png)
+every element know next element => effient re-sizing
 
-![image-20200808195148050](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200808195148050.png)
+no need to specify memory size (flexible size)
+
+![image-20200926165716188](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200926165716188.png)
+
+ordered
 
 ```js
 class Node {
@@ -138,43 +315,612 @@ class LinkedList {
 }
 ```
 
-#### VS array
+## Linked list VS array
+
+https://www.youtube.com/watch?v=DyG9S9nAlUM
 
 ![image-20200808195510033](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200808195510033.png)
 
-### Queue
+## Queue
 
-#### Vs linked list
+FIFO (first in firtst out)
 
-### Stack
+ordered operation, callback queue, ...
 
-#### Vs linked list
+linked list
 
-### Hash Tables
+![image-20200926170053927](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200926170053927.png)
 
-### Tree
+array => removal O(n) (normal array) O(1) (CircularQueue)
 
-### BST tree
+## Stack
 
-### AVL tree
+LIFO (last in first out)
 
-#### Vs BST
+function call stack, browser history, undo, ...
 
-### Tries
+![image-20200926165950746](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200926165950746.png)
 
-#### Vs hash table
+## Tree
+
+one way
+
+![image-20200919001422481](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200919001422481.png)
+
+DOM, abstract syntax tree, ...
+
+## Binary Tree
+
+![image-20200919001758892](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200919001758892.png)
+
+perfect tree: all leafs are full
+
+full tree: all node not have 1 child (0 or 2)
+
+## BST tree
+
+https://visualgo.net/bn/bst?slide=1
+
+is a **Binary Tree**
+
+search O(logN)
+
+insert O(logN)
+
+delete O(logN)
+
+=> can become a linked list if unbalance (worst case) O(n), no O(1) operation
+
+```js
+class Node {
+  constructor(value){
+    this.left = null;
+    this.right = null;
+    this.value = value;
+  }
+}
+
+class BinarySearchTree {
+  constructor(){
+    this.root = null;
+  }
+  insert(value){
+    const newNode = new Node(value);
+    if (this.root === null) {
+      this.root = newNode;
+    } else {
+      let currentNode = this.root;
+      while(true){
+        if(value < currentNode.value){
+          //Left
+          if(!currentNode.left){
+            currentNode.left = newNode;
+            return this;
+          }
+          currentNode = currentNode.left;
+        } else {
+          //Right
+          if(!currentNode.right){
+            currentNode.right = newNode;
+            return this;
+          } 
+          currentNode = currentNode.right;
+        }
+      }
+    }
+  }
+  lookup(value){
+    if (!this.root) {
+      return false;
+    }
+    let currentNode = this.root;
+    while(currentNode){
+      if(value < currentNode.value){
+        currentNode = currentNode.left;
+      } else if(value > currentNode.value){
+        currentNode = currentNode.right;
+      } else if (currentNode.value === value) {
+        return currentNode;
+      }
+    }
+    return null
+  }
+  remove(value) {
+    if (!this.root) {
+      return false;
+    }
+    let currentNode = this.root;
+    let parentNode = null;
+    while(currentNode){
+      if(value < currentNode.value){
+        parentNode = currentNode;
+        currentNode = currentNode.left;
+      } else if(value > currentNode.value){
+        parentNode = currentNode;
+        currentNode = currentNode.right;
+      } else if (currentNode.value === value) {
+        //We have a match, get to work!
+        
+        //Option 1: No right child: 
+        if (currentNode.right === null) {
+          if (parentNode === null) {
+            this.root = currentNode.left;
+          } else {
+            
+            //if parent > current value, make current left child a child of parent
+            if(currentNode.value < parentNode.value) {
+              parentNode.left = currentNode.left;
+            
+            //if parent < current value, make left child a right child of parent
+            } else if(currentNode.value > parentNode.value) {
+              parentNode.right = currentNode.left;
+            }
+          }
+        
+        //Option 2: Right child which doesnt have a left child
+        } else if (currentNode.right.left === null) {
+          currentNode.right.left = currentNode.left;
+          if(parentNode === null) {
+            this.root = currentNode.right;
+          } else {
+            
+            //if parent > current, make right child of the left the parent
+            if(currentNode.value < parentNode.value) {
+              parentNode.left = currentNode.right;
+            
+            //if parent < current, make right child a right child of the parent
+            } else if (currentNode.value > parentNode.value) {
+              parentNode.right = currentNode.right;
+            }
+          }
+        
+        //Option 3: Right child that has a left child
+        } else {
+
+          //find the Right child's left most child
+          let leftmost = currentNode.right.left;
+          let leftmostParent = currentNode.right;
+          while(leftmost.left !== null) {
+            leftmostParent = leftmost;
+            leftmost = leftmost.left;
+          }
+          
+          //Parent's left subtree is now leftmost's right subtree
+          leftmostParent.left = leftmost.right;
+          leftmost.left = currentNode.left;
+          leftmost.right = currentNode.right;
+
+          if(parentNode === null) {
+            this.root = leftmost;
+          } else {
+            if(currentNode.value < parentNode.value) {
+              parentNode.left = leftmost;
+            } else if(currentNode.value > parentNode.value) {
+              parentNode.right = leftmost;
+            }
+          }
+        }
+      return true;
+      }
+    }
+  }
+  static traverse(node) {
+  	const tree = { value: node.value };
+  	tree.left = node.left === null ? null : traverse(node.left);
+  	tree.right = node.right === null ? null : traverse(node.right);
+  	return tree;
+  }
+}
+
+const tree = new BinarySearchTree();
+tree.insert(9)
+tree.insert(4)
+tree.insert(6)
+tree.insert(20)
+tree.insert(170)
+tree.insert(15)
+tree.insert(1)
+tree.remove(170)
+JSON.stringify(traverse(tree.root))
+
+//     9
+//  4     20
+//1  6  15  170
+```
+
+### Balance Binary Tree
+
+https://stackoverflow.com/questions/13852870/red-black-tree-over-avl-tree
+
+AVL Tree
+
+https://www.cs.usfca.edu/~galles/visualization/AVLtree.html
+
+https://medium.com/basecs/the-little-avl-tree-that-could-86a3cae410c7
+
+Red Black Tree
+
+https://www.cs.usfca.edu/~galles/visualization/RedBlack.html
+
+https://medium.com/basecs/painting-nodes-black-with-red-black-trees-60eacb2be9a5
+
+## Heaps
+
+https://visualgo.net/en/heap?slide=1
+
+https://stackoverflow.com/questions/1699057/why-are-two-different-concepts-both-called-heap
+
+max Heaps
+
+min Heaps
+
+the parents will be 'better' than the chidlren
+
+## Binary Heaps
+
+![image-20200926171000486](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200926171000486.png)
 
 ### Priority Queues
 
-### Heaps
+https://www.geeksforgeeks.org/implementation-priority-queue-javascript/
 
-### Graphs
+is a **Binary Heaps**
 
-#### Adj matrix
+Highest priority go first
 
-#### Adj Lists
+```js
+// User defined class 
+// to store element and its priority 
+class QElement { 
+    constructor(element, priority) 
+    { 
+        this.element = element; 
+        this.priority = priority; 
+    } 
+} 
+  
+// PriorityQueue class 
+class PriorityQueue { 
+  
+    // An array is used to implement priority 
+    constructor() 
+    { 
+        this.items = []; 
+    } 
+    // enqueue function to add element to the queue as per priority 
+    enqueue(element, priority) 
+    { 
+        // creating object from queue element 
+        var qElement = new QElement(element, priority); 
+        var contain = false; 
+
+        // iterating through the entire 
+        // item array to add element at the 
+        // correct location of the Queue 
+        for (var i = 0; i < this.items.length; i++) { 
+            if (this.items[i].priority > qElement.priority) { 
+                // Once the correct location is found it is 
+                // enqueued 
+                this.items.splice(i, 0, qElement); 
+                contain = true; 
+                break; 
+            } 
+        } 
+
+        // if the element have the highest priority 
+        // it is added at the end of the queue 
+        if (!contain) { 
+            this.items.push(qElement); 
+        } 
+    } 
+
+    // dequeue method to remove element from the queue 
+    dequeue() 
+    { 
+        // return the dequeued element 
+        // and remove it. 
+        // if the queue is empty 
+        // returns Underflow 
+        if (this.isEmpty()) 
+            return "Underflow"; 
+        return this.items.shift(); 
+    } 
+    // front function 
+    front() 
+    { 
+        // returns the highest priority element 
+        // in the Priority queue without removing it. 
+        if (this.isEmpty()) 
+            return "No elements in Queue"; 
+        return this.items[0]; 
+    }
+    // rear function 
+    rear() 
+    { 
+        // returns the lowest priorty 
+        // element of the queue 
+        if (this.isEmpty()) 
+            return "No elements in Queue"; 
+        return this.items[this.items.length - 1]; 
+    } 
+    // isEmpty function 
+    isEmpty() 
+    { 
+        // return true if the queue is empty. 
+        return this.items.length == 0; 
+    } 
+    // printQueue function prints all the element of the queue 
+    printPQueue() 
+    { 
+        var str = ""; 
+        for (var i = 0; i < this.items.length; i++) 
+            str += this.items[i].element + " "; 
+        return str; 
+    } 
+} 
+```
+
+
+
+## Tries
+
+![image-20200919010005444](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200919010005444.png)
+
+string problem
+
+## Graphs
+
+https://visualgo.net/en/graphds?slide=1
+
+Relations
+
+![image-20200920232710591](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200920232710591.png)
+
+social network, map, ...
+
+![image-20200920232952077](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200920232952077.png)
+
+![image-20200920234055908](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200920234055908.png)
+
+![image-20200926171858113](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200926171858113.png)
+
+![image-20200920234440612](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200920234440612.png)
+
+```js
+class Graph { 
+  constructor() { 
+    this.numberOfNodes = 0; 
+    this.adjacentList = {}; 
+  } 
+  addVertex(node)  { 
+    this.adjacentList[node] = []; 
+    this.numberOfNodes++;
+  } 
+  addEdge(node1, node2) { 
+    //uniderected Graph 
+    this.adjacentList[node1].push(node2); 
+    this.adjacentList[node2].push(node1); 
+  } 
+  showConnections() { 
+    const allNodes = Object.keys(this.adjacentList); 
+    for (let node of allNodes) { 
+      let nodeConnections = this.adjacentList[node]; 
+      let connections = ""; 
+      let vertex;
+      for (vertex of nodeConnections) {
+        connections += vertex + " ";
+      } 
+      console.log(node + "-->" + connections); 
+    } 
+  } 
+} 
+```
+
+# Algorithms
+
+https://gist.github.com/TSiege/cbb0507082bb18ff7e4b
+
+https://www.interviewcake.com/sorting-algorithm-cheat-sheet
+
+https://sinon.org/algorithms/
+
+https://github.com/phishman3579/java-algorithms-implementation
+
+https://visualgo.net/en
+
+https://xlinux.nist.gov/dads/
+
+https://algs4.cs.princeton.edu/home/
+
+https://www.bigocheatsheet.com/
+
+https://www.clear.rice.edu/comp160/data_cheat.html
+
+http://www.sergiy.ca/guide-to-selecting-appropriate-map-collection-in-java/
+
+http://cooervo.github.io/Algorithms-DataStructures-BigONotation/index.html
+
+![img](https://qph.fs.quoracdn.net/main-qimg-ab520faa02d4b693f5fc66c5ce17604c)
+
+## Partterns
+
+![image-20200924064930242](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200924064930242.png)
+
+![image-20200924092815774](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200924092815774.png)
+
+![image-20200924151424941](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200924151424941.png)
+
+![image-20200925013019562](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200925013019562.png)
+
+# Search
+
+linear search
+
+O(1) O(n)
+
+binary search
+
+O(1) O(logN)
+
+# Sort
+
+https://www.toptal.com/developers/sorting-algorithms
+
+## Bubble Sort
+
+```
+Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.
+
+**Example:**
+**First Pass:**
+( **5** **1** 4 2 8 ) –> ( **1** **5** 4 2 8 ), Here, algorithm compares the first two elements, and swaps since 5 > 1.
+( 1 **5** **4** 2 8 ) –> ( 1 **4** **5** 2 8 ), Swap since 5 > 4
+( 1 4 **5** **2** 8 ) –> ( 1 4 **2** **5** 8 ), Swap since 5 > 2
+( 1 4 2 **5** **8** ) –> ( 1 4 2 **5** **8** ), Now, since these elements are already in order (8 > 5), algorithm does not swap them.
+
+**Second Pass:**
+( **1** **4** 2 5 8 ) –> ( **1** **4** 2 5 8 )
+( 1 **4** **2** 5 8 ) –> ( 1 **2** **4** 5 8 ), Swap since 4 > 2
+( 1 2 **4** **5** 8 ) –> ( 1 2 **4** **5** 8 )
+( 1 2 4 **5** **8** ) –> ( 1 2 4 **5** **8** )
+Now, the array is already sorted, but our algorithm does not know if it is completed. The algorithm needs one **whole** pass without **any** swap to know it is sorted.
+
+**Third Pass:**
+( **1** **2** 4 5 8 ) –> ( **1** **2** 4 5 8 )
+( 1 **2** **4** 5 8 ) –> ( 1 **2** **4** 5 8 )
+( 1 2 **4** **5** 8 ) –> ( 1 2 **4** **5** 8 )
+( 1 2 4 **5** **8** ) –> ( 1 2 4 **5** **8** )
+```
+
+## Selection Sort
+
+```
+arr[] = 64 25 12 22 11
+
+// Find the minimum element in arr[0...4]
+// and place it at beginning
+11 25 12 22 64
+
+// Find the minimum element in arr[1...4]
+// and place it at beginning of arr[1...4]
+11 12 25 22 64
+
+// Find the minimum element in arr[2...4]
+// and place it at beginning of arr[2...4]
+11 12 22 25 64
+
+// Find the minimum element in arr[3...4]
+// and place it at beginning of arr[3...4]
+11 12 22 25 64 
+```
+
+## Insertion sort
+
+![insertion-sort](https://media.geeksforgeeks.org/wp-content/uploads/insertionsort.png)
+
+## B vs S vs I sort
+
+![image-20200926003713413](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200926003713413.png)
+
+## Merge sort
+
+https://www.geeksforgeeks.org/merge-sort/
+
+![Merge-Sort-Tutorial](https://media.geeksforgeeks.org/wp-content/cdn-uploads/Merge-Sort-Tutorial.png)
+
+```
+MergeSort(arr[], l,  r)
+If r > l
+     1. Find the middle point to divide the array into two halves:  
+             middle m = (l+r)/2
+     2. Call mergeSort for first half:   
+             Call mergeSort(arr, l, m)
+     3. Call mergeSort for second half:
+             Call mergeSort(arr, m+1, r)
+     4. Merge the two halves sorted in step 2 and 3:
+             Call merge(arr, l, m, r)
+```
+
+Sort linklist, Count inversion, external sorting
+
+Time: O(N\*logN)
+
+Space: O(n)
+
+## Quicksort
+
+https://www.geeksforgeeks.org/quick-sort/
+
+```
+/* low  --> Starting index,  high  --> Ending index */
+quickSort(arr[], low, high)
+{
+    if (low < high)
+    {
+        /* pi is partitioning index, arr[pi] is now
+           at right place */
+        pi = partition(arr, low, high);
+
+        quickSort(arr, low, pi - 1);  // Before pi
+        quickSort(arr, pi + 1, high); // After pi
+    }
+}
+```
+
+![quicksort](https://www.geeksforgeeks.org/wp-content/uploads/gq/2014/01/QuickSort2.png)
+
+![image-20200926161436312](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200926161436312.png)
+
+## Radix sort
+
+**1)** Do following for each digit i where i varies from least significant digit to the most significant digit.
+………….**a)** Sort input array using counting sort (or any stable sort) according to the i’th digit.
+
+```
+170, 45, 75, 90, 802, 24, 2, 66
+Sorting by least significant digit (1s place) gives: [*Notice that we keep 802 before 2, because 802 occurred before 2 in the original list, and similarly for pairs 170 & 90 and 45 & 75.]
+
+Sorting by next digit (10s place) gives: [*Notice that 802 again comes before 2 as 802 comes before 2 in the previous list.]
+
+802, 2, 24, 45, 66, 170, 75, 90
+Sorting by most significant digit (100s place) gives:
+
+2, 24, 45, 66, 75, 90, 170, 802
+```
+
+![image-20200926162933604](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200926162933604.png)
+
+## JS sort
+
+-if no comparator => sort by alphabet (unicode)
+
+-With comparator:
+
+returns negative => a before b
+
+return positive => a after b
+
+return 0 => same
+
+![image-20200925223114475](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200925223114475.png)
 
 # More
+
+https://vnoi.info/wiki/Home
+
+https://www.reddit.com/r/learnprogramming/comments/3gpvyx/algorithms_and_data_structures_cheat_sheets/?sort=confidence
+
+https://thimbleby.gitlab.io/algorithm-wiki-site/
+
+https://visualgo.net/en
+
+https://cse.buffalo.edu/~hungngo/classes/2014/Fall/250/notes.html
+
+https://www3.cs.stonybrook.edu/~algorith/video-lectures/
+
+https://algs4.cs.princeton.edu/home/
+
+http://blog.notdot.net/tag/damn-cool-algorithms
 
 More on Algorithms & Data Structures: https://adrianmejia.com/how-you-can-change-the-world-learning-data-structures-algorithms-free-online-course-tutorial/
 
