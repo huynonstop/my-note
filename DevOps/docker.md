@@ -1,5 +1,7 @@
 https://www.youtube.com/watch?v=gAkwW2tuIqE
 
+https://www.youtube.com/watch?v=1xo-0gCVhTU
+
 # VM
 
 ![image-20200825130341150](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200825130341150.png)

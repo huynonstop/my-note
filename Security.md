@@ -148,6 +148,8 @@ https://blogvaronis2.wpengine.com/what-is-oauth/
 
 https://oauth.net/about/introduction/
 
+https://medium.com/@sherryhsu/session-vs-token-based-authentication-11a6c5ac45e4
+
 ## HTTP Basic Authentication
 
 Base64 encode username and password (username:password) and put it in the Authentication header.
@@ -221,6 +223,8 @@ There are ways to encode date and time into this token so someone intercepting t
 The user will need to pass this token through either the header, body or as a query parameter when it calls on an endpoint to access resources.
 
 ### JSON Web Token
+
+https://trungquandev.com/hieu-sau-ve-jwt-json-web-tokens/?fbclid=IwAR3RqABq9ZJZgiKiYFZnOvbkSmLHU6tjgJzcazYIBfQ_JgaabyCxVQxTXw8
 
 https://tools.ietf.org/html/rfc7519
 

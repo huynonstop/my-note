@@ -1,6 +1,42 @@
 # OOP
 
+## Principles of OOP
+
 ![img](https://images.viblo.asia/e8e24a71-54dd-4b1d-94c0-3862a46683b9.png)
+
+### Abstraction
+
+Applying abstraction means that each object should **only** expose a high-level mechanism for using it.
+
+Abstract means a concept or an Idea which is not associated with any particular instance. Using abstract class/Interface we express the intent of the class rather than the actual implementation. In a way, one class should not know the inner details of another in order to use it, just knowing the interfaces should be good enough.
+
+This mechanism should hide internal implementation details. It should only reveal operations relevant for the other objects.
+
+Think — a coffee machine. It does a lot of stuff and makes quirky noises under the hood. But all you have to do is put in coffee and press a button.
+
+Preferably, this mechanism should be easy to use and should rarely change over time. Think of it as a small set of public methods which any other class can call without “knowing” how they work.
+
+### Encapsulation
+
+Encapsulation is the mechanism of hiding of data implementation by restricting access to public things (data and methods) and don't allow to access to private things
+
+Only inside of object's class can access to **private** things . And the object only expose public things for the outside.
+
+### Inheritance
+
+This reuse the common logic
+
+It means that you create a (child) class by deriving from another (parent) class. This way, we form a hierarchy.
+
+The child class reuses all fields and methods of the parent class (common part) and can implement its own (unique part).
+
+<img src="https://cdn-media-1.freecodecamp.org/images/ZIm7lFjlrKeMWxcH8fqBapNkuSJIxW9-t9yf" alt="img" style="zoom:100%; background: white" />
+
+### Polymorphism
+
+ polymorphism gives a way to use a class exactly like its parent so there’s no confusion with mixing types. But each child class keeps its own implement methods as they are.
+
+<img src="https://cdn-media-1.freecodecamp.org/images/8GySv1U8Kh9nVVyiTqv5cDuWZC7p0uARVeF0" alt="img" style="zoom:100%; background: white" />
 
 ## SOLID
 
@@ -85,56 +121,17 @@ objects of a superclass shall be replaceable with objects of its subclasses with
 
 ## Composition over inheritance
 
-```
-User => need eat(),sleep(),play()
-  email
-  username
-  pets
-  friends
-  adopt()
-  befriend()
-
+```js
 Animal
-  name
-  energy
-  eat()
-  sleep()
-  play()
-
-  Dog
-    breed
-    bark()
-
-  Cat
-    declawed
-    meow()
-```
-
-```
-FarmFantasy => God-obj
-  name
-  play()
-  sleep()
-  eat()
-
-  User
-    email
-    username
-    pets
-    friends
-    adopt()
-    befriend()
-
-  Animal
-    energy
-
-    Dog
-      breed
-      bark()
-
-    Cat
-      declawed
-      meow()
+	eat()
+	sound()
+FlyAnimal extend Aninal
+	fly()
+SwimAnimal extend Animal
+	swim()
+MoveAnimal extend Animal
+	move()
+MoveAndFlyAnimal extend ?
 ```
 
 Inheritance makes us turn a blind eye to the inevitable fact that our class structure will most likely change in the future, and when it does, our tightly coupled inheritance structure is going to crumble.
