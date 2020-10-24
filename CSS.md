@@ -1,5 +1,7 @@
 # CSS
 
+https://academind.com/learn/css/
+
 ## CSS selector
 
 1. `a` is whether inline styles are being used. If the property declaration is an inline style on the element, `a` is 1, else 0.

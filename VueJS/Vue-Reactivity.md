@@ -8,6 +8,8 @@ https://v3.vuejs.org/guide/reactivity-fundamentals.html
 
 https://v3.vuejs.org/guide/reactivity-computed-watchers.html
 
+https://www.youtube.com/watch?v=HezB8UEU5Rg
+
 One of Vue’s most distinct features is the unobtrusive reactivity system. Models are proxied JavaScript objects. When you modify them, the view updates.
 
 Reactivity is a programming paradigm that allows us to adjust to changes in a declarative manner. The canonical example that people usually show, because it’s a great one, is an **excel spreadsheet**.

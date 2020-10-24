@@ -91,6 +91,8 @@ A *phantom read* occurs when, in the course of a transaction, new rows are added
 
 # NoSQL
 
+https://academind.com/learn/mongodb/complete-introduction-summary/
+
 ![image-20200716223418804](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200716223418804.png)
 
 # N+1 problem

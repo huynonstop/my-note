@@ -1,5 +1,7 @@
 # Hooks
 
+https://www.youtube.com/watch?v=unFHsn0qSMA&list=PLeS7aZkL6GOsHNoyeEpeL8B1PnbKoQD9m&index=1
+
 https://reactjs.org/docs/hooks-reference.html
 
 https://reactjs.org/docs/hooks-faq.html
@@ -289,6 +291,8 @@ https://stackoverflow.com/questions/53513872/react-hooks-what-is-the-difference-
 
 ## useState
 
+> useState give us a value persist across renders and a function to change value and trigger re-render
+
 ![image-20200831095141404](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200831095141404.png)
 
 ## useEffect
@@ -417,6 +421,10 @@ function ThemedButton() {
 ## useMemo
 
 ## useRef
+
+> persist value and no need to notify re-render
+
+https://www.youtube.com/watch?v=ZGL9XiveFHs
 
 https://medium.com/trabe/react-useref-hook-b6c9d39e2022
 
@@ -550,6 +558,8 @@ https://www.codebeast.dev/usestate-vs-useref-re-render-or-not/
 2. Both useState and useRef remembers their data after a re-render
 
 React re-renders to show us the changes we have requested through events, requests, timers, and so on. But they are not the actual triggers — state change is the actual trigger.
+
+![image-20201021230506432](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201021230506432.png)
 
 ## Preserving data without re-rendering
 
@@ -704,6 +714,35 @@ function FriendListItem(props) {
 **Do two components using the same Hook share state?** No. Custom Hooks are a mechanism to reuse *stateful logic* (such as setting up a subscription and remembering the current value), but every time you use a custom Hook, all state and effects inside of it are fully isolated.
 
 **How does a custom Hook get isolated state?** Each *call* to a Hook gets isolated state. Because we call `useFriendStatus` directly, from React’s point of view our component just calls `useState` and `useEffect`.
+
+## usePersitentValue
+
+```jsx
+import React, { useState, useEffect } from 'react';
+
+function usePersitentValue(initValue) {
+    return useState({current: initValue})[0]
+}
+
+function Counter() {
+    const [count,setCount] = useState(0)
+    const id = usePersitentValue(null)
+    const clear = () => {
+        window.clearInterval(id.current)
+    }
+    useEffect(() => {
+        id.current = window.setInterval(() => {
+            setCount((c) => c+1)
+        })
+    }, [])
+    return (
+    	<div>
+            <h1>{count}</h1>
+        	<button onClick={clear}>Stop</button>
+        </div>
+    )
+}
+```
 
 ## useInterval
 

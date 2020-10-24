@@ -22,6 +22,8 @@ https://quasar.dev/
 
 https://vuetifyjs.com/en/
 
+https://academind.com/learn/firebase/a-comprehensive-project-with-vuetify-firebase/
+
 # Vue-powered Static Site Generator
 
 https://vuepress.vuejs.org/

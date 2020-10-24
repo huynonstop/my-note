@@ -2,6 +2,8 @@ https://www.cloudflare.com/learning/
 
 https://developer.mozilla.org/en-US/docs/Glossary
 
+https://academind.com/learn/web-dev/
+
 # Network Layer
 
 [https://www.electronicdesign.com/unused/article/21800810/whats-the-difference-between-the-osi-sevenlayer-network-model-and-tcpip#:~:text=The%20Internet%20Protocol%20layer%20is,%2C%206%2C%20and%207%20combined.](https://www.electronicdesign.com/unused/article/21800810/whats-the-difference-between-the-osi-sevenlayer-network-model-and-tcpip#:~:text=The Internet Protocol layer is,%2C 6%2C and 7 combined.)

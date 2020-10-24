@@ -4,6 +4,8 @@ https://github.com/huynonstop/react-redux-links
 
 https://goshakkk.name/on-react/
 
+https://academind.com/learn/react/
+
 # React is a JavaScript “library”
 
 https://stackoverflow.com/questions/51506440/mvvm-architectural-pattern-for-a-reactjs-application

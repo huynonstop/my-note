@@ -297,3 +297,27 @@ export default class LoginComponent extends Component {
 <BrowserRouter basename="/">
 </BrowserRouter>
 ```
+
+# React router v5
+
+## URL params
+
+```jsx
+<Route path="/:params">
+	<Component></Component>
+</Route>
+
+import {useParams} from 'react-router-dom'
+function Component() {
+    const [user,setUser] = useState(null);
+    const {params} = useParams();
+    useEffect(() => {
+        fetch(`https://api.com/user/${params}`)
+        	.then(setUser)
+    }, params)
+    return(
+    	//...
+    )
+}
+```
+

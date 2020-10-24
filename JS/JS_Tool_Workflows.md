@@ -18,47 +18,76 @@ Want to use a preset? Here you go: https://www.npmjs.com/search?q=eslint-config 
 
 https://eslint.org/docs/user-guide/getting-started
 
-## Webpack
+## Module bundlers
 
-#### Bundle and optimize code
+### Webpack
 
-### `webpack.config.js`
+https://webpack.js.org/concepts/
 
-![image-20200611143200356](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611143200356.png)
+https://academind.com/learn/webpack/webpack-2-the-basics/
 
-![image-20200611142536194](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611142536194.png)
+Webpack is a static module bundler for JavaScript applications — it takes all the code from your application and makes it usable in a web browser.
 
-#### Webpack dev server (hot reload)
+When Webpack processes your application, it builds a dependency graph which maps out the modules that your project needs and generates one or more **bundles**. A bundle is a distinct grouping of connected code that has been compiled and transformed for the browser.
 
-![image-20200611143529885](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611143529885.png)
+If one file depends on another (it uses the code from a separate file), Webpack treats this as a dependency. Webpack also takes your non-code assets (images, fonts, styles, etc.) and converts them to dependencies for your application.
 
-![image-20200611143559885](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611143559885.png)
+![image-20201024123431671](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201024123431671.png)
 
-### Webpack dev tool
+![image-20201024122747596](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201024122747596.png)
 
-![image-20200611143901367](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611143901367.png)
+Loaders: compile files not JS
 
-### Production
+webpack.config.js: entry, output, module (rules => match files to loaders, plugins => a tap into the bundler life cycle, Dev Server =>  watch and serve files (auto recompile want have change))  
 
-`webpack.config.prod.js`
 
-![image-20200611144206834](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611144206834.png)
 
-![image-20200611144431991](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611144431991.png)
+> (legacy)
+>
+> Bundle and optimize code
+>
+> `webpack.config.js`
+>
+> ![image-20200611143200356](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611143200356.png)
+>
+> ![image-20200611142536194](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611142536194.png)
+>
+> Webpack dev server (hot reload)
+>
+> ![image-20200611143529885](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611143529885.png)
+>
+> ![image-20200611143559885](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611143559885.png)
+>
+> Webpack dev tool
+>
+> ![image-20200611143901367](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611143901367.png)
+>
+> Production
+>
+> `webpack.config.prod.js`
+>
+> ![image-20200611144206834](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611144206834.png)
+>
+> ![image-20200611144431991](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611144431991.png)
+>
+> Clean webpack plugin
+>
+> clean-webpack-plugin
+>
+> ![image-20200611144817778](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611144817778.png)
+>
+> ![image-20200611144835668](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611144835668.png)
+>
+> New name for file (no old cache on browser)
+>
+> ![image-20200611145119738](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611145119738.png)
+>
+> change import script in the html file
+>
 
-#### Clean webpack plugin
+### Snowpack
 
-clean-webpack-plugin
-
-![image-20200611144817778](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611144817778.png)
-
-![image-20200611144835668](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611144835668.png)
-
-#### New name for file (no old cache on browser)
-
-![image-20200611145119738](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611145119738.png)
-
-change import script in the html file
+https://www.snowpack.dev/
 
 # Browser support
 
@@ -102,7 +131,7 @@ install `core-js` or preset like that
 
 ![image-20200611171758128](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611171758128.png)
 
-## Disable JS
+# Disable JS
 
 ![image-20200611172441016](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611172441016.png)
 

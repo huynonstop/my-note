@@ -59,7 +59,9 @@ It's common for an app to be organized into a tree of nested components
 
 For example, you might have components for a header, sidebar, and content area, each typically containing other components for navigation links, blog posts, etc.
 
+## Comunication between Component
 
+![image-20201022173111114](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201022173111114.png)
 
 ## Passing Data to Child Components with Props
 
@@ -749,7 +751,7 @@ Note that props are validated before a component instance is created, so instanc
 
 The `type` can be one of the following native constructors: String, Number, Boolean, Array, Object, Date, Function, Symbol
 
-In addition, `type` can also be a custom constructor function and the assertion will be made with an `instanceof` check. For example, given the following constructor function exists:
+In addition, `type` can also be a custom constructor function  (built-in ones like `Date` or custom ones).  and the assertion will be made with an `instanceof` check. For example, given the following constructor function exists:
 
 ```js
 function Person(firstName, lastName) {
@@ -1636,6 +1638,23 @@ app.component('todo-list', {
   `
 })
 // => This allows us to more safely keep developing that component, without fear that we might change/remove something that a child component is relying on. The interface between these components remains clearly defined, just as with props.
+
+// Provide a method, instead passing custom event
+app.component('todo-list', {
+  provide() {
+    return {
+      doSomething: this.doSomething
+    }
+  },
+  methods: {
+    doSomething() {
+        console.log("something")
+    }  
+  },
+  template: `
+    ...
+  `
+})
 ```
 
 In fact, you can think of dependency injection as sort of “long-range props”, except:

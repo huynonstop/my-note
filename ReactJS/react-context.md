@@ -8,6 +8,8 @@ In a typical React application, data is passed top-down (parent to child) via pr
 
 ## When to Use Context
 
+![image-20201021230611795](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201021230611795.png)
+
 Context is designed to share data that can be considered “global” for a tree of React components, such as the current authenticated user, theme, or preferred language. For example, in the code below we manually thread through a “theme” prop in order to style the Button component:
 
 ```jsx
@@ -137,6 +139,8 @@ However, sometimes the same data needs to be accessible by many components in th
 ## API
 
 ### `React.createContext`
+
+![image-20201021231900346](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201021231900346.png)
 
 ```jsx
 const MyContext = React.createContext(defaultValue);
@@ -461,6 +465,28 @@ function Content() {
 
 If two or more context values are often used together, you might want to consider creating your own render prop component that provides both.
 
+## More
+
+![image-20201021230822851](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201021230822851.png)
+
+![image-20201021230846334](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201021230846334.png)
+
+![image-20201021230918256](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201021230918256.png)
+
+=> value will be a new object (changed) when App re-render
+
+=> when data changed, React will re-render all component are using Consumer to subscribe that data
+
+=> performance issues
+
+![image-20201021231629213](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201021231629213.png)
+
+![image-20201021231801760](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201021231801760.png)
+
+=> same object
+
+![image-20201021232054505](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201021232054505.png)
+
 ## Caveats
 
 Because context uses reference identity to determine when to re-render, there are some gotchas that could trigger unintentional renders in consumers when a provider’s parent re-renders. For example, the code below will re-render all consumers every time the Provider re-renders because a new object is always created for `value`:
@@ -469,7 +495,8 @@ Because context uses reference identity to determine when to re-render, there ar
 class App extends React.Component {
   render() {
     return (
-      <MyContext.Provider value={{something: 'something'}}>        <Toolbar />
+      <MyContext.Provider value={{something: 'something'}}>
+            <Toolbar />
       </MyContext.Provider>
     );
   }
@@ -488,13 +515,17 @@ class App extends React.Component {
 
   render() {
     return (
-      <Provider value={this.state.value}>        <Toolbar />
+      <Provider value={this.state.value}> 
+            <Toolbar />
       </Provider>
     );
   }
 }
 ```
 
+# useContext
 
+![image-20201021232136071](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201021232136071.png)
 
-## 
+![image-20201021232225579](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201021232225579.png)
+

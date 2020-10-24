@@ -1,5 +1,7 @@
 https://www.youtube.com/watch?v=kM4oZTJaO8k
 
+https://academind.com/learn/python/
+
 # Conditional statement
 
 ```python

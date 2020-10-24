@@ -1,5 +1,7 @@
 # **JavaScript**
 
+https://academind.com/learn/javascript/
+
 ## What is JavaScript
 
 JavaScript is a **dynamic**, **weakly typed** **programming language** which is **compiled at runtime**. It can be executed as part of a webpage in a browser or directly on any machine (**“host environment”**).
