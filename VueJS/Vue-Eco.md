@@ -36,6 +36,46 @@ https://cli.vuejs.org/
 
 https://vue-loader.vuejs.org/
 
+## Scoped CSS
+
+https://vue-loader.vuejs.org/guide/scoped-css.html
+
+When a `<style>` tag has the `scoped` attribute, its CSS will apply to elements of the current component only. 
+
+This is similar to the style encapsulation found in Shadow DOM
+
+It is achieved by using PostCSS to transform the following:
+
+```html
+<style scoped>
+.example {
+  color: red;
+}
+</style>
+
+<template>
+  <div class="example">hi</div>
+</template>
+```
+
+Into the following:
+
+```html
+<style>
+.example[data-v-f3f3eg9] {
+  color: red;
+}
+</style>
+
+<template>
+  <div class="example" data-v-f3f3eg9>hi</div>
+</template>
+```
+
+## CSS module
+
+https://vue-loader.vuejs.org/guide/css-modules.html
+
 # Vue Devtools
 
 https://github.com/vuejs/vue-devtools

@@ -335,20 +335,6 @@ app.component('alert-box', {
 // => we just add the slot where we want it to go
 ```
 
-## Dynamic Components
-
-The above is made possible by Vue's `<component>` element with the `is` special attribute:
-
-```html
-<!-- Component changes when currentTabComponent changes -->
-<component :is="currentTabComponent"></component>
-```
-
-In the example above, `currentTabComponent` can contain either:
-
-- the name of a registered component, or
-- a component's options object
-
 ##  DOM Template Parsing Caveats
 
 Some HTML elements, such as `<ul>`, `<ol>`, `<table>` and `<select>` have restrictions on what elements can appear inside them, and some elements such as `<li>`, `<tr>`, and `<option>` can only appear inside certain other elements.
@@ -400,6 +386,43 @@ It should be noted that **these limitations do \*not\* apply if you are using st
 # Component Registration
 
 To use these components in templates, they must be registered so that Vue knows about them. There are two types of component registration: **global** and **local**
+
+## Component Names
+
+When registering a component, it will always be given a name. For example, in the global registration we've seen so far:
+
+```js
+const app = Vue.createApp({...})
+
+app.component('my-component-name', {
+  /* ... */
+})
+```
+
+The component's name is the first argument of `app.component`. In the example above, the component's name is "my-component-name".
+
+1. All lowercase
+2. Contains a hyphen (i.e., has multiple words connected with the hyphen symbol)
+
+### Name Casing
+
+When defining components in a string template or a single-file component, you have two options when defining component names:
+
+```js
+//With kebab-case
+app.component('my-component-name', {
+  /* ... */
+})
+// When defining a component with kebab-case, you must also use kebab-case when referencing its custom element, such as in `<my-component-name>`.
+```
+
+```js
+//With PascalCase
+app.component('MyComponentName', {
+  /* ... */
+})
+// When defining a component with PascalCase, you can use either case when referencing its custom element. That means both `<my-component-name>` and `<MyComponentName>` are acceptable. Note, however, that only kebab-case names are valid directly in the DOM (i.e. non-string templates).
+```
 
 ## Global Registration
 
@@ -483,27 +506,21 @@ const ComponentB = {
   }
   // ...
 }
-```
-
-Or if you're using ES2015 modules, such as through Babel and Webpack, that might look more like:
-
-```js
+// Or if you're using ES2015 modules, such as through Babel and Webpack, that might look more like:
 import ComponentA from './ComponentA.vue'
 
 export default {
   components: {
-    ComponentA
+    ComponentA // same ComponentA: ComponentA
   }
   // ...
 }
+// the name of the ComponentA is both:
+// - the custom element name to use in the template, and
+// - the name of the variable containing the component options
 ```
 
-Note that in ES2015+, placing a variable name like `ComponentA` inside an object is shorthand for `ComponentA: ComponentA`, meaning the name of the variable is both:
-
-- the custom element name to use in the template, and
-- the name of the variable containing the component options
-
-## Module Systems (Local Registration)
+### Module Systems (Local Registration)
 
 We recommend creating a `components` directory, with each component in its own file.
 
@@ -520,43 +537,6 @@ export default {
   // ...
 }
 // => Now both `ComponentA` and `ComponentC` can be used inside `ComponentB`'s template.
-```
-
-## Component Names
-
-When registering a component, it will always be given a name. For example, in the global registration we've seen so far:
-
-```js
-const app = Vue.createApp({...})
-
-app.component('my-component-name', {
-  /* ... */
-})
-```
-
-The component's name is the first argument of `app.component`. In the example above, the component's name is "my-component-name".
-
-1. All lowercase
-2. Contains a hyphen (i.e., has multiple words connected with the hyphen symbol)
-
-### Name Casing
-
-When defining components in a string template or a single-file component, you have two options when defining component names:
-
-```js
-//With kebab-case
-app.component('my-component-name', {
-  /* ... */
-})
-// When defining a component with kebab-case, you must also use kebab-case when referencing its custom element, such as in `<my-component-name>`.
-```
-
-```js
-//With PascalCase
-app.component('MyComponentName', {
-  /* ... */
-})
-// When defining a component with PascalCase, you can use either case when referencing its custom element. That means both `<my-component-name>` and `<MyComponentName>` are acceptable. Note, however, that only kebab-case names are valid directly in the DOM (i.e. non-string templates).
 ```
 
 # Props
@@ -1249,7 +1229,7 @@ As a rule, remember that:
 
 > Everything in the parent template is compiled in parent scope; everything in the child template is compiled in the child scope.
 
-## Fallback Content
+## Fallback (default) Content
 
 There are cases when it's useful to specify fallback (i.e. default) content for a slot, to be rendered only when no content is provided. For example, in a `<submit-button>` component:
 
@@ -1369,6 +1349,19 @@ The rendered HTML will be:
     <p>Here's some contact info</p>
   </footer>
 </div>
+```
+
+### Not render empty warper element when empty slot
+
+```vue
+<template>
+  <div class="base-card">
+    <header v-if="$slot.header">
+      <slot name="header"></slot>
+    </header>
+    <slot></slot>
+  </div>
+</template>
 ```
 
 Note that **`v-slot` can only be added to a `<template> `** and  with 1 exception below:
@@ -1681,7 +1674,19 @@ In this, any change to `todos.length` will be reflected correctly in the compone
 
 #  Dynamic & Async Components
 
-## Dynamic Components with `keep-alive`
+## Dynamic Components
+
+```html
+<!-- Component changes when currentTabComponent changes -->
+<component :is="currentTabComponent"></component>
+```
+
+In the example above, `currentTabComponent` can contain either:
+
+- the name of a registered component, or
+- a component's options object
+
+## `keep-alive` Dynamic Components
 
 https://v3.vuejs.org/api/built-in-components.html#keep-alive
 
@@ -1845,6 +1850,8 @@ createApp({
 ```
 
 ### Using with Suspense
+
+https://vueschool.io/articles/vuejs-tutorials/suspense-new-feature-in-vue-3/
 
 Async components are *suspensible* by default. This means if it has a `<Suspense>` in the parent chain, it will be treated as an async dependency of that `<Suspense>`. In this case, the loading state will be controlled by the `<Suspense>`, and the component's own loading, error, delay and timeout options will be ignored.
 

@@ -1,11 +1,4 @@
-```html
-<div id="inline-handler">
-  <button @click="say('hi')">Say hi</button>
-  <button @click="say('what')">Say what</button>
-</div>
-```
-
-# What is Vue.js
+# What is Vue.js ? What can it do ?
 
 ![image-20201016111906517](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201016111906517.png)
 
@@ -16,6 +9,8 @@
 ![image-20201019184126291](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201019184126291.png)
 
 ![image-20201022173132938](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201022173132938.png)
+
+![image-20201026230418614](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201026230418614.png)
 
 # Creating and connecting Vue app instances
 

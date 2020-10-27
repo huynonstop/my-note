@@ -4,4 +4,135 @@
 
 # Teleport
 
+https://v3.vuejs.org/guide/teleport.html
+
+https://vueschool.io/lessons/vue-3-teleport?friend=vuejs
+
+https://v3.vuejs.org/api/built-in-components.html#teleport
+
+Vue encourages us to build our UIs by encapsulating UI and related behavior into components. We can nest them inside one another to build a tree that makes up an application UI.
+
+However, sometimes a part of a component's template belongs to this component logically, while from a technical point of view, it would be preferable to move this part of the template somewhere else in the DOM, outside of the Vue app.
+
+A common scenario for this is creating a component that includes a full-screen modal. In most cases, you'd want the modal's logic to live within the component, but the positioning of the modal quickly becomes difficult to solve through CSS, or requires a change in component composition.
+
+```html
+<body>
+  <div style="position: relative;">
+    <h3>Tooltips with Vue 3 Teleport</h3>
+    <div>
+      <modal-button></modal-button>
+    </div>
+  </div>
+</body>
+```
+
+```js
+const app = Vue.createApp({});
+// The component will have a button element to trigger the opening of the modal, and a div element with a class of .modal, which will contain the modal's content and a button to self-close.
+app.component('modal-button', {
+  template: `
+    <button @click="modalOpen = true">
+        Open full screen modal!
+    </button>
+
+    <div v-if="modalOpen" class="modal">
+      <div>
+        I'm a modal! 
+        <button @click="modalOpen = false">
+          Close
+        </button>
+      </div>
+    </div>
+  `,
+  data() {
+    return { 
+      modalOpen: false
+    }
+  }
+})
+// When using this component inside the initial HTML structure, we can see a problem - the modal is being rendered inside the deeply nested div and the position: absolute of the modal takes the parent relatively positioned div as reference.
+```
+
+Teleport provides a clean way to allow us to control under which parent in our DOM we want a piece of HTML to be rendered, without having to resort to global state or splitting this into two components.
+
+```js
+// Let's modify our modal-button to use <teleport> and tell Vue "teleport this HTML to the "body" tag".
+app.component('modal-button', {
+  template: `
+    <button @click="modalOpen = true">
+        Open full screen modal! (With teleport!)
+    </button>
+
+    <teleport to="body">
+      <div v-if="modalOpen" class="modal">
+        <div>
+          I'm a teleported modal! 
+          (My parent is "body")
+          <button @click="modalOpen = false">
+            Close
+          </button>
+        </div>
+      </div>
+    </teleport>
+  `,
+  data() {
+    return { 
+      modalOpen: false
+    }
+  }
+})
+// => once we click the button to open the modal, Vue will correctly render the modal's content as a child of the body tag.
+```
+
+## Using with Vue components
+
+If `<teleport>` contains a Vue component, it will remain a logical child component of the `<teleport>`'s parent
+
+```js
+const app = Vue.createApp({
+  template: `
+    <h1>Root instance</h1>
+    <parent-component />
+  `
+})
+
+app.component('parent-component', {
+  template: `
+    <h2>This is a parent component</h2>
+    <teleport to="#endofbody">
+      <child-component name="John" />
+    </teleport>
+  `
+})
+
+app.component('child-component', {
+  props: ['name'],
+  template: `
+    <div>Hello, {{ name }}</div>
+  `
+})
+// => In this case, even when child-component is rendered in the different place, it will remain a child of parent-component and will receive a name prop from it.
+// This also means that injections from a parent component work as expected, and that the child component will be nested below the parent component in the Vue Devtools, instead of being placed where the actual content moved to
+```
+
+## Using multiple teleports on the same target
+
+A common use case scenario would be a reusable `<Modal>` component of which there might be multiple instances active at the same time. For this kind of scenario, multiple `<teleport>` components can mount their content to the same target element. The order will be a simple append - later mounts will be located after earlier ones within the target element.
+
+```html
+<teleport to="#modals">
+  <div>A</div>
+</teleport>
+<teleport to="#modals">
+  <div>B</div>
+</teleport>
+
+<!-- result-->
+<div id="modals">
+  <div>A</div>
+  <div>B</div>
+</div>
+```
+
 # Plugins
