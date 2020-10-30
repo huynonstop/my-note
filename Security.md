@@ -6,6 +6,8 @@ https://restfulapi.net/security-essentials/
 
 https://nordicapis.com/fostering-an-internal-culture-of-security/
 
+https://www.youtube.com/watch?v=UBUNrFtufWo
+
 # Secrets and Keys
 
 https://random-ize.com/how-long-to-hack-pass/
@@ -65,6 +67,12 @@ https://medium.com/@vivekmadurai/different-ways-to-authenticate-a-web-applicatio
 https://www.youtube.com/watch?v=mBd-SMPp3kI
 
 https://medium.com/datadriveninvestor/api-design-101-solving-identity-issues-with-authentication-9f98d546131f
+
+https://medium.com/@sherryhsu/session-vs-token-based-authentication-11a6c5ac45e4
+
+https://dev.to/thecodearcher/what-really-is-the-difference-between-session-and-token-based-authentication-2o39
+
+https://stackoverflow.com/questions/40200413/sessions-vs-token-based-authentication
 
 ## Authorization
 

@@ -300,6 +300,12 @@ export default class LoginComponent extends Component {
 
 # React router v5
 
+## 404 pages
+
+https://www.youtube.com/watch?v=HCPh2e2VpJ0
+
+## Protected Route
+
 https://www.youtube.com/watch?v=kByiWTWdpww
 
 ## URL params

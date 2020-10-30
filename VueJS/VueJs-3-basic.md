@@ -1035,6 +1035,18 @@ Vue.createApp({
 }).mount('#two-way-binding')
 ```
 
+### Number
+
+```vue
+<div id="two-way-binding">
+   <input type="number" v-model.number="age" />
+    <p>
+        {{ age }} 
+    </p> 
+</div>
+<!-- this Vue will force the input data to a number -->
+```
+
 ### Multiline text
 
 ```html
@@ -1147,6 +1159,7 @@ Multiple select (bound to Array):
 </select>
 <br />
 <span>Selected: {{ selected }}</span>
+<!--Selected: ["A"] or Selected: ["A","B","C"] -->
 ```
 
 Dynamic options rendered with `v-for`:

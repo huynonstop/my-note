@@ -1657,6 +1657,33 @@ In fact, you can think of dependency injection as sort of “long-range props”
 
 ## Working with reactivity
 
+```js
+app.component('todo-list', {
+  data() {
+    return {
+      todos: ['Feed a cat', 'Buy tickets']
+    }
+  },
+  provide() {
+    return {
+      todos: this.todos,
+      deleteTodo: this.deleteTodo,
+    }
+  },
+  methods() {
+      deleteTodo(index) {
+          this.todos = this.todos.filter((v,i) => i !== index) //this will not reflected in the injected child component
+          // Instead use this
+          // const index = this.resources.find(r => r.id === id);
+          // this.storedResources.splice(index, 1);
+      }
+  }
+  template: `
+    ...
+  `
+})
+```
+
 In the example above, if we change the list of `todos`, this change won't be reflected in the injected `todoLength` property. This is because `provide/inject` bindings are *not* reactive by default. We can change this behavior by passing a `ref` property or `reactive` object to `provide`. In our case, if we wanted to react to changes in the ancestor component, we would need to assign a Composition API `computed` property to our provided `todoLength`:
 
 ```js

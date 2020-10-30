@@ -297,6 +297,8 @@ https://stackoverflow.com/questions/53513872/react-hooks-what-is-the-difference-
 
 ## useEffect
 
+https://topdev.vn/blog/useeffect-tu-a-toi-z/
+
 ![image-20200831110123166](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200831110123166.png)
 
 ![image-20200831120523438](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200831120523438.png)
