@@ -37,7 +37,16 @@ Let’s recap the two examples above and see how Concurrent Mode unifies them. *
 - For CPU-bound updates (such as creating DOM nodes and running component code), concurrency means that a more urgent update can “interrupt” rendering that has already started.
 - For IO-bound updates (such as fetching code or data from the network), concurrency means that React can start rendering in memory even before all the data arrives, and skip showing jarring empty loading states.
 
-## React lazy + Suspense
+# React lazy
+
+let you render a dynamic import as a component (a promise)
+
+```jsx
+import Settings from './Settings'
+const Settings = React.lazy(() => import('./Settings'))
+```
+
+# React lazy + Suspense
 
 ```jsx
 const ProfilePage = React.lazy(() => import('./ProfilePage')); // Lazy-loaded

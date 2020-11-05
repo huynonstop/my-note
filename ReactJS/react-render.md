@@ -114,6 +114,8 @@ https://reactjs.org/docs/implementation-notes.html
 
 https://reactjs.org/docs/codebase-overview.html
 
+https://reactjs.org/docs/reconciliation.html
+
 **reconciliation**
 
 The algorithm React uses to diff one tree with another to determine which parts need to be changed.
@@ -122,16 +124,9 @@ The algorithm React uses to diff one tree with another to determine which parts 
 
 A change in the data used to render a React app. Usually the result of `setState`. Eventually results in a re-render.
 
-https://reactjs.org/docs/reconciliation.html
-
 ## Motivation
 
 When you use React, at a single point in time you can think of the `render()` function as creating a tree of React elements. On the next state or props update, that `render()` function will return a different tree of React elements. React then needs to figure out how to efficiently update the UI to match the most recent tree. So that component updates are predictable while being fast enough for high-performance apps.
-
-React implements a heuristic O(n) algorithm based on two assumptions:
-
-1. Different component types are assumed to generate substantially different trees. React will not attempt to diff them, but rather replace the old tree completely.
-2. Diffing of lists is performed using keys. Keys should be "stable, predictable, and unique."
 
 
 
@@ -139,7 +134,21 @@ React implements a heuristic O(n) algorithm based on two assumptions:
 
 https://medium.com/@abdellani/how-does-the-diff-algorithm-work-in-react-js-c4296548f84b
 
+React implements a heuristic O(n) algorithm based on two assumptions:
+
+1. Different component types are assumed to generate substantially different trees. React will not attempt to diff them, but rather replace the old tree completely.
+2. Diffing of lists is performed using keys. Keys should be "stable, predictable, and unique."
+
+https://www.cronj.com/blog/diff-algorithm-implemented-reactjs/
+
 When **diffing two trees**, React first compares the two root elements. The behavior is different depending on the types of the root elements.
+
+- If the root element is different , it completely tears down the old tree and begins from the root of the new tree
+- If the root element is the same, then the algorithm compares each and every difference in attributes keeps the same valued attributes and changes only the new/differed attributes.
+- When a component updates, the instance stays the same, so that state is maintained across renders. React updates the props of the underlying component instance to match the new element
+  Next, the `render()` method is called and the diff algorithm recurses on the previous result and the new result.
+- By default, when recursing on the children of a DOM node, React just iterates over both lists of children at the same time and generates a mutation whenever there’s a difference.
+  When children have **keys**, React uses the key to match children in the original tree with children in the subsequent tree.
 
 ### Elements Of Different Types
 
@@ -196,6 +205,20 @@ React will mutate every child instead of realizing it can keep the `<li>Duke</li
 
 ### Keys
 
+https://reactjs.org/docs/lists-and-keys.html
+
+Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity
+
+Keys used within arrays should be unique among their siblings
+
+https://stackoverflow.com/questions/42801343/what-is-the-significance-of-keys-in-reactjs/42801409
+
+https://dev.to/francodalessio/understanding-the-importance-of-the-key-prop-in-react-3ag7
+
+https://coderwall.com/p/jdybeq/the-importance-of-component-keys-in-react-js
+
+https://stackoverflow.com/questions/38903698/the-importance-of-component-keys-in-react-js
+
  When children have keys, React uses the key to match children in the original tree with children in the subsequent tree.
 
  adding a `key`can make the tree conversion efficient
@@ -231,6 +254,10 @@ Because React relies on heuristics, if the assumptions behind them are not met, 
 2. Keys should be stable, predictable, and unique. Unstable keys (like those produced by `Math.random()`) will cause many component instances and DOM nodes to be unnecessarily recreated, which can cause performance degradation and lost state in child components.
 
 ## Stack reconciler
+
+https://reactjs.org/docs/implementation-notes.html
+
+**The “stack” reconciler is the implementation powering React 15 and earlier.**
 
 Let’s start with our familiar `ReactDOM.render(<App />, document.getElementById('root'))`.
 
@@ -372,6 +399,8 @@ https://www.w3schools.com/REACT/react_lifecycle.asp
 > \* Parent component re-renders due to any of the above reasons.
 
 => state change is the actual trigger re-rendering.
+
+
 
 # When a component re-renders
 

@@ -723,7 +723,7 @@ https://formik.org/docs/overview
 
 https://www.youtube.com/watch?v=oiNtnehlaTo
 
-# ![image-20200831130138878](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200831130138878.png)
+![image-20200831130138878](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200831130138878.png)
 
 ```jsx
 <Formik onSubmit={this.handleSubmit}>
@@ -815,5 +815,9 @@ Bundlers take JavaScript and CSS code written as separate modules (often hundred
 React has a powerful composition model, and we recommend using composition instead of inheritance to reuse code between components.
 
 https://reactjs.org/docs/composition-vs-inheritance.html
+
+# Structure
+
+https://medium.com/better-programming/how-you-should-structure-your-react-applications-e7dd32375a98
 
 

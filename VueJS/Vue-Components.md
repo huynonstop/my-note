@@ -971,13 +971,13 @@ app.component('custom-form', {
 
 ## `v-model` arguments
 
-By default, `v-model` on a component uses `modelValue` as the prop and `update:modelValue` as the event. We can modify these names passing an argument to `v-model`:
+By default, `v-model` on a component uses **`modelValue`** as the prop and **`update:modelValue`** as the event. 
+
+We can modify these names passing an argument to `v-model`:
 
 ```html
 <my-component v-model:title="bookTitle"></my-component>
 ```
-
-1
 
 In this case, child component will expect a `title` prop and emits `update:title` event to sync:
 
@@ -995,10 +995,6 @@ app.component('my-component', {
       @input="$emit('update:title', $event.target.value)">
   `
 })
-```
-
-```html
-<my-component v-model:title="bookTitle"></my-component>
 ```
 
 ## Multiple `v-model` bindings
@@ -1109,13 +1105,12 @@ app.component('my-component', {
 app.mount('#app')
 ```
 
-For `v-model` bindings with arguments, the generated prop name will be `arg + "Modifiers"`:
-
 ```html
 <my-component v-model:foo.capitalize="bar"></my-component>
 ```
 
 ```js
+// For `v-model` bindings with arguments, the generated prop name will be `arg + "Modifiers"`:
 app.component('my-component', {
   props: ['foo', 'fooModifiers'],
   template: `
@@ -1951,6 +1946,10 @@ app.component('terms-of-service', {
 })
 // => Once again, try not to overuse this pattern. While convenient in those rare cases when you have to render a lot of static content, it's simply not necessary unless you actually notice slow rendering - plus, it could cause a lot of confusion later. For example, imagine another developer who's not familiar with v-once or simply misses it in the template. They might spend hours trying to figure out why the template isn't updating correctly.
 ```
+
+# Render Functions
+
+https://v3.vuejs.org/guide/render-function.html
 
 # Multiple Vue Apps vs Multiple Components
 

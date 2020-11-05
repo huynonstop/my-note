@@ -308,6 +308,17 @@ https://www.youtube.com/watch?v=HCPh2e2VpJ0
 
 https://www.youtube.com/watch?v=kByiWTWdpww
 
+## Query Strings
+
+```jsx
+function App() {
+    const {search} = useLocation(); //?abc=asdasd
+    const searchParams = new URLSearchParams(search);
+    const abc = searchParams.get('name');
+    return <div>{abc}</div>
+}
+```
+
 ## URL params
 
 ```jsx
@@ -325,6 +336,74 @@ function Component() {
     }, params)
     return(
     	//...
+    )
+}
+```
+
+## Nested Route
+
+```jsx
+// topics data
+function Home() {
+    return <h1>Home</h1>
+}
+function Topic() {
+    const {topicId} = useParams();
+    //const {path,url} = useRouteMatch();
+    const topic = topics.find(({id}) => id === topicId)
+    return (
+    	<div>
+        	<h2>{topic.name}</h2>
+           	<p>{topic.content}</p>
+        </div>
+    )
+}
+function Topics() {
+    const {path,url} = useRouteMatch();
+    return (
+        <div>
+            <ul>
+                {topics.map(({name,id}) => {
+                	<li key={id}>
+                    	<Link to={`${url}/${id}`}>{name}</Link>
+                    </li>
+                })}
+            </ul>
+            <Route path={`${path}/:topicId`}><Topic></Topic></Route>
+   		</div>
+    )
+}
+export default function App() {
+    return (
+    	<Router>
+        	<div>
+                <ul>
+                	<li><Link to='/'>Home</Link></li>
+                    <li><Link to='/concepts'>Topics</Link></li>
+                </ul>
+            </div>
+            <Route exact path='/'>
+            	<Home />
+            </Route>
+            <Route path='/concepts'>
+            	<Topics />
+            </Route>
+        </Router>
+    )
+}
+```
+
+## React.lazy
+
+```jsx
+const Home = React.lazy(()=>import('./Home'))
+function App() {
+    return (
+        <React.Suspense fallback={<p>Loading</p>}>
+        	<Route exact path="/">
+            	<Home></Home>
+            </Route>
+        </React.Suspense>
     )
 }
 ```
