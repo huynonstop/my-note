@@ -116,7 +116,7 @@ Of course there are other aspects to consider, like you don't want people to hij
 
 In your specific example, the user id (could be username or another unique ID in your user database) is stored in the session data, server-side, after successful identification. Then for every HTTP request you get from the client, the session id (given by the client) will point you to the correct session data (stored by the server) that contains the authenticated user id - that way your code will know what user it is talking to.
 
-![image-20200812213039239](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200812213039239.png)
+![image-20200812213039239](assets/Security/image-20200812213039239.png)
 
 # Stateless
 
@@ -170,7 +170,7 @@ HTTP header:
 Authentication Basic c3VwZXJ1c2VyOnNvc2VjdXJl
 ```
 
-<img src="https://miro.medium.com/max/1136/1*mW_BXoOpZ0H-Uu_VVPhBFA.png" alt="Image for post" style="zoom:50%;" />
+![image-20201207235247070](assets/Security/image-20201207235247070.png)
 
 However, base64 encoding is not secure at all, since it's super easy to decode. So it’s a bit like carrying your passport around all the time and using it as your main way of identification. If somebody steals it, they can in easily pretend to be you.
 
@@ -206,9 +206,9 @@ https://www.softwaretestinghelp.com/api-management-tools/
 
 API keys make sense when the users of an API are only developers. However, as developers created tools for themselves, they started sharing them with others.
 
-![API keys overview](https://cloud.google.com/endpoints/docs/images/api_keys_overview.png)
+![API keys overview](assets/Security/api_keys_overview.png)
 
-<img src="https://miro.medium.com/max/1136/1*Oa_9KvYFig6iW1RrNUUd6w.png" alt="Image for post" style="zoom:50%;" />
+![image-20201207235323593](assets/Security/image-20201207235323593.png)
 
 https://nordicapis.com/why-api-keys-are-not-enough/
 
@@ -248,9 +248,11 @@ Token can be set to expire after a certain amount of time so users will need to 
 
 JWTs don’t need **credentials**, they are **stateless** and they allow for fine-grained access control as well 
 
-![image-20200827011215497](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200827011215497.png)
+![image-20200827011215497](assets/Security/image-20200827011215497.png)
 
 ### Refreshing Token
+
+https://anonystick.com/blog-developer/refresh-token-la-gi-cach-hoat-dong-co-khac-gi-so-voi-token-khong-202006067903464
 
 ### OAuth
 
@@ -268,7 +270,7 @@ OAuth doesn’t pass authentication data between **consumers** and **service pro
 >
 > An **OAuth token** is like that valet **key**. As a **user**, you get to tell the **consumers** what they **can** use and what they **can’t** use from each **service provider**. You can give each **consumer** a **different** valet **key**. They never have the full key or any of the private data that gives them access to the full key.
 
-![OAuth Explained](https://www.varonis.com/blog/wp-content/uploads/2012/04/oauth-explained.png)
+![OAuth Explained](assets/Security/oauth-explained.png)
 
 This means you could send an authentication request to Google and ask the user to authenticate using their Google credentials, through Google. Then Google will send you a token that authenticates the user and specifies what kind of user information from Google you have access to.
 
@@ -381,13 +383,13 @@ Có rất nhiều rủi ro có thể gặp phải trong quá trình xác thực:
 >
 > the malicious script comes from the current HTTP request
 >
-> ![img](https://images.viblo.asia/28e81cf8-c006-4835-9ef0-a8df7d2ccd12.jpg)
+> ![img](assets/Security/28e81cf8-c006-4835-9ef0-a8df7d2ccd12.jpg)
 >
 > ### Stored XSS
 >
 > the malicious script comes from the website's database
 >
-> ![img](http://securitydaily.net/wp-content/uploads/2014/03/stored-xss-scenario1.png)
+> ![img](assets/Security/stored-xss-scenario1.png)
 >
 > ### DOM Based XSS
 >
@@ -405,7 +407,7 @@ Có rất nhiều rủi ro có thể gặp phải trong quá trình xác thực:
 >
 > In a typical case, the input field would be populated from part of the HTTP request, such as a URL query string parameter, allowing the attacker to deliver an attack using a malicious URL, in the same manner as reflected XSS.
 >
-> ![img](https://images.viblo.asia/cc00ebb0-67cc-4110-91e4-4188104777fd.png)
+> ![img](assets/Security/cc00ebb0-67cc-4110-91e4-4188104777fd.png)
 >
 > ### Prevent XSS
 >
@@ -423,7 +425,7 @@ CSRF ( Cross Site Request Forgery) abuse server session and trick user execute m
 
 => Protect: only let session available on your views
 
-![image-20200611220835360](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611220835360.png)
+![image-20200611220835360](assets/Security/image-20200611220835360.png)
 
 ### Prevent
 

@@ -22,7 +22,7 @@ https://www.youtube.com/watch?v=1jWS7cCuUXw
 
 https://www.youtube.com/watch?v=dpw9EHDh2bM
 
-![image-20200829221317466](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200829221317466.png)
+![image-20200829221317466](assets/react-hooks/image-20200829221317466.png)
 
 hooks are meaningless if not called in the right context
 
@@ -293,15 +293,15 @@ https://stackoverflow.com/questions/53513872/react-hooks-what-is-the-difference-
 
 > useState give us a value persist across renders and a function to change value and trigger re-render
 
-![image-20200831095141404](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200831095141404.png)
+![image-20200831095141404](assets/react-hooks/image-20200831095141404.png)
 
 ## useEffect
 
 https://topdev.vn/blog/useeffect-tu-a-toi-z/
 
-![image-20200831110123166](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200831110123166.png)
+![image-20200831110123166](assets/react-hooks/image-20200831110123166.png)
 
-![image-20200831120523438](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200831120523438.png)
+![image-20200831120523438](assets/react-hooks/image-20200831120523438.png)
 
 > this runs *after* react render is committed to the screen  and ensures that your effect callback does not block browser painting, i.e. after Layout and Paint phase. Use this whenever possible to avoid blocking visual updates
 >
@@ -561,7 +561,7 @@ https://www.codebeast.dev/usestate-vs-useref-re-render-or-not/
 
 React re-renders to show us the changes we have requested through events, requests, timers, and so on. But they are not the actual triggers — state change is the actual trigger.
 
-![image-20201021230506432](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201021230506432.png)
+![image-20201021230506432](assets/react-hooks/image-20201021230506432.png)
 
 ## Preserving data without re-rendering
 

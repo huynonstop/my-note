@@ -1,4 +1,4 @@
-![image-20200611175535965](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611175535965.png)
+![image-20200611175535965](assets/reactJS/image-20200611175535965.png)
 
 https://github.com/huynonstop/react-redux-links
 
@@ -24,7 +24,7 @@ React is an open-source JavaScript library created by Facebook for building comp
 
 # One-way data binding
 
-![img](https://viblo.asia/uploads/29fea837-c6e8-416f-a11f-d708b33c2a78.png)
+![img](assets/reactJS/29fea837-c6e8-416f-a11f-d708b33c2a78.png)
 
 # JSX
 
@@ -58,7 +58,7 @@ Conceptually, components are JavaScript functions**. They accept arbitrary input
 
 A good rule of thumb is that if a part of your UI is used several times (Button, Panel, Avatar), or is complex enough on its own (App, FeedStory, Comment), it is a good candidate to be a reusable component
 
-![image-20200623234919972](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200623234919972.png)
+![image-20200623234919972](assets/reactJS/image-20200623234919972.png)
 
 # Render Elements
 
@@ -82,7 +82,7 @@ Elements are what components are “made of”
 
 React DOM compares the element and its children to the previous one, and only applies the DOM updates necessary to bring the DOM to the desired state.
 
-![DOM inspector showing granular updates](https://reactjs.org/c158617ed7cc0eac8f58330e49e48224/granular-dom-updates.gif)
+![DOM inspector showing granular updates](assets/reactJS/granular-dom-updates.gif)
 
 ## Adjacent JSX rendering
 
@@ -216,7 +216,7 @@ class User extends React.Component {
 
 # state
 
-![state](https://github.com/sudheerj/reactjs-interview-questions/raw/master/images/state.jpg)
+![state](assets/reactJS/state.jpg)
 
 A component needs `state` when some data associated with it changes over time.
 
@@ -266,7 +266,7 @@ class CounterButton extends React.Component {
 }
 ```
 
-![image-20200615215913665](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200615215913665.png)
+![image-20200615215913665](assets/reactJS/image-20200615215913665.png)
 
 ### Dynamic key name
 
@@ -586,7 +586,7 @@ The component lifecycle has three distinct lifecycle phases:
 2. **Updating:** In this phase, the component get updated in two ways, sending the new props and updating the state either from `setState()` or `forceUpdate()`. This phase covers `getDerivedStateFromProps()`, `shouldComponentUpdate()`, `render()`, `getSnapshotBeforeUpdate()` and `componentDidUpdate()` lifecycle methods.
 3. **Unmounting:** In this last phase, the component is not needed and get unmounted from the browser DOM. This phase includes `componentWillUnmount()` lifecycle method.
 
-[![image-20200208132318599](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200208132318599.png)](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+[![image-20200208132318599](assets/reactJS/image-20200208132318599.png)](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
 
 React internally has a concept of phases when applying changes to the DOM. They are separated as follows
 
@@ -596,11 +596,11 @@ React internally has a concept of phases when applying changes to the DOM. They 
 
 ## Mounting
 
-![image-20200623235236575](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200623235236575.png)
+![image-20200623235236575](assets/reactJS/image-20200623235236575.png)
 
-![image-20200624001528878](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200624001528878.png)
+![image-20200624001528878](assets/reactJS/image-20200624001528878.png)
 
-![image-20200624001758575](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200624001758575.png)
+![image-20200624001758575](assets/reactJS/image-20200624001758575.png)
 
 If  you try to setState on an unmounted component, which would not work.
 
@@ -608,11 +608,11 @@ Don't setState immediately inside componentDidMount (trigger a re-rendering cycl
 
 ## Updating
 
-![image-20200624000344927](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200624000344927.png)
+![image-20200624000344927](assets/reactJS/image-20200624000344927.png)
 
 Don't setState inside componentDidUpdate without control (setState => update => setState => Loop...) 
 
-![image-20200624001411868](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200624001411868.png)
+![image-20200624001411868](assets/reactJS/image-20200624001411868.png)
 
 ### optimize 
 
@@ -620,13 +620,15 @@ Don't setState inside componentDidUpdate without control (setState => update => 
 
 remove useless re-render, when props change
 
-![image-20200624003938434](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200624003938434.png)
+![image-20200624003938434](assets/reactJS/image-20200624003938434.png)
 
 #### pure component
 
 remove useless re-render, when props change and you want to check all props 
 
-![image-20200624004138678](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200624004138678.png)
+```js
+class Persons extends PureComponent {}
+```
 
 #### React.memo
 
@@ -709,11 +711,11 @@ Concretely, **a higher-order component is a function that takes a component and 
 
 We call them **pure components** because they can accept any dynamically provided child component but they won't modify or copy any behavior from their input components.
 
-.![img](https://images.viblo.asia/d08aa39a-285d-483d-baf7-087b621aaf24.jpg)
+.![img](assets/reactJS/d08aa39a-285d-483d-baf7-087b621aaf24.jpg)
 
-![image-20200624010831877](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200624010831877.png)
+![image-20200624010831877](assets/reactJS/image-20200624010831877.png)
 
-![image-20200624010927236](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200624010927236.png)
+![image-20200624010927236](assets/reactJS/image-20200624010927236.png)
 
 # render Props
 
@@ -723,7 +725,7 @@ https://formik.org/docs/overview
 
 https://www.youtube.com/watch?v=oiNtnehlaTo
 
-![image-20200831130138878](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200831130138878.png)
+![image-20200831130138878](assets/reactJS/image-20200831130138878.png)
 
 ```jsx
 <Formik onSubmit={this.handleSubmit}>

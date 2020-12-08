@@ -6,6 +6,8 @@ https://next.router.vuejs.org/guide
 
 https://next.router.vuejs.org/api/
 
+https://www.youtube.com/watch?v=0whOTp7nH5U
+
 Features include:
 
 - Nested routes mapping
@@ -1205,5 +1207,9 @@ const router = createRouter({
   },
 })
 ```
+
+# Transitions
+
+https://next.router.vuejs.org/guide/advanced/transitions.html
 
 # Migrating from Vue 2

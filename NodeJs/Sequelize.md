@@ -2,13 +2,13 @@ http://docs.sequelizejs.com/
 
 # Squelize
 
-![image-20200718212728810](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200718212728810.png)
+![image-20200718212728810](assets/Sequelize/image-20200718212728810.png)
 
-![image-20200718212801892](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200718212801892.png)
+![image-20200718212801892](assets/Sequelize/image-20200718212801892.png)
 
 # Connect
 
-![image-20200718213031244](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200718213031244.png)
+![image-20200718213031244](assets/Sequelize/image-20200718213031244.png)
 
 ```js
 const Sequelize = require('sequelize');
@@ -115,7 +115,7 @@ Product.findByPk(pk,options)
 
 # Association / Relation
 
-![image-20200718232834555](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200718232834555.png)
+![image-20200718232834555](assets/Sequelize/image-20200718232834555.png)
 
 ```js
 const sequelize = require('../util/database');

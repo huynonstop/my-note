@@ -1,6 +1,45 @@
-## .forEach() vs .map()
+# debounce vs throttle
 
-**`forEach`**
+https://anonystick.com/blog-developer/debounce-vs-throttle-javascript-202005261421546
+
+https://stackoverflow.com/questions/25991367/difference-between-throttling-and-debouncing-a-function
+
+https://dev.to/iyashsoni/javascript-debounce-vs-throttle-392i
+
+https://codeburst.io/throttling-and-debouncing-in-javascript-b01cad5c8edf
+
+https://lodash.com/docs/4.17.15#debounce
+
+https://lodash.com/docs/4.17.15#throttle
+
+https://css-tricks.com/debouncing-throttling-explained-examples/
+
+```js
+    function debounce (fn, delay) {
+        let timeOutId = null;
+        return args => {
+            clearTimeout(fn.id)
+            timeOutId = setTimeout(() => {
+                fn.call(this, args)
+            }, delay)
+        }
+    }
+    function throttle (fn, delay) {
+        let timeOutId = null;
+        return args => {
+            if (timeOutId) return
+            timeOutId = setTimeout(() => {
+                fn.call(this, args)
+                clearTimeout(timeOutId)
+                timeOutId = null
+            }, delay)
+        }
+    }
+```
+
+
+
+# **`forEach`**
 
 - Iterates through the elements in an array.
 - Executes a callback for each element.
@@ -15,7 +54,7 @@ a.forEach((num, index) => {
 
 If you simply need to iterate over an array, `forEach` is a fine choice.
 
-**`map`**
+# **`map`**
 
 - Iterates through the elements in an array.
 - "Maps" each element to a new element by calling the function on each element, creating a new array as a result.
@@ -31,7 +70,7 @@ const doubled = a.map(num => {
 
 If you need the result, but do not wish to mutate the original array, `.map()` is the clear choice. 
 
-## Drag & Drop
+# Drag & Drop
 
 https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API
 
@@ -39,15 +78,15 @@ https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Recommen
 
 https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/effectAllowed
 
-![image-20200608161618766](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608161618766.png)
+![image-20200608161618766](assets/BestPractice/image-20200608161618766.png)
 
-![image-20200608171018463](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608171018463.png)
+![image-20200608171018463](assets/BestPractice/image-20200608171018463.png)
 
-![image-20200608180617462](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608180617462.png)
+![image-20200608180617462](assets/BestPractice/image-20200608180617462.png)
 
-![image-20200608172954427](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608172954427.png)
+![image-20200608172954427](assets/BestPractice/image-20200608172954427.png)
 
-![image-20200608180315371](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608180315371.png)
+![image-20200608180315371](assets/BestPractice/image-20200608180315371.png)
 
 ## Infinitive scrolling
 
@@ -88,7 +127,7 @@ The **console.log()** returns the object in its string representation and **cons
 
 ## Boolean trick
 
-![image-20200523210404436](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200523210404436.png)
+![image-20200523210404436](assets/BestPractice/image-20200523210404436.png)
 
 ## import external "\<script>" to html
 
@@ -226,7 +265,7 @@ c.retrieve(); // => The counter is currently at: 14
 
 ## Set prototype
 
-![image-20200605214747603](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200605214747603.png)
+![image-20200605214747603](assets/BestPractice/image-20200605214747603.png)
 
 ## Check integer
 
@@ -379,7 +418,7 @@ get('story.json').then(function(response) {
 
 ## Pure prototype inheritance
 
-![image-20200612212615904](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612212615904.png)
+![image-20200612212615904](assets/BestPractice/image-20200612212615904.png)
 
 ## IIFE module
 

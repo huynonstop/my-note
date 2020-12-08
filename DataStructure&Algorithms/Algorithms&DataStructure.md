@@ -1,6 +1,6 @@
 # TIme Complexity
 
-![image-20200808195416003](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200808195416003.png)
+![image-20200808195416003](assets/Algorithms&DataStructure/image-20200808195416003.png)
 
 # Big-O notation
 
@@ -8,9 +8,9 @@ Mô tả cận trên hoặc trường hợp xấu nhất độ phức tạp củ
 
 O(2N) = O(N) = O(669N)
 
-![image-20200301153930483](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200301153930483.png)
+![image-20200301153930483](assets/Algorithms&DataStructure/image-20200301153930483.png)
 
-![image-20200301153945953](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200301153945953.png)
+![image-20200301153945953](assets/Algorithms&DataStructure/image-20200301153945953.png)
 
 ```javascript
 for (int a : arrA) {
@@ -28,15 +28,15 @@ for (int a : arrA) {
 //O(N^2)
 ```
 
-![image-20200301153741625](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200301153741625.png)
+![image-20200301153741625](assets/Algorithms&DataStructure/image-20200301153741625.png)
 
 https://algs4.cs.princeton.edu/cheatsheet/
 
 # Recursion
 
-![image-20200925172339474](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200925172339474.png)
+![image-20200925172339474](assets/Algorithms&DataStructure/image-20200925172339474.png)
 
-![image-20200921155215123](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200921155215123.png)
+![image-20200921155215123](assets/Algorithms&DataStructure/image-20200921155215123.png)
 
 JSON parse/ JSON stringify
 
@@ -48,7 +48,7 @@ alternative to iteration
 
 ## JS
 
-![image-20200925172911063](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200925172911063.png)
+![image-20200925172911063](assets/Algorithms&DataStructure/image-20200925172911063.png)
 
 # Dynamic program
 
@@ -56,13 +56,13 @@ cached, solve small problem and memo the result for next time
 
 sub problem **overlap**
 
-![image-20200921200050131](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200921200050131.png)
+![image-20200921200050131](assets/Algorithms&DataStructure/image-20200921200050131.png)
 
-![image-20200921200838373](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200921200838373.png)
+![image-20200921200838373](assets/Algorithms&DataStructure/image-20200921200838373.png)
 
-![image-20200927013120931](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200927013120931.png)
+![image-20200927013120931](assets/Algorithms&DataStructure/image-20200927013120931.png)
 
-![image-20200927013050896](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200927013050896.png)
+![image-20200927013050896](assets/Algorithms&DataStructure/image-20200927013050896.png)
 
 # Data structure
 
@@ -72,13 +72,13 @@ https://en.wikipedia.org/wiki/List_of_data_structures
 
 https://github.com/ashish-chopra/Structures
 
-![Image for post](https://miro.medium.com/max/1345/1*WuPrPNWDYL72boblf4Me4Q.png)
+![image-20201208085029605](assets/Algorithms&DataStructure/image-20201208085029605.png)
 
 JS
 
-![image-20200807220953518](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200807220953518.png)
+![image-20200807220953518](assets/Algorithms&DataStructure/image-20200807220953518.png)
 
-![image-20200807221116770](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200807221116770.png)
+![image-20200807221116770](assets/Algorithms&DataStructure/image-20200807221116770.png)
 
 ## Array
 
@@ -215,19 +215,19 @@ class HashTable {
 
 ## Hash table vs Array
 
-![image-20200918011028633](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200918011028633.png)
+![image-20200918011028633](assets/Algorithms&DataStructure/image-20200918011028633.png)
 
 ## Linked List
 
 https://visualgo.net/en/list
 
-![image-20200808175311665](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200808175311665.png)
+![image-20200808175311665](assets/Algorithms&DataStructure/image-20200808175311665.png)
 
 every element know next element => effient re-sizing
 
 no need to specify memory size (flexible size)
 
-![image-20200926165716188](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200926165716188.png)
+![image-20200926165716188](assets/Algorithms&DataStructure/image-20200926165716188.png)
 
 ordered
 
@@ -319,7 +319,7 @@ class LinkedList {
 
 https://www.youtube.com/watch?v=DyG9S9nAlUM
 
-![image-20200808195510033](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200808195510033.png)
+![image-20200808195510033](assets/Algorithms&DataStructure/image-20200808195510033.png)
 
 ## Queue
 
@@ -329,7 +329,7 @@ ordered operation, callback queue, ...
 
 linked list
 
-![image-20200926170053927](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200926170053927.png)
+![image-20200926170053927](assets/Algorithms&DataStructure/image-20200926170053927.png)
 
 array => removal O(n) (normal array) O(1) (CircularQueue)
 
@@ -339,19 +339,19 @@ LIFO (last in first out)
 
 function call stack, browser history, undo, ...
 
-![image-20200926165950746](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200926165950746.png)
+![image-20200926165950746](assets/Algorithms&DataStructure/image-20200926165950746.png)
 
 ## Tree
 
 one way
 
-![image-20200919001422481](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200919001422481.png)
+![image-20200919001422481](assets/Algorithms&DataStructure/image-20200919001422481.png)
 
 DOM, abstract syntax tree, ...
 
 ## Binary Tree
 
-![image-20200919001758892](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200919001758892.png)
+![image-20200919001758892](assets/Algorithms&DataStructure/image-20200919001758892.png)
 
 perfect tree: all leafs are full
 
@@ -558,7 +558,7 @@ the parents will be 'better' than the chidlren
 
 ## Binary Heaps
 
-![image-20200926171000486](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200926171000486.png)
+![image-20200926171000486](assets/Algorithms&DataStructure/image-20200926171000486.png)
 
 ### Priority Queues
 
@@ -664,7 +664,7 @@ class PriorityQueue {
 
 ## Tries
 
-![image-20200919010005444](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200919010005444.png)
+![image-20200919010005444](assets/Algorithms&DataStructure/image-20200919010005444.png)
 
 string problem
 
@@ -674,17 +674,17 @@ https://visualgo.net/en/graphds?slide=1
 
 Relations
 
-![image-20200920232710591](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200920232710591.png)
+![image-20200920232710591](assets/Algorithms&DataStructure/image-20200920232710591.png)
 
 social network, map, ...
 
-![image-20200920232952077](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200920232952077.png)
+![image-20200920232952077](assets/Algorithms&DataStructure/image-20200920232952077.png)
 
-![image-20200920234055908](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200920234055908.png)
+![image-20200920234055908](assets/Algorithms&DataStructure/image-20200920234055908.png)
 
-![image-20200926171858113](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200926171858113.png)
+![image-20200926171858113](assets/Algorithms&DataStructure/image-20200926171858113.png)
 
-![image-20200920234440612](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200920234440612.png)
+![image-20200920234440612](assets/Algorithms&DataStructure/image-20200920234440612.png)
 
 ```js
 class Graph { 
@@ -740,17 +740,17 @@ http://www.sergiy.ca/guide-to-selecting-appropriate-map-collection-in-java/
 
 http://cooervo.github.io/Algorithms-DataStructures-BigONotation/index.html
 
-![img](https://qph.fs.quoracdn.net/main-qimg-ab520faa02d4b693f5fc66c5ce17604c)
+![img](assets/Algorithms&DataStructure/main-qimg-ab520faa02d4b693f5fc66c5ce17604c)
 
 ## Partterns
 
-![image-20200924064930242](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200924064930242.png)
+![image-20200924064930242](assets/Algorithms&DataStructure/image-20200924064930242.png)
 
-![image-20200924092815774](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200924092815774.png)
+![image-20200924092815774](assets/Algorithms&DataStructure/image-20200924092815774.png)
 
-![image-20200924151424941](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200924151424941.png)
+![image-20200924151424941](assets/Algorithms&DataStructure/image-20200924151424941.png)
 
-![image-20200925013019562](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200925013019562.png)
+![image-20200925013019562](assets/Algorithms&DataStructure/image-20200925013019562.png)
 
 # Search
 
@@ -816,17 +816,17 @@ arr[] = 64 25 12 22 11
 
 ## Insertion sort
 
-![insertion-sort](https://media.geeksforgeeks.org/wp-content/uploads/insertionsort.png)
+![insertion-sort](assets/Algorithms&DataStructure/insertionsort.png)
 
 ## B vs S vs I sort
 
-![image-20200926003713413](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200926003713413.png)
+![image-20200926003713413](assets/Algorithms&DataStructure/image-20200926003713413.png)
 
 ## Merge sort
 
 https://www.geeksforgeeks.org/merge-sort/
 
-![Merge-Sort-Tutorial](https://media.geeksforgeeks.org/wp-content/cdn-uploads/Merge-Sort-Tutorial.png)
+![Merge-Sort-Tutorial](assets/Algorithms&DataStructure/Merge-Sort-Tutorial.png)
 
 ```
 MergeSort(arr[], l,  r)
@@ -867,9 +867,9 @@ quickSort(arr[], low, high)
 }
 ```
 
-![quicksort](https://www.geeksforgeeks.org/wp-content/uploads/gq/2014/01/QuickSort2.png)
+![quicksort](assets/Algorithms&DataStructure/QuickSort2.png)
 
-![image-20200926161436312](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200926161436312.png)
+![image-20200926161436312](assets/Algorithms&DataStructure/image-20200926161436312.png)
 
 ## Radix sort
 
@@ -888,7 +888,7 @@ Sorting by most significant digit (100s place) gives:
 2, 24, 45, 66, 75, 90, 170, 802
 ```
 
-![image-20200926162933604](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200926162933604.png)
+![image-20200926162933604](assets/Algorithms&DataStructure/image-20200926162933604.png)
 
 ## JS sort
 
@@ -902,7 +902,7 @@ return positive => a after b
 
 return 0 => same
 
-![image-20200925223114475](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200925223114475.png)
+![image-20200925223114475](assets/Algorithms&DataStructure/image-20200925223114475.png)
 
 # More
 

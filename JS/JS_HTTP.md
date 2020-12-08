@@ -1,32 +1,32 @@
 # HTTP
 
-![image-20200610234056906](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200610234056906.png)
+![image-20200610234056906](assets/JS_HTTP/image-20200610234056906.png)
 
-![image-20200610234900270](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200610234900270.png)
+![image-20200610234900270](assets/JS_HTTP/image-20200610234900270.png)
 
 # XMLHttpRequest
 
 ## create
 
-![image-20200611102645496](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611102645496.png)
+![image-20200611102645496](assets/JS_HTTP/image-20200611102645496.png)
 
 ## open (config)
 
-![image-20200611102728958](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611102728958.png)
+![image-20200611102728958](assets/JS_HTTP/image-20200611102728958.png)
 
 ## send
 
-![image-20200611102816532](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611102816532.png)
+![image-20200611102816532](assets/JS_HTTP/image-20200611102816532.png)
 
 ## onload property
 
-![image-20200611104019142](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611104019142.png)
+![image-20200611104019142](assets/JS_HTTP/image-20200611104019142.png)
 
-![image-20200611104044218](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611104044218.png)
+![image-20200611104044218](assets/JS_HTTP/image-20200611104044218.png)
 
 ## responeType
 
-![image-20200611104302030](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611104302030.png)
+![image-20200611104302030](assets/JS_HTTP/image-20200611104302030.png)
 
 ## Use with promise
 
@@ -79,19 +79,19 @@ fetchPosts();
 createPost('DUMMY', 'A dummy post!');
 ```
 
-![image-20200611110251836](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611110251836.png)
+![image-20200611110251836](assets/JS_HTTP/image-20200611110251836.png)
 
-![image-20200611110723734](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611110723734.png)
+![image-20200611110723734](assets/JS_HTTP/image-20200611110723734.png)
 
 ## Error handle
 
 ### onerror (client)
 
-![image-20200611111518201](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611111518201.png)
+![image-20200611111518201](assets/JS_HTTP/image-20200611111518201.png)
 
 ### response code (server)
 
-![image-20200611111541613](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611111541613.png)
+![image-20200611111541613](assets/JS_HTTP/image-20200611111541613.png)
 
 ## More
 
@@ -113,19 +113,19 @@ function sendHttpRequest(method, url, data) {
 }
 ```
 
-![image-20200611115051143](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611112459987.png)
+![image-20200611115051143](assets/JS_HTTP/image-20200611112459987.png)
 
-![image-20200611115152534](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611115152534.png)
+![image-20200611115152534](assets/JS_HTTP/image-20200611115152534.png)
 
 # Header request
 
-![image-20200611114101723](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611114101723.png)
+![image-20200611114101723](assets/JS_HTTP/image-20200611114101723.png)
 
-![image-20200611114158894](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611114158894.png)
+![image-20200611114158894](assets/JS_HTTP/image-20200611114158894.png)
 
 # Form data
 
-![image-20200611124024123](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611124024123.png)
+![image-20200611124024123](assets/JS_HTTP/image-20200611124024123.png)
 
 ```js
 function sendHttpRequest(method, url, data) {
@@ -141,6 +141,6 @@ function sendHttpRequest(method, url, data) {
 }
 ```
 
-![image-20200611124132522](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611124132522.png)
+![image-20200611124132522](assets/JS_HTTP/image-20200611124132522.png)
 
-![image-20200611124325513](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611124325513.png)
+![image-20200611124325513](assets/JS_HTTP/image-20200611124325513.png)

@@ -19,14 +19,6 @@ So a value in column `b` will override values in columns `c` and `d`, no matter 
 
 **Classes** — Can be reused on multiple elements within the document. Mainly for styling and targeting elements.
 
-## **Resetting** 
-
-Resetting is meant to strip all default browser styling on elements. For e.g. `margin`s, `padding`s, `font-size`s of all elements are reset to be the same. You will have to redeclare styling for common typographic elements.
-
-## **Normalizing** 
-
-Normalizing preserves useful default styles rather than "unstyling" everything. It also corrects bugs for common browser dependencies.
-
 ## Box model
 
 The CSS box model is a rectangular layout paradigm for HTML elements that consists of the following:
@@ -38,13 +30,13 @@ The CSS box model is a rectangular layout paradigm for HTML elements that consis
 
 ## Float
 
-Với CSS float, một phần tử có thể đẩy về trái hoặc phải, có phép các phần tử khác bám quanh nó.
+`Với CSS float, một phần tử có thể đẩy về trái hoặc phải, có phép các phần tử khác bám quanh nó.`
 
-Thuộc tính `float` thường sử dụng với ảnh, nhưng nó cũng làm việc với các phần tử khác để dàn trang
+`Thuộc tính `float` thường sử dụng với ảnh, nhưng nó cũng làm việc với các phần tử khác để dàn trang`
 
 ## Thuộc tính clear
 
-Các phần tử theo sau một phần tử có thuộc tính `float` (left, right) nó sẽ bám theo đuôi phần tử đó. Nếu bạn muốn ngắt đuôi bạn dùng thuộc tính `clear`.
+`Các phần tử theo sau một phần tử có thuộc tính `float` (left, right) nó sẽ bám theo đuôi phần tử đó. Nếu bạn muốn ngắt đuôi bạn dùng thuộc tính `clear`.`
 
 ## Different ways to visually hide content
 
@@ -61,8 +53,6 @@ Các phần tử theo sau một phần tử có thuộc tính `float` (left, rig
 - The `width` of an element is now calculated by the content's `width` + horizontal `padding` + horizontal `border` width.
 
 ## Display
-
-Mọi phần tử trên trang đều có dạng hộp chữ nhật. Thuộc tính `display` quy định ứng xử của box này trên trang.
 
 | `display`      | Description                                                  |
 | -------------- | ------------------------------------------------------------ |
@@ -97,6 +87,14 @@ Mọi phần tử trên trang đều có dạng hộp chữ nhật. Thuộc tín
 Flexbox is mainly meant for 1-dimensional layouts while Grid is meant for 2-dimensional layouts
 
 Flexbox solves many common problems in CSS, such as vertical centering of elements within a container, sticky footer
+
+## Flexbox
+
+https://scrimba.com/learn/flexbox
+
+## Grid
+
+https://scrimba.com/learn/R8PTE
 
 ## A mobile-first strategy has 2 main advantages
 

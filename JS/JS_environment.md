@@ -4,7 +4,7 @@ JavaScript is an **interpreted programming language**. It means that source code
 
 The **JavaScript engine** translates your script into runnable machine code instructions so it can be executed by the CPU of the host machine. The engine translates scripts during runtime. Your code won’t be compiled unless you run it. **(JIT (Just-In-Time) compiler)**
 
-![JavaScript engine resposibility](http://dolszewski.com/wp-content/uploads/2018/04/javascript-engine.png)
+![JavaScript engine resposibility](assets/JS_environment/javascript-engine.png)
 
 - **Chrome V8** – As you probably guessed the engine shipped in *Google Chrome*. It’s an open source project written in C++. V8 is also used in *Opera*, *NodeJS*, and *Couchbase*.
 - **SpiderMonkey** – The open source engine implemented in C++. It’s maintained by Mozilla Foundation. You can find it in *Firefox*.
@@ -21,11 +21,11 @@ The **JavaScript runtime environment** provides your scripts with utility librar
 
 The cool thing is **the JavaScript engine implementation is totally independent of the runtime environment.** Engines aren’t developed with any particular environment in mind.
 
-![Kết quả hình ảnh cho JavaScript runtime environment](https://codecute.com/wp-content/uploads/2019/04/js-runtime-enviroment-1.png)
+![Kết quả hình ảnh cho JavaScript runtime environment](assets/JS_environment/js-runtime-enviroment-1.png)
 
 ## Event loop
 
-![image-20200609164035886](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200609164035886.png)
+![image-20200609164035886](assets/JS_environment/image-20200609164035886.png)
 
 ## Node.JS
 
@@ -35,7 +35,7 @@ Node.js uses an event-driven, non-blocking I/O model that makes it lightweight a
 
 Node.js’ package ecosystem, [npm](https://www.npmjs.com/), is the largest ecosystem of open source libraries in the world.
 
-![img](https://cdn-media-1.freecodecamp.org/images/1*B_UCsFOPfRDKO8ovHpxphg.png)
+![image-20201208090447225](assets/JS_environment/image-20201208090447225.png)
 
 - Realtime: Đúng như định nghĩa, xử lí giao tiếp theo thời gian thực.
 - Very Fast: V8 Javascript Engine nên việc thực thi chương trình rất nhanh
@@ -45,7 +45,7 @@ Node.js’ package ecosystem, [npm](https://www.npmjs.com/), is the largest ecos
 
 ## Browser
 
-![img](https://miro.medium.com/max/499/1*RL0pnuf_hmLJ76oY6DViZw.png)
+![image-20201208090507467](assets/JS_environment/image-20201208090507467.png)
 
 ### Rendering Engine
 
@@ -54,13 +54,13 @@ Node.js’ package ecosystem, [npm](https://www.npmjs.com/), is the largest ecos
 - Internet Explorer uses Trident
 - Edge uses EdgeHTML
 
-![img](https://miro.medium.com/max/600/1*cfQpu6Xvb7e9IiH4CCuiCg.png)
+![image-20201208090648812](assets/JS_environment/image-20201208090648812.png)
 
-![img](https://viblo.asia/uploads/d6710955-9dc3-4a28-944d-069c0dac03c0.png)
+<img src="assets/JS_environment/d6710955-9dc3-4a28-944d-069c0dac03c0.png" alt="img" style="zoom:150%;background: white" />
 
 ### Storage/Data Persistence
 
-localStorage, sessionStorage, and cookies are all **client storage** solutions. Session data is held on the server where it remains under your direct control. (It's unique per `protocol://host:port`(**Origin**) combination)
+`localStorage`, `sessionStorage`, and cookies are all **client storage** solutions. Session data is held on the server where it remains under your direct control. (It's unique per `protocol://host:port`(**Origin**) combination)
 
  They are only able to store values as strings.
 
@@ -71,7 +71,7 @@ localStorage, sessionStorage, and cookies are all **client storage** solutions. 
   - Stores data that has to be sent back to the server with subsequent requests. Its expiration varies based on the type and the **expiration duration** can be set from either server-side or client-side (normally from server-side).
   - Cookies can be read on server-side and client-side.
   - Size must be less than 4KB.
-  - Cookies can be made secure by setting the httpOnly flag as true for that cookie. This prevents client-side access to that cookie
+  - Cookies can be made secure by setting the `httpOnly` flag as true for that cookie. This prevents client-side access to that cookie
 
   Cookies are mainly used for three purposes:
 
@@ -85,25 +85,25 @@ localStorage, sessionStorage, and cookies are all **client storage** solutions. 
 
     **Third-party cookies**
 
-+ SessionStorage (1 Tab)
++ `sessionStorage` (1 Tab)
 
-  + The sessionStorage object stores data only for a session, meaning that the data is stored until the browser (or tab) is closed.
+  + The `sessionStorage` object stores data only for a session, meaning that the data is stored until the browser (or tab) is closed.
   + Data is never transferred to the server.
   + Storage limit is larger than a cookie (at least 5MB).
-  + SessionStorage can only be read on client-side
+  + `sessionStorage` can only be read on client-side
 
-+ LocalStorage (Browser)
++ `localStorage`(Browser)
 
   - Stores data with no expiration date, and gets cleared only through JavaScript, or clearing the Browser cache / Locally Stored Data
   - Storage limit is the maximum amongst the three
   - Data is never transferred to the server.
-  - LocalStorage can only be read on client-side
+  - `localStorage`can only be read on client-side
 
-![JavaScript web browser environment](http://dolszewski.com/wp-content/uploads/2018/04/javascript-web-env.png)
+![JavaScript web browser environment](assets/JS_environment/javascript-web-env.png)
 
 # Garbage collector
 
-![image-20200523225819599](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200523225819599.png)
+![image-20200523225819599](assets/JS_environment/image-20200523225819599.png)
 
 # DOM
 
@@ -116,7 +116,7 @@ Although similar to other forms of the source HTML document, the DOM is differen
 - It doesn't include pseudo-elements (e.g. `::after`)
 - It does include hidden elements (e.g. with `display: none`)
 
-![img](https://miro.medium.com/max/753/1*ZrzXoRljG5Co5KvEsWJNjA.png)
+![image-20201208090809656](assets/JS_environment/image-20201208090809656.png)
 
 # Is JavaScript single-threaded?
 
@@ -151,7 +151,7 @@ AJAX allows web pages to be updated asynchronously by exchanging data with a web
     - Send data to a server - in the background
   
 
-![AJAX](https://www.w3schools.com/whatis/img_ajax.gif)
+![AJAX](assets/JS_environment/img_ajax.gif)
 
 ### What are the advantages and disadvantages of using Ajax?
 
@@ -186,17 +186,4 @@ Client Side: Only browser is enough.
 
 # Middleware
 
-![image-20200227181407311](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200227181407311.png)
-
-# Term Vietsub
-
-1. **AJAX**: viết tắt cho cụm “Asynchronous JavaScript and XML” (JavaScript và HTML không đồng bộ): công nghệ giúp giúp tạo ra những trang Web động mà không phải reload lại trang, giúp tác vụ chạy mượt và đẹp hơn.
-2. [**API**](https://topdev.vn/blog/api-la-gi/)**:** viết tắt của cụm từ “Application Programming Interface” (Giao diện lập trình ứng dụng): phương thức, giao thức kết nối với các thư viện và ứng dụng khác. Ngoài ra, API cung cấp khả năng truy xuất đến một tập các hàm hay dùng, từ đó có thể trao đổi dữ liệu giữa các ứng dụng.
-3. **Native API**: native API là một tính năng tích hợp có sẵn trong môi trường lập trình. Ví dụ: document.querySelector() đuợc gọi là native API để chọn các phần tử HTML (HTML elements)
-6. **Browser API hay Web API:** giống như native APIs, Web API là tính năng cụ thể có sẵn trên trình duyệt web, và dev có thể sử dụng ngay lập tức sau vài buớc cài đặt đơn giản. Ví dụ như setTimeout, setInterval, console.log. Xem thêm full list Web APIs.
-10. [**JavaScript engine**: ](https://topdev.vn/blog/hieu-hon-ve-cach-hoat-dong-cua-javascript-engine/)là một phần của browser và có khả năng biên dịch (compile) và phiên dịch (interpret) JavaScript code. JavaScript engine đọc các đoạn code JavaScript rồi chuyển nó sang mã máy để máy tính (hoặc phần mềm máy tính như trình duyệt web, server node.js…) có thể hiểu và chạy được.
-11. **JavaScript specification**: là bản mô tả chức năng cho ECMAScript. Trong mỗi ấn bản này, người ta định nghĩa các tính năng của ngôn ngữ lập trình ECMAScript theo một cách viết rất hàn lâm, với hàng đống những thuật ngữ khoa học. Loại tài liệu academic này chắc chắn không hợp khẩu vị của đa số JavaScript developer, nhưng lại rất quan trọng đối với các nhóm phát triển web browser và JavaScript engine. Họ sẽ tham khảo đặc tả và lần lượt tích hợp chức năng vào sản phẩm của họ.
-12.  **Node.js**: là môi trường chạy JavaScript bên ngoài browser, bao gồm JavaScript engine và V8 để compile và execute đoạn code. Nodejs không chạy trên một trình duyệt mà chạy trên Server.
-17. **REST API**: REST là một dạng chuyển đổi cấu trúc dữ liệu, API là giao diện lập trình ứng dụng giúp tạo ra các phương thức kết nối với các thư viện và ứng dụng khác nhau. REST API là một ứng dụng chuyển đổi cấu trúc dữ liệu có các phương thức để kết nối với các thư viện và ứng dụng khác. REST API không được xem là một công nghệ, nó là một giải pháp để tạo ra các ứng dụng web services thay thế cho các kiểu khác như SOAP, WSDL (Web Service Definition Language),…
-24. [**CORS**](https://topdev.vn/blog/cors-la-gi/): viết tắt cho Cross-Origin Resource Sharing, CORS là một cơ chế cho phép nhiều tài nguyên khác nhau (fonts, Javascript, v.v…) của một trang web có thể được truy vấn từ domain khác với domain của trang đó. Xem thêm cách sử dụng CORS tại đây.
-25. [**WebSocket**:](https://topdev.vn/blog/socket-la-gi-websocket-la-gi/) là một giao thức giúp truyền dữ liệu hai chiều giữa server-client qua một kết nối TCP duy nhất. Không giống với giao thức HTTP là cần client chủ động gửi yêu cầu cho server, client sẽ chờ đợi để nhận được dữ liệu từ máy chủ. Hay nói cách khác với giao thức Websocket thì server có thể chủ động gửi thông tin đến client mà không cần phải có yêu cầu từ client.
+![image-20200227181407311](assets/JS_environment/image-20200227181407311.png)

@@ -1,3 +1,7 @@
+https://anonystick.com/blog-developer/9-mau-thiet-ke-ma-moi-lap-trinh-vien-deu-phai-biet-phan-1-builder-pattern-2020103194916615
+
+https://anonystick.com/blog-developer/phan-2-factory-pattern-cach-ma-toi-trien-khai-trong-nha-may-vinfast-fresher-va-junior-nen-bo-qua-phan-3-2020110554662242
+
 # Creational
 
  These patterns are designed for class instantiation. They can be either class-creation patterns or object-creational patterns.
@@ -6,7 +10,7 @@
 
 Ensure a class has only one instance and provide a global point of access to it.
 
-![Diagram JavaScript Singleton  Design Pattern](https://www.dofactory.com/images/diagrams/javascript/javascript-singleton.jpg)
+![Diagram JavaScript Singleton  Design Pattern](assets/DesignParttern/javascript-singleton.jpg)
 
 ```js
 class SingletonClass {
@@ -36,7 +40,7 @@ A Factory Method creates new objects as instructed by the client. One way to cre
 
 The key objective of the Factory Method is extensibility. Factory Methods are frequently used in applications that manage, maintain, or manipulate collections of objects that are different but at the same time have many characteristics (i.e. methods and properties) in common. An example would be a collection of documents with a mix of Xml documents, Pdf documents, and Rtf documents.
 
-![Diagram JavaScript Factory Method Design Pattern](https://www.dofactory.com/images/diagrams/javascript/javascript-factory-method.jpg)
+![Diagram JavaScript Factory Method Design Pattern](assets/DesignParttern/javascript-factory-method.jpg)
 
 ```js
 function Factory() {
@@ -95,9 +99,7 @@ You may be wondering why you would want to leave the responsibility of the const
 
 This includes scenarios in which the creation process involves object caching, sharing or re-using of objects, complex logic, or applications that maintain object and type counts, and objects that interact with different resources or devices. If your application needs more control over the object creation process, consider using a Factory.
 
-![Diagram JavaScript Abstract Factory Design Pattern](https://www.dofactory.com/images/diagrams/javascript/javascript-abstract-factory.jpg)
-
-
+![Diagram JavaScript Abstract Factory Design Pattern](assets/DesignParttern/javascript-abstract-factory.jpg)
 
 # Structural
 
@@ -113,7 +115,7 @@ A tree control is a perfect example of a Composite pattern. The nodes of the tre
 
 All nodes in the Composite pattern share a common set of properties and methods which supports individual objects as well as object collections. This common interface greatly facilitates the design and construction of recursive algorithms that iterate over each object in the Composite collection.
 
-![Diagram JavaScript Composite  Design Pattern](https://www.dofactory.com/images/diagrams/javascript/javascript-composite.jpg)
+![Diagram JavaScript Composite  Design Pattern](assets/DesignParttern/javascript-composite.jpg)
 
 ## Flyweight
 
@@ -127,7 +129,7 @@ An example of the Flyweight Pattern is within the JavaScript engine itself which
 
 Other examples include characters and line-styles in a word processor, or 'digit receivers' in a public switched telephone network application. You will find flyweights mostly in utility type applications such as word processors, graphics programs, and network apps; they are less often used in data-driven business type applications.
 
-![Diagram JavaScript Flyweight Design Pattern](https://www.dofactory.com/images/diagrams/javascript/javascript-flyweight.jpg)
+![Diagram JavaScript Flyweight Design Pattern](assets/DesignParttern/javascript-flyweight.jpg)
 
 # Behavioral
 
@@ -143,7 +145,7 @@ Command objects allow you to centralize the processing of these actions, one for
 
 Because commands centralize all processing, they are also frequently involved in handling Undo functionality for the entire application.
 
-![Diagram JavaScript Command Design Pattern](https://www.dofactory.com/images/diagrams/javascript/javascript-command.jpg)
+![Diagram JavaScript Command Design Pattern](assets/DesignParttern/javascript-command.jpg)
 
 ## Observer
 
@@ -153,7 +155,7 @@ When building web apps you end up writing many event handlers. Event handlers ar
 
 The event and event-handler paradigm in JavaScript is the manifestation of the Observer design pattern. Another name for the Observer pattern is Pub/Sub, short for Publication/Subscription.
 
-![Diagram JavaScript Observer Design Pattern](https://www.dofactory.com/images/diagrams/javascript/javascript-observer.jpg)
+![Diagram JavaScript Observer Design Pattern](assets/DesignParttern/javascript-observer.jpg)
 
 ```js
   // each instance of the Observer class
@@ -221,4 +223,4 @@ Say we like to test the performance of different sorting algorithms to an array 
 
 In JavaScript the Strategy pattern is widely used as a plug-in mechanism when building extensible frameworks. This can be a very effective approach
 
-![Diagram JavaScript Strategy Design Pattern](https://www.dofactory.com/images/diagrams/javascript/javascript-strategy.jpg)
+![Diagram JavaScript Strategy Design Pattern](assets/DesignParttern/javascript-strategy.jpg)

@@ -1,14 +1,16 @@
 # Dev server
 
-![image-20201021155741231](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201021155741231.png)
+![image-20201021155741231](assets/Vue-CLI/image-20201021155741231.png)
 
-![image-20201021155849504](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201021155849504.png)
+![image-20201021155849504](assets/Vue-CLI/image-20201021155849504.png)
 
-![image-20201021164339629](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201021164339629.png)
+![image-20201021164339629](assets/Vue-CLI/image-20201021164339629.png)
 
 # Vue CLI
 
 https://cli.vuejs.org/
+
+https://www.youtube.com/watch?v=xht56VLMCY8
 
 ```bash
 # Install

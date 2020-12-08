@@ -2,15 +2,15 @@
 
 https://developer.mozilla.org/en-US/docs/Glossary/MVC
 
-![image-20200710222322856](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200710222322856.png)
+![image-20200710222322856](assets/MVC/image-20200710222322856.png)
 
 # Template engine
 
-![image-20200710205108632](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200710205108632.png)
+![image-20200710205108632](assets/MVC/image-20200710205108632.png)
 
 dynamic HTML page create by server data on the fly
 
-![image-20200710205253101](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200710205253101.png)
+![image-20200710205253101](assets/MVC/image-20200710205253101.png)
 
 ## installing
 
@@ -221,7 +221,7 @@ include
 
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
 
-![image-20200811210557113](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200811210557113.png)
+![image-20200811210557113](assets/MVC/image-20200811210557113.png)
 
 user can simply manipulating cookie value => use to store value to tracking users, advertisements tracking, not store sensitive data
 
@@ -237,11 +237,11 @@ httpOnly
 
 ## set
 
-![image-20200811224940148](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200811224940148.png)
+![image-20200811224940148](assets/MVC/image-20200811224940148.png)
 
 ## get
 
-![image-20200811225023175](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200811225023175.png)
+![image-20200811225023175](assets/MVC/image-20200811225023175.png)
 
 # sessions
 
@@ -251,7 +251,7 @@ entry store in database or in memory of server
 
 connect separate request of an user
 
-![image-20200812105326281](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200812105326281.png)
+![image-20200812105326281](assets/MVC/image-20200812105326281.png)
 
 => data in session will be protected in server-side, cannot change in client-side, only for a client session
 
@@ -261,24 +261,24 @@ A client need to tell the server which sessions he belongs by send to server a h
 
 https://github.com/expressjs/session
 
-![image-20200812172200159](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200812172200159.png)
+![image-20200812172200159](assets/MVC/image-20200812172200159.png)
 
-![image-20200812212938371](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200812212938371.png)
+![image-20200812212938371](assets/MVC/image-20200812212938371.png)
 
-![image-20200812172817484](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200812172817484.png)
+![image-20200812172817484](assets/MVC/image-20200812172817484.png)
 
 ## connect-mongodb-session
 
-![image-20200812175050327](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200812175050327.png)
+![image-20200812175050327](assets/MVC/image-20200812175050327.png)
 
-![image-20200812175255496](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200812175255496.png)
+![image-20200812175255496](assets/MVC/image-20200812175255496.png)
 
-![image-20200812175306686](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200812175306686.png)
+![image-20200812175306686](assets/MVC/image-20200812175306686.png)
 
 ## delete cookie
 
-![image-20200812191259969](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200812191259969.png)
+![image-20200812191259969](assets/MVC/image-20200812191259969.png)
 
 # cookies vs sessions
 
-![image-20200812213039239](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200812213039239.png)
+![image-20200812213039239](assets/MVC/image-20200812213039239.png)

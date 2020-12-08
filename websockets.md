@@ -1,10 +1,10 @@
-![image-20200816155150812](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200816155150812.png)
+![image-20200816155150812](assets/websockets/image-20200816155150812.png)
 
 # WebSockets
 
 https://www.npmjs.com/package/express-ws
 
-![image-20200816155407038](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200816155407038.png)
+![image-20200816155407038](assets/websockets/image-20200816155407038.png)
 
 ## socket.io
 
@@ -12,7 +12,7 @@ https://socket.io/
 
 https://socket.io/docs/rooms/
 
-![image-20200907222159837](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200907222159837.png)
+![image-20200907222159837](assets/websockets/image-20200907222159837.png)
 
 ### server
 
@@ -23,13 +23,13 @@ const Server = require('socket.io');
 const io = new Server();
 ```
 
-![image-20200816163948479](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200816163948479.png)
+![image-20200816163948479](assets/websockets/image-20200816163948479.png)
 
-![image-20200816163912881](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200816163912881.png)
+![image-20200816163912881](assets/websockets/image-20200816163912881.png)
 
 > the callback function will run when a client emit event
 
-![image-20200816164200864](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200816164200864.png)
+![image-20200816164200864](assets/websockets/image-20200816164200864.png)
 
 > ## server.of(nsp)
 >
@@ -232,13 +232,15 @@ Within each `Namespace`, you can also define arbitrary channels (called `room`) 
 
 ### client socket
 
-![image-20200816161712562](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200816161712562.png)
+```js
+import openSocket from 'socket.io-client'
+const socket = openSocket('http://localhost:8080');
+socket.on('posts', data => {
+    if (data.action === 'create') this.addPost()
+})
+```
 
-![image-20200816164400341](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200816164400341.png)
-
-
-
-# Cheat Sheet (socket.io)
+# Cheat sheet (socket.io)
 
 ## Server only
 
@@ -283,6 +285,6 @@ io.of('/admin').emit() //broadcast to namespace
 
 # Chat app flow
 
-![image-20200908102144586](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200908102144586.png)
+![image-20200908102144586](assets/websockets/image-20200908102144586.png)
 
-![image-20200908102741781](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200908102741781.png)
+![image-20200908102741781](assets/websockets/image-20200908102741781.png)

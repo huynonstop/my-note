@@ -2,7 +2,7 @@
 
 ## Principles of OOP
 
-![img](https://images.viblo.asia/e8e24a71-54dd-4b1d-94c0-3862a46683b9.png)
+![img](assets/Paradigm/e8e24a71-54dd-4b1d-94c0-3862a46683b9.png)
 
 ### Abstraction
 
@@ -30,13 +30,13 @@ It means that you create a (child) class by deriving from another (parent) class
 
 The child class reuses all fields and methods of the parent class (common part) and can implement its own (unique part).
 
-<img src="https://cdn-media-1.freecodecamp.org/images/ZIm7lFjlrKeMWxcH8fqBapNkuSJIxW9-t9yf" alt="img" style="zoom:100%; background: white" />
+<img src="assets/Paradigm/ZIm7lFjlrKeMWxcH8fqBapNkuSJIxW9-t9yf" alt="img" style="zoom:100%; background: white" />
 
 ### Polymorphism
 
  polymorphism gives a way to use a class exactly like its parent so there’s no confusion with mixing types. But each child class keeps its own implement methods as they are.
 
-<img src="https://cdn-media-1.freecodecamp.org/images/8GySv1U8Kh9nVVyiTqv5cDuWZC7p0uARVeF0" alt="img" style="zoom:100%; background: white" />
+<img src="assets/Paradigm/8GySv1U8Kh9nVVyiTqv5cDuWZC7p0uARVeF0" alt="img" style="zoom:100%; background: white" />
 
 ## SOLID
 
@@ -113,11 +113,11 @@ objects of a superclass shall be replaceable with objects of its subclasses with
 
 ## Inheritance
 
-![image-20200612211739276](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612211739276.png)
+![image-20200612211739276](assets/Paradigm/image-20200612211739276.png)
 
-![image-20200612211759007](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612211759007.png)
+![image-20200612211759007](assets/Paradigm/image-20200612211759007.png)
 
-![image-20200612211808601](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612211808601.png)
+![image-20200612211808601](assets/Paradigm/image-20200612211808601.png)
 
 ## Composition over inheritance
 
@@ -125,7 +125,7 @@ https://www.youtube.com/watch?v=wfMtDGfHWpA
 
 https://www.youtube.com/watch?v=7HolHe7Gqbw
 
-![image-20201021232918308](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201021232918308.png)
+![image-20201021232918308](assets/Paradigm/image-20201021232918308.png)
 
 => God object
 
@@ -144,7 +144,7 @@ MoveAndFlyAnimal extend ?
 
 Inheritance makes us turn a blind eye to the inevitable fact that our class structure will most likely change in the future, and when it does, our tightly coupled inheritance structure is going to crumble.
 
-![image-20201021233015497](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201021233015497.png)
+![image-20201021233015497](assets/Paradigm/image-20201021233015497.png)
 
 => Rather than thinking in terms of what things **are**, what if we think in terms of what things **do**?
 

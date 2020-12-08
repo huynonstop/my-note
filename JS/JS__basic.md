@@ -8,45 +8,45 @@ JavaScript was created to make webpages more dynamic (e.g. change content on a p
 
 JavaScript is a specific version of ECMAScript
 
-![image-20200521234356795](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200521234356795.png)
+![image-20200521234356795](assets/JS__basic/image-20200521234356795.png)
 
-![image-20200609162703842](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200609162703842.png)
+![image-20200609162703842](assets/JS__basic/image-20200609162703842.png)
 
-For implementation (browser, runtime)![image-20200609162754749](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200609162754749.png)
+![image-20200609162754749](assets/JS__basic/image-20200609162754749.png)
 
 # How JS execute
 
-![image-20200523003553345](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200523003553345.png)
+![image-20200523003553345](assets/JS__basic/image-20200523003553345.png)
 
 # Dynamic and Weakly-typed
 
-![image-20200523112734856](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200523112734856.png)
+![image-20200523112734856](assets/JS__basic/image-20200523112734856.png)
 
 # Hosted Language
 
-![image-20200611212206286](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611212206286.png)
+![image-20200611212206286](assets/JS__basic/image-20200611212206286.png)
 
 # Environment
 
-![image-20200523122656403](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200523122656403.png)
+![image-20200523122656403](assets/JS__basic/image-20200523122656403.png)
 
-![image-20200523131144520](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200523131144520.png)
+![image-20200523131144520](assets/JS__basic/image-20200523131144520.png)
 
 ## What browser does with JS code (V8)
 
 Browser read html => Hit script tag => Parsing (read JS and load it) and Execute code
 
-![image-20200523222006668](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200523222006668.png)
+![image-20200523222006668](assets/JS__basic/image-20200523222006668.png)
 
-![image-20200523220200236](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200523220200236.png)
+![image-20200523220200236](assets/JS__basic/image-20200523220200236.png)
 
 ## How code gets executed in the JS engine
 
-![image-20200523222358818](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200523222358818.png)
+![image-20200523222358818](assets/JS__basic/image-20200523222358818.png)
 
 ## How Garbage Collector work
 
-![image-20200523225819599](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200523225819599.png)
+![image-20200523225819599](assets/JS__basic/image-20200523225819599.png)
 
 When a block of memory (an object, say) is no longer reachable, it is eligible to be reclaimed. When, how, or whether it is reclaimed is entirely up to the implementation, and different implementations do it differently. But at a language level, it's automatic.
 
@@ -88,7 +88,7 @@ A variable declared outside a function, becomes global variable
 
 # Comparison operators
 
-![image-20200523203645095](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200523203645095.png)
+![image-20200523203645095](assets/JS__basic/image-20200523203645095.png)
 
 Careful with comparing object
 
@@ -104,11 +104,11 @@ console.log(a == null); // true
 console.log(a == undefined); // true
 ```
 
-![image-20200523204617685](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200523204617685.png)
+![image-20200523204617685](assets/JS__basic/image-20200523204617685.png)
 
 # Expression
 
-![image-20200612205313041](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612205313041.png)
+![image-20200612205313041](assets/JS__basic/image-20200612205313041.png)
 
 # Statement
 
@@ -116,11 +116,11 @@ Code that not return value
 
 if, function statement,....
 
-![image-20200612205716918](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612205716918.png)
+![image-20200612205716918](assets/JS__basic/image-20200612205716918.png)
 
 # Control Structures
 
-![image-20200612145656041](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612145656041.png)
+![image-20200612145656041](assets/JS__basic/image-20200612145656041.png)
 
 ## Conditional statement
 
@@ -128,7 +128,7 @@ if, else if, else
 
 ## Loop
 
-![image-20200523210555960](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200523210555960.png)
+![image-20200523210555960](assets/JS__basic/image-20200523210555960.png)
 
 break: stop looping
 
@@ -136,7 +136,7 @@ continue: skip this loop
 
 ### Iterable
 
-![image-20200530211212489](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200530211212489.png)
+![image-20200530211212489](assets/JS__basic/image-20200530211212489.png)
 
 # Datatype
 
@@ -157,7 +157,7 @@ continue: skip this loop
     typeof undefined; // “undefined”
     ```
 
-    ![image-20200612205802024](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612205802024.png)
+    ![image-20200612205802024](assets/JS__basic/image-20200612205802024.png)
 
 + Reference type: Shallow copy, store value in heap
 
@@ -167,21 +167,21 @@ continue: skip this loop
 
   - Function
 
-    ![image-20200612205815807](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612205815807.png)
+    ![image-20200612205815807](assets/JS__basic/image-20200612205815807.png)
 
-![image-20200523224859003](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200523224859003.png)
+![image-20200523224859003](assets/JS__basic/image-20200523224859003.png)
 
-![image-20200531222813663](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200531222813663.png)
+![image-20200531222813663](assets/JS__basic/image-20200531222813663.png)
 
-![image-20200609173712566](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200609173712566.png)
+![image-20200609173712566](assets/JS__basic/image-20200609173712566.png)
 
 ## Coercion
 
-![image-20200612204624112](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612204624112.png)
+![image-20200612204624112](assets/JS__basic/image-20200612204624112.png)
 
 ## Floating point  (Im)Precision
 
-![image-20200609174146528](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200609174146528.png)
+![image-20200609174146528](assets/JS__basic/image-20200609174146528.png)
 
 # Array
 
@@ -189,7 +189,7 @@ array, element, index, length
 
 An `array` is an object that holds values (of any type) not particularly in named properties/keys, but rather in numerically indexed positions
 
-![image-20200530211734950](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200530211734950.png)
+![image-20200530211734950](assets/JS__basic/image-20200530211734950.png)
 
 # Array method
 
@@ -319,25 +319,25 @@ console.log(b); // 1
 
 #  Array-like-object
 
-![image-20200530211222871](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200530211222871.png)
+![image-20200530211222871](assets/JS__basic/image-20200530211222871.png)
 
 # Function
 
-![image-20200221180104305](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200221180104305.png)
+![image-20200221180104305](assets/JS__basic/image-20200221180104305.png)
 
 Functions are one of the fundamental building blocks in JavaScript. A function is a JavaScript object (store your code - a set of statements ) that can be invoked (run) later. 
 
 To use a function, you must define it somewhere in the scope and then you can call it any time and any where you want.
 
-![image-20200612145620350](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612145620350.png)
+![image-20200612145620350](assets/JS__basic/image-20200612145620350.png)
 
 Function is an object in JavaScript
 
 You can defined a function inside a function
 
-![image-20200524210656777](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200524210656777.png)
+![image-20200524210656777](assets/JS__basic/image-20200524210656777.png)
 
-![image-20200612204848376](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612204848376.png)
+![image-20200612204848376](assets/JS__basic/image-20200612204848376.png)
 
 ## Anonymous function
 
@@ -415,11 +415,11 @@ sum(1,2,3,4,5) // 15
 
 ## Arrow function ES6+
 
-![image-20200524212628601](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200524212628601.png)
+![image-20200524212628601](assets/JS__basic/image-20200524212628601.png)
 
 # Object
 
-![image-20200531222729940](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200531222729940.png)
+![image-20200531222729940](assets/JS__basic/image-20200531222729940.png)
 
 ## 	Native objects 
 
@@ -551,15 +551,15 @@ console.log(q); // true
 
 ## Getter & Setter
 
-![image-20200601210340382](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200601210340382.png)
+![image-20200601210340382](assets/JS__basic/image-20200601210340382.png)
 
 ## Descriptor
 
-![image-20200602004653502](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200602004653502.png)
+![image-20200602004653502](assets/JS__basic/image-20200602004653502.png)
 
-![image-20200602004806899](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200602004806899.png)
+![image-20200602004806899](assets/JS__basic/image-20200602004806899.png)
 
-![image-20200602005053500](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200602005053500.png)
+![image-20200602005053500](assets/JS__basic/image-20200602005053500.png)
 
 ## document & window
 
@@ -567,7 +567,7 @@ document: give access to your loaded HTML document
 
 window: give access to browser's core APIs (just the active tab)
 
-![image-20200525233250502](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200525233250502.png)
+![image-20200525233250502](assets/JS__basic/image-20200525233250502.png)
 
 # Class 
 
@@ -591,7 +591,7 @@ const a = new Person("hi")// this = a
 
 ## Fields vs Properties
 
-![image-20200601212615544](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200601212615544.png)
+![image-20200601212615544](assets/JS__basic/image-20200601212615544.png)
 
 ```js
 class MyClass() {
@@ -610,7 +610,7 @@ class MyClass() {
 }
 ```
 
-![image-20200602003702552](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200602003702552.png)
+![image-20200602003702552](assets/JS__basic/image-20200602003702552.png)
 
 ```js
 class Private { 
@@ -622,29 +622,29 @@ class Private {
 
 ## Binding class method 
 
-![image-20200601214159413](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200601214159413.png)
+![image-20200601214159413](assets/JS__basic/image-20200601214159413.png)
 
-![image-20200601214143079](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200601214143079.png)
+![image-20200601214143079](assets/JS__basic/image-20200601214143079.png)
 
-![image-20200602003253632](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200602003253632.png)
+![image-20200602003253632](assets/JS__basic/image-20200602003253632.png)
 
-![image-20200602003417752](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200602003417752.png)
+![image-20200602003417752](assets/JS__basic/image-20200602003417752.png)
 
 ## static
 
-![image-20200601233442514](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200601233442514.png)
+![image-20200601233442514](assets/JS__basic/image-20200601233442514.png)
 
 Static class members (properties/methods) are not tied to a specific instance of a class and have the same value regardless of which instance is referring to it. Static properties are typically configuration variables and static methods are usually pure utility functions which do not depend on the state of the instance.
 
 ## Getter & Setter
 
-![image-20200601235032694](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200601235032694.png)
+![image-20200601235032694](assets/JS__basic/image-20200601235032694.png)
 
 ## Inheritance
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super
 
-![image-20200601235316105](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200601235316105.png)
+![image-20200601235316105](assets/JS__basic/image-20200601235316105.png)
 
 ```javascript
 class Polygon {
@@ -669,7 +669,7 @@ class Square extends Polygon {
 
 An IIFE is an anonymous function that is created and then immediately invoked. It’s not called from anywhere else (hence why it’s anonymous), but runs just after being created.
 
-![image-20200612210709261](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612210709261.png)
+![image-20200612210709261](assets/JS__basic/image-20200612210709261.png)
 
 ```javascript
 function foo(){ }();// not working
@@ -692,11 +692,11 @@ console.log(window.SOME_GLOBAL_VALUE)
 //order is matter be careful
 ```
 
-![image-20200611133605096](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611133605096.png)
+![image-20200611133605096](assets/JS__basic/image-20200611133605096.png)
 
-![image-20200611132342219](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611132342219.png)
+![image-20200611132342219](assets/JS__basic/image-20200611132342219.png)
 
-![image-20200611131250853](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611131250853.png)
+![image-20200611131250853](assets/JS__basic/image-20200611131250853.png)
 
 To share `export`
 
@@ -725,5 +725,5 @@ import { Component } form './component'
 
 Import code in a later time, not when your web app load but only when we need that code
 
-![image-20200611133255822](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611133255822.png)
+![image-20200611133255822](assets/JS__basic/image-20200611133255822.png)
 

@@ -45,8 +45,6 @@ Chúng ta thường sử dụng kiến trúc một khối khi:
 - Bạn không muốn mất thời gian cho cơ sở hạ tầng, monitoring,…
 - Khi người dùng thường nhỏ và ít nên bạn không mong đợi họ sẽ mở rộng. Ví dụ các ứng dụng doanh nghiệp nhắm đến mục tiêu là một nhóm người cụ thể…
 
-![img](https://miro.medium.com/max/1400/1*TRmj8lWyzCufEGjxCONAog.jpeg)
-
 ## Ưu điểm:
 
 - Dễ phát triển vì các stack công nghệ thống nhất ở tất cả các layer.
@@ -84,8 +82,6 @@ Chúng ta thường sử dụng kiến trúc microservice khi:
 - Thời gian để đem đi marketing không quan trọng. Kiến trúc microservice sẽ mất nhiều thời gian hơn để hoạt động được.
 - Bạn sẵn sàng chi nhiều hơn cho cơ sở hạ tầng, giám sát,… để nâng cao chất lượng sản phẩm.
 - Tiềm năng về người dùng lớn và bạn kỳ vọng số lượng người dùng sẽ phát triển. Ví dụ một phương tiện truyền thoong xã hội nhắm mục tiêu là người dùng trên toàn thế giới.
-
-![img](https://miro.medium.com/max/1400/1*TRmj8lWyzCufEGjxCONAog.jpeg)
 
 ## Ưu điểm:
 
@@ -125,9 +121,9 @@ Chúng ta thường sử dụng kiến trúc microservice khi:
 | Microservices work on the principle that focuses on products, not projects | Put emphasize on the entire project                          |
 | No cross-dependencies between code bases. You can use different technologies for different Microservices. | One function or program depends on others.                   |
 
-![Kết quả hình ảnh cho what is monolithic architecture](https://miro.medium.com/max/3764/1*Un9W-mw18NLtuQdsBNytJQ.png)
+![image-20201208084524466](assets/Architectures/image-20201208084524466.png)
 
-![img](https://images.viblo.asia/1cf078a4-ded3-4126-8890-1bbd4bd37e11.png)
+![img](assets/Architectures/1cf078a4-ded3-4126-8890-1bbd4bd37e11.png)
 
 # Client–server model
 
@@ -139,7 +135,7 @@ The Client-server model is a distributed application structure that partitions t
 
 So, its basically the **Client** requesting something and the **Server** serving it as long as its present in the database.
 
-![img](https://media.geeksforgeeks.org/wp-content/uploads/20191016114416/801.png)
+![img](assets/Architectures/801.png)
 
 # peer-to-peer
 

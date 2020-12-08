@@ -1,6 +1,6 @@
 # The Waterfall Approach
 
-![Waterfall–Approach–scheme–image](https://www.sam-solutions.com/blog/wp-content/uploads/2018/07/WATERFALL@2x.png)
+![Waterfall–Approach–scheme–image](assets/Software%20development/WATERFALL@2x.png)
 
 ### The Positives
 
@@ -41,7 +41,7 @@ It is most suitable for simple projects in which customers have a clear vision o
 
 # Agile Model
 
-![Agile–Approach–Scheme–image](https://www.sam-solutions.com/blog/wp-content/uploads/2018/07/AGILE@2x.png)
+![Agile–Approach–Scheme–image](assets/Software%20development/AGILE@2x.png)
 
 After launching, customers start using the product, and if any problems occur, the team reviews and addresses them.
 

@@ -8,9 +8,9 @@ https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API
 
 https://medium.com/analytics-and-data/cookies-tracking-and-pixels-where-does-your-web-data-comes-from-ff5d9b8bc8f7
 
-![image-20200611154542654](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611154542654.png)
+![image-20200611154542654](assets/JS_Browser_Storage/image-20200611154542654.png)
 
-![image-20200611154906597](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611154906597.png)
+![image-20200611154906597](assets/JS_Browser_Storage/image-20200611154906597.png)
 
 ## Difference `cookie`, `sessionStorage` and `localStorage`.
 
@@ -135,6 +135,10 @@ retrBtn.addEventListener('click', () => {
 });
 
 ```
+
+# cookieStore
+
+[cookieStore là gì? Tạo sao nó lại thay thế document.cookie kế từ phiên bản Chrome 87 (anonystick.com)](https://anonystick.com/blog-developer/cookiestore-la-gi-tao-sao-no-lai-thay-the-documentcookie-ke-tu-phien-ban-chrome-87-2020103067936008)
 
 ## More
 

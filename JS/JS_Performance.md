@@ -1,22 +1,22 @@
 # Performance ?
 
-![image-20200611223710374](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611223710374.png)
+![image-20200611223710374](assets/JS_Performance/image-20200611223710374.png)
 
-![image-20200611223731975](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611223731975.png)
+![image-20200611223731975](assets/JS_Performance/image-20200611223731975.png)
 
-![image-20200611223943586](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611223943586.png)
+![image-20200611223943586](assets/JS_Performance/image-20200611223943586.png)
 
-![image-20200611224149450](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611224149450.png)
+![image-20200611224149450](assets/JS_Performance/image-20200611224149450.png)
 
-![image-20200611224206818](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611224206818.png)
+![image-20200611224206818](assets/JS_Performance/image-20200611224206818.png)
 
 https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference
 
 https://developers.google.com/web/fundamentals/performance/rendering/optimize-javascript-execution
 
-![image-20200611231651583](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611231651583.png)
+![image-20200611231651583](assets/JS_Performance/image-20200611231651583.png)
 
-![image-20200611231702657](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611231702657.png)
+![image-20200611231702657](assets/JS_Performance/image-20200611231702657.png)
 
 # Updating DOM correctly
 
@@ -24,7 +24,7 @@ Don't rerender everything on every change, rerender what is updated
 
 # Benchmarking & Comparing
 
-![image-20200611230710806](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611230710806.png)
+![image-20200611230710806](assets/JS_Performance/image-20200611230710806.png)
 
 # Memory leak
 

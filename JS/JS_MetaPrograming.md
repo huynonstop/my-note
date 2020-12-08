@@ -8,7 +8,7 @@ https://medium.com/jspoint/a-brief-introduction-to-metaprogramming-in-javascript
 
 Configuring our code to behave in a certain way when other people use it
 
-![image-20200611211554298](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611211554298.png)
+![image-20200611211554298](assets/JS_MetaPrograming/image-20200611211554298.png)
 
 - [More about Symbols (MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
 - [List of Well-Known Symbols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol#Well-known_symbols)
@@ -23,9 +23,9 @@ https://medium.com/intrinsic/javascript-symbols-but-why-6b02768f4a5c
 
 Unique identifiers for your objects
 
-![image-20200611181703613](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611181703613.png)
+![image-20200611181703613](assets/JS_MetaPrograming/image-20200611181703613.png)
 
-![image-20200611181716785](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611181716785.png)
+![image-20200611181716785](assets/JS_MetaPrograming/image-20200611181716785.png)
 
 ```js
 Symbol("abc") === Symbol("abc") //false
@@ -33,7 +33,7 @@ Symbol("abc") === Symbol("abc") //false
 
 #### Well-know symbols
 
-![image-20200611182645270](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611182645270.png)
+![image-20200611182645270](assets/JS_MetaPrograming/image-20200611182645270.png)
 
 ### Iterator
 
@@ -62,9 +62,11 @@ company.next()
 company.next()
 ```
 
-![image-20200611192846023](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611192846023.png)
+![image-20200611192846023](assets/JS_MetaPrograming/image-20200611192846023.png)
 
-<img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611193123041.png" alt="image-20200611193123041" style="zoom:150%;" /><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611193146309.png" alt="image-20200611193146309" style="zoom:150%;" />
+<img src="assets/JS_MetaPrograming/image-20200611193123041.png" alt="image-20200611193123041" style="zoom:150%;" />
+
+<img src="assets/JS_MetaPrograming/image-20200611193146309.png" alt="image-20200611193146309" style="zoom:150%;" />
 
 ### Generator
 
@@ -81,7 +83,7 @@ function* employeeGenerator() {
 const it = employeeGenerator()
 ```
 
-![image-20200611195527229](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611195527229.png)
+![image-20200611195527229](assets/JS_MetaPrograming/image-20200611195527229.png)
 
 ```js
 const company = {
@@ -152,4 +154,4 @@ const pCourse = new Proxy(course,courseHandler)
 console.log(pCourse.title)
 ```
 
-![image-20200611211112467](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611211112467.png)
+![image-20200611211112467](assets/JS_MetaPrograming/image-20200611211112467.png)

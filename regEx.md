@@ -25,7 +25,7 @@ replace matching patterns
 
 ## operator
 
-![image-20200825131928971](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200825131928971.png)
+![image-20200825131928971](assets/regEx/image-20200825131928971.png)
 
 |: or
 

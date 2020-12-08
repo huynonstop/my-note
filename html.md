@@ -4,7 +4,7 @@
 
 The DOCTYPE declaration for the HTML5 standards is `<!DOCTYPE html>`.
 
-![image-20200211225751248](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200211225751248.png)
+![image-20200211225751248](assets/html/image-20200211225751248.png)
 
 ## language 
 

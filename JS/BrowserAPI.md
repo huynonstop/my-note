@@ -6,35 +6,35 @@ Read more [JS_DOM.md](JS_DOM.md)
 
 ### Timers & intervals
 
-![image-20200608121224915](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608121224915.png)
+![image-20200608121224915](assets/BrowserAPI/image-20200608121224915.png)
 
-![image-20200608121324990](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608121324990.png)
+![image-20200608121324990](assets/BrowserAPI/image-20200608121324990.png)
 
-![image-20200608121503051](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608121503051.png)
+![image-20200608121503051](assets/BrowserAPI/image-20200608121503051.png)
 
-![image-20200608121524339](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608121524339.png)
+![image-20200608121524339](assets/BrowserAPI/image-20200608121524339.png)
 
 **minimum** time to run the callback (waiting for the callstack is empty)
 
 ### location (URL and page we're on)
 
-![image-20200608124840159](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608124840159.png)
+![image-20200608124840159](assets/BrowserAPI/image-20200608124840159.png)
 
 ### history
 
-![image-20200608124758794](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608124758794.png)
+![image-20200608124758794](assets/BrowserAPI/image-20200608124758794.png)
 
 ### navigator
 
-![image-20200608125128292](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608125128292.png)
+![image-20200608125128292](assets/BrowserAPI/image-20200608125128292.png)
 
 ### Date
 
-![image-20200608125559605](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608125559605.png)
+![image-20200608125559605](assets/BrowserAPI/image-20200608125559605.png)
 
 ### Error
 
-![image-20200608125712784](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608125712784.png)
+![image-20200608125712784](assets/BrowserAPI/image-20200608125712784.png)
 
 ### JSON 
 

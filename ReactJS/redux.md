@@ -13,21 +13,21 @@ State managing and share data between components easier
 
 Do not pass un-using props for between components (prop drilling)
 
-![image-20200618172322498](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200618172322498.png)
+![image-20200618172322498](assets/redux/image-20200618172322498.png)
 
 ## Flow
 
-![image-20200623140532415](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200623140532415.png)
+![image-20200623140532415](assets/redux/image-20200623140532415.png)
 
 ## Reducer
 
 return a new version of state when dispatch an action
 
-![image-20200618181653587](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200618181653587.png)
+![image-20200618181653587](assets/redux/image-20200618181653587.png)
 
 ## Action
 
-![image-20200618181734946](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200618181734946.png)
+![image-20200618181734946](assets/redux/image-20200618181734946.png)
 
 ## Middleware
 
@@ -73,7 +73,7 @@ function fetchData() {
 
 ### redux-thunk
 
-![image-20200623112850576](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200623112850576.png)
+![image-20200623112850576](assets/redux/image-20200623112850576.png)
 
 ```js
 export const fetchShop = () => (dispatch) => {
@@ -92,6 +92,4 @@ export const fetchShop = () => (dispatch) => {
 
 ### redux-saga
 
-![image-20200623131340647](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200623131340647.png)
-
-# 
+![image-20200623131340647](assets/redux/image-20200623131340647.png)

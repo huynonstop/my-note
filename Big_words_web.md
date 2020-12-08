@@ -34,7 +34,7 @@ https://www.totolink.vn/article/136-mo-hinh-osi-la-gi-chuc-nang-cua-cac-tang-gia
 | Data Link Layer                   | The data link layer is used for the encoding, decoding and logical organization of data bits. Data packets are framed and addressed by this layer, which has two sublayers.(media access control - MAC, logical link control, ethernet, WIFI) |
 | Physical Layer                    | This layer plays with most of the network’s physical connections—wireless transmission, cabling, cabling standards and types, connectors and types, network interface cards |
 
-![Kết quả hình ảnh cho TCP/IP model](https://download.huawei.com/mdl/imgDownload?uuid=d6bd7de144f045e09d2e3a95e9667a14.png)
+![Kết quả hình ảnh cho TCP/IP model](assets/Big_words_web/imgDownload)
 
 # Network Protocol
 
@@ -133,7 +133,7 @@ The Client-server model is a distributed application structure that partitions t
 
 its basically the **Client** requesting something and the **Server** serving it as long as its present in the database.
 
-![img](https://media.geeksforgeeks.org/wp-content/uploads/20191016114416/801.png)
+![img](assets/Big_words_web/801.png)
 
 ## How it's work
 
@@ -144,7 +144,7 @@ its basically the **Client** requesting something and the **Server** serving it 
 - Server sends over the necessary files of the website.
 - Browser then renders the files and the website is displayed. This rendering is done with the help of **DOM** (Document Object Model) interpreter, **CSS** interpreter and **JS Engine** collectively known as the **JIT** or (Just in Time) Compilers.
 
-![img](https://media.geeksforgeeks.org/wp-content/uploads/20191016120927/8110.png)
+![img](assets/Big_words_web/8110.png)
 
 **Advantages of Client-Server model:**
 
@@ -174,7 +174,7 @@ A website, need a few things to be accessed:
 
 Web hosting is the service of providing storage space for a website or application on a server on the internet. Once your website is made available on the internet, it can be accessed by other computers connected to the internet.
 
-![img](https://qph.fs.quoracdn.net/main-qimg-3350f84445b9e9e6fe8381f2c7c3e895)
+![img](assets/Big_words_web/main-qimg-3350f84445b9e9e6fe8381f2c7c3e895)
 
 **Shared Hosting **(shared with the orther) < **VPS hosting** (shard the server but not the resources ) < **Dedicated Hosting** (full-control)
 
@@ -184,9 +184,11 @@ Web hosting is the service of providing storage space for a website or applicati
 
 https://www.youtube.com/watch?v=hJHvdBlSxug
 
-![image-20200521225002397](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200521225002397.png)
+![image-20200521225002397](assets/Big_words_web/image-20200521225002397.png)
 
 # HTTP/HTTPS
+
+ HTTP uses **port 80** and HTTPS uses **port 443**
 
 ## **HTTP** 
 
@@ -247,13 +249,13 @@ HTTP requests, and responses, share similar structure and are composed of:
 
 4. An optional *body* containing data associated with the request (like content of an HTML form), or the document associated with a response. The presence of the body and its size is specified by the start-line and HTTP headers.
 
-   <img src="https://mdn.mozillademos.org/files/13827/HTTPMsgStructure2.png" alt="Requests and responses share a common structure in HTTP" style="zoom:80%;background-color:white" />
+   <img src="assets/Big_words_web/HTTPMsgStructure2.png" alt="Requests and responses share a common structure in HTTP" style="zoom:80%;background-color:white" />
 
 ### Request
 
 messages sent by the client to initiate an action on the server
 
-<img src="https://mdn.mozillademos.org/files/13821/HTTP_Request_Headers2.png" alt="Example of headers in an HTTP request" style="zoom:100%; background-color: white" />
+<img src="assets/Big_words_web/HTTP_Request_Headers2.png" alt="Example of headers in an HTTP request" style="zoom:100%; background-color: white" />
 
 #### start-line 
 
@@ -285,7 +287,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 
 *responses*, the answer from the server
 
-<img src="https://mdn.mozillademos.org/files/13823/HTTP_Response_Headers2.png" alt="Example of headers in an HTTP response" style="zoom:100%; background-color: white" />
+<img src="assets/Big_words_web/HTTP_Response_Headers2.png" alt="Example of headers in an HTTP response" style="zoom:100%; background-color: white" />
 
 #### Status line
 
@@ -325,9 +327,9 @@ HTTP +  Secure Sockets Layer (port 443)
 
 HTTPS uses HTTP and an encryption protocol (TLS/SSL) to encrypt communications. 
 
-<img src="https://s3-ap-southeast-1.amazonaws.com/kipalog.com/WRNrD.png_q1sk0vahes" alt="img" style="zoom:200%;" />
+<img src="assets/Big_words_web/WRNrD.png_q1sk0vahes" alt="img" style="zoom:200%;" />
 
-![img](https://cache.digistar.vn/wp-content/uploads/2017/10/img_ssl_how_it_works_1-1.jpg?x90642)
+![img](assets/Big_words_web/img_ssl_how_it_works_1-1.jpg)
 
 Và tất nhiên, các session key sẽ được tạo ra ngẫu nhiên và khác nhau trong mỗi phiên làm việc với server. Ngoài encryption thì cơ chế hashing sẽ được sử dụng để đảm bảo tính Integrity cho các thông điệp được trao đổi.
 
@@ -376,11 +378,11 @@ Cross-Origin Resource Sharing ([CORS](https://developer.mozilla.org/en-US/docs/G
 
 A web application executes a **cross-origin HTTP request** when it requests a resource that has a different origin (domain, protocol, or port) from its own.
 
-![image-20200611213702513](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611213702513.png)
+![image-20200611213702513](assets/Big_words_web/image-20200611213702513.png)
 
 => You have to tell the browser Cross-Origin Resource Sharing is OK, set a header in the **backend** the to signal the **browser** that this access is fine, that we allow this access - a middleware to handle cors header
 
-![image-20200611214236251](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611214236251.png)
+![image-20200611214236251](assets/Big_words_web/image-20200611214236251.png)
 
 [More](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
 
@@ -412,7 +414,7 @@ https://rapidapi.com/blog/api-glossary/webhooks/
 
 # Client-side Rendering And Server-side Rendering
 
-![img](https://images.viblo.asia/df2bcc4e-5dec-4469-8e0b-a71e31d7152f.png)
+![img](assets/Big_words_web/df2bcc4e-5dec-4469-8e0b-a71e31d7152f.png)
 
 # Redis
 
@@ -424,7 +426,7 @@ strings, hashes, lists, sets, sorted
 
 # Framework vs library
 
-![image-20200611174849202](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611174849202.png)
+![image-20200611174849202](assets/Big_words_web/image-20200611174849202.png)
 
 # Framework Front-end
 
@@ -432,7 +434,7 @@ VueJS, Angular, React
 
 https://academind.com/learn/angular/angular-vs-react-vs-vue-my-thoughts/
 
-![image-20200611175234911](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611175234911.png)
+![image-20200611175234911](assets/Big_words_web/image-20200611175234911.png)
 
 - Helping us interact with a big a DOM Trees easily (may have thousands of nodes)
 - Helping us searching and update the real DOM efficiently with the **virtual DOM**
@@ -441,17 +443,17 @@ https://academind.com/learn/angular/angular-vs-react-vs-vue-my-thoughts/
 
 A way of representing the actual DOM with Javascript Objects
 
-![image-20200626221721144](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200626221721144.png)
+![image-20200626221721144](assets/Big_words_web/image-20200626221721144.png)
 
 virtual DOM is the "blueprint"
 
 actual DOM is the "building"
 
-![image-20200626222105080](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200626222105080.png)
+![image-20200626222105080](assets/Big_words_web/image-20200626222105080.png)
 
 Change the DOM (repaint element to the browser, repaint CSS, ...) is the heaviest and slowest work and you may want to do that only when needed and not update the DOM nodes or everything in the real DOM
 
-![image-20200626221905921](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200626221905921.png)
+![image-20200626221905921](assets/Big_words_web/image-20200626221905921.png)
 
 # Flux
 
@@ -459,7 +461,7 @@ https://facebook.github.io/flux/
 
 Action => dispatcher => store => View => Action
 
-![img](https://qph.fs.quoracdn.net/main-qimg-ef494b3986df9d9f624cfd6230fc632f)
+![img](assets/Big_words_web/main-qimg-ef494b3986df9d9f624cfd6230fc632f)
 
 # MVC
 
@@ -475,7 +477,7 @@ In MVC pattern, application and its development are divided into three interconn
 - View is User Interface part.
 - Controller is request-response handler.
 
-<img src="https://mdn.mozillademos.org/files/16042/model-view-controller-light-blue.png" alt="Diagram to show the different parts of the mvc architecture." style="zoom:100%;background-color: white;" />
+<img src="assets/Big_words_web/model-view-controller-light-blue.png" alt="Diagram to show the different parts of the mvc architecture." style="zoom:100%;background-color: white;" />
 
 # MVVM
 
@@ -491,9 +493,9 @@ MODEL: ( Reusable Code – DATA ) Business Objects that encapsulate data and beh
 VIEW**:** ( Platform Specific Code – USER INTERFACE ) What the user sees, The Formatted data.
 VIEWMODEL: ( Reusable Code – LOGIC ) Link bewteen Model and View OR It Retrieves data from Model and exposes it to the View (using Observer design pattern to binding, 1 way or 2 ways ). This is the model specifically designed for the View.
 
-![img](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190530163655/Capture5.png)
+![img](assets/Big_words_web/Capture5.png)
 
-![img](https://images.viblo.asia/52a8cf0b-b5fb-457b-967f-ce406975b2d0.png)
+![img](assets/Big_words_web/52a8cf0b-b5fb-457b-967f-ce406975b2d0.png)
 
 # Single thread
 
@@ -517,11 +519,11 @@ Code add a newer feature of Javascript which the older engine version don't supp
 
 # Syntax sugar
 
-![image-20200612212716624](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612212716624.png)
+![image-20200612212716624](assets/Big_words_web/image-20200612212716624.png)
 
 # Service worker
 
-![image-20200623144206679](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200623144206679.png)
+![image-20200623144206679](assets/Big_words_web/image-20200623144206679.png)
 
 # Tracking pixel url
 

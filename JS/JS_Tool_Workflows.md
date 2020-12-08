@@ -1,10 +1,10 @@
 # Tooling & Workflows
 
-![image-20200611140405097](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611140405097.png)
+![image-20200611140405097](assets/JS_Tool_Workflows/image-20200611140405097.png)
 
-![image-20200611140427459](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611140427459.png)
+![image-20200611140427459](assets/JS_Tool_Workflows/image-20200611140427459.png)
 
-![image-20200611140629104](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611140629104.png)
+![image-20200611140629104](assets/JS_Tool_Workflows/image-20200611140629104.png)
 
 ## ESLint
 
@@ -32,9 +32,9 @@ When Webpack processes your application, it builds a dependency graph which maps
 
 If one file depends on another (it uses the code from a separate file), Webpack treats this as a dependency. Webpack also takes your non-code assets (images, fonts, styles, etc.) and converts them to dependencies for your application.
 
-![image-20201024123431671](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201024123431671.png)
+![image-20201024123431671](assets/JS_Tool_Workflows/image-20201024123431671.png)
 
-![image-20201024122747596](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201024122747596.png)
+![image-20201024122747596](assets/JS_Tool_Workflows/image-20201024122747596.png)
 
 Loaders: compile files not JS
 
@@ -48,39 +48,39 @@ webpack.config.js: entry, output, module (rules => match files to loaders, plugi
 >
 > `webpack.config.js`
 >
-> ![image-20200611143200356](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611143200356.png)
+> ![image-20200611143200356](assets/JS_Tool_Workflows/image-20200611143200356.png)
 >
-> ![image-20200611142536194](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611142536194.png)
+> ![image-20200611142536194](assets/JS_Tool_Workflows/image-20200611142536194.png)
 >
 > Webpack dev server (hot reload)
 >
-> ![image-20200611143529885](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611143529885.png)
+> ![image-20200611143529885](assets/JS_Tool_Workflows/image-20200611143529885.png)
 >
-> ![image-20200611143559885](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611143559885.png)
+> ![image-20200611143559885](assets/JS_Tool_Workflows/image-20200611143559885.png)
 >
 > Webpack dev tool
 >
-> ![image-20200611143901367](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611143901367.png)
+> ![image-20200611143901367](assets/JS_Tool_Workflows/image-20200611143901367.png)
 >
 > Production
 >
 > `webpack.config.prod.js`
 >
-> ![image-20200611144206834](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611144206834.png)
+> ![image-20200611144206834](assets/JS_Tool_Workflows/image-20200611144206834.png)
 >
-> ![image-20200611144431991](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611144431991.png)
+> ![image-20200611144431991](assets/JS_Tool_Workflows/image-20200611144431991.png)
 >
 > Clean webpack plugin
 >
 > clean-webpack-plugin
 >
-> ![image-20200611144817778](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611144817778.png)
+> ![image-20200611144817778](assets/JS_Tool_Workflows/image-20200611144817778.png)
 >
-> ![image-20200611144835668](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611144835668.png)
+> ![image-20200611144835668](assets/JS_Tool_Workflows/image-20200611144835668.png)
 >
 > New name for file (no old cache on browser)
 >
-> ![image-20200611145119738](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611145119738.png)
+> ![image-20200611145119738](assets/JS_Tool_Workflows/image-20200611145119738.png)
 >
 > change import script in the html file
 >
@@ -91,33 +91,33 @@ https://www.snowpack.dev/
 
 # Browser support
 
-![image-20200611164923403](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611164923403.png)
+![image-20200611164923403](assets/JS_Tool_Workflows/image-20200611164923403.png)
 
-![image-20200611164943405](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611164943405.png)
+![image-20200611164943405](assets/JS_Tool_Workflows/image-20200611164943405.png)
 
-![image-20200611165220488](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611165220488.png)
+![image-20200611165220488](assets/JS_Tool_Workflows/image-20200611165220488.png)
 
-![image-20200611165334323](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611165334323.png)
+![image-20200611165334323](assets/JS_Tool_Workflows/image-20200611165334323.png)
 
-![image-20200611165410604](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611165410604.png)
+![image-20200611165410604](assets/JS_Tool_Workflows/image-20200611165410604.png)
 
-![image-20200611165617262](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611165617262.png)
+![image-20200611165617262](assets/JS_Tool_Workflows/image-20200611165617262.png)
 
 ## Polyfill
 
-![image-20200611165738554](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611165738554.png)
+![image-20200611165738554](assets/JS_Tool_Workflows/image-20200611165738554.png)
 
 ## Transpilation
 
-![image-20200611165900311](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611165900311.png)
+![image-20200611165900311](assets/JS_Tool_Workflows/image-20200611165900311.png)
 
 ### babel loader + webpack + polyfill
 
-![image-20200611170031012](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611170031012.png)
+![image-20200611170031012](assets/JS_Tool_Workflows/image-20200611170031012.png)
 
-![image-20200611170138191](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611170138191.png)
+![image-20200611170138191](assets/JS_Tool_Workflows/image-20200611170138191.png)
 
-![image-20200611170534203](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611170534203.png)
+![image-20200611170534203](assets/JS_Tool_Workflows/image-20200611170534203.png)
 
 https://babeljs.io/docs/en/
 
@@ -129,12 +129,12 @@ https://github.com/browserslist/browserslist#full-list
 
 install `core-js` or preset like that
 
-![image-20200611171758128](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611171758128.png)
+![image-20200611171758128](assets/JS_Tool_Workflows/image-20200611171758128.png)
 
 # Disable JS
 
-![image-20200611172441016](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611172441016.png)
+![image-20200611172441016](assets/JS_Tool_Workflows/image-20200611172441016.png)
 
 # non-Browser support
 
-![image-20200611172211838](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611172211838.png)
+![image-20200611172211838](assets/JS_Tool_Workflows/image-20200611172211838.png)

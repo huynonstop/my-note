@@ -8,11 +8,11 @@ A javascript runtime - Allow javascript to run outside of browser
 
 NodeJS use V8 engine and adds more features to it (File system, ...)
 
-![image-20200706164537151](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200706164537151.png)
+![image-20200706164537151](assets/NodeJs/image-20200706164537151.png)
 
-![image-20200707115214004](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200707115214004.png)
+![image-20200707115214004](assets/NodeJs/image-20200707115214004.png)
 
-![image-20200817015104933](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817015104933.png)
+![image-20200817015104933](assets/NodeJs/image-20200817015104933.png)
 
 # V8 javascript engine
 
@@ -22,7 +22,7 @@ Taking JS code => compiling to machine code
 
 A javascript runtime => Build server, Utility script, helper tool, app, ... Make javascript not be limited to the browser and can do everything that other programming langue can do
 
-![image-20200817015437923](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817015437923.png)
+![image-20200817015437923](assets/NodeJs/image-20200817015437923.png)
 
 ## web dev
 
@@ -36,7 +36,7 @@ Return response: return html, JSON
 
 https://docs.npmjs.com/s
 
-![image-20200817015153517](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817015153517.png)
+![image-20200817015153517](assets/NodeJs/image-20200817015153517.png)
 
 ## CLI
 
@@ -52,7 +52,7 @@ https://stackoverflow.com/a/25861938
 
 https://academind.com/learn/webpack
 
-![image-20200817015510854](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817015510854.png)
+![image-20200817015510854](assets/NodeJs/image-20200817015510854.png)
 
 # REPL
 
@@ -91,7 +91,7 @@ https://nodejs.org/en/knowledge/errors/what-is-the-error-object/
 
 Client => request => Server => response => Client
 
-![image-20200706201622744](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200706201622744.png)
+![image-20200706201622744](assets/NodeJs/image-20200706201622744.png)
 
 # Node Server
 
@@ -132,7 +132,7 @@ https://medium.freecodecamp.org/node-js-streams-everything-you-need-to-know-c914
 
 [https://itnext.io/using-node-js-to-read-really-really-large-files-pt-1-d2057fe76b33#:~:text=Whomp%20whomp%E2%80%A6-,As%20it%20turns%20out%2C%20although%20Node.,one%20time%2C%20but%20no%20more.](https://itnext.io/using-node-js-to-read-really-really-large-files-pt-1-d2057fe76b33#:~:text=Whomp whomp…-,As it turns out%2C although Node.,one time%2C but no more.)
 
-![image-20200706235605988](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200706235605988.png)
+![image-20200706235605988](assets/NodeJs/image-20200706235605988.png)
 
 What makes streams unique, is that instead of a program reading a file into memory **all at once** like in the traditional way, streams read chunks of data piece by piece, processing its content without keeping it all in memory.
 
@@ -146,7 +146,7 @@ chunk are a part of **file data**
 
 https://nodejs.org/en/knowledge/advanced/buffers/how-to-use-buffers/
 
-![image-20200815223001292](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200815223001292.png)
+![image-20200815223001292](assets/NodeJs/image-20200815223001292.png)
 
 basically give us access to chunk
 
@@ -163,7 +163,7 @@ https://nodejs.org/en/knowledge/advanced/streams/how-to-use-stream-pipe/
 
 Streams make for quite a handy abstraction, and there's a lot you can do with them - as an example, let's take a look at `stream.pipe()`, the method used to take a readable stream and connect it to a writeable steam.
 
-![image-20200815224109613](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200815224109613.png)
+![image-20200815224109613](assets/NodeJs/image-20200815224109613.png)
 
 ## file system
 
@@ -179,7 +179,7 @@ https://nodejs.org/en/knowledge/file-system/how-to-write-files-in-nodejs/
 
 ### delete file
 
-![image-20200815233158554](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200815233158554.png)
+![image-20200815233158554](assets/NodeJs/image-20200815233158554.png)
 
 # Request
 
@@ -220,7 +220,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/asy
 
 sugar syntax
 
-![image-20200816150649356](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200816150649356.png)
+![image-20200816150649356](assets/NodeJs/image-20200816150649356.png)
 
 ## Top level await (node 14>)
 
@@ -242,11 +242,11 @@ https://nodejs.org/en/knowledge/getting-started/what-is-node-core-verus-userland
 
 https://medium.com/better-programming/is-node-js-really-single-threaded-7ea59bcc8d64
 
-![image-20200707104435586](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200707104435586.png)
+![image-20200707104435586](assets/NodeJs/image-20200707104435586.png)
 
 ## Node life cycle 
 
-![image-20200706202546754](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200706202546754.png)
+![image-20200706202546754](assets/NodeJs/image-20200706202546754.png)
 
 ## Event loop
 
@@ -254,7 +254,7 @@ https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
 
 https://dev.to/cpuram1/nodejs-event-loop-architecture-53jn
 
-![image-20200707104401166](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200707104401166.png)
+![image-20200707104401166](assets/NodeJs/image-20200707104401166.png)
 
 ## Event driven
 
@@ -285,9 +285,9 @@ fs.writeFile(filename, message, cb) // offload write file process to the OS (whi
 - Chai: https://www.chaijs.com/
 - Sinon: https://sinonjs.org/
 
-![image-20200817014848649](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817014848649.png)
+![image-20200817014848649](assets/NodeJs/image-20200817014848649.png)
 
-![image-20200817014903396](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817014903396.png)
+![image-20200817014903396](assets/NodeJs/image-20200817014903396.png)
 
 # Deployment
 
@@ -299,9 +299,9 @@ https://aws.amazon.com/getting-started/projects/deploy-nodejs-web-app/
 
 https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-16-04
 
-![image-20200817011307490](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817011307490.png)
+![image-20200817011307490](assets/NodeJs/image-20200817011307490.png)
 
-![image-20200817011405198](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817011405198.png)
+![image-20200817011405198](assets/NodeJs/image-20200817011405198.png)
 
 ## Helmet
 
@@ -309,9 +309,9 @@ https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-applica
 
 ## Compression assets
 
-![image-20200817012209283](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817012209283.png)
+![image-20200817012209283](assets/NodeJs/image-20200817012209283.png)
 
-![image-20200817012220035](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817012220035.png)
+![image-20200817012220035](assets/NodeJs/image-20200817012220035.png)
 
 ## Logging (host can do this)
 
@@ -319,31 +319,31 @@ https://blog.risingstack.com/node-js-logging-tutorial/
 
 `npm install --save morgan`
 
-![image-20200817012456148](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817012456148.png)
+![image-20200817012456148](assets/NodeJs/image-20200817012456148.png)
 
-![image-20200817012404864](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817012404864.png)
+![image-20200817012404864](assets/NodeJs/image-20200817012404864.png)
 
-![image-20200817012720573](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817012720573.png)
+![image-20200817012720573](assets/NodeJs/image-20200817012720573.png)
 
 ## SSL/TLS
 
-![image-20200817013010251](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817013010251.png)
+![image-20200817013010251](assets/NodeJs/image-20200817013010251.png)
 
 create your own SSL (for fun)
 
-![image-20200817013106413](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817013106413.png)
+![image-20200817013106413](assets/NodeJs/image-20200817013106413.png)
 
-![image-20200817013253356](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817013253356.png)
+![image-20200817013253356](assets/NodeJs/image-20200817013253356.png)
 
-![image-20200817013329360](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817013329360.png)
+![image-20200817013329360](assets/NodeJs/image-20200817013329360.png)
 
 ## Use Hosting Provider
 
-![image-20200817013513656](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817013513656.png)
+![image-20200817013513656](assets/NodeJs/image-20200817013513656.png)
 
 ### Git
 
-![image-20200817013659434](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200817013659434.png)
+![image-20200817013659434](assets/NodeJs/image-20200817013659434.png)
 
 ## File upload
 

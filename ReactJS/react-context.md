@@ -8,7 +8,7 @@ In a typical React application, data is passed top-down (parent to child) via pr
 
 ## When to Use Context
 
-![image-20201021230611795](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201021230611795.png)
+![image-20201021230611795](assets/react-context/image-20201021230611795.png)
 
 Context is designed to share data that can be considered “global” for a tree of React components, such as the current authenticated user, theme, or preferred language. For example, in the code below we manually thread through a “theme” prop in order to style the Button component:
 
@@ -140,7 +140,7 @@ However, sometimes the same data needs to be accessible by many components in th
 
 ### `React.createContext`
 
-![image-20201021231900346](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201021231900346.png)
+![image-20201021231900346](assets/react-context/image-20201021231900346.png)
 
 ```jsx
 const MyContext = React.createContext(defaultValue);
@@ -467,11 +467,11 @@ If two or more context values are often used together, you might want to conside
 
 ## More
 
-![image-20201021230822851](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201021230822851.png)
+![image-20201021230822851](assets/react-context/image-20201021230822851.png)
 
-![image-20201021230846334](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201021230846334.png)
+![image-20201021230846334](assets/react-context/image-20201021230846334.png)
 
-![image-20201021230918256](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201021230918256.png)
+![image-20201021230918256](assets/react-context/image-20201021230918256.png)
 
 => value will be a new object (changed) when App re-render
 
@@ -479,13 +479,13 @@ If two or more context values are often used together, you might want to conside
 
 => performance issues
 
-![image-20201021231629213](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201021231629213.png)
+![image-20201021231629213](assets/react-context/image-20201021231629213.png)
 
-![image-20201021231801760](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201021231801760.png)
+![image-20201021231801760](assets/react-context/image-20201021231801760.png)
 
 => same object
 
-![image-20201021232054505](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201021232054505.png)
+![image-20201021232054505](assets/react-context/image-20201021232054505.png)
 
 ## Caveats
 
@@ -525,7 +525,7 @@ class App extends React.Component {
 
 # useContext
 
-![image-20201021232136071](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201021232136071.png)
+![image-20201021232136071](assets/react-context/image-20201021232136071.png)
 
-![image-20201021232225579](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201021232225579.png)
+![image-20201021232225579](assets/react-context/image-20201021232225579.png)
 

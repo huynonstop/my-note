@@ -1,7 +1,5 @@
 # [Vue Router](https://router.vuejs.org/)
 
-https://v3.vuejs.org/guide/routing.html
-
 https://router.vuejs.org/
 
 https://router.vuejs.org/api/

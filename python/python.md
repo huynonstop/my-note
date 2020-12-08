@@ -2,6 +2,8 @@ https://www.youtube.com/watch?v=kM4oZTJaO8k
 
 https://academind.com/learn/python/
 
+https://scrimba.com/learn/python
+
 # Conditional statement
 
 ```python
@@ -117,7 +119,7 @@ def get_pos_int():
 
 # argv
 
-![image-20201016215141605](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201016215141605.png)
+![image-20201016215141605](assets/python/image-20201016215141605.png)
 
 # swap
 

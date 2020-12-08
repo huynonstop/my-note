@@ -74,7 +74,7 @@ class Button extends Component {
 
 ## conditional JSX
 
-![image-20200623230956314](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200623230956314.png)
+![image-20200623230956314](assets/best-practice/image-20200623230956314.png)
 
 ## use `innerHTML ` in React
 

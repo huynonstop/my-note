@@ -71,7 +71,7 @@ The following table gives a short summary of some of these differences. The rest
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model#Creating_the_hierarchy
 
-![image-20201028163952141](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20201028163952141.png)
+![image-20201028163952141](assets/PrototypeBase-ClassBase/image-20201028163952141.png)
 
 The following Java and JavaScript (base class) `Employee` definitions are similar.
 

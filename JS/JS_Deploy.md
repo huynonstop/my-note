@@ -1,6 +1,6 @@
 # Kind of applications
 
-![image-20200611221622261](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611221622261.png)
+![image-20200611221622261](assets/JS_Deploy/image-20200611221622261.png)
 
 static host: firebase, github page, ...
 
@@ -12,4 +12,4 @@ dynamic host: heroku, aws, ...
 
 # Steps
 
-![image-20200611221638104](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611221638104.png)
+![image-20200611221638104](assets/JS_Deploy/image-20200611221638104.png)

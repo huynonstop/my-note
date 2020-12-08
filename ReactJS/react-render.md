@@ -35,7 +35,7 @@ In summary, here’s what happens when you try to update the DOM in React:
 
 ## How React update real DOM
 
-![image-20200624005326042](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200624005326042.png)
+![image-20200624005326042](assets/react-render/image-20200624005326042.png)
 
 1. Whenever anything may have changed, the components will be **re-rendered in a Virtual DOM representation**. (render)
 2. The **difference** between the previous Virtual DOM representation and the new one will be **calculated**. (reconciliation)
@@ -74,11 +74,11 @@ One of the major difference between render phase and commit phase is that **rend
 
 
 
-![image-20200830171544982](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200830171544982.png)
+![image-20200830171544982](assets/react-render/image-20200830171544982.png)
 
-![image-20200830171607515](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200830171607515.png)
+![image-20200830171607515](assets/react-render/image-20200830171607515.png)
 
-![image-20200830225417685](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200830225417685.png)
+![image-20200830225417685](assets/react-render/image-20200830225417685.png)
 
 ## Render Phase
 
@@ -381,15 +381,15 @@ With Fiber, React can:
 
 That's the purpose of React Fiber. Fiber is reimplementation of the stack, specialized for React components. You can think of a single fiber as a **virtual stack frame**.
 
-![image-20200830231646104](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200830231646104.png)
+![image-20200830231646104](assets/react-render/image-20200830231646104.png)
 
 # Lifecycle of Components
 
 https://www.w3schools.com/REACT/react_lifecycle.asp
 
-![image-20200829221520546](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200829221520546.png)
+![image-20200829221520546](assets/react-render/image-20200829221520546.png)
 
-![image-20200829221029941](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200829221029941.png)
+![image-20200829221029941](assets/react-render/image-20200829221029941.png)
 
 # What prompts React to trigger the render phase?
 
@@ -475,7 +475,7 @@ https://medium.com/@guptagaruda/react-hooks-understanding-component-re-renders-9
 
 https://medium.com/swlh/how-does-react-hooks-re-renders-a-function-component-cc9b531ae7f0
 
-![image-20200829221338257](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200829221338257.png)
+![image-20200829221338257](assets/react-render/image-20200829221338257.png)
 
 > 1. `useState` causes re-render; `useRef` does not.
 > 2. Both `useState` and `useRef` remembers their data after a re-render

@@ -10,17 +10,17 @@ Also in the runtime environment is a **JavaScript Engine (callstack, memory heap
 
 # JS is single-threaded
 
-![image-20200609200301370](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200609200301370.png)
+![image-20200609200301370](assets/JS_Async/image-20200609200301370.png)
 
 # Some code can't be finished immediately
 
 timeout, http request, event listener,...
 
-![image-20200609200626297](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200609200626297.png)
+![image-20200609200626297](assets/JS_Async/image-20200609200626297.png)
 
 => Blocking code execution
 
-![image-20200609201736970](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200609201736970.png)
+![image-20200609201736970](assets/JS_Async/image-20200609201736970.png)
 
 => **Runtime environment** is responsible for asynchronous action by using **multiple threads**, so JS code will not blocked in main thread.
 
@@ -46,33 +46,33 @@ From **call stack**, if an asynchronous action pop off the stack, it will be han
 
 **Event loop** job is waiting to the stack empty, take one item in queue, push to the **call stack** and then the **JS engine** will handle the callback code
 
-![image-20200209104121348](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200209104121348.png)
+![image-20200209104121348](assets/JS_Async/image-20200209104121348.png)
 
 **TLDR**: Handing the asynchronous (long) task to the **environment** which push **callback to queue** when **done that task**, while we **continue in JavaScript thread** and handle the **callback** when **JavaScript thread free** by using **event loop** so that Javascript code is **never blocked** (if there is no really long JS operations like long for loops, heavy calculation,...)
 
 ## Event loop in actions
 
-![image-20200609221539480](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200609221539480.png)
+![image-20200609221539480](assets/JS_Async/image-20200609221539480.png)
 
 => Browser handler setTimeout, JS continue exec code
 
-![image-20200609222017101](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200609222017101.png)
+![image-20200609222017101](assets/JS_Async/image-20200609222017101.png)
 
 => done timer
 
-![image-20200609222401163](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200609222401163.png)
+![image-20200609222401163](assets/JS_Async/image-20200609222401163.png)
 
 => When the call stack is empty, the event loop executes and push a waiting messages to the call stack and JS engine will executes it 
 
-![image-20200609223824366](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200609223824366.png)
+![image-20200609223824366](assets/JS_Async/image-20200609223824366.png)
 
 ![image-20200609221007727](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200609221007727.png)
 
-![image-20200609221404314](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200609221404314.png)
+![image-20200609221404314](assets/JS_Async/image-20200609221404314.png)
 
 ### Browser
 
-![image-20200209102003696](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200209102003696.png)
+![image-20200209102003696](assets/JS_Async/image-20200209102003696.png)
 
 ### Node
 
@@ -82,7 +82,7 @@ No user interaction (clicking on the page)
 
 No animation frame callbacks, no render (No DOM **Manipulation**)
 
-![image-20200209103048426](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200209103048426.png)
+![image-20200209103048426](assets/JS_Async/image-20200209103048426.png)
 
 ### Web worker
 
@@ -98,25 +98,25 @@ Function that after finishing an async job, put in the callback queue, wait call
 
 ( >< function is passed to another simple function (not an API of browser), put in the call stack)
 
-![image-20200610201745892](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200610201745892.png)
+![image-20200610201745892](assets/JS_Async/image-20200610201745892.png)
 
 Task depend on before task => Callback in Callback => Callback hell
 
 # Promise 
 
-![image-20200610201843824](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200610201843824.png)
+![image-20200610201843824](assets/JS_Async/image-20200610201843824.png)
 
 A promise is an object that may produce a single value some time in the future
 
 Promises are eager, meaning that a promise will start doing the task you give it (the function passed to the promise) as soon as the promise constructor is invoked
 
-![image-20200610203008825](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200610203008825.png)
+![image-20200610203008825](assets/JS_Async/image-20200610203008825.png)
 
-![image-20200610203929118](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200610203929118.png)
+![image-20200610203929118](assets/JS_Async/image-20200610203929118.png)
 
-![image-20200610204057687](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200610204057687.png)
+![image-20200610204057687](assets/JS_Async/image-20200610204057687.png)
 
-![image-20200610204452121](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200610204452121.png)
+![image-20200610204452121](assets/JS_Async/image-20200610204452121.png)
 
 ## How it work
 
@@ -193,7 +193,7 @@ The `.then()` method must comply with these rules:
 
 - Once a promise is settled, it must have a value (which may be `undefined`). That value must not change.
 
-  ![img](https://firebasestorage.googleapis.com/v0/b/anonystick-83a85.appspot.com/o/img%2F1552272366081?alt=media&token=abccf254-336e-40be-9976-8e30ff511136)
+  ![img](assets/JS_Async/1552272366081)
 
 ```javascript
 console.log('before')
@@ -252,6 +252,8 @@ promise
 
 # Async/Await 
 
+[async await javascript without try catch (anonystick.com)](https://anonystick.com/blog-developer/async-await-javascript-without-try-catch-202011289973428)
+
 Async functions are functions that auto return a promises
 
 ```javascript
@@ -269,7 +271,7 @@ function helloAsync() {
 
 Write async code a bit more like synchronous code
 
-![image-20200610221055590](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200610221055590.png)
+![image-20200610221055590](assets/JS_Async/image-20200610221055590.png)
 
 ## How it works
 
@@ -299,18 +301,18 @@ Write async code a bit more like synchronous code
   printAll()
   ```
 
-  ![image-20200211180859185](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200211180859185.png)
+  ![image-20200211180859185](assets/JS_Async/image-20200211180859185.png)
 
-  ![image-20200610222512399](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200610222512399.png)
+  ![image-20200610222512399](assets/JS_Async/image-20200610222512399.png)
 
-  ![image-20200610231833680](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200610231833680.png)
+  ![image-20200610231833680](assets/JS_Async/image-20200610231833680.png)
 
 ## Error handle
 
 - If a **promise** throws an exception or `reject()` , we can handle by using `try/catch`. **exceptions will get swallowed** if they are not caught somewhere in the async function chain. 
 - It is a good practice to always have one `try/catch` per chain. This will provide one single place to deal with errors while doing async work and will force you to correctly chain your **Async Function** calls.
 
-![image-20200610223453174](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200610223453174.png)
+![image-20200610223453174](assets/JS_Async/image-20200610223453174.png)
 
 ## Use an async function
 

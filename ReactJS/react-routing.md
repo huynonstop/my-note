@@ -2,9 +2,9 @@
 
 https://goshakkk.name/min-viable-router-is-state/
 
-![image-20200626200729737](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200626200729737.png)
+![image-20200626200729737](assets/react-routing/image-20200626200729737.png)
 
-![image-20200626200713192](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200626200713192.png)
+![image-20200626200713192](assets/react-routing/image-20200626200713192.png)
 
 # React Router
 
@@ -46,7 +46,7 @@ A history instance has two methods for navigation purpose.
 
 ## Routing-props
 
-![image-20200626201851218](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200626201851218.png)
+![image-20200626201851218](assets/react-routing/image-20200626201851218.png)
 
 You can accessing Routing-props when:
 
@@ -55,6 +55,13 @@ Passing Routing-props to child component
 Using the `withRouter()` higher-order function
 
 Using props of component rendered by a `<Route>`
+
+## Pass props
+
+```jsx
+// render props
+<Route path="/" render{() => <Home a={true}></Home>}></Route>
+```
 
 ## Absolute Paths
 
@@ -290,7 +297,7 @@ export default class LoginComponent extends Component {
 
 # Server deployment
 
-![image-20200626204520572](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200626204520572.png)
+![image-20200626204520572](assets/react-routing/image-20200626204520572.png)
 
 ```jsx
 //index.js
@@ -405,6 +412,18 @@ function App() {
             </Route>
         </React.Suspense>
     )
+}
+```
+
+## Pass props
+
+```jsx
+<Route path="/">
+	<Home a={true}></Home>
+</Route>
+
+function Home({a}) {
+    // do something
 }
 ```
 

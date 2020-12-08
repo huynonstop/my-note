@@ -1,6 +1,6 @@
 # Programming paradigm
 
-![image-20200611232313269](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200611232313269.png)
+![image-20200611232313269](assets/JS_Programming_Paradigm/image-20200611232313269.png)
 
 # Procedural
 
@@ -164,12 +164,11 @@ class UserInputForm {
 new UserInputForm();
 ```
 
-![image-20200601211116941](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200601211116941.png)
+![image-20200601211116941](assets/JS_Programming_Paradigm/image-20200601211116941.png)
 
-![image-20200601211007877](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200601211007877.png)
+![image-20200601211007877](assets/JS_Programming_Paradigm/image-20200601211007877.png)
 
-![image-20200601211422042](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200601211422042.png)
+![image-20200601211422042](assets/JS_Programming_Paradigm/image-20200601211422042.png)
 
-![image-20200601234636997](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200601234636997.png)
+![image-20200601234636997](assets/JS_Programming_Paradigm/image-20200601234636997.png)
 
-![image-20200612211621459](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612211621459.png)

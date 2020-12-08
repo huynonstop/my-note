@@ -202,11 +202,11 @@ set the value of a function's `this` regardless of how it's called
 
 to preconfigure what `this` will refer to
 
-![image-20200601003113705](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200601003113705.png)
+![image-20200601003113705](assets/JS_this/image-20200601003113705.png)
 
-![image-20200601003438995](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200601003438995.png)
+![image-20200601003438995](assets/JS_this/image-20200601003438995.png)
 
-![image-20200601003540463](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200601003540463.png)
+![image-20200601003540463](assets/JS_this/image-20200601003540463.png)
 
 ## arrow function behavior 
 
@@ -273,6 +273,6 @@ When the code is called from an inline on-event handler its `this` is set to the
 
 - In an event, `this` refers to the **element** that received the event.
 
-![image-20200608152759049](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608152759049.png)
+![image-20200608152759049](assets/JS_this/image-20200608152759049.png)
 
-![image-20200608152825710](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608152825710.png)
+![image-20200608152825710](assets/JS_this/image-20200608152825710.png)

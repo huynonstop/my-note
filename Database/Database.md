@@ -1,16 +1,16 @@
 # Why database
 
-![image-20200716220926516](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200716220926516.png)
+![image-20200716220926516](assets/Database/image-20200716220926516.png)
 
 # Scaling
 
-![image-20200716223546267](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200716223546267.png)
+![image-20200716223546267](assets/Database/image-20200716223546267.png)
 
 # SQL vs NoSQL
 
 https://academind.com/learn/web-dev/sql-vs-nosql/
 
-![image-20200716223824491](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200716223824491.png)
+![image-20200716223824491](assets/Database/image-20200716223824491.png)
 
 |                                             | SQL Databases                                                | NoSQL Databases                                              |
 | ------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -25,11 +25,11 @@ https://academind.com/learn/web-dev/sql-vs-nosql/
 
 # SQL
 
-![image-20200716221148542](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200716221148542.png)
+![image-20200716221148542](assets/Database/image-20200716221148542.png)
 
 ## ACID 
 
-![img](https://tedu.com.vn/UploadData/images/acid-600x338.png)
+![img](assets/Database/acid-600x338.png)
 
 **Atomicity** là một đề xuất tất cả hoặc không có gì. Tính chất này đảm bảo rằng khi một giao dịch liên quan đến hai hay nhiều xử lý, hoặc là tất cả các xử lý được thực hiện hoặc không có xử lý được thực hiện.
 **Consistency** đảm bảo rằng một giao dịch không bao giờ được thông qua cơ sở dữ liệu của bạn trong tình trạng dở dang. Tính chất này, hoặc là tạo ra toàn bộ trạng thái mới hoặc rollback tất cả các xử lý để về trạng thái ban đầu, nhưng không bao giờ thông qua cơ sở dữ liệu trong trạng thái dở dang.
@@ -55,7 +55,7 @@ All transaction must contain four properties that commonly known as ACID propert
 
 A **lost update** occurs when two different transactions are trying to **update** the same column on the same row within a database at the same time.
 
-![Kết quả hình ảnh cho Lost updates](https://www.researchgate.net/profile/Shamim_Abdul_Nazar/publication/299424245/figure/fig1/AS:462101773852674@1487185056862/Example-for-Lost-Update-5.png)
+![Kết quả hình ảnh cho Lost updates](assets/Database/Example-for-Lost-Update-5.png)
 
 ## Dirty reads
 
@@ -93,7 +93,7 @@ A *phantom read* occurs when, in the course of a transaction, new rows are added
 
 https://academind.com/learn/mongodb/complete-introduction-summary/
 
-![image-20200716223418804](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200716223418804.png)
+![image-20200716223418804](assets/Database/image-20200716223418804.png)
 
 # N+1 problem
 

@@ -1,16 +1,16 @@
 # Event
 
-![image-20200608132055539](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608132055539.png)
+![image-20200608132055539](assets/JS_Event/image-20200608132055539.png)
 
 ## Browser Event Objects
 
-![image-20200608132201928](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608132201928.png)
+![image-20200608132201928](assets/JS_Event/image-20200608132201928.png)
 
 Whatever causes an event provides you some data along with such an event to describe it to help you control it
 
-![image-20200608142509047](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608142509047.png)
+![image-20200608142509047](assets/JS_Event/image-20200608142509047.png)
 
-![image-20200608142527917](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608142527917.png)
+![image-20200608142527917](assets/JS_Event/image-20200608142527917.png)
 
 ## Adding event
 
@@ -22,7 +22,7 @@ element `addEventListener()` => most flexibles ways (can add and remove event li
 
 ## Remove event
 
-![image-20200608134906555](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608134906555.png)
+![image-20200608134906555](assets/JS_Event/image-20200608134906555.png)
 
 can only remove exact the same function (not work direct with anonymous function or `bind()`)
 
@@ -32,7 +32,7 @@ form submit to server or link navigation
 
 ## Bubbling & Capturing, Propagation
 
-![image-20200608144128162](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608144128162.png)
+![image-20200608144128162](assets/JS_Event/image-20200608144128162.png)
 
 Capturing => Bubbling
 
@@ -45,19 +45,19 @@ By default all event listeners are registered in the bubbling phase
 </div>
 ```
 
-![image-20200608144923627](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608144923627.png)
+![image-20200608144923627](assets/JS_Event/image-20200608144923627.png)
 
-![image-20200608145005127](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608145005127.png)
+![image-20200608145005127](assets/JS_Event/image-20200608145005127.png)
 
-![image-20200608145139650](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608145139650.png)
+![image-20200608145139650](assets/JS_Event/image-20200608145139650.png)
 
-![image-20200608145211518](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608145211518.png)
+![image-20200608145211518](assets/JS_Event/image-20200608145211518.png)
 
 The way event occurred on this button but it's listenable on all ancestors called **Event Propagation** (some event are not propagated)
 
-![image-20200608145736200](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608145736200.png)
+![image-20200608145736200](assets/JS_Event/image-20200608145736200.png)
 
-![image-20200608150018545](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608150018545.png)
+![image-20200608150018545](assets/JS_Event/image-20200608150018545.png)
 
 ## Event delegation pattern
 
@@ -73,7 +73,7 @@ The way event occurred on this button but it's listenable on all ancestors calle
 
 Event delegation is a technique involving adding event listeners to a **parent** element instead of adding them to the child elements. 
 
-![image-20200608150822633](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608150822633.png)
+![image-20200608150822633](assets/JS_Event/image-20200608150822633.png)
 
 The listener will fire whenever the event is triggered on the descendant elements due to **event bubbling up** the DOM. The benefits of this technique are:
 
@@ -94,7 +94,7 @@ use element method (submit(),click(),...)
 
 ## Observer Pattern
 
-![image-20200623095423563](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200623095423563.png)
+![image-20200623095423563](assets/JS_Event/image-20200623095423563.png)
 
 - **subject** – This is the object that will send out a notification to all of the ‘observers’ who want/need to know that the subject was updated.
 - **observers** – These are the objects that want to know when the subject has changed
@@ -140,5 +140,3 @@ headingsObserver.subscribe(o2);
 
 headingsObserver.unsubscribe(o2)
 ```
-
-# 

@@ -6,7 +6,7 @@ https://www.youtube.com/watch?v=Wf2eSG3owoA
 
 # VM
 
-![image-20200825130341150](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200825130341150.png)
+![image-20200825130341150](assets/docker/image-20200825130341150.png)
 
 => run in VM OS => slow 
 
@@ -16,7 +16,7 @@ reproducing environment
 
 package software into containers that run reliably in any environment
 
-![image-20200825130509290](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200825130509290.png)
+![image-20200825130509290](assets/docker/image-20200825130509290.png)
 
 # Images
 
@@ -34,7 +34,7 @@ data and files created in container will lost if stop container
 
 => Volumes (shared data across container), a folder on host machines and other containers mount to CRUD theses files
 
-![image-20200825124349770](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200825124349770.png)
+![image-20200825124349770](assets/docker/image-20200825124349770.png)
 
 # Port Forwarding
 

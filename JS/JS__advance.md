@@ -8,21 +8,21 @@ https://medium.com/@chamikakasun/javascript-factory-functions-vs-constructor-fun
 
 ## Constructor function vs Classes
 
-![image-20200602210506813](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200602210506813.png)
+![image-20200602210506813](assets/JS__advance/image-20200602210506813.png)
 
-![image-20200602210528810](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200602210528810.png)
+![image-20200602210528810](assets/JS__advance/image-20200602210528810.png)
 
-![image-20200602210252909](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200602210252909.png)
+![image-20200602210252909](assets/JS__advance/image-20200602210252909.png)
 
-![image-20200612212210695](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612212210695.png)
+![image-20200612212210695](assets/JS__advance/image-20200612212210695.png)
 
-![image-20200612212336865](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612212336865.png)
+![image-20200612212336865](assets/JS__advance/image-20200612212336865.png)
 
 ## new
 
  The `new` keyword allows us to use a function as a constructor. In addition it clones the `prototype` of the constructor and binds it to the `this` pointer of the constructor, returning `this` if no other object is returned
 
-![image-20200211182818925](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200211182818925.png)
+![image-20200211182818925](assets/JS__advance/image-20200211182818925.png)
 
 When a constructor call with new key work:
 
@@ -46,7 +46,7 @@ new ConstructorExample();
 // -> ConstructorExample { value: 10 }
 ```
 
-![image-20200612212123663](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612212123663.png)
+![image-20200612212123663](assets/JS__advance/image-20200612212123663.png)
 
 ### Difference between: function Person(){}, var person = Person(), and var person = new Person()
 
@@ -100,7 +100,7 @@ Person.prototype.constructor = Person;
 console.log(new Person())
 ```
 
-![image-20200605212352374](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200605212352374.png)
+![image-20200605212352374](assets/JS__advance/image-20200605212352374.png)
 
 ## Class use  prototype
 
@@ -134,7 +134,7 @@ class Person extends AgedPerson {
 console.log(new Person())
 ```
 
-![image-20200603231505454](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200603231505454.png)
+![image-20200603231505454](assets/JS__advance/image-20200603231505454.png)
 
 ## Prototype
 
@@ -150,11 +150,11 @@ https://anonystick.com/blog-developer/prototype-la-gi-lap-trinh-huong-doi-tuong-
 
 **A prototype is just a base blue print of object**
 
-![image-20200602222126942](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200602222126942.png)
+![image-20200602222126942](assets/JS__advance/image-20200602222126942.png)
 
 JavaScript is often described as a **prototype-based language** — to provide inheritance, objects can have a **`prototype` object**, which acts as a **template** **(fallback)** object that it inherits methods and properties from. 
 
-![image-20200602224007200](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200602224007200.png)
+![image-20200602224007200](assets/JS__advance/image-20200602224007200.png)
 
 When a function is created in JavaScript, the JavaScript engine adds a `prototype` property to the function. This `prototype` property is an object (called as prototype object) which has a `constructor` property by default. The `constructor` property points back to the function on which `prototype` object is a property. 
 
@@ -168,9 +168,9 @@ function Human(firstName, lastName) {
 }
 ```
 
-![image-20200602231222250](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200602231222250.png)
+![image-20200602231222250](assets/JS__advance/image-20200602231222250.png)
 
-![image-20200602223953825](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200602223953825.png)
+![image-20200602223953825](assets/JS__advance/image-20200602223953825.png)
 
 This prototype (constructor `prototype` property) then automatically be assigned to the instance of the constructor upon creation (get the prototype object of an instance by using `__proto__ property` or  `Object.getPrototypeOf()`)
 
@@ -181,9 +181,9 @@ Human.prototype === person.__proto__ //true
 console.log(person)
 ```
 
-![image-20200605213852666](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200605213852666.png)
+![image-20200605213852666](assets/JS__advance/image-20200605213852666.png)
 
-![img](https://miro.medium.com/max/806/1*5qHhF8HTzZD2xdx3p-RLIQ.png)
+![image-20201208091643389](assets/JS__advance/image-20201208091643389.png)
 
 ### `Object` constructor
 
@@ -203,7 +203,7 @@ person1.__proto__ === person2.__proto__ //true
 
 A **prototype** is just an **object** itself. An **object's prototype object** may also have a **prototype object**. This is often referred to as a **prototype chain**, and explains why different objects have properties and methods defined on other objects available to them
 
-![image-20200602230654002](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200602230654002.png)
+![image-20200602230654002](assets/JS__advance/image-20200602230654002.png)
 
 ```js
 function doSomething(){}
@@ -238,7 +238,7 @@ If it still doesn't exits, the `__proto__` of the `__proto__` of doSomeInstancin
 
 If JavaScript reach to the end of  **prototype chain** and if it didn't find property, it will return undefined and for the method, it would throw an error
 
-![image-20200612211958126](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612211958126.png)
+![image-20200612211958126](assets/JS__advance/image-20200612211958126.png)
 
 ### Summary
 
@@ -362,7 +362,7 @@ Employee.prototype.sharedProperty = 'we are communist, we share';
 
 Prototype is shared => Add method to prototype (save memory)
 
-![image-20200605205426303](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200605205426303.png)
+![image-20200605205426303](assets/JS__advance/image-20200605205426303.png)
 
 ```js
 function Person() {
@@ -549,7 +549,7 @@ var a = {
 
 The *call stack* is a collection of execution contexts.
 
-![image-20200612164941745](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612164941745.png)
+![image-20200612164941745](assets/JS__advance/image-20200612164941745.png)
 
 > In other words, as we start the program, we start in the global execution context. Some variables are declared within the global execution context. We call these global variables. When the program calls a function:
 >
@@ -571,14 +571,14 @@ No outer environment, this = global object, your global code
 
 Code not inside a function is global
 
-<img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612164606842.png" alt="image-20200612164606842" style="zoom: 33%;" />
+<img src="assets/JS__advance/image-20200612164606842.png" alt="image-20200612164606842" style="zoom: 100%;" />
 
 ## Creation phase
 
 - JS Engine parses - run through your code & `identifies variables & functions` created by code (which will be used in execution phase)
 - Setup memory space for Variables & Functions
 
-![image-20200612165628524](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612165628524.png)
+![image-20200612165628524](assets/JS__advance/image-20200612165628524.png)
 
 ### Hoisting 
 
@@ -641,7 +641,7 @@ const bar = "bar";
 
 Run code in single thread and synchronously
 
-![image-20200612172016928](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612172016928.png)
+![image-20200612172016928](assets/JS__advance/image-20200612172016928.png)
 
 # Execution/Call stack
 
@@ -664,11 +664,15 @@ The JavaScript engine first creates a global execution context and pushes it int
 
 Then it creates a function execution context for the function `a()`. Since `b()` is called inside `a()`, it will create another function execution context for `b()` and push it into the stack.
 
-![image-20200830112444561](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200830112444561.png)
+![image-20200830112444561](assets/JS__advance/image-20200830112444561.png)
 
 When the function `b()` returns, the engine destroys the context of `b()`, and when we exit function `a()`, the context of `a()` is destroyed.
 
 # Scope
+
+[Chính vì Lexical scope là gì? Mà thằng miền trung nói gì thằng Miền Nam không hiểu? (anonystick.com)](https://anonystick.com/blog-developer/chinh-vi-lexical-scope-la-gi-ma-thang-mien-trung-noi-gi-thang-mien-nam-khong-hieu-2020112562757134)
+
+[Scope in javascript - 66 khái niệm cần hiểu khi học lập trình javascript (anonystick.com)](https://anonystick.com/blog-developer/scope-in-javascript-66-khai-niem-can-hieu-khi-hoc-lap-trinh-javascript-2020112314026307)
 
 The **scope** is where a variable is available in your code determines the way your data will travel throughout your application via **statements** and **expressions**.
 
@@ -688,7 +692,7 @@ we have variables in the local execution context and variables in the global exe
 
 function can access to variables that are defined in its calling context. The formal name of this phenomenon is the **lexical scope**.
 
-![image-20200612150147376](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612150147376.png)
+![image-20200612150147376](assets/JS__advance/image-20200612150147376.png)
 
 A variable defined exclusively within the function cannot be accessed from outside the function or within other functions.
 
@@ -704,7 +708,7 @@ var myVar = 1
 a()
 ```
 
-![image-20200612180323636](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612180323636.png)
+![image-20200612180323636](assets/JS__advance/image-20200612180323636.png)
 
 ```js
 function a() {
@@ -719,7 +723,7 @@ a() // 1
 b() // not defined
 ```
 
-![image-20200612180830321](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612180830321.png)
+![image-20200612180830321](assets/JS__advance/image-20200612180830321.png)
 
 **"scope chain" that makes closures possible.**
 
@@ -771,7 +775,7 @@ When a function returns a function, that is when the concept of closures becomes
 
 A **closure** is the combination of a function bundled together (enclosed) with references to its surrounding state (the **lexical environment**). In other words, a closure gives you access to an **outer function’s scope** from an inner function even **that outer function has returned**. In JavaScript, closures are created every time a function is created, at function creation time.
 
-![image-20200612211115251](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612211115251.png)
+![image-20200612211115251](assets/JS__advance/image-20200612211115251.png)
 
 # Function Factory 
 
@@ -779,7 +783,7 @@ A function return a function
 
 ![image-20200608220359309](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608220359309.png)
 
-![image-20200612211304984](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612211304984.png)
+![image-20200612211304984](assets/JS__advance/image-20200612211304984.png)
 
 # Functional programming
 
@@ -793,13 +797,13 @@ https://www.freecodecamp.org/news/functional-programming-principles-in-javascrip
 
 JS current no have optimize for tail recursion
 
-![image-20200608235527130](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608235527130.png)
+![image-20200608235527130](assets/JS__advance/image-20200608235527130.png)
 
-![image-20200608235802861](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608235802861.png)
+![image-20200608235802861](assets/JS__advance/image-20200608235802861.png)
 
 # Pure function
 
-![image-20200608183520088](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200608183520088.png)
+![image-20200608183520088](assets/JS__advance/image-20200608183520088.png)
 
 Should aim for pure function than impure function (reduce impure function), because they are predictable (not do anything behind the scene)
 
@@ -809,7 +813,7 @@ A **higher order function** is a function that takes a function as an argument, 
 
 # Curry function
 
-![image-20200612211507617](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200612211507617.png)
+![image-20200612211507617](assets/JS__advance/image-20200612211507617.png)
 
 Change a multiple arguments function into a chain of many single argument function
 
