@@ -157,11 +157,295 @@ After the first render, a component would have tracked a list of dependencies â€
 
 # Reactivity Fundamentals
 
+[Reactivity API | Vue.js](https://v3.vuejs.org/api/reactivity-api.html)
+
 https://v3.vuejs.org/guide/reactivity-fundamentals.html
+
+## Declaring Reactive State
+
+To create a reactive state from a JavaScript object, we can use a `reactive` method:
+
+```js
+import { reactive } from 'vue'
+
+// reactive state
+const state = reactive({
+  count: 0
+})
+```
+
+`reactive` is the equivalent of the `Vue.observable()` API in Vue 2.x
+
+Here, the returned state is a reactive object. The reactive conversion is "deep" - it affects all nested properties of the passed object.
+
+The essential use case for reactive state in Vue is that we can use it during render. Thanks to dependency tracking, the view automatically updates when reactive state changes.
+
+This is the very essence of Vue's reactivity system. When you return an object from `data()` in a component, it is internally made reactive by `reactive()`
+
+The template is compiled into a [render function](https://v3.vuejs.org/guide/render-function.html) that makes use of these reactive properties.
+
+## Creating Standalone Reactive Values as `refs`
+
+Imagine the case where we have a standalone primitive value (for example, a string) and we want to make it reactive. Of course, we could make an object with a single property equal to our string, and pass it to `reactive`
+
+```js
+import { ref } from 'vue'
+
+const count = ref(0)
+```
+
+`ref` will return a reactive and mutable object that serves as a reactive **ref**erence to the internal value it is holding - that's where the name comes from. This object contains the only one property named `value`:
+
+```js
+import { ref } from 'vue'
+
+const count = ref(0)
+console.log(count.value) // 0
+
+count.value++
+console.log(count.value) // 1
+```
+
+###  Ref Unwrapping
+
+```vue
+<template>
+  <div>
+    <span>{{ count }}</span>
+    <button @click="count ++">Increment count</button>
+  </div>
+</template>
+
+<script>
+  import { ref } from 'vue'
+  export default {
+    setup() {
+      const count = ref(0)
+      // When a ref is returned as a property on the render context (the object returned from setup()) and accessed in the template, it automatically unwraps to the inner value. There is no need to append .value in the template:
+      return {
+        count
+      }
+    }
+  }
+</script>
+```
+
+### Access in Reactive Objects
+
+When a `ref` is accessed or mutated as a property of a reactive object, it automatically unwraps to the inner value so it behaves like a normal property:
+
+```js
+const count = ref(0)
+const state = reactive({
+  count
+})
+
+console.log(state.count) // 0
+
+state.count = 1
+console.log(count.value) // 1
+```
+
+If a new ref is assigned to a property linked to an existing ref, it will replace the old ref:
+
+```js
+const otherCount = ref(2)
+
+state.count = otherCount
+console.log(state.count) // 2
+console.log(count.value) // 1
+```
+
+Ref unwrapping only happens when nested inside a reactive `Object`. There is no unwrapping performed when the ref is accessed from an `Array` or a native collection type like `Map`
+
+```js
+const books = reactive([ref('Vue 3 Guide')])
+// need .value here
+console.log(books[0].value)
+
+const map = reactive(new Map([['count', ref(0)]]))
+// need .value here
+console.log(map.get('count').value)
+```
+
+## Destructuring Reactive State
+
+```js
+import { reactive } from 'vue'
+
+const book = reactive({
+  author: 'Vue Team',
+  year: '2020',
+  title: 'Vue 3 Guide',
+  description: 'You are reading this book right now ;)',
+  price: 'free'
+})
+// When we want to use a few properties of the large reactive object, it could be tempting to use ES6 destructuring (opens new window)to get properties we want
+let { author, title } = book
+// Unfortunately, with such a destructuring the reactivity for both properties would be lost. For such a case, we need to convert our reactive object to a set of refs. These refs will retain the reactive connection to the source object
+let { author, title } = toRefs(book)
+
+title.value = 'Vue 3 Detailed Guide' // we need to use .value as title is a ref now
+console.log(book.title) // 'Vue 3 Detailed Guide'
+```
+
+## Prevent Mutating Reactive Objects with `readonly`
+
+Sometimes we want to track changes of the reactive object (`ref` or `reactive`) but we also want prevent changing it from a certain place of the application. For example, when we have a [provided](https://v3.vuejs.org/guide/component-provide-inject.html) reactive object, we want to prevent mutating it where it's injected. To do so, we can create a readonly proxy to the original object:
+
+```js
+import { reactive, readonly } from 'vue'
+
+const original = reactive({ count: 0 })
+
+const copy = readonly(original)
+
+// mutating original will trigger watchers relying on the copy
+original.count++
+
+// mutating the copy will fail and result in a warning
+copy.count++ // warning: "Set operation on key 'count' failed: target is readonly."
+```
 
 # Computed and Watch
 
 https://v3.vuejs.org/guide/reactivity-computed-watchers.html
+
+## Computed values
+
+Sometimes we need state that depends on other state - in Vue this is handled with component computed properties
+
+To directly create a computed value, we can use the `computed` method: it takes a getter function and returns an immutable reactive [ref](https://v3.vuejs.org/guide/reactivity-fundamentals.html#creating-standalone-reactive-values-as-refs) object for the returned value from the getter.
+
+```js
+const count = ref(1)
+const plusOne = computed(() => count.value + 1)
+
+console.log(plusOne.value) // 2
+plusOne.value++ // error
+
+// Alternatively, it can take an object with get and set functions to create a writable ref object.
+const count = ref(1)
+const plusOne = computed({
+  get: () => count.value + 1,
+  set: val => {
+    count.value = val - 1
+  }
+})
+
+plusOne.value = 1
+console.log(count.value) // 0
+```
+
+## `watchEffect`
+
+To apply and *automatically re-apply* a side effect based on reactive state, we can use the `watchEffect` method. It runs a function immediately while reactively tracking its dependencies and re-runs it whenever the dependencies are changed.
+
+```js
+const count = ref(0)
+
+watchEffect(() => console.log(count.value))
+// -> logs 0
+
+setTimeout(() => {
+  count.value++
+  // -> logs 1
+}, 100)
+```
+
+### Stopping the Watcher
+
+When `watchEffect` is called during a component's [setup()](https://v3.vuejs.org/guide/composition-api-setup.html) function or [lifecycle hooks](https://v3.vuejs.org/guide/composition-api-lifecycle-hooks.html), the watcher is linked to the component's lifecycle and will be automatically stopped when the component is unmounted.
+
+In other cases, it returns a stop handle which can be called to explicitly stop the watcher:
+
+```js
+const stop = watchEffect(() => {
+  /* ... */
+})
+
+// later
+stop()
+```
+
+### Side Effect Invalidation
+
+Sometimes the watched effect function will perform asynchronous side effects that need to be cleaned up when it is invalidated (i.e. state changed before the effects can be completed). The effect function receives an `onInvalidate` function that can be used to register an invalidation callback. This invalidation callback is called when:
+
+- the effect is about to re-run
+- the watcher is stopped (i.e. when the component is unmounted if `watchEffect` is used inside `setup()` or lifecycle hooks)
+
+```js
+watchEffect(onInvalidate => {
+  const token = performAsyncOperation(id.value)
+  onInvalidate(() => {
+    // id has changed or watcher is stopped.
+    // invalidate previously pending async operation
+    token.cancel()
+  })
+})
+```
+
+We are registering the invalidation callback via a passed-in function instead of returning it from the callback because the return value is important for async error handling. It is very common for the effect function to be an async function when performing data fetching:
+
+```js
+const data = ref(null)
+watchEffect(async (onInvalidate) => {
+  onInvalidate(() => { /* ... */ }) // we register cleanup function before Promise resolves
+  data.value = await fetchData(props.id)
+})
+```
+
+An async function implicitly returns a Promise, but the cleanup function needs to be registered immediately before the Promise resolves. In addition, Vue relies on the returned Promise to automatically handle potential errors in the Promise chain.
+
+### Effect Flush Timing
+
+Vue's reactivity system buffers invalidated effects and flushes them asynchronously to avoid unnecessary duplicate invocation when there are many state mutations happening in the same "tick". Internally, a component's `update` function is also a watched effect. When a user effect is queued, it is by default invoked **before** all component `update` effects
+
+### Watcher Debugging
+
+The `onTrack` and `onTrigger` options can be used to debug a watcher's behavior.
+
+## `watch`
+
+The `watch` API is the exact equivalent of the component [watch](https://v3.vuejs.org/guide/computed.html#watchers) property. `watch` requires watching a specific data source and applies side effects in a separate callback function. It also is lazy by default - i.e. the callback is only called when the watched source has changed.
+
+Compared to `watchEffect`, `watch` allows us to:
+
+- Perform the side effect lazily;
+- Be more specific about what state should trigger the watcher to re-run;
+- Access both the previous and current value of the watched state.
+
+```js
+// watching a getter
+const state = reactive({ count: 0 })
+watch(
+  () => state.count,
+  (count, prevCount) => {
+    /* ... */
+  }
+)
+
+// directly watching a ref
+const count = ref(0)
+watch(count, (count, prevCount) => {
+  /* ... */
+})
+```
+
+```js
+const firstName = ref('');
+const lastName= ref('');
+
+watch([firstName, lastName], (newValues, prevValues) => {
+  console.log(newValues, prevValues);
+})
+
+firstName.value = "John"; // logs: ["John",""] ["", ""]
+lastName.value = "Smith"; // logs: ["John", "Smith"] ["John", ""]
+```
+
+`watch` shares behavior with `watchEffect` in terms of manual stoppage, side effect invalidation (with `onInvalidate` passed to the callback as the 3rd argument instead), flush timing and debugging.
 
 # Change Detection Caveats in Vue 2
 

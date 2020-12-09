@@ -46,10 +46,4 @@ In Vue 3, components now have official support for multi-root node components, i
 
 # Composition API
 
-https://v3.vuejs.org/guide/composition-api-introduction.html
-
-https://www.youtube.com/watch?v=bwItFdPt-6M
-
-## limit of options api
-
-![image-20200923135459550](assets/VueJS-3-new/image-20200923135459550.png)
+ [Vue-3-Composition-API.md](Vue-3-Composition-API.md) 
