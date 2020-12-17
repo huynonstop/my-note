@@ -82,10 +82,6 @@ Nest aspires to be a full-fledged platform for Node.js apps that brings a higher
 
 # Technique
 
-[Health checks (Terminus)](https://docs.nestjs.com/recipes/terminus)
-
-[Hot reload](https://docs.nestjs.com/recipes/hot-reload)
-
 [NestJS_Technique.md](NestJS_Technique.md)
 
 # Security
@@ -116,15 +112,15 @@ There are several ways of mounting a Nest application. You can create a web app,
 
  [NestJS_SAA.md](NestJS_SAA.md) 
 
-# GRAPHQL
+# GraphQL apps
 
 [GraphQL + TypeScript | NestJS - A progressive Node.js framework](https://docs.nestjs.com/graphql/quick-start)
 
-# WEBSOCKETS
+# Websockets
 
 [Gateways | NestJS - A progressive Node.js framework](https://docs.nestjs.com/websockets/gateways)
 
-# MICROSERVICES
+# Microservices
 
 [Microservices | NestJS - A progressive Node.js framework](https://docs.nestjs.com/microservices/basics)
 
