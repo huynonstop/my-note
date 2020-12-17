@@ -1,3 +1,13 @@
+[leonardomso/33-js-concepts: 📜 33 concepts every JavaScript developer should know. (github.com)](https://github.com/leonardomso/33-js-concepts)
+
+[lydiahallie/javascript-questions: A long list of (advanced) JavaScript questions, and their explanations (github.com)](https://github.com/lydiahallie/javascript-questions)
+
+[ryanmcdermott/clean-code-javascript: Clean Code concepts adapted for JavaScript (github.com)](https://github.com/ryanmcdermott/clean-code-javascript)
+
+[You-Dont-Know-JS/README.md at 2nd-ed · getify/You-Dont-Know-JS (github.com)](https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/get-started/README.md)
+
+[You-Dont-Know-JS/README.md at 1st-ed · getify/You-Dont-Know-JS (github.com)](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/README.md)
+
 # Behind the scenes of class and object in JavaScript
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model
@@ -147,6 +157,8 @@ https://www.javatpoint.com/javascript-oops-prototype-object
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model#Object_properties
 
 https://anonystick.com/blog-developer/prototype-la-gi-lap-trinh-huong-doi-tuong-oop-trong-javascript-2020070686855915
+
+[What Makes JavaScript JavaScript? Prototypal Inheritance (dmitripavlutin.com)](https://dmitripavlutin.com/javascript-prototypal-inheritance/)
 
 **A prototype is just a base blue print of object**
 

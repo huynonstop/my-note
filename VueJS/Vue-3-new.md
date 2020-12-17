@@ -47,3 +47,13 @@ In Vue 3, components now have official support for multi-root node components, i
 # Composition API
 
  [Vue-3-Composition-API.md](Vue-3-Composition-API.md) 
+
+# Migrate guide
+
+[Release v3.0.0 One Piece · vuejs/vue-next (github.com)](https://github.com/vuejs/vue-next/releases/tag/v3.0.0)
+
+[Introduction | Vue.js](https://v3.vuejs.org/guide/migration/introduction.html#overview)
+
+[Migrating from Vue 2 | Vue Router (vuejs.org)](https://next.router.vuejs.org/guide/migration/index.html#breaking-changes)
+
+[Migrating to 4.0 from 3.x | Vuex (vuejs.org)](https://next.vuex.vuejs.org/guide/migrating-to-4-0-from-3-x.html)

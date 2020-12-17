@@ -1,3 +1,5 @@
+[How to Put a Website Online: Template, Coding, Domain, Hosting, and DNS - YouTube](https://www.youtube.com/watch?v=NQP89ish9t8)
+
 # Kind of applications
 
 ![image-20200611221622261](assets/JS_Deploy/image-20200611221622261.png)

@@ -22,6 +22,8 @@ https://www.youtube.com/watch?v=1jWS7cCuUXw
 
 https://www.youtube.com/watch?v=dpw9EHDh2bM
 
+![image-20200829221520546](assets/react-hooks/image-20200829221520546.png)
+
 ![image-20200829221317466](assets/react-hooks/image-20200829221317466.png)
 
 hooks are meaningless if not called in the right context
@@ -297,7 +299,11 @@ https://stackoverflow.com/questions/53513872/react-hooks-what-is-the-difference-
 
 ## useEffect
 
+[A Complete Guide to useEffect — Overreacted](https://overreacted.io/a-complete-guide-to-useeffect)
+
 https://topdev.vn/blog/useeffect-tu-a-toi-z/
+
+![img](assets/react-hooks/131383234_2092973390833124_3865804495538231186_n.jpg)
 
 ![image-20200831110123166](assets/react-hooks/image-20200831110123166.png)
 

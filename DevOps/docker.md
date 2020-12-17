@@ -2,7 +2,11 @@ https://www.youtube.com/watch?v=gAkwW2tuIqE
 
 https://www.youtube.com/watch?v=1xo-0gCVhTU
 
-https://www.youtube.com/watch?v=Wf2eSG3owoA
+[Docker and Kubernetes - Full Course for Beginners - YouTube](https://www.youtube.com/watch?v=Wf2eSG3owoA)
+
+[Docker - Complete Tutorial [Docker For Everyone In 2 Hours\] - YouTube](https://www.youtube.com/watch?v=d-PPOS-VsC8)
+
+[TechWorld with Nana - YouTube](https://www.youtube.com/c/TechWorldwithNana/videos)
 
 # VM
 

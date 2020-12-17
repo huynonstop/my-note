@@ -8,6 +8,8 @@ https://www.youtube.com/watch?v=bwItFdPt-6M
 
 [Reactivity API | Vue.js](https://v3.vuejs.org/api/reactivity-api.html)
 
+![image-20201211231753281](assets/Vue-3-Composition-API/image-20201211231753281.png)
+
 # limit of options api
 
 ![image-20200923135459550](assets/Vue-3-Composition-API/image-20200923135459550.png)
@@ -405,6 +407,18 @@ export default {
 ```
 
 `attrs` and `slots` are stateful objects that are always updated when the component itself is updated. This means you should avoid destructuring them and always reference properties as `attrs.x` or `slots.x`. Also note that unlike `props`, `attrs` and `slots` are **not** reactive. If you intend to apply side effects based on `attrs` or `slots` changes, you should do so inside an `onUpdated` lifecycle hook.
+
+#### Emits
+
+```js
+export default {
+  setup(props, { attrs, slots, emit }) {
+    emit('custome-event') // this.$emit('custome-event')
+  }
+}
+```
+
+
 
 ## Accessing Component Properties
 
@@ -851,3 +865,35 @@ Composition API template refs do not have special handling when used inside `v-f
   }
 </script>
 ```
+
+# Custom hooks
+
+![image-20201211233617951](assets/Vue-3-Composition-API/image-20201211233617951.png)
+
+![image-20201211233631674](assets/Vue-3-Composition-API/image-20201211233631674.png)
+
+# Router
+
+## props params
+
+![image-20201211230917426](assets/Vue-3-Composition-API/image-20201211230917426.png)
+
+## Router & route object
+
+```js
+import { useRoute, useRouter } from 'vue-router'
+```
+
+# Vuex
+
+```js
+import { useStore } from 'vuex'
+```
+
+
+
+# Migrate from V2
+
+![image-20201211224026360](assets/Vue-3-Composition-API/image-20201211224026360.png)
+
+![image-20201211224053833](assets/Vue-3-Composition-API/image-20201211224053833.png)

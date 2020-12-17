@@ -2,7 +2,7 @@
 
 https://developer.mozilla.org/en-US/docs/Mozilla/Introduction_to_Layout_in_Mozilla
 
-<img src="https://developer.mozilla.org/files/464/Gecko_Overview_9.png" alt="img" style="zoom:150%;background: white" />
+<img src="assets/react-render/Gecko_Overview_9.png" alt="img" style="zoom:150%;background: white" />
 
 Each time something in the DOM changes. Since DOM is represented as a tree structure, changes to the DOM is pretty quick but the changed element, and it’s children’s has to go through **Reflow/Layout** stage and then the changes has to be **Re-painted** which are slow. Therefore more the items to reflow/repaint, more slow your app becomes.
 

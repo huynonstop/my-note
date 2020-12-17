@@ -333,3 +333,8 @@ doManyThings().then((result) => {  // Do the things that need to wait for our fu
 });
 ```
 
+# RxJS
+
+[Introduction - Learn RxJS](https://www.learnrxjs.io/)
+
+[RxJS - Introduction](https://rxjs.dev/guide/overview)
