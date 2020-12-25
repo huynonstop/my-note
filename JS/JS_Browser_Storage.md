@@ -14,6 +14,8 @@ https://medium.com/analytics-and-data/cookies-tracking-and-pixels-where-does-you
 
 ## Difference `cookie`, `sessionStorage` and `localStorage`.
 
+![Hình ảnh có thể có: văn bản](assets/JS_Browser_Storage/131986214_3556451341101909_5452667036261089041_o.jpg)
+
 All the above-mentioned technologies are key-value storage mechanisms on the client side. They are only able to store values as strings. Each key-name pair is unique for a protocol and domain, regardless of the paths.
 
 |                                        | `cookie`                                                     | `localStorage`                                             | `sessionStorage`                                             |
