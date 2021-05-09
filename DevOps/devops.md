@@ -12,3 +12,6 @@ automatic everything between writing code and production
 
 ## CircleCI
 
+## Docker
+
+![image-20210322165920751](assets/devops/image-20210322165920751.png)

@@ -1,5 +1,7 @@
 # CSS
 
+[10 CSS Pro Tips - Code this, NOT that! - YouTube](https://www.youtube.com/watch?v=Qhaz36TZG5Y)
+
 https://academind.com/learn/css/
 
 ## CSS selector
