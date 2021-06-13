@@ -1,1 +1,0 @@
-[Web Scraping with Python - Beautiful Soup Crash Course - YouTube](https://www.youtube.com/watch?v=XVv6mJpFOb0)
