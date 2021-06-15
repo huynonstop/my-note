@@ -36,21 +36,6 @@ https://academind.com/learn/web-dev/sql-vs-nosql/
 **Isolation** giữ giao dịch tách rời nhau cho đến khi chúng đã hoàn tất. Tính chất này đảm bảo rằng hai hoặc nhiều giao dịch không bao giờ được trộn lẫn với nhau, tạo ra dữ liệu không chính xác và không phù hợp.
 **Durability** đảm bảo rằng cơ sở dữ liệu sẽ theo dõi các thay đổi cấp phát trong một cách mà các máy chủ có thể phục hồi từ một sự kết thúc bất thường. Tính chất này đảm bảo rằng trong trường hợp thất bại hay dịch vụ khởi động lại các dữ liệu có sẵn trong  trước khi gặp lỗi.
 
-## Transaction 
-
-Transaction can be defined as a collection of task that are considered as minimum processing unit. Each minimum processing unit can not be divided further.
-
-The main operation of a transaction are read and write.
-
-All transaction must contain four properties that commonly known as ACID properties for the purpose of ensuring accuracy , completeness and data integrity.
-
-| Read phenomena\ Isolation level | Dirty reads | Lost updates | Non-repeatable reads |  Phantoms   |
-| :-----------------------------: | :---------: | :----------: | :------------------: | :---------: |
-|        Read Uncommitted         |  may occur  |  may occur   |      may occur       |  may occur  |
-|         Read Committed          | don't occur |  may occur   |      may occur       |  may occur  |
-|         Repeatable Read         | don't occur | don't occur  |     don't occur      |  may occur  |
-|          Serializable           | don't occur | don't occur  |     don't occur      | don't occur |
-
 ## Lost updates
 
 A **lost update** occurs when two different transactions are trying to **update** the same column on the same row within a database at the same time.
@@ -88,6 +73,23 @@ A *phantom read* occurs when, in the course of a transaction, new rows are added
 | `/* Query 1 */ SELECT * FROM users WHERE age BETWEEN 10 AND 30; ` |                                                              |
 |                                                              | `/* Query 2 */ INSERT INTO users(id,name,age) VALUES ( 3, 'Bob', 27 ); COMMIT; ` |
 | `/* Query 1 */ SELECT * FROM users WHERE age BETWEEN 10 AND 30; COMMIT; ` |                                                              |
+
+
+## Transaction - Isolation Levels
+
+Transaction can be defined as a collection of task that are considered as minimum processing unit. Each minimum processing unit can not be divided further.
+
+The main operation of a transaction are read and write.
+
+All transaction must contain four properties that commonly known as ACID properties for the purpose of ensuring accuracy , completeness and data integrity.
+
+| Read phenomena\ Isolation level | Dirty reads | Lost updates | Non-repeatable reads |  Phantoms   |
+| :-----------------------------: | :---------: | :----------: | :------------------: | :---------: |
+|        Read Uncommitted         |  may occur  |  may occur   |      may occur       |  may occur  |
+|         Read Committed          | don't occur |  may occur   |      may occur       |  may occur  |
+|         Repeatable Read         | don't occur | don't occur  |     don't occur      |  may occur  |
+|          Serializable           | don't occur | don't occur  |     don't occur      | don't occur |
+
 
 # NoSQL
 

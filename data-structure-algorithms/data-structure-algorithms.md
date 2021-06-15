@@ -1,3 +1,9 @@
+[CSC 541: Spring 2020 Schedule (ncsu.edu)](https://www.csc2.ncsu.edu/faculty/healey/csc541/)
+
+[6.851: Advanced Data Structures (mit.edu)](https://courses.csail.mit.edu/6.851/)
+
+[6.854/18.415J: Advanced Algorithms (mit.edu)](http://courses.csail.mit.edu/6.854/20/)
+
 # TIme Complexity
 
 ![image-20200808195416003](assets/Algorithms&DataStructure/image-20200808195416003.png)
