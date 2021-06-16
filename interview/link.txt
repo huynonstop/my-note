@@ -1,0 +1,16 @@
+https://github.com/viraptor/reverse-interview
+https://github.com/lydiahallie/javascript-questions
+https://github.com/leonardomso/33-js-concepts
+
+https://www.youtube.com/watch?v=LFkm8RALRbo
+
+https://github.com/sudheerj/reactjs-interview-questions
+https://www.sitepoint.com/react-interview-questions-solutions/
+https://yangshun.github.io/tech-interview-handbook/introduction
+https://github.com/jwasham/coding-interview-university
+
+https://vnoi.info/wiki/Home
+https://vnoi.info/wiki/interview/experience-from-interviewer.md
+https://vnoi.info/wiki/interview/general-experience.md
+https://vnoi.info/wiki/interview/Nhung-lan-phong-van-trong-thuc-te-va-bai-hoc-rut-ra.md
+
