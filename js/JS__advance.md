@@ -755,6 +755,8 @@ In a web browser, global variables are deleted when you close the browser window
 
 https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36
 
+[Closures Explained in 100 Seconds // Tricky JavaScript Interview Prep - YouTube](https://www.youtube.com/watch?v=vKJpN5FAeF4)
+
 Inner functions contain the scope of parent functions even if the parent function has returned (closure).
 
 ```js
