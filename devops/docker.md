@@ -8,21 +8,17 @@ https://www.youtube.com/watch?v=1xo-0gCVhTU
 
 [TechWorld with Nana - YouTube](https://www.youtube.com/c/TechWorldwithNana/videos)
 
-# VM
+![image-20210322170931077](assets/docker/image-20210322170931077.png)
 
-![image-20210322172628984](assets/docker/image-20210322172628984.png)
+https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
 
-![image-20200825130341150](assets/docker/image-20200825130341150.png)
-
-![image-20210322172722992](assets/docker/image-20210322172722992.png)
+https://snyk.io/blog/10-best-practices-to-containerize-nodejs-web-applications-with-docker/
 
 # Docker
 
 ![image-20210322165951376](assets/docker/image-20210322165951376.png)
 
-![image-20210322170931077](assets/docker/image-20210322170931077.png)
-
-reproducing environment 
+reproducing environment , code
 
 package software into containers that run reliably in any environment
 
@@ -32,17 +28,39 @@ package software into containers that run reliably in any environment
 
 ![image-20210322180332132](assets/docker/image-20210322180332132.png)
 
-# Images
+## Images
 
-template (snapshot) of your app to run in container
+get from docker-hub or create a custom image (write Dockerfile based on another images)
 
-# Container
+template (snapshot, setup, code, environment) of your app
 
-running process
+read-only, need to rebuild for new update
 
-=> 1 process 1 container
+layer base, cached same instruction in Dockerfile, when a layer changed rerun all layers after it. (more speed)
 
-# Volumes
+Images are "blueprints" for containers which then are running instances with read and write access.
+
+## Container
+
+the running instances base on images
+
+containers are isolated from host environment, has an internal network and containers are separated from each other and have no shared data or state by default. (Isolation)
+
+Images & Container concept allows multiple containers to be based on the same image without interfering with each other.
+
+![image-20210618230252821](assets/docker/image-20210618230252821.png)
+
+each docker container will run the source code and environment in the images
+
+![image-20210623015628844](assets/docker/image-20210623015628844.png)
+
+![image-20210618230203183](assets/docker/image-20210618230203183.png)
+
+![image-20210623015027258](assets/docker/image-20210623015027258.png)
+
+![image-20210623021326587](assets/docker/image-20210623021326587.png)
+
+## Volumes
 
 data and files created in container will lost if stop container
 
@@ -50,112 +68,74 @@ data and files created in container will lost if stop container
 
 ![image-20200825124349770](assets/docker/image-20200825124349770.png)
 
-# Port Forwarding
+## Port Mapping (Forwarding)
 
-allow host machine access container
+allow host machine access container port
 
 docker commands
 
-docker compose
+docker-compose
 
-# DockerFile
+## Dockerfile
 
-blueprint to tell docker how to build a docker image
+[dockerfile.md](./dockerfile.md)
 
-### layer
+## Commands
 
-every instruction is a step or layer
+```bash	
+# Images
+docker pull image_base # pull image from docker-hub
+docker build ./path/to/Dockerfile # build image base on dockerfile
 
-docker will cache layer
+docker images 
+-a # all images
 
-### .dockerignore
+docker rmi image_id_or_name image_id_or_name
+docker image prune
 
-`node_modules`
+docker rmi $(docker images -a -q)
 
-## FROM
+# Containers
+docker ps 
+-a # all container
 
-`FROM unbuntu`
+docker rm container_id_or_name container_id_or_name
 
-`FROM node`
+docker run 
+-p host_port:container_expose_port # publish to host port
+--rm # remove container after exist
+image_id_or_name # Run container from image
 
-## WORKDIR
+docker stop container_id_or_name container_id_or_name
 
-`WORKDIR /app`
-
-## COPY
-
-`COPY (local place) (container place/ working directory)`
-
-`COPY package*.json ./`
-
-`COPY . .`
-
-## RUN
-
-`run npm install`
-
-## ENV
-
-`ENV port=8080`
-
-## EXPOSE
-
-`EXPOSE 8080`
-
-## CMD 
-
-run command
-
-`CMD ["npm","start"]` 
-
-## Example
-
-.dockerignore
-
-```
-node_modules
+docker rm $(docker ps -a -f status=exited -q) # Remove all exited containers
+docker stop $(docker ps -a -q) # Stop all containers
+docker rm $(docker ps -a -q) # Remove all containers
 ```
 
-DockerFile
+For **all docker commands** where an **ID** can be used, you **don't always have to copy** / write out the **full id.**
 
-```dockerfile
-FROM node:12
+You can also **just use the first (few) character(s)** - just enough to have a unique identifier.
 
-WORKDIR /app
+So instead of
 
-COPY package*.json ./
-RUN npm install
-
-COPY . .
-
-ENV port=8080
-EXPOSE 8080
-CMD ["npm", "start"] 
+```
+docker run abcdefg
 ```
 
+you could also run
 
+```
+docker run abc
+```
 
-# Pull
+or, if there's no other image ID starting with "a", you could even run just:
 
-# Push
+```
+docker run a
+```
 
-# Commands
-
-## `docker ps`
-
-## `docker build (-flags) DOCKERFILE_PATH`
-
--t name: name tag (username/app_name:version)
-
-`docker build huy/abc:1.0 ./`
-
-## `docker volume create NAME`
-
-## `docker run (-flags) DOCKERFILE_PATH`
-
--p **local_port : container_port** :  **port forwading**
-
---mount source=**VOLUME_NAME**,target=**FILE_IN_CONTAINER** : mount to volumes 
+**This applies to ALL Docker commands where IDs are needed.**
 
 # Docker Compose
 
