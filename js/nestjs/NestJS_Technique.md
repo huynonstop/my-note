@@ -12,6 +12,18 @@
 
 [HTTP module | NestJS - A progressive Node.js framework](https://docs.nestjs.com/techniques/http-module)
 
+# Sample
+
+[nest/sample at master · nestjs/nest (github.com)](https://github.com/nestjs/nest/tree/master/sample)
+
+https://dev.to/tony133/an-api-boilerplate-to-create-a-ready-to-use-rest-api-in-seconds-with-nestjs-7-passport-auth-jwt-system-typeorm-38l0
+
+https://dev.to/tony133/simple-example-api-rest-with-nestjs-7-x-and-mongoose-37eo
+
+https://dev.to/tony133/simple-example-custom-repository-with-nestjs-7-x-and-typeorm-3c9o
+
+https://dev.to/tony133/knexjs-module-for-nestjs-7-x-framework-15g8
+
 # SQL 
 
 [SQL (TypeORM) Nest recipes](https://docs.nestjs.com/recipes/sql-typeorm)
@@ -581,10 +593,6 @@ export class CatsModule {}
 # File upload
 
 [File upload | NestJS - A progressive Node.js framework](https://docs.nestjs.com/techniques/file-upload)
-
-# Sample
-
-[nest/sample at master · nestjs/nest (github.com)](https://github.com/nestjs/nest/tree/master/sample)
 
 # Others tech
 
