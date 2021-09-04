@@ -28,224 +28,6 @@ https://www.youtube.com/watch?v=dpw9EHDh2bM
 
 hooks are meaningless if not called in the right context
 
-## The dispatcher
-
-The dispatcher is the shared object that contains the hook functions. It will be dynamically allocated or cleaned up based on the rendering phase of ReactDOM, and it will ensure that the user doesn’t access hooks outside a React component (see [implementation](https://github.com/facebook/react/tree/5f06576f51ece88d846d01abd2ddd575827c6127/packages/react-reconciler/src/ReactFiberDispatcher.js#L24)).
-
-When we’re done performing the rendering work, we nullify the dispatcher and thus preventing hooks from being accidentally used outside ReactDOM’s rendering cycle. This is a mechanism that will ensure that the user doesn’t do silly things (see [implementation](https://github.com/facebook/react/tree/5f06576f51ece88d846d01abd2ddd575827c6127/packages/react-reconciler/src/ReactFiberScheduler.js#L1376)).
-
-The dispatcher is resolved in each and every hook call using a function called `resolveDispatcher()`. Outside the rendering cycle of React this should be meaningless, and React should print the warning message: *“Hooks can only be called inside the body of a function component”* (see [implementation](https://github.com/facebook/react/tree/5f06576f51ece88d846d01abd2ddd575827c6127/packages/react/src/ReactHooks.js#L17)).
-
-```jsx
-let currentDispatcher
-const dispatcherWithoutHooks = { /* ... */ }
-const dispatcherWithHooks = { /* ... */ }
-
-function resolveDispatcher() {
-  if (currentDispatcher) return currentDispatcher
-  throw Error("Hooks can't be called")
-}
-
-function useXXX(...args) {
-  const dispatcher = resolveDispatcher()
-  return dispatcher.useXXX(...args)
-}
-
-function renderRoot() {
-  currentDispatcher = enableHooks ? dispatcherWithHooks : dispatcherWithoutHooks
-  performWork()
-  currentDispatcher = null
-}
-```
-
-## The hooks queue
-
-Behind the scenes, hooks are represented as nodes which are linked together in their calling order.
-
-> They’re represented like so because hooks are not simply created and then left alone. They have a mechanism which allows them to be what they are. A hook has several properties which I would like you to bare in mind before diving into its implementation:
->
-> - Its initial state is created in the initial render.
-> - Its state can be updated on the fly.
-> - React would remember the hook’s state in future renders.
-> - React would provide you with the right state based on the calling order.
-> - React would know which fiber does this hook belong to.
-
-But when dealing with hooks state should be viewed as a queue, where each node represents a single model of the state
-
-The schema of a single hook node can be viewed in the [implementation](https://github.com/facebook/react/tree/5f06576f51ece88d846d01abd2ddd575827c6127/packages/react-reconciler/src/ReactFiberHooks.js#L243).
-
-```jsx
-{
-  memoizedState: 'foo',
-  next: {
-    memoizedState: 'bar',
-    next: {
-      memoizedState: 'bar',
-      next: null
-    }
-  }
-}
-```
-
-before each and every function Component invocation, a function named `prepareHooks()` is gonna be called, where the current fiber and its first hook node in the hooks queue are gonna be stored in global variables. This way, any time we call a hook function (`useXXX()`) it would know in which context to run.
-
-```jsx
-
-let currentlyRenderingFiber
-let workInProgressQueue
-let currentHook
-
-// Source: https://github.com/facebook/react/tree/5f06576f51ece88d846d01abd2ddd575827c6127/react-reconciler/src/ReactFiberHooks.js:123
-function prepareHooks(recentFiber) {
-  currentlyRenderingFiber = workInProgressFiber
-  currentHook = recentFiber.memoizedState
-}
-
-// Source: https://github.com/facebook/react/tree/5f06576f51ece88d846d01abd2ddd575827c6127/react-reconciler/src/ReactFiberHooks.js:148
-function finishHooks() {
-  currentlyRenderingFiber.memoizedState = workInProgressHook
-  currentlyRenderingFiber = null
-  workInProgressHook = null
-  currentHook = null
-}
-
-// Source: https://github.com/facebook/react/tree/5f06576f51ece88d846d01abd2ddd575827c6127/react-reconciler/src/ReactFiberHooks.js:115
-function resolveCurrentlyRenderingFiber() {
-  if (currentlyRenderingFiber) return currentlyRenderingFiber
-  throw Error("Hooks can't be called")
-}
-// Source: https://github.com/facebook/react/tree/5f06576f51ece88d846d01abd2ddd575827c6127/react-reconciler/src/ReactFiberHooks.js:267
-function createWorkInProgressHook() {
-  workInProgressHook = currentHook ? cloneHook(currentHook) : createNewHook()
-  currentHook = currentHook.next
-  workInProgressHook
-}
-
-function useXXX() {
-  const fiber = resolveCurrentlyRenderingFiber()
-  const hook = createWorkInProgressHook()
-  // ...
-}
-
-function updateFunctionComponent(recentFiber, workInProgressFiber, Component, props) {
-  prepareHooks(recentFiber, workInProgressFiber)
-  Component(props)
-  finishHooks()
-}
-```
-
-Once an update has finished, a function named `finishHooks()` will be called, where a reference for the first node in the hooks queue will be stored on the rendered fiber in the `memoizedState` property. This means that the hooks queue and their state can be addressed externally:
-
-```jsx
-const ChildComponent = () => {
-  useState('foo')
-  useState('bar')
-  useState('baz')
-
-  return null
-}
-
-const ParentComponent = () => {
-  const childFiberRef = useRef()
-
-  useEffect(() => {
-    let hookNode = childFiberRef.current.memoizedState
-
-    assert(hookNode.memoizedState, 'foo')
-    hookNode = hooksNode.next
-    assert(hookNode.memoizedState, 'bar')
-    hookNode = hooksNode.next
-    assert(hookNode.memoizedState, 'baz')
-  })
-
-  return (
-    <ChildComponent ref={childFiberRef} />
-  )
-}
-```
-
-
-
-## States hooks
-
-but behind the scenes the `useState` hook uses `useReducer` and it simply provides it with a pre-defined reducer handler (see [implementation](https://github.com/facebook/react/blob/5f06576f51ece88d846d01abd2ddd575827c6127/packages/react-reconciler/src/ReactFiberHooks.js#L339)). This means that the results returned by `useState` are actually a reducer state, and an action dispatcher.
-
-So as expected, we can provide the action dispatcher with the new state directly; but would you look at that?! We can also provide the dispatcher with *an action function that will receive the old state and return the new one.*
-
-This means that when you send the state setter down the component tree you can run mutations against the current state of the parent component, without passing it as a different prop. For example:
-
-```jsx
-
-const ParentComponent = () => {
-  const [name, setName] = useState()
-  
-  return (
-    <ChildComponent toUpperCase={setName} />
-  )
-}
-
-const ChildComponent = (props) => {
-  useEffect(() => {
-    props.toUpperCase((state) => state.toUpperCase())
-  }, [true])
-  
-  return null
-}
-```
-
-## Effect hooks
-
-- They’re created during render time, but they run *after* painting.
-- If given so, they’ll be destroyed right before the next painting.
-- They’re called in their definition order.
-
-Accordingly, there should be another an additional queue that should hold these effects and should be addressed after painting. Generally speaking, a fiber holds a queue which contains effect nodes. Each effect is of a different type and should be addressed at its appropriate phase:
-
-- Invoke instances of `getSnapshotBeforeUpdate()` before mutation (see [implementation](https://github.com/facebook/react/tree/5f06576f51ece88d846d01abd2ddd575827c6127/packages/react-reconciler/src/ReactFiberScheduler.js#L646)).
-- Perform all the host insertions, updates, deletions and ref unmounts (see [implementation](https://github.com/facebook/react/tree/5f06576f51ece88d846d01abd2ddd575827c6127/packages/react-reconciler/src/ReactFiberScheduler.js#L687)).
-- Perform all life-cycles and ref callbacks. Life-cycles happen as a separate pass so that all placements, updates, and deletions in the entire tree have already been invoked. This pass also triggers any renderer-specific initial effects (see [implementation](https://github.com/facebook/react/tree/5f06576f51ece88d846d01abd2ddd575827c6127/packages/react-reconciler/src/ReactFiberScheduler.js#L732)).
-- Effects which were scheduled by the `useEffect()` hook - which are also known as “passive effects” based on the [implementation](https://github.com/facebook/react/tree/5f06576f51ece88d846d01abd2ddd575827c6127/packages/react-reconciler/src/ReactFiberScheduler.js#L779)
-
-When it comes to the hook effects, they should be stored on the fiber in a property called `updateQueue`, and each effect node should have the following schema (see [implementation](https://github.com/facebook/react/tree/5f06576f51ece88d846d01abd2ddd575827c6127/packages/react-reconciler/src/ReactFiberHooks.js#L477)):
-
-- `tag` - A binary number which will dictate the behavior of the effect (`useMutationEffect()`(legacy), `useLayoutEffect()`,`useEffect()`)(see [implementation](https://github.com/facebook/react/tree/5f06576f51ece88d846d01abd2ddd575827c6127/packages/react-reconciler/src/ReactHookEffectTags.js)).
-- `create` - The callback that should be ran *after* painting.
-- `destroy` - The callback returned from `create()` that should be ran *before* the initial render.
-- `inputs` - A set of values that will determine whether the effect should be destroyed and recreated.
-- `next` - A reference to the next effect which was defined in the function Component.
-
-we can actually inject an effect to a certain fiber externally:
-
-```jsx
-function injectEffect(fiber) {
-  const lastEffect = fiber.updateQueue.lastEffect
-
-  const destroyEffect = () => {
-    console.log('on destroy')
-  }
-
-  const createEffect = () => {
-    console.log('on create')
-
-    return destroy
-  }
-
-  const injectedEffect = {
-    tag: 0b11000000,
-    next: lastEffect.next,
-    create: createEffect,
-    destroy: destroyEffect,
-    inputs: [createEffect],
-  }
-
-  lastEffect.next = injectedEffect
-}
-
-const ParentComponent = (
-  <ChildComponent ref={injectEffect} />
-)
-```
-
 # Rule of hooks
 
 https://reactjs.org/docs/hooks-rules.html
@@ -292,6 +74,10 @@ https://kentcdodds.com/blog/useeffect-vs-uselayouteffect
 https://stackoverflow.com/questions/53513872/react-hooks-what-is-the-difference-between-usemutationeffect-and-uselayoutef
 
 ## useState
+
+https://stackoverflow.com/questions/58860021/why-react-hook-usestate-uses-const-and-not-let
+
+https://github.com/facebook/react/issues/13982
 
 > useState give us a value persist across renders and a function to change value and trigger re-render
 
@@ -663,6 +449,222 @@ React.useEffect(() => {
 ```
 
  Its ability to preserve data also makes it powerful for remembering the state of timing functions like setInterval, debounce, throttle, etc.
+ 
+ 
+# The dispatcher
+
+The dispatcher is the shared object that contains the hook functions. It will be dynamically allocated or cleaned up based on the rendering phase of ReactDOM, and it will ensure that the user doesn’t access hooks outside a React component (see [implementation](https://github.com/facebook/react/tree/5f06576f51ece88d846d01abd2ddd575827c6127/packages/react-reconciler/src/ReactFiberDispatcher.js#L24)).
+
+When we’re done performing the rendering work, we nullify the dispatcher and thus preventing hooks from being accidentally used outside ReactDOM’s rendering cycle. This is a mechanism that will ensure that the user doesn’t do silly things (see [implementation](https://github.com/facebook/react/tree/5f06576f51ece88d846d01abd2ddd575827c6127/packages/react-reconciler/src/ReactFiberScheduler.js#L1376)).
+
+The dispatcher is resolved in each and every hook call using a function called `resolveDispatcher()`. Outside the rendering cycle of React this should be meaningless, and React should print the warning message: *“Hooks can only be called inside the body of a function component”* (see [implementation](https://github.com/facebook/react/tree/5f06576f51ece88d846d01abd2ddd575827c6127/packages/react/src/ReactHooks.js#L17)).
+
+```jsx
+let currentDispatcher
+const dispatcherWithoutHooks = { /* ... */ }
+const dispatcherWithHooks = { /* ... */ }
+
+function resolveDispatcher() {
+  if (currentDispatcher) return currentDispatcher
+  throw Error("Hooks can't be called")
+}
+
+function useXXX(...args) {
+  const dispatcher = resolveDispatcher()
+  return dispatcher.useXXX(...args)
+}
+
+function renderRoot() {
+  currentDispatcher = enableHooks ? dispatcherWithHooks : dispatcherWithoutHooks
+  performWork()
+  currentDispatcher = null
+}
+```
+
+# The hooks queue
+
+Behind the scenes, hooks are represented as nodes which are linked together in their calling order.
+
+> They’re represented like so because hooks are not simply created and then left alone. They have a mechanism which allows them to be what they are. A hook has several properties which I would like you to bare in mind before diving into its implementation:
+>
+> - Its initial state is created in the initial render.
+> - Its state can be updated on the fly.
+> - React would remember the hook’s state in future renders.
+> - React would provide you with the right state based on the calling order.
+> - React would know which fiber does this hook belong to.
+
+But when dealing with hooks state should be viewed as a queue, where each node represents a single model of the state
+
+The schema of a single hook node can be viewed in the [implementation](https://github.com/facebook/react/tree/5f06576f51ece88d846d01abd2ddd575827c6127/packages/react-reconciler/src/ReactFiberHooks.js#L243).
+
+```jsx
+{
+  memoizedState: 'foo',
+  next: {
+    memoizedState: 'bar',
+    next: {
+      memoizedState: 'bar',
+      next: null
+    }
+  }
+}
+```
+
+before each and every function Component invocation, a function named `prepareHooks()` is gonna be called, where the current fiber and its first hook node in the hooks queue are gonna be stored in global variables. This way, any time we call a hook function (`useXXX()`) it would know in which context to run.
+
+```jsx
+
+let currentlyRenderingFiber
+let workInProgressQueue
+let currentHook
+
+// Source: https://github.com/facebook/react/tree/5f06576f51ece88d846d01abd2ddd575827c6127/react-reconciler/src/ReactFiberHooks.js:123
+function prepareHooks(recentFiber) {
+  currentlyRenderingFiber = workInProgressFiber
+  currentHook = recentFiber.memoizedState
+}
+
+// Source: https://github.com/facebook/react/tree/5f06576f51ece88d846d01abd2ddd575827c6127/react-reconciler/src/ReactFiberHooks.js:148
+function finishHooks() {
+  currentlyRenderingFiber.memoizedState = workInProgressHook
+  currentlyRenderingFiber = null
+  workInProgressHook = null
+  currentHook = null
+}
+
+// Source: https://github.com/facebook/react/tree/5f06576f51ece88d846d01abd2ddd575827c6127/react-reconciler/src/ReactFiberHooks.js:115
+function resolveCurrentlyRenderingFiber() {
+  if (currentlyRenderingFiber) return currentlyRenderingFiber
+  throw Error("Hooks can't be called")
+}
+// Source: https://github.com/facebook/react/tree/5f06576f51ece88d846d01abd2ddd575827c6127/react-reconciler/src/ReactFiberHooks.js:267
+function createWorkInProgressHook() {
+  workInProgressHook = currentHook ? cloneHook(currentHook) : createNewHook()
+  currentHook = currentHook.next
+  workInProgressHook
+}
+
+function useXXX() {
+  const fiber = resolveCurrentlyRenderingFiber()
+  const hook = createWorkInProgressHook()
+  // ...
+}
+
+function updateFunctionComponent(recentFiber, workInProgressFiber, Component, props) {
+  prepareHooks(recentFiber, workInProgressFiber)
+  Component(props)
+  finishHooks()
+}
+```
+
+Once an update has finished, a function named `finishHooks()` will be called, where a reference for the first node in the hooks queue will be stored on the rendered fiber in the `memoizedState` property. This means that the hooks queue and their state can be addressed externally:
+
+```jsx
+const ChildComponent = () => {
+  useState('foo')
+  useState('bar')
+  useState('baz')
+
+  return null
+}
+
+const ParentComponent = () => {
+  const childFiberRef = useRef()
+
+  useEffect(() => {
+    let hookNode = childFiberRef.current.memoizedState
+
+    assert(hookNode.memoizedState, 'foo')
+    hookNode = hooksNode.next
+    assert(hookNode.memoizedState, 'bar')
+    hookNode = hooksNode.next
+    assert(hookNode.memoizedState, 'baz')
+  })
+
+  return (
+    <ChildComponent ref={childFiberRef} />
+  )
+}
+```
+# States hooks
+
+but behind the scenes the `useState` hook uses `useReducer` and it simply provides it with a pre-defined reducer handler (see [implementation](https://github.com/facebook/react/blob/5f06576f51ece88d846d01abd2ddd575827c6127/packages/react-reconciler/src/ReactFiberHooks.js#L339)). This means that the results returned by `useState` are actually a reducer state, and an action dispatcher.
+
+So as expected, we can provide the action dispatcher with the new state directly; but would you look at that?! We can also provide the dispatcher with *an action function that will receive the old state and return the new one.*
+
+This means that when you send the state setter down the component tree you can run mutations against the current state of the parent component, without passing it as a different prop. For example:
+
+```jsx
+
+const ParentComponent = () => {
+  const [name, setName] = useState()
+  
+  return (
+    <ChildComponent toUpperCase={setName} />
+  )
+}
+
+const ChildComponent = (props) => {
+  useEffect(() => {
+    props.toUpperCase((state) => state.toUpperCase())
+  }, [true])
+  
+  return null
+}
+```
+
+# Effect hooks
+
+- They’re created during render time, but they run *after* painting.
+- If given so, they’ll be destroyed right before the next painting.
+- They’re called in their definition order.
+
+Accordingly, there should be another an additional queue that should hold these effects and should be addressed after painting. Generally speaking, a fiber holds a queue which contains effect nodes. Each effect is of a different type and should be addressed at its appropriate phase:
+
+- Invoke instances of `getSnapshotBeforeUpdate()` before mutation (see [implementation](https://github.com/facebook/react/tree/5f06576f51ece88d846d01abd2ddd575827c6127/packages/react-reconciler/src/ReactFiberScheduler.js#L646)).
+- Perform all the host insertions, updates, deletions and ref unmounts (see [implementation](https://github.com/facebook/react/tree/5f06576f51ece88d846d01abd2ddd575827c6127/packages/react-reconciler/src/ReactFiberScheduler.js#L687)).
+- Perform all life-cycles and ref callbacks. Life-cycles happen as a separate pass so that all placements, updates, and deletions in the entire tree have already been invoked. This pass also triggers any renderer-specific initial effects (see [implementation](https://github.com/facebook/react/tree/5f06576f51ece88d846d01abd2ddd575827c6127/packages/react-reconciler/src/ReactFiberScheduler.js#L732)).
+- Effects which were scheduled by the `useEffect()` hook - which are also known as “passive effects” based on the [implementation](https://github.com/facebook/react/tree/5f06576f51ece88d846d01abd2ddd575827c6127/packages/react-reconciler/src/ReactFiberScheduler.js#L779)
+
+When it comes to the hook effects, they should be stored on the fiber in a property called `updateQueue`, and each effect node should have the following schema (see [implementation](https://github.com/facebook/react/tree/5f06576f51ece88d846d01abd2ddd575827c6127/packages/react-reconciler/src/ReactFiberHooks.js#L477)):
+
+- `tag` - A binary number which will dictate the behavior of the effect (`useMutationEffect()`(legacy), `useLayoutEffect()`,`useEffect()`)(see [implementation](https://github.com/facebook/react/tree/5f06576f51ece88d846d01abd2ddd575827c6127/packages/react-reconciler/src/ReactHookEffectTags.js)).
+- `create` - The callback that should be ran *after* painting.
+- `destroy` - The callback returned from `create()` that should be ran *before* the initial render.
+- `inputs` - A set of values that will determine whether the effect should be destroyed and recreated.
+- `next` - A reference to the next effect which was defined in the function Component.
+
+we can actually inject an effect to a certain fiber externally:
+
+```jsx
+function injectEffect(fiber) {
+  const lastEffect = fiber.updateQueue.lastEffect
+
+  const destroyEffect = () => {
+    console.log('on destroy')
+  }
+
+  const createEffect = () => {
+    console.log('on create')
+
+    return destroy
+  }
+
+  const injectedEffect = {
+    tag: 0b11000000,
+    next: lastEffect.next,
+    create: createEffect,
+    destroy: destroyEffect,
+    inputs: [createEffect],
+  }
+
+  lastEffect.next = injectedEffect
+}
+
+const ParentComponent = (
+  <ChildComponent ref={injectEffect} />
+)
+```
 
 # Custom hooks
 
