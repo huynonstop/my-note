@@ -467,6 +467,10 @@ Fix: (**do not blindly optimize**.)
 
 ## With hooks
 
+https://overreacted.io/before-you-memo/
+
+https://kentcdodds.com/blog/optimize-react-re-renders
+
 https://medium.com/the-guild/under-the-hood-of-reacts-hooks-system-eb59638c9dba
 
 https://reactjs.org/docs/hooks-faq.html
