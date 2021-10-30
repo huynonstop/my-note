@@ -1,7 +1,5 @@
 # Hooks
 
-https://www.youtube.com/watch?v=unFHsn0qSMA&list=PLeS7aZkL6GOsHNoyeEpeL8B1PnbKoQD9m&index=1
-
 https://reactjs.org/docs/hooks-reference.html
 
 https://reactjs.org/docs/hooks-faq.html
@@ -88,6 +86,12 @@ https://github.com/facebook/react/issues/13982
 [A Complete Guide to useEffect — Overreacted](https://overreacted.io/a-complete-guide-to-useeffect)
 
 https://topdev.vn/blog/useeffect-tu-a-toi-z/
+
+https://stackoverflow.com/questions/62653595/difference-between-with-and-without-useeffect-in-react-functional-component
+
+https://stackoverflow.com/questions/59841800/react-useeffect-in-depth-use-of-useeffect
+
+https://wavez.github.io/react-hooks-lifecycle/
 
 ![img](assets/react-hooks/131383234_2092973390833124_3865804495538231186_n.jpg)
 
