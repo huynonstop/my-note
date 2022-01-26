@@ -1,0 +1,9 @@
+{
+  "pasteImage.namePrefix": "${currentFileNameWithoutExt}-",
+  "pasteImage.path": "${projectRoot}/assets/${currentFileNameWithoutExt}",
+  "pasteImage.basePath": "${projectRoot}",
+  "pasteImage.prefix": "/",
+  "pasteImage.insertPattern": "![${imageFileNameWithoutExt}](${imageFilePath}${imageSyntaxSuffix}",
+  "pasteImage.forceUnixStyleSeparator": true,
+  "pasteImage.showFilePathConfirmInputBox": true
+}
