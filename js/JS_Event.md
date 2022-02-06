@@ -36,7 +36,7 @@ form submit to server or link navigation
 
 Capturing => Bubbling
 
-By default all event listeners are registered in the bubbling phase 
+By default all event listeners are registered in the bubbling phase
 
 ```html
 <div>
@@ -63,15 +63,15 @@ The way event occurred on this button but it's listenable on all ancestors calle
 
 ```html
 <ul id="parent-list">
-	<li id="post-1">Item 1</li>
-	<li id="post-2">Item 2</li>
-	<li id="post-3">Item 3</li>
-	<li id="post-4">Item 4</li>
-	<li id="post-5">Item 5</li>
+ <li id="post-1">Item 1</li>
+ <li id="post-2">Item 2</li>
+ <li id="post-3">Item 3</li>
+ <li id="post-4">Item 4</li>
+ <li id="post-5">Item 5</li>
 </ul>
 ```
 
-Event delegation is a technique involving adding event listeners to a **parent** element instead of adding them to the child elements. 
+Event delegation is a technique involving adding event listeners to a **parent** element instead of adding them to the child elements.
 
 ![image-20200608150822633](assets/JS_Event/image-20200608150822633.png)
 
@@ -81,9 +81,9 @@ The listener will fire whenever the event is triggered on the descendant element
 - There is no need to unbind the handler from elements that are removed and to bind the event for new elements.
 
 ```js
-document.getElementById("parent-list").addEventListener("click", 			function(e) {
-		// e.target is the clicked element!
-   		event.target.closest('li').classList.toggle('highlight');
+document.getElementById("parent-list").addEventListener("click",    function(e) {
+  // e.target is the clicked element!
+     event.target.closest('li').classList.toggle('highlight');
     }
  );
 ```

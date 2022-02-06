@@ -1,22 +1,12 @@
-# What is Web Application Security?
+# Security
 
-https://www.cloudflare.com/learning/security/what-is-web-application-security/
-
-https://restfulapi.net/security-essentials/
-
-https://nordicapis.com/fostering-an-internal-culture-of-security/
-
-https://www.youtube.com/watch?v=UBUNrFtufWo
-
-# Secrets and Keys
+## Secrets and Keys
 
 https://random-ize.com/how-long-to-hack-pass/
 
-> Authentication is the art of unlocking things with a secret. At the heart of every authentication is a shared secret!
-
 The secret can be given to you, like a secret code to enter a night club, or you can generate the secret and store it with the system like your pin number for your bank card.
 
-# Public and private keys
+## Public and private keys
 
 Either way, the secret has two copies. One copy is with the system and the other copy is with you. Your copy is what is called the *private* key.
 
@@ -28,7 +18,7 @@ The copy of the key on the server is not readable by another human being or a ma
 
 Your front door lock is public. Anybody can come up to your front door and try your lock with their key but only your key would open it. While your key is private, the lock of your house is public.
 
-# Factors
+## Factors
 
 > Factors authenticate you by who you are, what do you know, and what do you have.
 
@@ -37,10 +27,8 @@ In addition to username and password, authentication can include additional info
 1. Single Factor — this is the username and password that we talked about
 2. Two Factor — this is where, along with the username and password, you need to answer another secret question that you set up while signing up. So you have 2 secrets keys. One for who you are and the other for what you know.
 3. Multi-Factor Authentication (MFA) — this is the hardest to crack. You use your secret key, and you set up a secret location for the server to send you another secret key. When you use your first secret key, the server sends you another secret key to the secret location that you mutually agreed on during the sign-up process (usually people set this as their phone number or their email address). This second secret key is usually valid for only a few minutes. Within that timeframe, you’ll need to use this second secret key to login.
-4. Biometric authentication — this is the fingerprint ID that is becoming a common part of authenticating on the mobile. My Dell laptop that I’m writing this article on has biometric authentication for logging in. I have to run my index finger on the power button to be able to log in.
-5. Captchas — there are two kinds. One where you have to decipher the squiggly words that you see and type those in. The other where you have to identify mountains, or cars, or storefronts, or any number of things in a grid of pictures. These are the most annoying ones, and I hope they go away soon. Sometimes the squiggly words are so convoluted that I have to ask for a second set, and then turn on the audio to hear them.
 
-# Authorization and Authentication
+## Authorization and Authentication
 
 https://anonystick.com/blog-developer/4-co-che-dang-nhap-bai-viet-nay-la-du-cho-dan-lap-trinh-phan-1-2020091071827696
 
@@ -84,9 +72,9 @@ The resource owner grants the client access to the API service, usually in the f
 
 *A user’s default access level to any resource in the system should be “denied” unless they’ve been granted a “permit” explicitly.*
 
-# State-full
+## State-full
 
-## Sessions
+### Sessions
 
 https://www.quora.com/What-is-a-session-in-a-Web-Application
 
@@ -118,7 +106,7 @@ In your specific example, the user id (could be username or another unique ID in
 
 ![image-20200812213039239](assets/Security/image-20200812213039239.png)
 
-# Stateless
+## Stateless
 
 > Being stateless, the REST API can’t remember your credentials. So you have to tell it who you are every time you talk to it!
 
@@ -158,7 +146,9 @@ https://oauth.net/about/introduction/
 
 https://medium.com/@sherryhsu/session-vs-token-based-authentication-11a6c5ac45e4
 
-## HTTP Basic Authentication
+https://www.youtube.com/watch?v=UBUNrFtufWo
+
+### Basic Authentication
 
 Base64 encode username and password (username:password) and put it in the Authentication header.
 
@@ -180,9 +170,7 @@ For APIs on internal networks, Basic Authentication might be appropriate.
 
 For mobile apps and single page apps, basic authentication is not a good scheme because you don’t want to store the username and the password on the device or in the Javascript code of the SPA.
 
-
-
-## API keys
+### API keys
 
 An API key is a randomly generated string prepared in a cryptographically strong manner. (generated from their hardware combination and IP data, or **randomly generated** by the server which knows them)
 
@@ -216,7 +204,7 @@ https://nordicapis.com/why-api-keys-are-not-enough/
 
 Because anyone who makes a request of a service transmits their key, in theory, this key can be picked up just as easy as any network transmission, and if any point in the entire network is insecure, the entire network is exposed
 
-## Token based
+### Token based
 
 API Keys and HTTP Basic Authentication **require that credentials be sent to the API service every time an API call is made**. Straightforward as it is, the design is far from ideal, as it incurs unnecessary overhead and poses additional security risks: your API service have to **repeatedly verify** the same set of credentials, and **transmitting sensitive** information over the network **over and over again** increases the chances of security compromises.
 
@@ -341,11 +329,9 @@ You need OAuth only when you want to enable a user of your service to allow a th
 
 Phone, email
 
-# Attack
+## Attack
 
-
-
-## Injection
+### Injection
 
 Injection là lỗ hổng xảy ra do sự thiếu sót trong việc lọc các dữ liệu đầu vào không đáng tin cậy. Khi bạn truyền các dữ liệu chưa được lọc tới Database (Ví dụ như lỗ hổng [SQL injection](https://resources.cystack.net/news/tan-cong-sql-injection/)), tới trình duyệt (lỗ hổng XSS), tới máy chủ LDAP (lỗ hổng LDAP Injection) hoặc tới bất cứ vị trí nào khác. Vấn đề là kẻ tấn công có thể chèn các đoạn mã độc để gây ra lộ lọt dữ liệu và chiếm quyền kiểm soát trình duyệt của khách hàng.
 
@@ -363,7 +349,7 @@ Injection là lỗ hổng xảy ra do sự thiếu sót trong việc lọc các 
 | [**SQL Injection (SQLi)**](https://www.acunetix.com/websitesecurity/sql-injection/) | The attacker injects SQL statements that can read or modify database data. In the case of advanced SQL Injection attacks, the attacker can use SQL commands to write arbitrary files to the server and even execute OS commands. This may lead to full system compromise. | Authentication bypassInformation disclosureData lossSensitive data theftLoss of data integrityDenial of serviceFull system compromise. |
 | [**XPath injection**](https://www.acunetix.com/vulnerabilities/web/xpath-injection-vulnerability) | The attacker injects data into an application to execute crafted XPath queries. They can use them to access unauthorized data and bypass authentication. | Information disclosureAuthentication bypass                  |
 
-## Broken Authentication
+### Broken Authentication
 
 Đây là nhóm các vấn đề có thể xảy ra trong quá trình xác thực. Có một lời khuyên là không nên tự phát triển các giải pháp mã hóa vì rất khó có thể làm được chính xác.
 
@@ -375,7 +361,7 @@ Có rất nhiều rủi ro có thể gặp phải trong quá trình xác thực:
 - Tấn công Session Hacking có thể xảy ra khi thời gian hét hạn của session không được triển khai đúng hoặc sử dụng HTTP (không bảo mật SSL)…
 - …
 
-## XSS (Cross Site Scripting)
+### XSS (Cross Site Scripting)
 
 Để khai thác một lỗ hổng XSS, hacker sẽ chèn mã độc thông qua các đoạn script để thực thi chúng ở phía client. Thông thường, các cuộc tấn công XSS được sử dụng để vượt qua các kiểm soát truy cập và mạo danh người dùng.
 
@@ -417,7 +403,7 @@ Có rất nhiều rủi ro có thể gặp phải trong quá trình xác thực:
 > - **Content Security Policy.** As a last line of defense, you can use Content Security Policy (CSP) to reduce the severity of any XSS vulnerabilities that still occur.
 >
 
-## Cross Site Request Forgery (CSRF)
+### Cross Site Request Forgery (CSRF)
 
 https://www.acunetix.com/websitesecurity/csrf-attacks/
 
@@ -427,28 +413,69 @@ CSRF ( Cross Site Request Forgery) abuse server session and trick user execute m
 
 ![image-20200611220835360](assets/Security/image-20200611220835360.png)
 
-### Prevent
 
-#### Client side
 
-- Logout
-- check url
+## HTTPS
 
-#### Server side
+https://kipalog.com/posts/https-hoat-dong-nhu-the-nao
 
-> ##### Use right HTTP method
->
-> GET, POST, PUT, PATCH, DELETE
->
-> ##### use CAPCHA, or confirm message
->
-> ##### use CSRF token when send data
->
-> send token to views and valid that form request in server
->
-> ##### Separate cookie for admin site
->
-> use "[admin.site.com](http://admin.site.com/)" intead of  "[site.com/admin](http://site.com/admin)"
->
-> ##### check IP
->
+HTTP +  Secure Sockets Layer (port 443)
+
+HTTPS uses HTTP and an encryption protocol (TLS/SSL) to encrypt communications. 
+
+<img src="assets/Big_words_web/WRNrD.png_q1sk0vahes" alt="img" style="zoom:200%;" />
+
+![img](assets/Big_words_web/img_ssl_how_it_works_1-1.jpg)
+
+Và tất nhiên, các session key sẽ được tạo ra ngẫu nhiên và khác nhau trong mỗi phiên làm việc với server. Ngoài encryption thì cơ chế hashing sẽ được sử dụng để đảm bảo tính Integrity cho các thông điệp được trao đổi.
+
+### TLS (transport layer security)
+
+### SSL (secure socket layer)
+
+https://www.cloudflare.com/learning/ssl/what-is-ssl/
+
+https://viblo.asia/p/https-va-ssl-OeVKBg4AZkW
+
+This protocol secures communications by using what’s known as an asymmetric public key infrastructure. This type of security system uses two different keys to encrypt communications between two parties:
+
+1. The private key - this key is controlled by the owner of a website and it’s kept, as the reader may have speculated, private. This key lives on a web server and is used to decrypt information encrypted by the public key.
+2. The public key - this key is available to everyone who wants to interact with the server in a way that’s secure. Information that’s encrypted by the public key can only be decrypted by the private key.
+
+### SSL certificate
+
+https://www.cloudflare.com/learning/ssl/what-is-an-ssl-certificate/
+
+### Certificate Authority
+
+## Why is HTTPS important
+
+HTTPS prevents websites from having their information broadcast in a way that’s easily viewed by anyone snooping on the network
+
+With HTTPS, traffic is encrypted such that even if the packets are sniffed or otherwise intercepted, they will come across as nonsensical characters.
+
+Before encryption
+
+```http
+This is a string of text that is completely readable
+```
+
+After encryption
+
+```http
+ITM0IRyiEhVpa6VnKyExMiEgNveroyWBPlgGyfkflYjDaaFf/Kn3bo3OfghBPDWo6AfSHlNtL8N7ITEwIXc1gU5X73xMsJormzzXlwOyrCs+
+```
+
+HTTPS eliminates the ability of unmoderated third parties to inject advertising into web content.
+
+## CORS
+
+Cross-Origin Resource Sharing ([CORS](https://developer.mozilla.org/en-US/docs/Glossary/CORS)) is a mechanism that uses additional [HTTP](https://developer.mozilla.org/en-US/docs/Glossary/HTTP) headers to tell browsers to give a web application running at one [origin,](https://developer.mozilla.org/en-US/docs/Glossary/Origin) access to selected resources from a different origin. 
+
+A web application executes a **cross-origin HTTP request** when it requests a resource that has a different origin (domain, protocol, or port) from its own.
+
+![image-20200611213702513](assets/Big_words_web/image-20200611213702513.png)
+
+=> You have to tell the browser Cross-Origin Resource Sharing is OK, set a header in the **backend** the to signal the **browser** that this access is fine, that we allow this access - a middleware to handle cors header
+
+![image-20200611214236251](assets/Big_words_web/image-20200611214236251.png)

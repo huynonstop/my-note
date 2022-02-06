@@ -1,3 +1,5 @@
+# Composition API
+
 https://v3.vuejs.org/guide/composition-api-introduction.html
 
 https://www.youtube.com/watch?v=bwItFdPt-6M
@@ -10,15 +12,13 @@ https://www.youtube.com/watch?v=bwItFdPt-6M
 
 ![image-20201211231753281](assets/Vue-3-Composition-API/image-20201211231753281.png)
 
-# limit of options api
+## Limit of options api
 
 ![image-20200923135459550](assets/Vue-3-Composition-API/image-20200923135459550.png)
 
-# Why Composition API?
+## Why Composition API?
 
 [why-composition-api](https://v3.vuejs.org/guide/composition-api-introduction.html#why-composition-api)
-
-# Basics of Composition API
 
 ## `setup` Component Option
 
@@ -50,15 +50,7 @@ export default {
 }
 ```
 
-This component has several responsibilities:
-
-1. Getting repositories from a presumedly external API for that user name and refreshing it whenever the user changes
-2. Searching for repositories using a `searchQuery` string
-3. Filtering repositories using a `filters` object
-
-## Reactive Variables with `ref`
-
-In Vue 3.0 we can make any variable reactive anywhere with a new `ref` function, like this:
+## `ref`
 
 ```js
 import { ref } from 'vue'
@@ -74,15 +66,30 @@ console.log(counter.value) // 1
 // Having a wrapper object around any value allows us to safely pass it across our whole app without worrying about losing its reactivity somewhere along the way
 ```
 
-In other words, `ref` creates a **Reactive Reference** to our value. The concept of working with **References** will be used often throughout the Composition API.
+In other words, `ref` creates a **Reactive Reference** to our value.
 
-```js
+```html
+<script>
 // src/components/UserRepositories.vue `setup` function
 import { fetchUserRepositories } from '@/api/repositories'
 import { ref } from 'vue'
 
 // in our component
-setup (props) {
+setup(props) {
+  const count = ref(0)
+  return {
+    count
+  }
+}
+</script>
+
+<template>
+  <p>{count}</p>
+</template>
+
+<script>
+// or 
+setup(props) {
   const repositories = ref([])
   const getUserRepositories = async () => {
     repositories.value = await fetchUserRepositories(props.user)
@@ -94,6 +101,123 @@ setup (props) {
   }
 }
 // Done! Now whenever we call getUserRepositories, repositories will be mutated and the view will be updated to reflect the change.
+</script>
+```
+
+## `reactive`
+
+```html
+<script>
+import { reactive } from 'vue'
+
+setup(props) {
+  const state = reactive({
+    count: 0
+  })
+  const incrementCount = () => {
+    state.count += 1
+  }
+  return {
+    state,
+    incrementCount
+  }
+}
+</script>
+
+<template>
+  <p>{state.count}</p>
+</template>
+```
+
+## `toRefs`
+
+```html
+<script>
+import { reactive, toRefs } from 'vue'
+
+setup(props) {
+  const state = reactive({
+    count: 0
+  })
+  const incrementCount = () => {
+    state.count += 1
+  }
+  return {
+    ...toRefs(state),
+    incrementCount
+  }
+}
+</script>
+
+<template>
+  <p>{count}</p>
+</template>
+```
+
+## `Computed` property
+
+```html
+<script>
+import { reactive, toRefs, computed } from 'vue'
+
+setup(props) {
+  const state = reactive({
+    count: 0
+  })
+  const doubleCount = computed(() => {
+    return state.count * 2
+  })
+
+  return {
+    ...toRefs(state),
+    doubleCount
+  }
+}
+// or 
+setup(props) {
+  const state = reactive({
+    count: 0,
+    doubleCount = computed(() => {
+      return state.count * 2
+    })
+  })
+
+  return {
+    ...toRefs(state),
+  }
+}
+</script>
+
+<template>
+  <p>{count}</p>
+  <p>{doubleCount}</p>
+</template>
+```
+
+## Method
+
+```html
+<script>
+import { reactive, toRefs } from 'vue'
+
+setup(props) {
+  const state = reactive({
+    count: 0
+  })
+  const incrementCount = () => {
+    state.count += 1
+  }
+  return {
+    ...toRefs(state),
+    incrementCount
+  }
+}
+</script>
+
+<template>
+  <button @click="incrementCount">Add</button>
+  <p>{count}</p>
+</template>
 ```
 
 ## Lifecycle Hook Registration Inside `setup`
@@ -178,60 +302,6 @@ setup (props) {
   return {
     repositories,
     getUserRepositories
-  }
-}
-```
-
-## Standalone `computed` properties
-
-Similar to `ref` and `watch`, computed properties can also be created outside of a Vue component with the `computed` function imported from Vue. Let’s get back to our counter example:
-
-```js
-import { ref, computed } from 'vue'
-
-const counter = ref(0)
-const twiceTheCounter = computed(() => counter.value * 2)
-
-counter.value++
-console.log(counter.value) // 1
-console.log(twiceTheCounter.value) // 2
-```
-
-Here, the computed function returns a **read-only Reactive Reference** to the output of the getter-like callback passed as the first argument to computed. In order to access the value of the newly-created computed variable, we need to use the .value property just like with ref.
-
-```js
-// src/components/UserRepositories.vue `setup` function
-import { fetchUserRepositories } from '@/api/repositories'
-import { ref, onMounted, watch, toRefs, computed } from 'vue'
-
-// in our component
-setup (props) {
-  // using `toRefs` to create a Reactive Reference to the `user` property of props
-  const { user } = toRefs(props)
-
-  const repositories = ref([])
-  const getUserRepositories = async () => {
-    // update `props.user` to `user.value` to access the Reference value
-    repositories.value = await fetchUserRepositories(user.value)
-  }
-
-  onMounted(getUserRepositories)
-
-  // set a watcher on the Reactive Reference to user prop
-  watch(user, getUserRepositories)
-
-  const searchQuery = ref('')
-  const repositoriesMatchingSearchQuery = computed(() => {
-    return repositories.value.filter(
-      repository => repository.name.includes(searchQuery.value)
-    )
-  })
-
-  return {
-    repositories,
-    getUserRepositories,
-    searchQuery,
-    repositoriesMatchingSearchQuery
   }
 }
 ```

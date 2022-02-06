@@ -72,6 +72,45 @@ retrBtn.addEventListener('click', () => {
 
 ```
 
+`localStorage`, `sessionStorage`, and cookies are all **client storage** solutions. Session data is held on the server where it remains under your direct control. (It's unique per `protocol://host:port`(**Origin**) combination)
+
+ They are only able to store values as strings.
+
+- Cookies
+
+  An HTTP cookie (web cookie, browser cookie) is a small piece of data that a server sends to the user's web browser. The browser may store it and send it back with the next request to the same server.
+
+  - Stores data that has to be sent back to the server with subsequent requests. Its expiration varies based on the type and the **expiration duration** can be set from either server-side or client-side (normally from server-side).
+  - Cookies can be read on server-side and client-side.
+  - Size must be less than 4KB.
+  - Cookies can be made secure by setting the `httpOnly` flag as true for that cookie. This prevents client-side access to that cookie
+
+  Cookies are mainly used for three purposes:
+
+  - Session management: Logins, shopping carts, game scores, or anything else the server should remember
+
+  - Personalization: User preferences, themes, and other settings
+
+  - Tracking: Recording and analyzing user behavior
+
+    **Cross-Site Request Forgery** (XSRF).
+
+    **Third-party cookies**
+
+- `sessionStorage` (1 Tab)
+
+  - The `sessionStorage` object stores data only for a session, meaning that the data is stored until the browser (or tab) is closed.
+  - Data is never transferred to the server.
+  - Storage limit is larger than a cookie (at least 5MB).
+  - `sessionStorage` can only be read on client-side
+
+- `localStorage`(Browser)
+
+  - Stores data with no expiration date, and gets cleared only through JavaScript, or clearing the Browser cache / Locally Stored Data
+  - Storage limit is the maximum amongst the three
+  - Data is never transferred to the server.
+  - `localStorage`can only be read on client-side
+
 ## IndexDB
 
 https://github.com/jakearchibald/idb

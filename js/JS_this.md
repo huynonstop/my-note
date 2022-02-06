@@ -14,7 +14,7 @@ Generally, `this` refers to the "thing" which call a function (if used inside of
 
 Every javascript function while executing has a reference to its current execution context, called ***this\***. Execution context means here is how the function is called.
 
-##  in Global Context
+## in Global Context
 
 In the global execution context (outside of any function), `this` refers to the global object whether in strict mode or not.
 

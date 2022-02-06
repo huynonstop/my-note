@@ -726,4 +726,3 @@ import { Component } form './component'
 Import code in a later time, not when your web app load but only when we need that code
 
 ![image-20200611133255822](assets/JS__basic/image-20200611133255822.png)
-

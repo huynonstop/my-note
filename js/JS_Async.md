@@ -2,17 +2,21 @@
 
 event loop, API's, task/callback queue, job/micro-task queue
 
-![img](https://miro.medium.com/max/700/1*zeKjWCjyAGZ9JN4fvnWsiA.png)
+![JS_Async-2022-02-06-14-00-20](/assets/JS_Async/JS_Async-2022-02-06-14-00-20.png)
+
+![JS_Async-2022-02-06-14-08-06](/assets/JS_Async/JS_Async-2022-02-06-14-08-06.png)
 
 *AJAX, the DOM tree, and other API’s, are not part of JavaScript (Engine), they are just objects with properties and methods, provided by the browser and made available in the browser’s JS Runtime Environment.*
 
 Also in the runtime environment is a **JavaScript Engine (callstack, memory heap)** that parses and run the code
 
-# JS is single-threaded
+## JS is single-threaded
+
+one thread == one callstack == one thing at one time
 
 ![image-20200609200301370](assets/JS_Async/image-20200609200301370.png)
 
-# Some code can't be finished immediately
+## Some code can't be finished immediately
 
 timeout, http request, event listener,...
 
@@ -24,7 +28,7 @@ timeout, http request, event listener,...
 
 => **Runtime environment** is responsible for asynchronous action by using **multiple threads**, so JS code will not blocked in main thread.
 
-# How we can do asynchronous  action 
+## How we can do asynchronous action 
 
 https://www.youtube.com/watch?v=PNa9OMajw9w
 
@@ -66,17 +70,13 @@ From **call stack**, if an asynchronous action pop off the stack, it will be han
 
 ![image-20200609223824366](assets/JS_Async/image-20200609223824366.png)
 
-![image-20200609221007727](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200609221007727.png)
-
-![image-20200609221404314](assets/JS_Async/image-20200609221404314.png)
-
 ### Browser
 
 ![image-20200209102003696](assets/JS_Async/image-20200209102003696.png)
 
 ### Node
 
-No script parsing event (<script> tag)
+No script parsing event (`script` tag)
 
 No user interaction (clicking on the page)
 
@@ -92,9 +92,9 @@ No user interaction
 
 No DOM **Manipulation**
 
-# Asynchronous Callback
+## Asynchronous Callback
 
-Function that after finishing an async job, put in the callback queue, wait callstack empty to run 
+Function that after finishing an async job, put in the callback queue, wait callstack empty to run
 
 ( >< function is passed to another simple function (not an API of browser), put in the call stack)
 
@@ -102,7 +102,7 @@ Function that after finishing an async job, put in the callback queue, wait call
 
 Task depend on before task => Callback in Callback => Callback hell
 
-# Promise 
+## Promise 
 
 ![image-20200610201843824](assets/JS_Async/image-20200610201843824.png)
 
@@ -113,10 +113,6 @@ Promises are eager, meaning that a promise will start doing the task you give it
 ![image-20200610203008825](assets/JS_Async/image-20200610203008825.png)
 
 ![image-20200610203929118](assets/JS_Async/image-20200610203929118.png)
-
-![image-20200610204057687](assets/JS_Async/image-20200610204057687.png)
-
-![image-20200610204452121](assets/JS_Async/image-20200610204452121.png)
 
 ## How it work
 
@@ -333,7 +329,7 @@ doManyThings().then((result) => {  // Do the things that need to wait for our fu
 });
 ```
 
-# RxJS
+## RxJS
 
 [Introduction - Learn RxJS](https://www.learnrxjs.io/)
 
