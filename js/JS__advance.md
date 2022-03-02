@@ -1,3 +1,5 @@
+# JS advance
+
 [leonardomso/33-js-concepts: 📜 33 concepts every JavaScript developer should know. (github.com)](https://github.com/leonardomso/33-js-concepts)
 
 [lydiahallie/javascript-questions: A long list of (advanced) JavaScript questions, and their explanations (github.com)](https://github.com/lydiahallie/javascript-questions)
@@ -100,7 +102,7 @@ var a = {
 }
 ```
 
-# Execution Context
+## Execution Context
 
 *Execution context* equates to the 'environment' a function executes in; that is, variable scope (and the *scope chain*, variables in closures from outer scopes), function arguments, and the value of the `this` object.
 
@@ -180,7 +182,7 @@ Run code in single thread and synchronously
 
 ![image-20200612172016928](assets/JS__advance/image-20200612172016928.png)
 
-# Execution/Call stack
+## Execution/Call stack
 
 Whenever you write a function in JavaScript, the JS engine creates what we call function execution context. Also, each time the JS engine begins, it creates a global execution context that holds the global objects — for example, the `window` object in the browser and the `global` object in Node.js. Both these contexts are handled in JS using a stack data structure also known as the execution stack.
 
@@ -205,7 +207,7 @@ Then it creates a function execution context for the function `a()`. Since `b()`
 
 When the function `b()` returns, the engine destroys the context of `b()`, and when we exit function `a()`, the context of `a()` is destroyed.
 
-# Scope
+## Scope
 
 [Chính vì Lexical scope là gì? Mà thằng miền trung nói gì thằng Miền Nam không hiểu? (anonystick.com)](https://anonystick.com/blog-developer/chinh-vi-lexical-scope-la-gi-ma-thang-mien-trung-noi-gi-thang-mien-nam-khong-hieu-2020112562757134)
 
@@ -276,7 +278,7 @@ Local variables are deleted when the function is completed.
 
 In a web browser, global variables are deleted when you close the browser window (or tab).
 
-# Closure
+## Closure
 
 <https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36>
 
@@ -316,7 +318,7 @@ A **closure** is the combination of a function bundled together (enclosed) with 
 
 ![image-20200612211115251](assets/JS__advance/image-20200612211115251.png)
 
-# Function Factory
+## Function Factory
 
 A function return a function
 
@@ -324,33 +326,11 @@ A function return a function
 
 ![image-20200612211304984](assets/JS__advance/image-20200612211304984.png)
 
-# Functional programming
-
-<https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0>
-
-<https://www.udemy.com/course/functional-programming-for-beginners-with-javascript/>
-
-<https://www.freecodecamp.org/news/functional-programming-principles-in-javascript-1b8fc6c3563f/>
-
-# Recursion
-
-JS current no have optimize for tail recursion
-
-![image-20200608235527130](assets/JS__advance/image-20200608235527130.png)
-
-![image-20200608235802861](assets/JS__advance/image-20200608235802861.png)
-
-# Pure function
-
-![image-20200608183520088](assets/JS__advance/image-20200608183520088.png)
-
-Should aim for pure function than impure function (reduce impure function), because they are predictable (not do anything behind the scene)
-
-# Higher order function
+## Higher order function
 
 A **higher order function** is a function that takes a function as an argument, or returns a function
 
-# Curry function
+## Curry function
 
 ![image-20200612211507617](assets/JS__advance/image-20200612211507617.png)
 

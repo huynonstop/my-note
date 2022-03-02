@@ -1,18 +1,18 @@
 # Browser Storage
 
-https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
+<https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies>
 
-https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API
+<https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API>
 
-https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API
+<https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API>
 
-https://medium.com/analytics-and-data/cookies-tracking-and-pixels-where-does-your-web-data-comes-from-ff5d9b8bc8f7
+<https://medium.com/analytics-and-data/cookies-tracking-and-pixels-where-does-your-web-data-comes-from-ff5d9b8bc8f7>
 
 ![image-20200611154542654](assets/JS_Browser_Storage/image-20200611154542654.png)
 
 ![image-20200611154906597](assets/JS_Browser_Storage/image-20200611154906597.png)
 
-## Difference `cookie`, `sessionStorage` and `localStorage`.
+## Difference `cookie`, `sessionStorage` and `localStorage`
 
 ![Hình ảnh có thể có: văn bản](assets/JS_Browser_Storage/131986214_3556451341101909_5452667036261089041_o.jpg)
 
@@ -113,7 +113,7 @@ retrBtn.addEventListener('click', () => {
 
 ## IndexDB
 
-https://github.com/jakearchibald/idb
+<https://github.com/jakearchibald/idb>
 
 ```js
 const storeBtn = document.getElementById('store-btn');
@@ -177,14 +177,10 @@ retrBtn.addEventListener('click', () => {
 
 ```
 
-# cookieStore
-
-[cookieStore là gì? Tạo sao nó lại thay thế document.cookie kế từ phiên bản Chrome 87 (anonystick.com)](https://anonystick.com/blog-developer/cookiestore-la-gi-tao-sao-no-lai-thay-the-documentcookie-ke-tu-phien-ban-chrome-87-2020103067936008)
-
 ## More
 
-More on localStorage / sessionStorage: https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+More on localStorage / sessionStorage: <https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage>
 
-More on Cookies (in JS): https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie
+More on Cookies (in JS): <https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie>
 
-More on IndexedDB: https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB
+More on IndexedDB: <https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB>

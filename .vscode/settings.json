@@ -5,5 +5,6 @@
   "pasteImage.prefix": "/",
   "pasteImage.insertPattern": "![${imageFileNameWithoutExt}](${imageFilePath}${imageSyntaxSuffix}",
   "pasteImage.forceUnixStyleSeparator": true,
-  "pasteImage.showFilePathConfirmInputBox": true
+  "pasteImage.showFilePathConfirmInputBox": true,
+  "cSpell.enabled": false,
 }

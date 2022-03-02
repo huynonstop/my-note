@@ -28,25 +28,25 @@ timeout, http request, event listener,...
 
 => **Runtime environment** is responsible for asynchronous action by using **multiple threads**, so JS code will not blocked in main thread.
 
-## How we can do asynchronous action 
+## How we can do asynchronous action
 
-https://www.youtube.com/watch?v=PNa9OMajw9w
+<https://www.youtube.com/watch?v=PNa9OMajw9w>
 
-https://www.youtube.com/watch?v=8aGhZQkoFbQ
+<https://www.youtube.com/watch?v=8aGhZQkoFbQ>
 
-https://www.youtube.com/watch?v=cCOL7MC4Pl0&feature=emb_logo
+<https://www.youtube.com/watch?v=cCOL7MC4Pl0&feature=emb_logo>
 
-https://medium.com/@Rahulx1/understanding-event-loop-call-stack-event-job-queue-in-javascript-63dcd2c71ecd
+<https://medium.com/@Rahulx1/understanding-event-loop-call-stack-event-job-queue-in-javascript-63dcd2c71ecd>
 
-https://medium.com/preezma/node-js-event-loop-architecture-go-deeper-node-core-c96b4cec7aa4
+<https://medium.com/preezma/node-js-event-loop-architecture-go-deeper-node-core-c96b4cec7aa4>
 
-https://medium.com/@onlykiosk/javascript-queue-stack-heap-thread-process-recursion-stack-overflow-event-loop-macro-task-7bc0db138899
+<https://medium.com/@onlykiosk/javascript-queue-stack-heap-thread-process-recursion-stack-overflow-event-loop-macro-task-7bc0db138899>
 
-https://medium.com/better-programming/is-javascript-synchronous-or-asynchronous-what-the-hell-is-a-promise-7aa9dd8f3bfb
+<https://medium.com/better-programming/is-javascript-synchronous-or-asynchronous-what-the-hell-is-a-promise-7aa9dd8f3bfb>
 
 JS runtime environment provide us **APIs** to work with asynchronous task in other threads **parallelly** for not blocking main JavaScript thread.  
 
-From **call stack**, if an asynchronous action pop off the stack, it will be handed to the **API container (environment)** to run in **another thread**. When any action is done or an event occurred, the **callback handler function** is sent to the end of the **callback (message) queue**. 
+From **call stack**, if an asynchronous action pop off the stack, it will be handed to the **API container (environment)** to run in **another thread**. When any action is done or an event occurred, the **callback handler function** is sent to the end of the **callback (message) queue**.
 
 **Event loop** job is waiting to the stack empty, take one item in queue, push to the **call stack** and then the **JS engine** will handle the callback code
 
@@ -66,7 +66,7 @@ From **call stack**, if an asynchronous action pop off the stack, it will be han
 
 ![image-20200609222401163](assets/JS_Async/image-20200609222401163.png)
 
-=> When the call stack is empty, the event loop executes and push a waiting messages to the call stack and JS engine will executes it 
+=> When the call stack is empty, the event loop executes and push a waiting messages to the call stack and JS engine will executes it
 
 ![image-20200609223824366](assets/JS_Async/image-20200609223824366.png)
 
@@ -102,7 +102,7 @@ Function that after finishing an async job, put in the callback queue, wait call
 
 Task depend on before task => Callback in Callback => Callback hell
 
-## Promise 
+## Promise
 
 ![image-20200610201843824](assets/JS_Async/image-20200610201843824.png)
 
@@ -212,7 +212,7 @@ Promise.resolve().then(promise1).then(promise2).then(promise3)
 
 ## Error
 
-If a promise in chain reject, **all** then() will be **skipped** until meet a catch() 
+If a promise in chain reject, **all** then() will be **skipped** until meet a catch()
 
 ```javascript
 promise 
@@ -233,20 +233,7 @@ promise
   - Fail to pass along any necessary environment/parameters
   - Swallow any errors/exceptions that may happen
 
-> #### `Promise.all()`
->
-> Return a promise with the combined data of all promise
->
-> #### `Promise.race()`
->
-> Return a promise with the result of the fastest promise
->
-> #### `Promise.allSeettled()`
->
-> Return a promise with the detail of all promise
->
-
-# Async/Await 
+## Async/Await
 
 [async await javascript without try catch (anonystick.com)](https://anonystick.com/blog-developer/async-await-javascript-without-try-catch-202011289973428)
 
@@ -277,7 +264,7 @@ Write async code a bit more like synchronous code
 
 - Your code can waiting for a **promise settled**  with `await` and next line code can only execute after that **promise settled** (only code in the async function)
 
-  It replicate `then` behind the scene, return that promise and get result of the promise 
+  It replicate `then` behind the scene, return that promise and get result of the promise
 
 - `await` can only be used inside an `async` function.
 
@@ -305,7 +292,7 @@ Write async code a bit more like synchronous code
 
 ## Error handle
 
-- If a **promise** throws an exception or `reject()` , we can handle by using `try/catch`. **exceptions will get swallowed** if they are not caught somewhere in the async function chain. 
+- If a **promise** throws an exception or `reject()` , we can handle by using `try/catch`. **exceptions will get swallowed** if they are not caught somewhere in the async function chain.
 - It is a good practice to always have one `try/catch` per chain. This will provide one single place to deal with errors while doing async work and will force you to correctly chain your **Async Function** calls.
 
 ![image-20200610223453174](assets/JS_Async/image-20200610223453174.png)

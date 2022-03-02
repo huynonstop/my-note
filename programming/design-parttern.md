@@ -1,12 +1,14 @@
-https://anonystick.com/blog-developer/9-mau-thiet-ke-ma-moi-lap-trinh-vien-deu-phai-biet-phan-1-builder-pattern-2020103194916615
+# Design pattern
 
-https://anonystick.com/blog-developer/phan-2-factory-pattern-cach-ma-toi-trien-khai-trong-nha-may-vinfast-fresher-va-junior-nen-bo-qua-phan-3-2020110554662242
+<https://anonystick.com/blog-developer/9-mau-thiet-ke-ma-moi-lap-trinh-vien-deu-phai-biet-phan-1-builder-pattern-2020103194916615>
 
-# Creational
+<https://anonystick.com/blog-developer/phan-2-factory-pattern-cach-ma-toi-trien-khai-trong-nha-may-vinfast-fresher-va-junior-nen-bo-qua-phan-3-2020110554662242>
+
+## Creational
 
  These patterns are designed for class instantiation. They can be either class-creation patterns or object-creational patterns.
 
-## Singleton
+### Singleton
 
 Ensure a class has only one instance and provide a global point of access to it.
 
@@ -85,7 +87,7 @@ var Contractor = function () {
 };
 ```
 
-## Abstract Factory
+### Abstract Factory
 
 Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
 
@@ -101,11 +103,11 @@ This includes scenarios in which the creation process involves object caching, s
 
 ![Diagram JavaScript Abstract Factory Design Pattern](assets/DesignParttern/javascript-abstract-factory.jpg)
 
-# Structural
+## Structural
 
 These patterns are designed with regard to a class's structure and composition. The main goal of most of these patterns is to increase the functionality of the class(es) involved, without changing much of its composition.
 
-## Composite
+### Composite
 
 Compose objects into tree structures to represent part-whole hierarchies. Composite lets clients treat individual objects and compositions of objects uniformly.
 
@@ -117,7 +119,7 @@ All nodes in the Composite pattern share a common set of properties and methods 
 
 ![Diagram JavaScript Composite  Design Pattern](assets/DesignParttern/javascript-composite.jpg)
 
-## Flyweight
+### Flyweight
 
 Use sharing to support large numbers of fine-grained objects efficiently.
 
@@ -131,11 +133,11 @@ Other examples include characters and line-styles in a word processor, or 'digit
 
 ![Diagram JavaScript Flyweight Design Pattern](assets/DesignParttern/javascript-flyweight.jpg)
 
-# Behavioral
+## Behavioral
 
 These patterns are designed depending on how one class communicates with others.
 
-## Command
+### Command
 
 The Command pattern encapsulates actions as objects. Command objects allow for loosely coupled systems by separating the objects that issue a request from the objects that actually process the request. These requests are called events and the code that processes the requests are called event handlers.
 
@@ -147,7 +149,7 @@ Because commands centralize all processing, they are also frequently involved in
 
 ![Diagram JavaScript Command Design Pattern](assets/DesignParttern/javascript-command.jpg)
 
-## Observer
+### Observer
 
 The Observer pattern offers a subscription model in which objects subscribe to an event and get notified when the event occurs. This pattern is the cornerstone of event driven programming, including JavaScript. The Observer pattern facilitates good object-oriented design and promotes loose coupling.
 
@@ -157,63 +159,68 @@ The event and event-handler paradigm in JavaScript is the manifestation of the O
 
 ![Diagram JavaScript Observer Design Pattern](assets/DesignParttern/javascript-observer.jpg)
 
+![design-parttern-2022-02-06-15-17-08](/assets/design-parttern/design-parttern-2022-02-06-15-17-08.png)
+
+![design-parttern-2022-02-06-15-02-09](/assets/design-parttern/design-parttern-2022-02-06-15-02-09.png)
+
 ```js
-  // each instance of the Observer class
-  // starts with an empty array of things (observers)
-  // that react to a state change
-  constructor() {
+var Subject = function() {
     this.observers = [];
-  }
 
-  // add the ability to subscribe to a new object / DOM element
-  // essentially, add something to the observers array
-  subscribe(f) {
-    this.observers.push(f);
-  }
-
-  // add the ability to unsubscribe from a particular object
-  // essentially, remove something from the observers array
-  unsubscribe(f) {
-    this.observers = this.observers.filter(subscriber => subscriber !== f);
-  }
-
-  // update all subscribed objects / DOM elements
-  // and pass some data to each of them
-  notify(data) {
-    this.observers.forEach(observer => observer(data));
-  }
-}
-
-function Click() {
-    this.handlers = [];  // observers
-}
- 
-Click.prototype = {
- 
-    subscribe: function(fn) {
-        this.handlers.push(fn);
-    },
- 
-    unsubscribe: function(fn) {
-        this.handlers = this.handlers.filter(
-            function(item) {
-                if (item !== fn) {
-                    return item;
-                }
+    return {
+        subscribeObserver: function(observer) {
+            this.observers.push(observer);
+        },
+        unsubscribeObserver: function(observer) {
+            var index = this.observers.indexOf(observer);
+            if(index > -1) {
+            this.observers.splice(index, 1);
             }
-        );
-    },
- 
-    fire: function(o, thisObj) {
-        var scope = thisObj || window;
-        this.handlers.forEach(function(item) {
-            item.call(scope, o);
-        });
+        },
+        notifyObserver: function(observer) {
+            var index = this.observers.indexOf(observer);
+            if(index > -1) {
+            this.observers[index].notify(index);
+            }
+        },
+        notifyAllObservers: function() {
+            for(var i = 0; i < this.observers.length; i++){
+            this.observers[i].notify(i);
+            };
+        }
+    };
+};
+
+var Observer = function() {
+    return {
+        notify: function(index) {
+            console.log("Observer " + index + " is notified!");
+        }
     }
 }
+
+var subject = new Subject();
+
+var observer1 = new Observer();
+var observer2 = new Observer();
+var observer3 = new Observer();
+var observer4 = new Observer();
+
+subject.subscribeObserver(observer1);
+subject.subscribeObserver(observer2);
+subject.subscribeObserver(observer3);
+subject.subscribeObserver(observer4);
+
+subject.notifyObserver(observer2); // Observer 2 is notified!
+
+subject.notifyAllObservers();
+// Observer 1 is notified!
+// Observer 2 is notified!
+// Observer 3 is notified!
+// Observer 4 is notified!
 ```
 
-## Strategy
+### Strategy
 
 Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
 
@@ -222,5 +229,7 @@ The Strategy pattern encapsulates alternative algorithms (or strategies) for a p
 Say we like to test the performance of different sorting algorithms to an array of numbers: shell sort, heap sort, bubble sort, quicksort, etc. Applying the Strategy pattern to these algorithms allows the test program to loop through all algorithms, simply by changing them at runtime and test each of these against the array. For Strategy to work all method signatures must be the same so that they can vary without the client program knowing about it.
 
 In JavaScript the Strategy pattern is widely used as a plug-in mechanism when building extensible frameworks. This can be a very effective approach
+
+![design-parttern-2022-02-06-14-56-55](/assets/design-parttern/design-parttern-2022-02-06-14-56-55.png)
 
 ![Diagram JavaScript Strategy Design Pattern](assets/DesignParttern/javascript-strategy.jpg)

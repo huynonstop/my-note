@@ -1,6 +1,6 @@
-https://academind.com/learn/javascript/
-
 # What is JavaScript
+
+<https://academind.com/learn/javascript/>
 
 JavaScript is a **dynamic**, **weakly typed** **programming language** which is **compiled at runtime**. It can be executed as part of a webpage in a browser or directly on any machine (**“host environment”**).
 
@@ -14,19 +14,19 @@ JavaScript is a specific version of ECMAScript
 
 ![image-20200609162754749](assets/JS__basic/image-20200609162754749.png)
 
-# How JS execute
+## How JS execute
 
 ![image-20200523003553345](assets/JS__basic/image-20200523003553345.png)
 
-# Dynamic and Weakly-typed
+## Dynamic and Weakly-typed
 
 ![image-20200523112734856](assets/JS__basic/image-20200523112734856.png)
 
-# Hosted Language
+## Hosted Language
 
 ![image-20200611212206286](assets/JS__basic/image-20200611212206286.png)
 
-# Environment
+## Environment
 
 ![image-20200523122656403](assets/JS__basic/image-20200523122656403.png)
 
@@ -50,8 +50,6 @@ Browser read html => Hit script tag => Parsing (read JS and load it) and Execute
 
 When a block of memory (an object, say) is no longer reachable, it is eligible to be reclaimed. When, how, or whether it is reclaimed is entirely up to the implementation, and different implementations do it differently. But at a language level, it's automatic.
 
-# Variable & Constant
-
 ## Variable
 
 A "data container" holds data which can change
@@ -68,7 +66,7 @@ Key word : const (ES6)
 
 Naming: **CAPITALIZE**
 
-A variable declared outside a function, becomes global variable 
+A variable declared outside a function, becomes global variable
 
 ## var vs let vs const
 
@@ -82,11 +80,7 @@ A variable declared outside a function, becomes global variable
 | **Hoisting**       | NO    | NO   | YES  |
 | **ES**             | 6+    | 6+   | <5   |
 
-# Operators
-
-[Docs link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
-
-# Comparison operators
+## Comparison operators
 
 ![image-20200523203645095](assets/JS__basic/image-20200523203645095.png)
 
@@ -106,25 +100,17 @@ console.log(a == undefined); // true
 
 ![image-20200523204617685](assets/JS__basic/image-20200523204617685.png)
 
-# Expression
+## Expression
 
 ![image-20200612205313041](assets/JS__basic/image-20200612205313041.png)
 
-# Statement
+## Statement
 
 Code that not return value
 
 if, function statement,....
 
 ![image-20200612205716918](assets/JS__basic/image-20200612205716918.png)
-
-# Control Structures
-
-![image-20200612145656041](assets/JS__basic/image-20200612145656041.png)
-
-## Conditional statement
-
-if, else if, else
 
 ## Loop
 
@@ -138,7 +124,7 @@ continue: skip this loop
 
 ![image-20200530211212489](assets/JS__basic/image-20200530211212489.png)
 
-# Datatype
+## Datatype
 
 + Primitive type: Deep copy, store in stack, present a single value
 
@@ -161,11 +147,11 @@ continue: skip this loop
 
 + Reference type: Shallow copy, store value in heap
 
-  - Array
+  + Array
 
-  - Object ({key: value})
+  + Object ({key: value})
 
-  - Function
+  + Function
 
     ![image-20200612205815807](assets/JS__basic/image-20200612205815807.png)
 
@@ -183,7 +169,7 @@ continue: skip this loop
 
 ![image-20200609174146528](assets/JS__basic/image-20200609174146528.png)
 
-# Array
+## Array
 
 array, element, index, length
 
@@ -191,7 +177,7 @@ An `array` is an object that holds values (of any type) not particularly in name
 
 ![image-20200530211734950](assets/JS__basic/image-20200530211734950.png)
 
-# Array method
+## Array method
 
 + `indexOf(v`), `lastIndexOf(v)`, includes(v) : bool => primitive value
 
@@ -282,12 +268,11 @@ An `array` is an object that holds values (of any type) not particularly in name
   //if no initialValue skip first iteration and take first value as the initial value
   ```
 
-- split : string => array
++ split : string => array
 
-- join : array => string
++ join : array => string
 
-
-# Spread operator ES6+
+## Array Spread operator ES6+
 
 ```js
 const a = [1,2,3]
@@ -298,7 +283,7 @@ Math.min(a)//NaN
 Math.min(...a)//1
 ```
 
-# Array destructuring
+## Array destructuring
 
 ```javascript
 // Variable assignment.
@@ -317,15 +302,15 @@ console.log(a); // 3
 console.log(b); // 1
 ```
 
-#  Array-like-object
+## Array-like-object
 
 ![image-20200530211222871](assets/JS__basic/image-20200530211222871.png)
 
-# Function
+## Function
 
 ![image-20200221180104305](assets/JS__basic/image-20200221180104305.png)
 
-Functions are one of the fundamental building blocks in JavaScript. A function is a JavaScript object (store your code - a set of statements ) that can be invoked (run) later. 
+Functions are one of the fundamental building blocks in JavaScript. A function is a JavaScript object (store your code - a set of statements ) that can be invoked (run) later.
 
 To use a function, you must define it somewhere in the scope and then you can call it any time and any where you want.
 
@@ -373,7 +358,7 @@ console.log(double); // [2, 4, 6]
 
 bind(context[...,arguments ])
 
-return a new reference at a function in place which is preconfigured regarding the arguments it receives 
+return a new reference at a function in place which is preconfigured regarding the arguments it receives
 
 not executed immediately
 
@@ -383,7 +368,7 @@ can append more arguments which is not preconfigured when call the function
 
 allow to preconfigured arguments to the function but immediately execute the function
 
-## Arguments variable 
+## Arguments variable
 
 Only used inside a function use function keyword
 
@@ -417,19 +402,19 @@ sum(1,2,3,4,5) // 15
 
 ![image-20200524212628601](assets/JS__basic/image-20200524212628601.png)
 
-# Object
+## Object
 
 ![image-20200531222729940](assets/JS__basic/image-20200531222729940.png)
 
-## 	Native objects 
+## Native objects
 
-​	Objects that are part of the JavaScript language defined by the ECMAScript specification, such as `String`, `Math`, `RegExp`, `Object`, `Function`, etc.
+​ Objects that are part of the JavaScript language defined by the ECMAScript specification, such as `String`, `Math`, `RegExp`, `Object`, `Function`, etc.
 
-## 	Host objects
+## Host objects
 
-​	Host objects are provided by the runtime environment (browser or Node), such as `window`, `XMLHTTPRequest`, etc.
+​ Host objects are provided by the runtime environment (browser or Node), such as `window`, `XMLHTTPRequest`, etc.
 
-​	The object type refers to a compound value where you can set properties (named locations) that each hold their own values of any type.
+​ The object type refers to a compound value where you can set properties (named locations) that each hold their own values of any type.
 
 ## Create object
 
@@ -464,21 +449,21 @@ let person2 = Object.create(person1);
 person2.__proto__ === person1
 //creates a new object extending the prototype object passed as a parameter.
 prototypeObject = {
-	fullName: function(){
-		return this.firstName + " " + this.lastName		
-	}
+ fullName: function(){
+  return this.firstName + " " + this.lastName  
+ }
 }
 var person = Object.create(prototypeObject)
 var person2 = Object.create(prototypeObject, {
       'firstName': {
-	value: "Virat", 
-	writable: true, 
-	enumerable: true
+ value: "Virat", 
+ writable: true, 
+ enumerable: true
       },
       'lastName': {
-	value: "Kohli",
-	writable: true,
-	enumerable: true
+ value: "Kohli",
+ writable: true,
+ enumerable: true
       }
 })
 ```
@@ -494,7 +479,7 @@ obj.method()
 //Added New properties
 obj.age = 27
 obj.getAge = function(){
-	return this.age;
+ return this.age;
 }
 ```
 
@@ -517,7 +502,7 @@ obj.12 = 12; //gives error
 delete obj.key; // return true
 ```
 
-## Spread operator ES6+
+## Object Spread operator ES6+
 
 very useful when coding in a functional paradigm as we can easily create copies of arrays or objects
 
@@ -549,10 +534,6 @@ console.log(p); // 42
 console.log(q); // true
 ```
 
-## Getter & Setter
-
-![image-20200601210340382](assets/JS__basic/image-20200601210340382.png)
-
 ## Descriptor
 
 ![image-20200602004653502](assets/JS__basic/image-20200602004653502.png)
@@ -569,9 +550,9 @@ window: give access to browser's core APIs (just the active tab)
 
 ![image-20200525233250502](assets/JS__basic/image-20200525233250502.png)
 
-# Class 
+## Class
 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes>
 
 JavaScript classes, introduced in ECMAScript 2015, are primarily syntactical sugar over JavaScript's existing prototype-based inheritance. The class syntax *does not* introduce a new object-oriented inheritance model to JavaScript.
 
@@ -598,8 +579,8 @@ class MyClass() {
   prop1 = 1;
   prop2; 
   /* 
-   	Don't depend on the constructor
-  	This is a property that this class instance will have, created when constructor is called and after super is executed completely
+    Don't depend on the constructor
+   This is a property that this class instance will have, created when constructor is called and after super is executed completely
   */
   constructor(someArg) {
     this.prop2 = someArg;
@@ -620,7 +601,7 @@ class Private {
 }
 ```
 
-## Binding class method 
+## Binding class method
 
 ![image-20200601214159413](assets/JS__basic/image-20200601214159413.png)
 
@@ -642,7 +623,7 @@ Static class members (properties/methods) are not tied to a specific instance of
 
 ## Inheritance
 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super
+<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super>
 
 ![image-20200601235316105](assets/JS__basic/image-20200601235316105.png)
 
@@ -665,7 +646,7 @@ class Square extends Polygon {
 }
 ```
 
-# Immediately-Invoked Function Expression (IIFE)
+## Immediately-Invoked Function Expression (IIFE)
 
 An IIFE is an anonymous function that is created and then immediately invoked. It’s not called from anywhere else (hence why it’s anonymous), but runs just after being created.
 
@@ -676,13 +657,13 @@ function foo(){ }();// not working
 (function () {return 5;} ()); //invokes when created
 ```
 
-# Modules 
+## Modules
 
 Each file content will be locked down (not add to global, but in it's own module scope, thing defined in a module is not shared unless you export it) and each file will be downloaded when needed (by HTTP request to a server)
 
 Module run in strict mode
 
-Can use global object (window, globalThis, ...) to share global data 
+Can use global object (window, globalThis, ...) to share global data
 
 ```js
 //app.js
@@ -721,7 +702,7 @@ import defaultContent form './file'
 import { Component } form './component'
 ```
 
-## Dynamic import 
+## Dynamic import
 
 Import code in a later time, not when your web app load but only when we need that code
 

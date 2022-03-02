@@ -13,7 +13,7 @@ The **JavaScript engine** translates your script into runnable machine code inst
 
 ## JavaScript runtime environment (NodeJS, Browser)
 
-**The JavaScript engine works inside an environment**
+The JavaScript engine works inside an environment
 
 These can be utility libraries or APIs which allow **communicating with the world surrounding the engine**
 

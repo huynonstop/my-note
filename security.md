@@ -2,7 +2,7 @@
 
 ## Secrets and Keys
 
-https://random-ize.com/how-long-to-hack-pass/
+<https://random-ize.com/how-long-to-hack-pass/>
 
 The secret can be given to you, like a secret code to enter a night club, or you can generate the secret and store it with the system like your pin number for your bank card.
 
@@ -30,11 +30,11 @@ In addition to username and password, authentication can include additional info
 
 ## Authorization and Authentication
 
-https://anonystick.com/blog-developer/4-co-che-dang-nhap-bai-viet-nay-la-du-cho-dan-lap-trinh-phan-1-2020091071827696
+<https://anonystick.com/blog-developer/4-co-che-dang-nhap-bai-viet-nay-la-du-cho-dan-lap-trinh-phan-1-2020091071827696>
 
-https://medium.com/@ratrosy/authorization-and-authentication-in-api-services-9b4db295a35b
+<https://medium.com/@ratrosy/authorization-and-authentication-in-api-services-9b4db295a35b>
 
-[https://medium.com/future-vision/the-great-authenticators-of-rest-738e81109331#:~:text=1.-,Basic%20Authentication,your%20computer%20to%20the%20server.](https://medium.com/future-vision/the-great-authenticators-of-rest-738e81109331#:~:text=1.-,Basic Authentication,your computer to the server.)
+[<https://medium.com/future-vision/the-great-authenticators-of-rest-738e81109331#:~:text=1.-,Basic%20Authentication,your%20computer%20to%20the%20server>.](<https://medium.com/future-vision/the-great-authenticators-of-rest-738e81109331#:~:text=1.-,Basic> Authentication,your computer to the server.)
 
 > Authentication gets you logged into the server. Authorization gets you access to the resources on the server.
 
@@ -50,17 +50,17 @@ Authentication is about proving you are the correct person because you know thin
 
 The client passes the key or the token to the API service, which verifies its validity and responds accordingly.
 
-https://medium.com/@vivekmadurai/different-ways-to-authenticate-a-web-application-e8f3875c254a
+<https://medium.com/@vivekmadurai/different-ways-to-authenticate-a-web-application-e8f3875c254a>
 
-https://www.youtube.com/watch?v=mBd-SMPp3kI
+<https://www.youtube.com/watch?v=mBd-SMPp3kI>
 
-https://medium.com/datadriveninvestor/api-design-101-solving-identity-issues-with-authentication-9f98d546131f
+<https://medium.com/datadriveninvestor/api-design-101-solving-identity-issues-with-authentication-9f98d546131f>
 
-https://medium.com/@sherryhsu/session-vs-token-based-authentication-11a6c5ac45e4
+<https://medium.com/@sherryhsu/session-vs-token-based-authentication-11a6c5ac45e4>
 
-https://dev.to/thecodearcher/what-really-is-the-difference-between-session-and-token-based-authentication-2o39
+<https://dev.to/thecodearcher/what-really-is-the-difference-between-session-and-token-based-authentication-2o39>
 
-https://stackoverflow.com/questions/40200413/sessions-vs-token-based-authentication
+<https://stackoverflow.com/questions/40200413/sessions-vs-token-based-authentication>
 
 ## Authorization
 
@@ -76,9 +76,9 @@ The resource owner grants the client access to the API service, usually in the f
 
 ### Sessions
 
-https://www.quora.com/What-is-a-session-in-a-Web-Application
+<https://www.quora.com/What-is-a-session-in-a-Web-Application>
 
-https://stackoverflow.com/questions/3804209/what-are-sessions-how-do-they-work
+<https://stackoverflow.com/questions/3804209/what-are-sessions-how-do-they-work>
 
 Coming to the technical details, all web applications work through **HTTP** protocol
 
@@ -94,9 +94,9 @@ Sessions can be maintained using hidden form fields, cookies, or http session.
 
 ### Cookies
 
-https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
+<https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies>
 
-Cookies or URL parameters ( for ex. like http://example.com/myPage?asd=lol&boo=no ) are both suitable ways to transport data between 2 or more request. However they are not good in case you don't want that data to be readable/editable on client side.
+Cookies or URL parameters ( for ex. like <http://example.com/myPage?asd=lol&boo=no> ) are both suitable ways to transport data between 2 or more request. However they are not good in case you don't want that data to be readable/editable on client side.
 
 The solution is to store that data server side, give it an "id", and let the client only know (and pass back at every http request) that id. There you go, sessions implemented. Or you can use the client as a convenient remote storage, but you would encrypt the data and keep the secret server-side.
 
@@ -110,43 +110,43 @@ In your specific example, the user id (could be username or another unique ID in
 
 > Being stateless, the REST API can’t remember your credentials. So you have to tell it who you are every time you talk to it!
 
-https://medium.com/better-programming/json-web-tokens-vs-session-cookies-for-authentication-55a5ddafb435
+<https://medium.com/better-programming/json-web-tokens-vs-session-cookies-for-authentication-55a5ddafb435>
 
-https://topdev.vn/blog/json-web-token-hay-session-cookies-dau-moi-la-chan-ai/?fbclid=IwAR0UlnfohlwT4ZcreuJWT9skndZRcqmnhfA61SWmn8stIu-I-QhLEcg4wVI
+<https://topdev.vn/blog/json-web-token-hay-session-cookies-dau-moi-la-chan-ai/?fbclid=IwAR0UlnfohlwT4ZcreuJWT9skndZRcqmnhfA61SWmn8stIu-I-QhLEcg4wVI>
 
-https://anonystick.com/blog-developer/authorization-framework-access-token-refresh-token-cung-giong-viec-sinh-vien-thue-nha-tro-2019061161976500?fbclid=IwAR1YHS5AGwC4bmfUoX6nEMpKXr3idkWsGl10b1KvNFxvHq7hu3m9aBdoqrk
+<https://anonystick.com/blog-developer/authorization-framework-access-token-refresh-token-cung-giong-viec-sinh-vien-thue-nha-tro-2019061161976500?fbclid=IwAR1YHS5AGwC4bmfUoX6nEMpKXr3idkWsGl10b1KvNFxvHq7hu3m9aBdoqrk>
 
-https://nordicapis.com/3-common-methods-api-authentication-explained/
+<https://nordicapis.com/3-common-methods-api-authentication-explained/>
 
-https://zapier.com/engineering/apikey-oauth-jwt/
+<https://zapier.com/engineering/apikey-oauth-jwt/>
 
-https://cloud.google.com/endpoints/docs/openapi/when-why-api-key
+<https://cloud.google.com/endpoints/docs/openapi/when-why-api-key>
 
-https://stoplight.io/blog/api-keys-best-practices-to-authenticate-apis/
+<https://stoplight.io/blog/api-keys-best-practices-to-authenticate-apis/>
 
-https://www.freecodecamp.org/news/best-practices-for-building-api-keys-97c26eabfea9/
+<https://www.freecodecamp.org/news/best-practices-for-building-api-keys-97c26eabfea9/>
 
-https://stackoverflow.com/questions/4201431/what-exactly-is-oauth-open-authorization
+<https://stackoverflow.com/questions/4201431/what-exactly-is-oauth-open-authorization>
 
-https://stackoverflow.com/questions/4727226/how-does-oauth-2-protect-against-things-like-replay-attacks-using-the-security-t
+<https://stackoverflow.com/questions/4727226/how-does-oauth-2-protect-against-things-like-replay-attacks-using-the-security-t>
 
-https://stackoverflow.com/questions/4113934/how-is-oauth-2-different-from-oauth-1
+<https://stackoverflow.com/questions/4113934/how-is-oauth-2-different-from-oauth-1>
 
-https://medium.com/google-cloud/understanding-oauth2-and-building-a-basic-authorization-server-of-your-own-a-beginners-guide-cf7451a16f66
+<https://medium.com/google-cloud/understanding-oauth2-and-building-a-basic-authorization-server-of-your-own-a-beginners-guide-cf7451a16f66>
 
-https://medium.com/@ratrosy/building-apis-with-openapi-ac3c24e33ee3
+<https://medium.com/@ratrosy/building-apis-with-openapi-ac3c24e33ee3>
 
-https://nordicapis.com/why-cant-i-just-send-jwts-without-oauth/
+<https://nordicapis.com/why-cant-i-just-send-jwts-without-oauth/>
 
-https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2
+<https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2>
 
-https://blogvaronis2.wpengine.com/what-is-oauth/
+<https://blogvaronis2.wpengine.com/what-is-oauth/>
 
-https://oauth.net/about/introduction/
+<https://oauth.net/about/introduction/>
 
-https://medium.com/@sherryhsu/session-vs-token-based-authentication-11a6c5ac45e4
+<https://medium.com/@sherryhsu/session-vs-token-based-authentication-11a6c5ac45e4>
 
-https://www.youtube.com/watch?v=UBUNrFtufWo
+<https://www.youtube.com/watch?v=UBUNrFtufWo>
 
 ### Basic Authentication
 
@@ -154,7 +154,7 @@ Base64 encode username and password (username:password) and put it in the Authen
 
 In this approach, an HTTP user agent simply provides a **username** and **password** to prove their authentication. This approach does not require cookies, session IDs, login pages, and other such specialty solutions, and because it uses the **HTTP header** itself, there’s no need to handshakes or other complex response systems.
 
-```
+```text
 base64('superuser:sosecure') = c3VwZXJ1c2VyOnNvc2VjdXJl
 HTTP header:
 Authentication Basic c3VwZXJ1c2VyOnNvc2VjdXJl
@@ -176,7 +176,7 @@ An API key is a randomly generated string prepared in a cryptographically strong
 
 > In this approach, a **unique generated value** is assigned to each first time user, signifying that the user is known.
 >
-> Each API key corresponds to a record in a database, which specifies the access scopes of the and other related information. 
+> Each API key corresponds to a record in a database, which specifies the access scopes of the and other related information.
 
 The client that needs access to the resources needs to register itself with the API. The API generates a Key and a Secret for each registered client. These are then stored with the server, and a copy of these are sent to the client. The client will need to pass these in when they try to connect.
 
@@ -190,7 +190,7 @@ Other issues with the API key and client secret is the key management. You’ll 
 
 **c.** Secure the key and secret
 
-https://www.softwaretestinghelp.com/api-management-tools/
+<https://www.softwaretestinghelp.com/api-management-tools/>
 
 API keys make sense when the users of an API are only developers. However, as developers created tools for themselves, they started sharing them with others.
 
@@ -198,7 +198,7 @@ API keys make sense when the users of an API are only developers. However, as de
 
 ![image-20201207235323593](assets/Security/image-20201207235323593.png)
 
-https://nordicapis.com/why-api-keys-are-not-enough/
+<https://nordicapis.com/why-api-keys-are-not-enough/>
 
  API keys are often used for what they’re not – **an API key is not a method of authorization**, it’s a method of authentication.
 
@@ -220,9 +220,9 @@ The user will need to pass this token through either the header, body or as a qu
 
 ### JSON Web Token
 
-https://trungquandev.com/hieu-sau-ve-jwt-json-web-tokens/?fbclid=IwAR3RqABq9ZJZgiKiYFZnOvbkSmLHU6tjgJzcazYIBfQ_JgaabyCxVQxTXw8
+<https://trungquandev.com/hieu-sau-ve-jwt-json-web-tokens/?fbclid=IwAR3RqABq9ZJZgiKiYFZnOvbkSmLHU6tjgJzcazYIBfQ_JgaabyCxVQxTXw8>
 
-https://tools.ietf.org/html/rfc7519
+<https://tools.ietf.org/html/rfc7519>
 
 A JSON web token is an encrypted string that contains information about who you are and JWT **self-contained** as well (your API service can verify them without having to inquire a source.)
 
@@ -234,17 +234,17 @@ The token itself is split into three parts. A header contains metadata about the
 
 Token can be set to expire after a certain amount of time so users will need to log in again. Tokens can also be revoked from the server side if there has been any compromise.
 
-JWTs don’t need **credentials**, they are **stateless** and they allow for fine-grained access control as well 
+JWTs don’t need **credentials**, they are **stateless** and they allow for fine-grained access control as well
 
 ![image-20200827011215497](assets/Security/image-20200827011215497.png)
 
 ### Refreshing Token
 
-https://anonystick.com/blog-developer/refresh-token-la-gi-cach-hoat-dong-co-khac-gi-so-voi-token-khong-202006067903464
+<https://anonystick.com/blog-developer/refresh-token-la-gi-cach-hoat-dong-co-khac-gi-so-voi-token-khong-202006067903464>
 
 ### OAuth
 
-https://tools.ietf.org/html/rfc6749
+<https://tools.ietf.org/html/rfc6749>
 
 OAuth is an authentication standard that uses tokens similar to a JWT, however it delegates dealing with credentials to a third party
 
@@ -289,7 +289,7 @@ You need OAuth only when you want to enable a user of your service to allow a th
 > - **Bitly:** “OK, Joe. I’m sending you over to Twitter so you can approve. Take this token with you.”
 > - **Joe:** “OK!”
 >
-> **<Bitly directs Joe to Twitter for authorization>**
+> **Bitly directs Joe to Twitter for authorization**
 >
 > This is the scary part. If Bitly were super-shady Evil Co. it could pop up a window that looked like Twitter but was really [phishing](https://www.varonis.com/blog/spot-phishing-scam/?__hstc=51647990.b87b6e0f511e43008049d03c97756493.1598468680485.1598468680485.1598468680485.1&__hssc=51647990.1.1598468680485&__hsfp=3849431553) for your username and password. Always be sure to verify that the URL you’re directed to is actually the service provider (Twitter, in this case).
 >
@@ -313,7 +313,7 @@ You need OAuth only when you want to enable a user of your service to allow a th
 > - **Twitter:** “Done!”
 >
 > In our scenario, Joe never had to share his Twitter credentials with Bitly. He simply delegated access using OAuth in a secure manner. At any time, Joe can login to Twitter and review the access he has granted and revoke tokens for specific applications without affecting others. OAuth also allows for granular permission levels. You can give Bitly the right to post to your Twitter account, but restrict LinkedIn to read-only access.
-
+>
 > ## OAuth 1.0 vs. OAuth 2.0
 >
 > OAuth 2.0 is a complete redesign from OAuth 1.0, and the two are not compatible. If you create a new application today, use OAuth 2.0. This blog only applies to OAuth 2.0, since OAuth 1.0 is deprecated.
@@ -405,7 +405,7 @@ Có rất nhiều rủi ro có thể gặp phải trong quá trình xác thực:
 
 ### Cross Site Request Forgery (CSRF)
 
-https://www.acunetix.com/websitesecurity/csrf-attacks/
+<https://www.acunetix.com/websitesecurity/csrf-attacks/>
 
 CSRF ( Cross Site Request Forgery) abuse server session and trick user execute malicious code with session of user
 
@@ -413,15 +413,13 @@ CSRF ( Cross Site Request Forgery) abuse server session and trick user execute m
 
 ![image-20200611220835360](assets/Security/image-20200611220835360.png)
 
-
-
 ## HTTPS
 
-https://kipalog.com/posts/https-hoat-dong-nhu-the-nao
+<https://kipalog.com/posts/https-hoat-dong-nhu-the-nao>
 
 HTTP +  Secure Sockets Layer (port 443)
 
-HTTPS uses HTTP and an encryption protocol (TLS/SSL) to encrypt communications. 
+HTTPS uses HTTP and an encryption protocol (TLS/SSL) to encrypt communications.
 
 <img src="assets/Big_words_web/WRNrD.png_q1sk0vahes" alt="img" style="zoom:200%;" />
 
@@ -433,9 +431,9 @@ Và tất nhiên, các session key sẽ được tạo ra ngẫu nhiên và khá
 
 ### SSL (secure socket layer)
 
-https://www.cloudflare.com/learning/ssl/what-is-ssl/
+<https://www.cloudflare.com/learning/ssl/what-is-ssl/>
 
-https://viblo.asia/p/https-va-ssl-OeVKBg4AZkW
+<https://viblo.asia/p/https-va-ssl-OeVKBg4AZkW>
 
 This protocol secures communications by using what’s known as an asymmetric public key infrastructure. This type of security system uses two different keys to encrypt communications between two parties:
 
@@ -444,7 +442,7 @@ This protocol secures communications by using what’s known as an asymmetric pu
 
 ### SSL certificate
 
-https://www.cloudflare.com/learning/ssl/what-is-an-ssl-certificate/
+<https://www.cloudflare.com/learning/ssl/what-is-an-ssl-certificate/>
 
 ### Certificate Authority
 
@@ -470,7 +468,7 @@ HTTPS eliminates the ability of unmoderated third parties to inject advertising 
 
 ## CORS
 
-Cross-Origin Resource Sharing ([CORS](https://developer.mozilla.org/en-US/docs/Glossary/CORS)) is a mechanism that uses additional [HTTP](https://developer.mozilla.org/en-US/docs/Glossary/HTTP) headers to tell browsers to give a web application running at one [origin,](https://developer.mozilla.org/en-US/docs/Glossary/Origin) access to selected resources from a different origin. 
+Cross-Origin Resource Sharing ([CORS](https://developer.mozilla.org/en-US/docs/Glossary/CORS)) is a mechanism that uses additional [HTTP](https://developer.mozilla.org/en-US/docs/Glossary/HTTP) headers to tell browsers to give a web application running at one [origin,](https://developer.mozilla.org/en-US/docs/Glossary/Origin) access to selected resources from a different origin.
 
 A web application executes a **cross-origin HTTP request** when it requests a resource that has a different origin (domain, protocol, or port) from its own.
 
